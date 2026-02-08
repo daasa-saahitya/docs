@@ -34,7 +34,7 @@ let lyricsData = {};
 let currentScript = "kannada";
 
 if (filePath) {
-  fetch(`${filePath}`)
+  fetch(`docs/songs/${filePath}`)
     .then(res => res.text())
     .then(text => parseMarkdown(text));
 }
