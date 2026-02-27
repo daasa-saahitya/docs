@@ -3,7 +3,7 @@ title: Sri Lakshmi Stotra Suladi
 subtitle: (Sri Gopala Dasaru)
 ---
 
-## kannada
+## devanagari
 ध्रुवताळ
 इन्दिरादेवि माते तन्दे विठलन अर-
 विन्द चरणकिन्नु अन्दिगे गेज्जेयादे ।
