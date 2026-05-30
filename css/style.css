@@ -1,0 +1,485 @@
+/* ═══════════════════════════════════════════
+   Daasa Sāhitya — Stylesheet
+   Antique parchment · Noto Serif · Devotional
+   ═══════════════════════════════════════════ */
+
+/* ── Tokens ── */
+:root {
+  --ink:        #1a1108;
+  --ink-light:  #3d2b10;
+  --ink-faint:  #6b4c25;
+  --parchment:  #f5edd8;
+  --parchment-dark: #ecddc0;
+  --parchment-deeper: #e0cfa5;
+  --accent:     #7a3b00;
+  --accent-light: #b05f10;
+  --rule:       #c8a96e;
+  --rule-light: #dfc99a;
+  --shadow:     rgba(80, 40, 0, 0.15);
+
+  --font-serif-latin:  'Noto Serif', Georgia, serif;
+  --font-kn:    'Noto Serif Kannada', 'Noto Serif', serif;
+  --font-ta:    'Noto Serif Tamil', 'Noto Serif', serif;
+  --font-hi:    'Noto Serif Devanagari', 'Noto Serif', serif;
+  --font-en:    'Noto Serif', Georgia, serif;
+
+  --size-title:  2rem;
+  --size-author: 1.2rem;
+  --size-meta:   0.9rem;
+  --size-verse:  1.15rem;
+  --size-label:  0.8rem;
+  --size-subtitle: 1.1rem;
+
+  --radius: 3px;
+  --tab-height: 44px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background-color: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: var(--font-serif-latin);
+  line-height: 1.75;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Site Header ── */
+.site-header {
+  background: var(--accent);
+  background-image: linear-gradient(135deg, #5a2800 0%, #7a3b00 50%, #5a2800 100%);
+  border-bottom: 3px solid var(--rule);
+  padding: 0;
+}
+
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+}
+
+.site-brand {
+  display: block;
+  text-decoration: none;
+  color: var(--parchment);
+}
+
+.brand-kn {
+  display: block;
+  font-family: var(--font-kn);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff8ec;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.brand-en {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rule-light);
+  margin-top: 0.2rem;
+}
+
+.site-subtitle {
+  color: var(--rule-light);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb-nav {
+  background: var(--parchment-dark);
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.breadcrumb-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  font-family: var(--font-kn);
+}
+
+.breadcrumb-inner a {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+.breadcrumb-inner a:hover { text-decoration: underline; }
+
+/* ── Index Page ── */
+.index-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  flex: 1;
+}
+
+.index-intro {
+  text-align: center;
+  padding: 1.5rem 0 2rem;
+}
+
+.total-badge {
+  display: inline-block;
+  background: var(--parchment-dark);
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  font-family: var(--font-kn);
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.category-section {
+  border: 1px solid var(--rule-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.category-header {
+  background: var(--parchment-deeper);
+  background-image: linear-gradient(90deg, var(--parchment-deeper), var(--parchment-dark));
+  border-bottom: 2px solid var(--rule);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category-name {
+  font-family: var(--font-kn);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.category-count {
+  background: var(--accent);
+  color: var(--parchment);
+  border-radius: 10px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.75rem;
+  font-family: var(--font-en);
+}
+
+.songs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-entry {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1.25rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-light);
+  transition: background 0.15s;
+}
+
+.song-entry:last-child { border-bottom: none; }
+
+.song-entry:hover {
+  background: var(--parchment-dark);
+}
+
+.song-entry-title {
+  font-family: var(--font-kn);
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.song-entry-author {
+  font-family: var(--font-kn);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
+.song-entry-raga {
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+/* ── Song Page ── */
+.song-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+  flex: 1;
+}
+
+/* ── Language Tabs ── */
+.lang-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: 0;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab-btn {
+  flex: 1;
+  min-width: 90px;
+  height: var(--tab-height);
+  background: var(--parchment-dark);
+  border: 1px solid var(--rule-light);
+  border-bottom: none;
+  color: var(--ink-faint);
+  cursor: pointer;
+  font-family: var(--font-kn);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, color 0.15s;
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin-right: 3px;
+  position: relative;
+  bottom: -2px;
+}
+
+.tab-btn:last-child { margin-right: 0; }
+
+.tab-btn:hover {
+  background: var(--parchment);
+  color: var(--accent);
+}
+
+.tab-btn.active {
+  background: var(--parchment);
+  color: var(--accent);
+  border-color: var(--rule);
+  border-bottom: 2px solid var(--parchment);
+  z-index: 1;
+}
+
+/* ── Language Panels ── */
+.lang-panels {
+  border: 1px solid var(--rule);
+  border-top: none;
+  background: var(--parchment);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 2rem 2.5rem 2.5rem;
+  min-height: 300px;
+}
+
+.lang-panel { display: none; }
+.lang-panel.active { display: block; }
+
+/* ── Song Header ── */
+.song-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule-light);
+  position: relative;
+}
+
+.song-header::after {
+  content: '✦';
+  position: absolute;
+  bottom: -0.65rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--parchment);
+  padding: 0 0.5rem;
+  color: var(--rule);
+  font-size: 0.85rem;
+}
+
+.song-title {
+  font-size: var(--size-title);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+}
+
+.song-author {
+  font-size: var(--size-author);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-light);
+  margin-bottom: 0.75rem;
+}
+
+.song-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1rem;
+}
+
+.meta-item {
+  font-size: var(--size-meta);
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.meta-item.raga::before { content: 'Rāga: '; font-style: normal; font-weight: 600; }
+.meta-item.tala::before { content: 'Tāḷa: '; font-style: normal; font-weight: 600; }
+
+/* ── Verses ── */
+.song-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.verse {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+.verse-label {
+  font-size: var(--size-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  text-align: right;
+  padding-top: 0.2rem;
+  padding-right: 1rem;
+  border-right: 2px solid var(--rule-light);
+  font-family: var(--font-en);
+  line-height: 1.75;
+}
+
+.verse-text {
+  font-size: var(--size-verse);
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+/* Verse type color accents */
+.verse-pallavi .verse-label    { color: var(--accent); border-right-color: var(--accent); }
+.verse-anupallavi .verse-label { color: var(--accent-light); }
+.verse-charana .verse-label    { color: var(--ink-faint); }
+
+/* Mid-song subtitle */
+.verse-subtitle {
+  font-size: var(--size-subtitle);
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--rule-light);
+  border-bottom: 1px solid var(--rule-light);
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+/* ── Font families per panel ── */
+#panel-kn .song-title,
+#panel-kn .song-author,
+#panel-kn .verse-text,
+#panel-kn .song-meta,
+#panel-kn .verse-subtitle { font-family: var(--font-kn); }
+
+#panel-ta .song-title,
+#panel-ta .song-author,
+#panel-ta .verse-text,
+#panel-ta .song-meta,
+#panel-ta .verse-subtitle { font-family: var(--font-ta); }
+
+#panel-hi .song-title,
+#panel-hi .song-author,
+#panel-hi .verse-text,
+#panel-hi .song-meta,
+#panel-hi .verse-subtitle { font-family: var(--font-hi); }
+
+#panel-en .song-title,
+#panel-en .song-author,
+#panel-en .verse-text,
+#panel-en .song-meta,
+#panel-en .verse-subtitle { font-family: var(--font-en); font-style: italic; }
+
+/* Tamil superscripts */
+.verse-text sup {
+  font-size: 0.65em;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--accent-light);
+  font-family: var(--font-en);
+}
+
+/* ── Site Footer ── */
+.site-footer {
+  background: var(--parchment-deeper);
+  border-top: 2px solid var(--rule);
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  font-style: italic;
+  font-family: var(--font-kn);
+}
+
+.build-date {
+  font-family: var(--font-en);
+  font-size: 0.72rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  :root {
+    --size-title: 1.5rem;
+    --size-verse: 1.05rem;
+  }
+
+  .lang-panels { padding: 1.25rem 1rem 2rem; }
+
+  .verse {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .verse-label {
+    text-align: left;
+    border-right: none;
+    border-bottom: 1px solid var(--rule-light);
+    padding-right: 0;
+    padding-bottom: 0.2rem;
+    font-size: 0.75rem;
+  }
+
+  .tab-btn { font-size: 0.82rem; min-width: 70px; }
+
+  .song-entry {
+    grid-template-columns: 1fr auto;
+  }
+  .song-entry-raga { display: none; }
+}
+
+@media (max-width: 400px) {
+  .lang-tabs { gap: 0; }
+  .tab-btn { min-width: 60px; font-size: 0.75rem; }
+}

@@ -1,0 +1,63 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Sāhitya — Lyrics File
+#
+# HOW TO USE:
+# • Fill in the _kn fields (Kannada) — Tamil, Devanagari, IAST
+#   are auto-generated. You may override any auto-translation
+#   by adding the _ta / _hi / _en version manually.
+# • verse types: pallavi | anupallavi | charana | madhyamakala | subtitle
+# • For a mid-song heading, use type: subtitle and subtitle_kn
+# • 'number' is optional, use for numbered charanas
+# ──────────────────────────────────────────────────────────────────
+
+title_kn:  ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+author_kn: ಪುರಂದರದಾಸ
+raga_kn:   ಮಧ್ಯಮಾವತಿ
+tala_kn:   ಆದಿ
+description_kn: ದಾಸರ ಪದ
+
+# Optional manual overrides (leave blank to use auto-transliteration)
+title_ta:  ""
+title_hi:  ""
+title_en:  ""
+
+verses:
+  - type: pallavi
+    kn: |
+      ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+      ನಮ್ಮ ಮನೆಯ ಮಹಾಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+
+  - type: anupallavi
+    kn: |
+      ಸೋಗೆಯ ತಳಿರ ತೋರಣ ಕಟ್ಟಿ
+      ಶ್ರೀ ಗಂಧದ ಚಿಟ್ಟಿ ರಂಗವಲ್ಲಿಯ ಇಟ್ಟಿ
+      ಮಂಗಳ ದೀಪವ ಬೆಳಗಿಸಿ ಕಟ್ಟಿ
+      ಮನೆಗೆ ಬಾರಮ್ಮ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+
+  # Mid-song section heading example:
+  - type: subtitle
+    subtitle_kn: ಚರಣಗಳು
+
+  - type: charana
+    number: 1
+    kn: |
+      ಕನಕದ ಕಲಶವ ತುಂಬಿ ಇಟ್ಟು
+      ಕದಳಿಯ ಫಲವ ನೀಡಿ ಮುಟ್ಟಿ
+      ವನಜಾಕ್ಷಿ ನಿನ್ನ ಪಾದ ಪಿಡಿದು
+      ಮನ ತಣಿಯೆ ಬಾರಮ್ಮ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+
+  - type: charana
+    number: 2
+    kn: |
+      ಶ್ರೀಗಂಧ ಕಸ್ತೂರಿ ಶ್ರೀಗಂಧ ಪುಷ್ಪ
+      ಭೃಂಗಾರ ತೀರ್ಥ ತಾಂಬೂಲ ಸಮರ್ಪಿಸಿ
+      ಮಂಗಳ ಹಾರತಿ ಬೆಳಗಿಸಲು ಬಂದು
+      ತುಂಗೆಯ ದಂಡೆಯ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+
+  - type: charana
+    number: 3
+    kn: |
+      ಪುರಂದರ ವಿಠ್ಠಲನ ಭಕ್ತರ ಮನೆಗೆ
+      ಬರಲು ಮರೆಯದಿರು ಲಕ್ಷ್ಮಿ ತಾಯೆ
+      ಕರ ಮುಗಿದು ನಿನ್ನ ಸ್ತೋತ್ರ ಪಾಡಿ
+      ಹರುಷದಿ ಬಾರಮ್ಮ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ

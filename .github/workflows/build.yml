@@ -1,0 +1,47 @@
+name: Build & Deploy Daasa Sāhitya
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'lyrics/**'
+      - 'scripts/**'
+      - 'templates/**'
+      - 'css/**'
+      - 'js/**'
+  workflow_dispatch:   # allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+
+      - name: Build site
+        run: |
+          python scripts/build.py .
+
+      - name: Commit generated site
+        run: |
+          git config user.name  "Daasa Saahitya Bot"
+          git config user.email "bot@daasa-saahitya.github.io"
+          git add site/
+          # Only commit if there are changes
+          git diff --cached --quiet || git commit -m "🔨 Auto-build: $(date '+%Y-%m-%d %H:%M')"
+          git push
