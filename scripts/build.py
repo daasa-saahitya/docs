@@ -581,12 +581,22 @@ def generate_song_page(data, rel_path, output_dir, template_path):
         active = 'active' if idx == 0 else ''
         tabs_html += f'<button class="tab-btn {active}" data-target="{lang}">{native_name}</button>\n'
 
-    # Breadcrumb
+    # Breadcrumb - handle nested categories
     parts = rel_path.parts
-    breadcrumb = '<a href="../../index.html">Home</a>'
-    if len(parts) > 1:
+    depth = len(parts) - 1  # Number of parent folders
+    back_path = '../' * depth + 'index.html'
+
+    breadcrumb = f'<a href="{back_path}">Home</a>'
+    if len(parts) >= 2:
+        # Category
         cat = parts[0]
-        breadcrumb += f' › <a href="../../index.html#{cat}">{cat.replace("-", " ").title()}</a>'
+        cat_label = format_category_name(cat)
+        breadcrumb += f' › <a href="{back_path}#{cat}">{cat_label}</a>'
+    if len(parts) >= 3:
+        # Sub-category
+        subcat = parts[1]
+        subcat_label = format_category_name(subcat)
+        breadcrumb += f' › <a href="{back_path}#{cat}-{subcat}">{subcat_label}</a>'
     breadcrumb += f' › {data.get("title_kn", "")}'
 
     html = template.replace('{{TABS}}', tabs_html)
@@ -602,54 +612,109 @@ def generate_song_page(data, rel_path, output_dir, template_path):
     return out_path
 
 
+def format_category_name(folder_name):
+    """Convert folder name to display name (e.g., 'lakshmi_devi' -> 'Lakshmi Devi')."""
+    return folder_name.replace('_', ' ').replace('-', ' ').title()
+
+
 def generate_index(all_songs, output_dir, template_path):
-    """Generate the main index.html grouping songs by category."""
+    """Generate the main index.html grouping songs by category and sub-category."""
     with open(template_path, encoding='utf-8') as f:
         template = f.read()
 
-    # Group by category folder
+    # Build nested structure: category -> subcategory -> songs
     from collections import defaultdict
-    groups = defaultdict(list)
+
+    # Structure: {category: {subcategory: [(rel_path, data), ...], ...}, ...}
+    # If no subcategory, use '_root_' as key
+    hierarchy = defaultdict(lambda: defaultdict(list))
+
     for rel_path, data in all_songs:
-        cat = rel_path.parts[0] if len(rel_path.parts) > 1 else 'other'
-        groups[cat].append((rel_path, data))
+        parts = rel_path.parts
+        if len(parts) >= 3:
+            # Has category and subcategory: category/subcategory/song.yml
+            category = parts[0]
+            subcategory = parts[1]
+            hierarchy[category][subcategory].append((rel_path, data))
+        elif len(parts) == 2:
+            # Only category: category/song.yml
+            category = parts[0]
+            hierarchy[category]['_root_'].append((rel_path, data))
+        else:
+            # No category
+            hierarchy['other']['_root_'].append((rel_path, data))
 
-    # Sort categories and songs within them
-    groups_html = ''
-    for cat in sorted(groups.keys()):
-        songs = sorted(groups[cat], key=lambda x: x[1].get('title_kn', ''))
-        cat_label = cat.replace('-', ' ').title()
-        count = len(songs)
-
-        songs_html = ''
-        for rel_path, data in songs:
-            # Use Devanagari for index display
-            title_hi = data.get('title_hi') or transliterate_to_devanagari(data.get('title_kn', ''))
-            author_hi = data.get('author_hi') or transliterate_to_devanagari(data.get('author_kn', ''))
-            raga_hi = data.get('raga_hi') or transliterate_to_devanagari(data.get('raga_kn', ''))
-            href = str(rel_path.with_suffix('.html'))
-            songs_html += f'''
+    def render_song_entry(rel_path, data):
+        """Render a single song entry HTML."""
+        title_hi = data.get('title_hi') or transliterate_to_devanagari(data.get('title_kn', ''))
+        author_hi = data.get('author_hi') or transliterate_to_devanagari(data.get('author_kn', ''))
+        raga_hi = data.get('raga_hi') or transliterate_to_devanagari(data.get('raga_kn', ''))
+        href = str(rel_path.with_suffix('.html'))
+        return f'''
 <a href="{href}" class="song-entry">
   <span class="song-entry-title">{title_hi}</span>
   <span class="song-entry-author">{author_hi}</span>
   {f'<span class="song-entry-raga">{raga_hi}</span>' if raga_hi else ''}
-</a>
-'''
+</a>'''
 
-        groups_html += f'''
-<section class="category-section" id="{cat}">
-  <div class="category-header">
-    <h2 class="category-name">{cat_label}</h2>
-    <span class="category-count">{count}</span>
+    # Generate HTML for all categories
+    groups_html = ''
+    total_songs = 0
+
+    for category in sorted(hierarchy.keys()):
+        subcategories = hierarchy[category]
+
+        # Count total songs in this category
+        cat_total = sum(len(songs) for songs in subcategories.values())
+        total_songs += cat_total
+
+        cat_label = format_category_name(category)
+
+        # Build subcategory content
+        subcats_html = ''
+
+        # First, render songs directly in category (no subcategory)
+        if '_root_' in subcategories:
+            root_songs = sorted(subcategories['_root_'], key=lambda x: x[1].get('title_kn', ''))
+            for rel_path, data in root_songs:
+                subcats_html += render_song_entry(rel_path, data)
+
+        # Then, render each subcategory
+        for subcat in sorted(k for k in subcategories.keys() if k != '_root_'):
+            songs = sorted(subcategories[subcat], key=lambda x: x[1].get('title_kn', ''))
+            subcat_label = format_category_name(subcat)
+            subcat_count = len(songs)
+
+            songs_html = ''
+            for rel_path, data in songs:
+                songs_html += render_song_entry(rel_path, data)
+
+            subcats_html += f'''
+<div class="subcategory-section" id="{category}-{subcat}">
+  <div class="subcategory-header">
+    <h3 class="subcategory-name">{subcat_label}</h3>
+    <span class="subcategory-count">{subcat_count}</span>
   </div>
   <div class="songs-list">
     {songs_html}
+  </div>
+</div>
+'''
+
+        groups_html += f'''
+<section class="category-section" id="{category}">
+  <div class="category-header">
+    <h2 class="category-name">{cat_label}</h2>
+    <span class="category-count">{cat_total}</span>
+  </div>
+  <div class="category-content">
+    {subcats_html}
   </div>
 </section>
 '''
 
     html = template.replace('{{CATEGORIES}}', groups_html)
-    html = html.replace('{{TOTAL}}', str(sum(len(v) for v in groups.values())))
+    html = html.replace('{{TOTAL}}', str(total_songs))
     html = html.replace('{{BUILD_DATE}}', datetime.now().strftime('%d %B %Y'))
 
     out_path = output_dir / 'index.html'

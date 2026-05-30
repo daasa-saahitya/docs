@@ -150,32 +150,83 @@ body {
   gap: 2.5rem;
 }
 
+/* ── Category Container ── */
 .category-section {
-  border: 1px solid var(--rule-light);
-  border-radius: var(--radius);
+  border: 2px solid var(--rule);
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 .category-header {
-  background: var(--parchment-deeper);
-  background-image: linear-gradient(90deg, var(--parchment-deeper), var(--parchment-dark));
-  border-bottom: 2px solid var(--rule);
-  padding: 0.75rem 1.25rem;
+  background: var(--accent);
+  background-image: linear-gradient(135deg, #5a2800 0%, #7a3b00 50%, #5a2800 100%);
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .category-name {
-  font-family: var(--font-kn);
-  font-size: 1.1rem;
+  font-family: var(--font-hi);
+  font-size: 1.4rem;
   font-weight: 700;
+  color: #fff8ec;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.category-count {
+  background: rgba(255,255,255,0.2);
+  color: var(--parchment);
+  border-radius: 12px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.85rem;
+  font-family: var(--font-en);
+  font-weight: 600;
+}
+
+.category-content {
+  display: flex;
+  flex-direction: column;
+  background: var(--parchment);
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.songs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Subcategory Container ── */
+.subcategory-section {
+  border: 1px solid var(--rule-light);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--parchment);
+}
+
+.subcategory-header {
+  background: var(--parchment-deeper);
+  background-image: linear-gradient(90deg, var(--parchment-deeper), var(--parchment-dark));
+  padding: 0.7rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rule);
+}
+
+.subcategory-name {
+  font-family: var(--font-hi);
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.02em;
 }
 
-.category-count {
-  background: var(--accent);
+.subcategory-count {
+  background: var(--accent-light);
   color: var(--parchment);
   border-radius: 10px;
   padding: 0.1rem 0.6rem;
@@ -183,9 +234,8 @@ body {
   font-family: var(--font-en);
 }
 
-.songs-list {
-  display: flex;
-  flex-direction: column;
+.subcategory-section .songs-list {
+  padding: 0.5rem 0;
 }
 
 .song-entry {
