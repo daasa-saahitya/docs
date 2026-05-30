@@ -729,14 +729,14 @@ def generate_index(all_songs, output_dir, template_path):
         # First, render songs directly in category (no subcategory)
         song_index = 1
         if '_root_' in subcategories:
-            root_songs = sorted(subcategories['_root_'], key=lambda x: x[1].get('title_kn', ''))
+            root_songs = sorted(subcategories['_root_'], key=lambda x: (x[1].get('title_en') or transliterate_to_iast(x[1].get('title_kn', ''))).lower())
             for rel_path, data in root_songs:
                 subcats_html += render_song_entry(rel_path, data, song_index)
                 song_index += 1
 
         # Then, render each subcategory
         for subcat in sorted(k for k in subcategories.keys() if k != '_root_'):
-            songs = sorted(subcategories[subcat], key=lambda x: x[1].get('title_kn', ''))
+            songs = sorted(subcategories[subcat], key=lambda x: (x[1].get('title_en') or transliterate_to_iast(x[1].get('title_kn', ''))).lower())
             subcat_label = format_category_name(subcat)
             subcat_count = len(songs)
 

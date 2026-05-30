@@ -8,20 +8,20 @@ title_ta: சிந்தா பரிஹார ஸுளாதி³
 title_hi: चिन्ता परिहार सुळादि
 title_en: cintā parihāra suḷādi
 
-author_kn: ಕಾಪಿ
-author_ta: காபி
-author_hi: कापि
-author_en: kāpi
+author_kn: ವಿಜಯ ದಾಸರು
+author_ta: விஜய தா³ஸரு
+author_hi: विजय दासरु
+author_en: vijaya dāsaru
 
-raga_kn: ವಿಜಯ ದಾಸರು
-raga_ta: விஜய தா³ஸரு
-raga_hi: विजय दासरु
-raga_en: vijaya dāsaru
+raga_kn: ಕಾಪಿ
+raga_ta: காபி
+raga_hi: कापि
+raga_en: kāpi
 
 
 
 verses:
-  - type: 
+  - type: None
     number: 1
     subtitle_kn: ಧ್ರುವ ತಾಳ
     subtitle_ta: த்⁴ருவ தாள
@@ -80,7 +80,7 @@ verses:
       gōkulāmbudhi candra vijayaviṭṭhala grāsa -
       hākuvaniralāgi nī kaḷavaḷisuvare ॥
 
-  - type: 
+  - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟ ತಾಳ
     subtitle_ta: மட்ட தாள
@@ -123,7 +123,7 @@ verses:
       dharaṇipālaka raṅga vijayaviṭṭhalarēya 
       paramapuruṣa hariya śaraṇage bhayavēnu ॥
 
-  - type: 
+  - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟ ತಾಳ
     subtitle_ta: த்ரிபுட தாள
@@ -198,7 +198,7 @@ verses:
       nārāyaṇa raṅga vijayaviṭṭhala nitya
       bhārakartanāgi porevanu pratidivasa ॥
 
-  - type: 
+  - type: None
     number: 4
     subtitle_kn: ಅಟ್ಟ ತಾಳ
     subtitle_ta: அட்ட தாள
@@ -253,7 +253,7 @@ verses:
       odagi sākuva tande vijayaviṭṭhalanire 
       ide dhairyaviḍidu mudadinda nalidāḍu ॥
 
-  - type: 
+  - type: None
     number: 5
     subtitle_kn: ಆದಿ ತಾಳ
     subtitle_ta: ஆதி³ தாள
@@ -304,7 +304,7 @@ verses:
       hinde indu mundu biḍade tandeyāgi sākuva gō -
       vinda vijayaviṭṭhalaṅge vandisuvadu biḍadiru ॥
 
-  - type: 
+  - type: None
     subtitle_kn: ಜತೆ
     subtitle_ta: ஜதெ
     subtitle_hi: जते
