@@ -561,7 +561,7 @@ def build(repo_root=None):
         repo_root = Path(repo_root)
 
     lyrics_dir = repo_root / 'lyrics'
-    output_dir = repo_root / 'site'
+    output_dir = repo_root / 'docs'
     templates_dir = repo_root / 'templates'
 
     # Clean and recreate output

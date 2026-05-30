@@ -2,14 +2,14 @@ name: Build & Deploy Daasa Sāhitya
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
     paths:
-      - 'lyrics/**'
-      - 'scripts/**'
-      - 'templates/**'
-      - 'css/**'
-      - 'js/**'
-  workflow_dispatch:   # allows manual trigger from GitHub UI
+      - "lyrics/**"
+      - "scripts/**"
+      - "templates/**"
+      - "css/**"
+      - "js/**"
+  workflow_dispatch: # allows manual trigger from GitHub UI
 
 permissions:
   contents: write
@@ -27,7 +27,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -41,7 +41,7 @@ jobs:
         run: |
           git config user.name  "Daasa Saahitya Bot"
           git config user.email "bot@daasa-saahitya.github.io"
-          git add site/
+          git add docs/
           # Only commit if there are changes
           git diff --cached --quiet || git commit -m "🔨 Auto-build: $(date '+%Y-%m-%d %H:%M')"
           git push
