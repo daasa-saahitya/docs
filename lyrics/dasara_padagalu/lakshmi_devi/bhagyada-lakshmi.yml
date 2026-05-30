@@ -1,31 +1,47 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Sāhitya — Lyrics File
-#
-# HOW TO USE:
-# • Fill in the _kn fields (Kannada) — Tamil, Devanagari, IAST
-#   are auto-generated. You may override any auto-translation
-#   by adding the _ta / _hi / _en version manually.
-# • verse types: pallavi | anupallavi | charana | madhyamakala | subtitle
-# • For a mid-song heading, use type: subtitle and subtitle_kn
-# • 'number' is optional, use for numbered charanas
+# Daasa Saahitya - Lyrics File (Auto-transliterated)
+# Edit the _ta, _hi, _en fields to correct any transliteration errors
 # ──────────────────────────────────────────────────────────────────
 
-title_kn:  ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
-author_kn: ಪುರಂದರದಾಸ
-raga_kn:   ಮಧ್ಯಮಾವತಿ
-tala_kn:   ಆದಿ
-description_kn: ದಾಸರ ಪದ
+title_kn: ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+title_ta: பா⁴க்³யத³ லக்ஷ்மி பா³ரம்ம
+title_hi: भाग्यद लक्ष्मि बारम्म
+title_en: bhāgyada lakṣmi bāramma
 
-# Optional manual overrides (leave blank to use auto-transliteration)
-title_ta:  ""
-title_hi:  ""
-title_en:  ""
+author_kn: ಪುರಂದರದಾಸ
+author_ta: புரந்த³ரதா³ஸ
+author_hi: पुरन्दरदास
+author_en: purandaradāsa
+
+ankita_kn: ದಾಸರ ಪದ
+ankita_ta: தா³ஸர பத³
+ankita_hi: दासर पद
+ankita_en: dāsara pada
+
+raga_kn: ಮಧ್ಯಮಾವತಿ
+raga_ta: மத்⁴யமாவதி
+raga_hi: मध्यमावति
+raga_en: madhyamāvati
+
+tala_kn: ಆದಿ
+tala_ta: ஆதி³
+tala_hi: आदि
+tala_en: ādi
 
 verses:
   - type: pallavi
     kn: |
       ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
       ನಮ್ಮ ಮನೆಯ ಮಹಾಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+    ta: |
+      பா⁴க்³யத³ லக்ஷ்மி பா³ரம்ம
+      நம்ம மனெய மஹாலக்ஷ்மி பா³ரம்ம
+    hi: |
+      भाग्यद लक्ष्मि बारम्म
+      नम्म मनेय महालक्ष्मि बारम्म
+    en: |
+      bhāgyada lakṣmi bāramma
+      namma maneya mahālakṣmi bāramma
 
   - type: anupallavi
     kn: |
@@ -33,10 +49,27 @@ verses:
       ಶ್ರೀ ಗಂಧದ ಚಿಟ್ಟಿ ರಂಗವಲ್ಲಿಯ ಇಟ್ಟಿ
       ಮಂಗಳ ದೀಪವ ಬೆಳಗಿಸಿ ಕಟ್ಟಿ
       ಮನೆಗೆ ಬಾರಮ್ಮ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+    ta: |
+      ஸோகெ³ய தளிர தோரண கட்டி
+      ஸ்ரீ க³ந்த⁴த³ சிட்டி ரங்க³வல்லிய இட்டி
+      மங்க³ள தீ³பவ பெ³ளகி³ஸி கட்டி
+      மனெகெ³ பா³ரம்ம லக்ஷ்மி பா³ரம்ம
+    hi: |
+      सोगेय तळिर तोरण कट्टि
+      श्री गन्धद चिट्टि रङ्गवल्लिय इट्टि
+      मङ्गळ दीपव बेळगिसि कट्टि
+      मनेगे बारम्म लक्ष्मि बारम्म
+    en: |
+      sōgeya taḷira tōraṇa kaṭṭi
+      śrī gandhada ciṭṭi raṅgavalliya iṭṭi
+      maṅgaḷa dīpava beḷagisi kaṭṭi
+      manege bāramma lakṣmi bāramma
 
-  # Mid-song section heading example:
   - type: subtitle
     subtitle_kn: ಚರಣಗಳು
+    subtitle_ta: சரணக³ளு
+    subtitle_hi: चरणगळु
+    subtitle_en: caraṇagaḷu
 
   - type: charana
     number: 1
@@ -45,6 +78,21 @@ verses:
       ಕದಳಿಯ ಫಲವ ನೀಡಿ ಮುಟ್ಟಿ
       ವನಜಾಕ್ಷಿ ನಿನ್ನ ಪಾದ ಪಿಡಿದು
       ಮನ ತಣಿಯೆ ಬಾರಮ್ಮ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+    ta: |
+      கனகத³ கலஶவ தும்பி³ இட்டு
+      கத³ளிய ப²லவ நீடி³ முட்டி
+      வனஜாக்ஷி நின்ன பாத³ பிடி³து³
+      மன தணியெ பா³ரம்ம லக்ஷ்மி பா³ரம்ம
+    hi: |
+      कनकद कलशव तुम्बि इट्टु
+      कदळिय फलव नीडि मुट्टि
+      वनजाक्षि निन्न पाद पिडिदु
+      मन तणिये बारम्म लक्ष्मि बारम्म
+    en: |
+      kanakada kalaśava tumbi iṭṭu
+      kadaḷiya phalava nīḍi muṭṭi
+      vanajākṣi ninna pāda piḍidu
+      mana taṇiye bāramma lakṣmi bāramma
 
   - type: charana
     number: 2
@@ -53,6 +101,21 @@ verses:
       ಭೃಂಗಾರ ತೀರ್ಥ ತಾಂಬೂಲ ಸಮರ್ಪಿಸಿ
       ಮಂಗಳ ಹಾರತಿ ಬೆಳಗಿಸಲು ಬಂದು
       ತುಂಗೆಯ ದಂಡೆಯ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+    ta: |
+      ஸ்ரீக³ந்த⁴ கஸ்தூரி ஸ்ரீக³ந்த⁴ புஷ்ப
+      பரு⁴ங்கா³ர தீர்த² தாம்பூ³ல ஸமர்பிஸி
+      மங்க³ள ஹாரதி பெ³ளகி³ஸலு ப³ந்து³
+      துங்கெ³ய த³ண்டெ³ய லக்ஷ்மி பா³ரம்ம
+    hi: |
+      श्रीगन्ध कस्तूरि श्रीगन्ध पुष्प
+      भृङ्गार तीर्थ ताम्बूल समर्पिसि
+      मङ्गळ हारति बेळगिसलु बन्दु
+      तुङ्गेय दण्डेय लक्ष्मि बारम्म
+    en: |
+      śrīgandha kastūri śrīgandha puṣpa
+      bhṛṅgāra tīrtha tāmbūla samarpisi
+      maṅgaḷa hārati beḷagisalu bandu
+      tuṅgeya daṇḍeya lakṣmi bāramma
 
   - type: charana
     number: 3
@@ -61,3 +124,19 @@ verses:
       ಬರಲು ಮರೆಯದಿರು ಲಕ್ಷ್ಮಿ ತಾಯೆ
       ಕರ ಮುಗಿದು ನಿನ್ನ ಸ್ತೋತ್ರ ಪಾಡಿ
       ಹರುಷದಿ ಬಾರಮ್ಮ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
+    ta: |
+      புரந்த³ர விட்²ட²லன ப⁴க்தர மனெகெ³
+      ப³ரலு மரெயதி³ரு லக்ஷ்மி தாயெ
+      கர முகி³து³ நின்ன ஸ்தோத்ர பாடி³
+      ஹருஷதி³ பா³ரம்ம லக்ஷ்மி பா³ரம்ம
+    hi: |
+      पुरन्दर विठ्ठलन भक्तर मनेगे
+      बरलु मरेयदिरु लक्ष्मि ताये
+      कर मुगिदु निन्न स्तोत्र पाडि
+      हरुषदि बारम्म लक्ष्मि बारम्म
+    en: |
+      purandara viṭhṭhalana bhaktara manege
+      baralu mareyadiru lakṣmi tāye
+      kara mugidu ninna stōtra pāḍi
+      haruṣadi bāramma lakṣmi bāramma
+

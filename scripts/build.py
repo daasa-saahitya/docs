@@ -281,7 +281,15 @@ def transliterate_to_tamil(text):
         result.append(ch)
         i += 1
 
-    return ''.join(result)
+    output = ''.join(result)
+
+    # Tamil words cannot start with ன, ங, ண - replace with ந at word boundaries
+    import re
+    output = re.sub(r'(^|[\s।॥|])ன', r'\1ந', output)
+    output = re.sub(r'(^|[\s।॥|])ங', r'\1ந', output)
+    output = re.sub(r'(^|[\s।॥|])ண', r'\1ந', output)
+
+    return output
 
 
 def transliterate_to_devanagari(text):
@@ -421,7 +429,7 @@ def auto_transliterate(data, engine_name):
 
     result = {}
     # Title, author
-    for field in ['title', 'author', 'raga', 'tala', 'description']:
+    for field in ['title', 'author', 'raga', 'tala', 'ankita']:
         kn_val = data.get(f'{field}_kn', '')
         # If a manual override exists and is non-empty, use it; else transliterate
         manual_override = data.get(f'{field}_{lang_key}')
@@ -540,7 +548,7 @@ def generate_song_page(data, rel_path, output_dir, template_path):
             author = data.get('author_kn', '')
             raga = data.get('raga_kn', '')
             tala = data.get('tala_kn', '')
-            desc = data.get('description_kn', '')
+            ankita = data.get('ankita_kn', '')
             verses = data.get('verses', [])
             text_key = 'kn'
             sub_key = 'subtitle_kn'
@@ -549,7 +557,7 @@ def generate_song_page(data, rel_path, output_dir, template_path):
             author = ta_data.get('author_ta', '')
             raga = ta_data.get('raga_ta', '')
             tala = ta_data.get('tala_ta', '')
-            desc = ta_data.get('description_ta', '')
+            ankita = ta_data.get('ankita_ta', '')
             verses = ta_data['verses']
             text_key = 'text_ta'
             sub_key = 'subtitle_ta'
@@ -558,7 +566,7 @@ def generate_song_page(data, rel_path, output_dir, template_path):
             author = hi_data.get('author_hi', '')
             raga = hi_data.get('raga_hi', '')
             tala = hi_data.get('tala_hi', '')
-            desc = hi_data.get('description_hi', '')
+            ankita = hi_data.get('ankita_hi', '')
             verses = hi_data['verses']
             text_key = 'text_hi'
             sub_key = 'subtitle_hi'
@@ -567,7 +575,7 @@ def generate_song_page(data, rel_path, output_dir, template_path):
             author = en_data.get('author_en', '')
             raga = en_data.get('raga_en', '')
             tala = en_data.get('tala_en', '')
-            desc = en_data.get('description_en', '')
+            ankita = en_data.get('ankita_en', '')
             verses = en_data['verses']
             text_key = 'text_en'
             sub_key = 'subtitle_en'
@@ -577,8 +585,8 @@ def generate_song_page(data, rel_path, output_dir, template_path):
             raga_html = f'<span class="meta-item raga">{raga}</span>' if raga else '<span></span>'
             tala_html = f'<span class="meta-item tala">{tala}</span>' if tala else '<span></span>'
             meta_html += f'<div class="song-meta-row">{raga_html}{tala_html}</div>\n'
-        if desc:
-            meta_html += f'<span class="meta-item desc">{desc}</span>'
+
+        ankita_html = f'<h3 class="song-ankita">{ankita}</h3>' if ankita else ''
 
         verses_html = ''
         subtitle_key = f'subtitle_{lang}'
@@ -620,6 +628,7 @@ def generate_song_page(data, rel_path, output_dir, template_path):
   <div class="song-header">
     <h1 class="song-title">{title}</h1>
     <h2 class="song-author">{author}</h2>
+    {ankita_html}
     <div class="song-meta">{meta_html}</div>
   </div>
   <div class="song-body">

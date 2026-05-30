@@ -1,80 +1,59 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics Template
-#
-# INSTRUCTIONS:
-# 1. Copy this file to the appropriate folder (e.g., dasara_padagalu/lakshmi_devi/)
-# 2. Rename it to your song name in kebab-case (e.g., bhagyada-lakshmi.yml)
-# 3. Fill in the _kn fields with Kannada text
-# 4. Tamil, Devanagari, IAST are auto-generated (or override manually)
-# 5. Delete any sections you don't need
+# Daasa Saahitya - Lyrics File (Auto-transliterated)
+# Edit the _ta, _hi, _en fields to correct any transliteration errors
 # ──────────────────────────────────────────────────────────────────
 
-# === SONG METADATA ===
-title_kn: # e.g., ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ
-author_kn: # e.g., ಪುರಂದರದಾಸ
-raga_kn: # e.g., ಮಧ್ಯಮಾವತಿ
-tala_kn: # e.g., ಆದಿ
-description_kn: # e.g., ದಾಸರ ಪದ
 
-# === OPTIONAL: Manual overrides (leave blank for auto-transliteration) ===
-# title_ta:
-# title_hi:
-# title_en:
-# raga_ta:      # Use this if auto-transliteration is wrong
 
-# === VERSES ===
+
+
+
 verses:
-  # ─── OPTION A: For regular songs (Dasara Padagalu) ───
-
   - type: pallavi
     kn: |
+      # Pallavi lyrics here
+    ta: |
+      # Pallavi lyrics here
+    hi: |
+      # Pallavi lyrics here
+    en: |
       # Pallavi lyrics here
 
   - type: anupallavi
     kn: |
       # Anupallavi lyrics here
+    ta: |
+      # Anupallavi lyrics here
+    hi: |
+      # Anupallavi lyrics here
+    en: |
+      # Anupallavi lyrics here
 
-  # Optional: Add a section heading
   - type: subtitle
     subtitle_kn: ಚರಣಗಳು
+    subtitle_ta: சரணக³ளு
+    subtitle_hi: चरणगळु
+    subtitle_en: caraṇagaḷu
 
   - type: charana
     number: 1
     kn: |
+      # Charana 1 lyrics here
+    ta: |
+      # Charana 1 lyrics here
+    hi: |
+      # Charana 1 lyrics here
+    en: |
       # Charana 1 lyrics here
 
   - type: charana
     number: 2
     kn: |
       # Charana 2 lyrics here
+    ta: |
+      # Charana 2 lyrics here
+    hi: |
+      # Charana 2 lyrics here
+    en: |
+      # Charana 2 lyrics here
 
-  # ─── OPTION B: For Suladis (delete Option A above if using this) ───
-
-  # - subtitle_kn: ಧ್ರುವತಾಳ
-  #   number: 1
-  #   kn: |
-  #     # Dhruvatala lyrics here
-
-  # - subtitle_kn: ಮಟ್ಟತಾಳ
-  #   number: 2
-  #   kn: |
-  #     # Mattatala lyrics here
-
-  # - subtitle_kn: ತ್ರಿಪುಟತಾಳ
-  #   number: 3
-  #   kn: |
-  #     # Triputatala lyrics here
-
-  # - subtitle_kn: ಅಟ್ಟತಾಳ
-  #   number: 4
-  #   kn: |
-  #     # Attatala lyrics here
-
-  # - subtitle_kn: ಆದಿತಾಳ
-  #   number: 5
-  #   kn: |
-  #     # Aditala lyrics here
-
-  # - subtitle_kn: ಜತೆ
-  #   kn: |
-  #     # Jate lyrics here

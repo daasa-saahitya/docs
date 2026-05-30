@@ -44,7 +44,7 @@ def process_yaml_file(yaml_path):
     modified = False
 
     # Fields to transliterate
-    fields = ['title', 'author', 'raga', 'tala', 'description']
+    fields = ['title', 'author', 'raga', 'tala', 'ankita']
 
     for field in fields:
         kn_val = data.get(f'{field}_kn', '')
@@ -146,9 +146,9 @@ def write_yaml_file(yaml_path, data):
         meta_fields = [
             ('title_kn', 'title_ta', 'title_hi', 'title_en'),
             ('author_kn', 'author_ta', 'author_hi', 'author_en'),
+            ('ankita_kn', 'ankita_ta', 'ankita_hi', 'ankita_en'),
             ('raga_kn', 'raga_ta', 'raga_hi', 'raga_en'),
             ('tala_kn', 'tala_ta', 'tala_hi', 'tala_en'),
-            ('description_kn', 'description_ta', 'description_hi', 'description_en'),
         ]
 
         for field_group in meta_fields:

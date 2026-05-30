@@ -385,6 +385,14 @@ body {
   font-weight: 400;
   font-style: normal;
   color: var(--ink-light);
+  margin-bottom: 0.3rem;
+}
+
+.song-ankita {
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--ink-faint);
   margin-bottom: 0.75rem;
 }
 
@@ -409,12 +417,6 @@ body {
 
 .meta-item.raga::before { content: 'Rāga: '; font-style: normal; font-weight: 600; }
 .meta-item.tala::before { content: 'Tāḷa: '; font-style: normal; font-weight: 600; }
-
-.meta-item.desc {
-  text-align: center;
-  font-size: 1.3rem;
-  margin-top: 0.3rem;
-}
 
 /* ── Verses ── */
 .song-body {
