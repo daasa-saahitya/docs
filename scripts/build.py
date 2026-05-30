@@ -246,14 +246,14 @@ def transliterate_to_tamil(text):
                 result.append(base)
                 result.append('்')
                 if sup:
-                    result.append(f'<sup>{sup}</sup>')
+                    result.append(sup)
                 i += 1
             elif i < n and chars[i] == ANUSVARA:
                 # Anusvara after consonant - output consonant with inherent 'a',
                 # then handle anusvara on next iteration
                 result.append(base)
                 if sup:
-                    result.append(f'<sup>{sup}</sup>')
+                    result.append(sup)
                 # Don't consume anusvara - let it be processed in next iteration
             elif i < n and chars[i] in KN_VOWEL_SIGNS:
                 vsign = chars[i]
@@ -261,13 +261,13 @@ def transliterate_to_tamil(text):
                 result.append(KN_VOWEL_SIGNS[vsign])
                 # Place superscript AFTER the vowel sign so it renders together
                 if sup:
-                    result.append(f'<sup>{sup}</sup>')
+                    result.append(sup)
                 i += 1
             else:
                 # Implicit 'a' vowel - superscript after base consonant
                 result.append(base)
                 if sup:
-                    result.append(f'<sup>{sup}</sup>')
+                    result.append(sup)
                 result.append('')  # Tamil has inherent 'a' in most contexts
             continue
 
@@ -435,15 +435,26 @@ def auto_transliterate(data, engine_name):
     for verse in data.get('verses', []):
         v = dict(verse)
         kn_text = verse.get('kn', '')
-        v[f'text_{lang_key}'] = verse.get(
-            f'text_{lang_key}',
-            transliterate_field(kn_text, engine) if kn_text else ''
-        )
+
+        # Check for pre-transliterated text (ta, hi, en) first, then text_ta, text_hi, text_en
+        pre_trans = verse.get(lang_key, '') or verse.get(f'text_{lang_key}', '')
+        if pre_trans:
+            v[f'text_{lang_key}'] = pre_trans
+        else:
+            v[f'text_{lang_key}'] = transliterate_field(kn_text, engine) if kn_text else ''
+
+        # Subtitle
         if 'subtitle_kn' in verse:
-            v[f'subtitle_{lang_key}'] = verse.get(
-                f'subtitle_{lang_key}',
-                transliterate_field(verse['subtitle_kn'], engine)
-            )
+            pre_sub = verse.get(f'subtitle_{lang_key}', '')
+            if pre_sub:
+                v[f'subtitle_{lang_key}'] = pre_sub
+            else:
+                v[f'subtitle_{lang_key}'] = transliterate_field(verse['subtitle_kn'], engine)
+
+        # Verse type translation
+        if verse.get(f'type_{lang_key}'):
+            v[f'type_{lang_key}'] = verse[f'type_{lang_key}']
+
         result['verses'].append(v)
     return result
 
@@ -457,14 +468,43 @@ VERSE_TYPE_LABELS = {
     'anupallavi': {'kn': 'ಅನುಪಲ್ಲವಿ', 'ta': 'அனுபல்லவி','hi': 'अनुपल्लवि', 'en': 'Anupallavi'},
     'charana':    {'kn': 'ಚರಣ',       'ta': 'சரண',      'hi': 'चरण',       'en': 'Caraṇa'},
     'madhyamakala':{'kn':'ಮಧ್ಯಮಕಾಲ', 'ta': 'மத்யமகால','hi': 'मध्यमकाल',  'en': 'Madhyamakāla'},
+    # Suladi talas
+    'dhruva':     {'kn': 'ಧ್ರುವ',     'ta': 'த்ருவ',    'hi': 'ध्रुव',     'en': 'Dhruva'},
+    'mathya':     {'kn': 'ಮಠ್ಯ',      'ta': 'மட்ய',     'hi': 'मठ्य',      'en': 'Maṭhya'},
+    'rupaka':     {'kn': 'ರೂಪಕ',      'ta': 'ரூபக',     'hi': 'रूपक',      'en': 'Rūpaka'},
+    'jhampe':     {'kn': 'ಝಂಪೆ',      'ta': 'ஜம்பே',    'hi': 'झंपे',      'en': 'Jhampe'},
+    'trividi':    {'kn': 'ತ್ರಿವಿಡಿ',   'ta': 'த்ரிவிடி',  'hi': 'त्रिविडि',   'en': 'Triviḍi'},
+    'atta':       {'kn': 'ಅಟ್ಟ',      'ta': 'அட்ட',     'hi': 'अट्ट',      'en': 'Aṭṭa'},
 }
 
-def verse_label(vtype, lang, number=None):
-    labels = VERSE_TYPE_LABELS.get(vtype, {})
-    label = labels.get(lang, vtype.capitalize())
+def get_verse_label(vtype, lang, number=None):
+    """
+    Get the label for a verse type in the specified language.
+    If vtype is in Kannada (e.g., 'ಧ್ರುವತಾಳ'), transliterate it.
+    If vtype is in English and in VERSE_TYPE_LABELS, use predefined labels.
+    """
+    # Check if it's a known English key
+    if vtype in VERSE_TYPE_LABELS:
+        labels = VERSE_TYPE_LABELS[vtype]
+        label = labels.get(lang, vtype.capitalize())
+    else:
+        # Assume it's in Kannada - transliterate based on target language
+        if lang == 'kn':
+            label = vtype
+        elif lang == 'ta':
+            label = transliterate_to_tamil(vtype)
+        elif lang == 'hi':
+            label = transliterate_to_devanagari(vtype)
+        else:  # 'en' / IAST
+            label = transliterate_to_iast(vtype)
+
     if number:
         label += f' {number}'
     return label
+
+def verse_label(vtype, lang, number=None):
+    """Wrapper for backwards compatibility - calls get_verse_label."""
+    return get_verse_label(vtype, lang, number)
 
 def lines_to_html(text):
     """Convert newline-separated text to HTML with <br> tags."""
@@ -483,7 +523,7 @@ def generate_song_page(data, rel_path, output_dir, template_path):
         ('kn', 'ಕನ್ನಡ', 'Kannada'),
         ('ta', 'தமிழ்', 'Tamil'),
         ('hi', 'देवनागरी', 'Devanagari'),
-        ('en', 'IAST', 'IAST'),
+        ('en', 'English (IAST)', 'IAST'),
     ]
 
     # Auto-transliterate missing fields
@@ -541,19 +581,32 @@ def generate_song_page(data, rel_path, output_dir, template_path):
             meta_html += f'<span class="meta-item desc">{desc}</span>'
 
         verses_html = ''
+        subtitle_key = f'subtitle_{lang}'
         for verse in verses:
             vtype = verse.get('type', '')
             vnum = verse.get('number', '')
 
-            # Subtitle (mid-song heading)
+            # Handle mid-song subtitle heading (type: subtitle)
             if vtype == 'subtitle':
-                sub_text = verse.get(sub_key) or verse.get('subtitle_kn', '')
+                sub_text = verse.get(subtitle_key) or verse.get('subtitle_kn', '')
                 verses_html += f'<h3 class="verse-subtitle">{sub_text}</h3>\n'
                 continue
 
-            label = verse_label(vtype, lang, vnum)
+            # Get label - either from subtitle_* fields (for tala names) or from type field (pallavi/charana)
+            if verse.get(subtitle_key) or verse.get('subtitle_kn'):
+                label = verse.get(subtitle_key) or verse.get('subtitle_kn', '')
+            elif vtype:
+                label = verse_label(vtype, lang)
+            else:
+                label = ''
+
             text = verse.get(text_key) or verse.get('kn', '')
             text_html = lines_to_html(text)
+
+            # Append number to the right end of last line if present
+            if vnum:
+                text_html = text_html.rstrip()
+                text_html += f'<span class="verse-number">॥{vnum}॥</span>'
 
             verses_html += f'''
 <div class="verse verse-{vtype}">
@@ -644,17 +697,17 @@ def generate_index(all_songs, output_dir, template_path):
             # No category
             hierarchy['other']['_root_'].append((rel_path, data))
 
-    def render_song_entry(rel_path, data):
-        """Render a single song entry HTML."""
-        title_hi = data.get('title_hi') or transliterate_to_devanagari(data.get('title_kn', ''))
-        author_hi = data.get('author_hi') or transliterate_to_devanagari(data.get('author_kn', ''))
-        raga_hi = data.get('raga_hi') or transliterate_to_devanagari(data.get('raga_kn', ''))
+    def render_song_entry(rel_path, data, index):
+        """Render a single song entry HTML with index number."""
+        title_en = data.get('title_en') or transliterate_to_iast(data.get('title_kn', ''))
+        author_en = data.get('author_en') or transliterate_to_iast(data.get('author_kn', ''))
+        title_en = title_en.title()
+        author_en = author_en.title()
         href = str(rel_path.with_suffix('.html'))
         return f'''
 <a href="{href}" class="song-entry">
-  <span class="song-entry-title">{title_hi}</span>
-  <span class="song-entry-author">{author_hi}</span>
-  {f'<span class="song-entry-raga">{raga_hi}</span>' if raga_hi else ''}
+  <span class="song-entry-main"><span class="song-entry-index">{index}.</span> {title_en}</span>
+  <span class="song-entry-author">{author_en}</span>
 </a>'''
 
     # Generate HTML for all categories
@@ -674,10 +727,12 @@ def generate_index(all_songs, output_dir, template_path):
         subcats_html = ''
 
         # First, render songs directly in category (no subcategory)
+        song_index = 1
         if '_root_' in subcategories:
             root_songs = sorted(subcategories['_root_'], key=lambda x: x[1].get('title_kn', ''))
             for rel_path, data in root_songs:
-                subcats_html += render_song_entry(rel_path, data)
+                subcats_html += render_song_entry(rel_path, data, song_index)
+                song_index += 1
 
         # Then, render each subcategory
         for subcat in sorted(k for k in subcategories.keys() if k != '_root_'):
@@ -687,7 +742,8 @@ def generate_index(all_songs, output_dir, template_path):
 
             songs_html = ''
             for rel_path, data in songs:
-                songs_html += render_song_entry(rel_path, data)
+                songs_html += render_song_entry(rel_path, data, song_index)
+                song_index += 1
 
             subcats_html += f'''
 <div class="subcategory-section" id="{category}-{subcat}">

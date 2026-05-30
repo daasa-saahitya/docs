@@ -23,12 +23,12 @@
   --font-hi:    'Noto Serif Devanagari', 'Noto Serif', serif;
   --font-en:    'Noto Serif', Georgia, serif;
 
-  --size-title:  2.8rem;
-  --size-author: 1.6rem;
-  --size-meta:   1.2rem;
-  --size-verse:  1.5rem;
-  --size-label:  1.1rem;
-  --size-subtitle: 1.4rem;
+  --size-title:  3.2rem;
+  --size-author: 1.8rem;
+  --size-meta:   1.4rem;
+  --size-verse:  1.7rem;
+  --size-label:  1.2rem;
+  --size-subtitle: 1.6rem;
 
   --radius: 3px;
   --tab-height: 44px;
@@ -94,7 +94,7 @@ body {
 .site-subtitle {
   color: var(--rule-light);
   font-size: 0.8rem;
-  font-style: italic;
+  font-style: normal;
   margin-top: 0.4rem;
   letter-spacing: 0.05em;
 }
@@ -122,9 +122,9 @@ body {
 
 /* ── Index Page ── */
 .index-page {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 3rem;
+  max-width: none;
+  margin: 0;
+  padding: 2rem 2rem 3rem;
   flex: 1;
 }
 
@@ -146,8 +146,13 @@ body {
 
 .categories-container {
   display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.category-section {
+  flex: 1 1 45%;
+  min-width: 300px;
 }
 
 /* ── Category Container ── */
@@ -168,7 +173,7 @@ body {
 }
 
 .category-name {
-  font-family: var(--font-hi);
+  font-family: var(--font-en);
   font-size: 1.4rem;
   font-weight: 700;
   color: #fff8ec;
@@ -218,7 +223,7 @@ body {
 }
 
 .subcategory-name {
-  font-family: var(--font-hi);
+  font-family: var(--font-en);
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--accent);
@@ -239,10 +244,10 @@ body {
 }
 
 .song-entry {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  align-items: center;
-  gap: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 1rem;
   padding: 0.7rem 1.25rem;
   text-decoration: none;
   border-bottom: 1px solid var(--rule-light);
@@ -255,30 +260,34 @@ body {
   background: var(--parchment-dark);
 }
 
-.song-entry-title {
-  font-family: var(--font-hi);
-  font-size: 1.15rem;
+.song-entry-main {
+  font-family: var(--font-en);
+  font-size: 1.4rem;
   color: var(--ink);
   font-weight: 600;
 }
 
+.song-entry-index {
+  font-family: var(--font-en);
+  font-weight: 600;
+}
+
 .song-entry-author {
-  font-family: var(--font-hi);
-  font-size: 0.9rem;
-  color: var(--ink-faint);
+  font-family: var(--font-en);
+  font-size: 0.95rem;
+  color: var(--ink-light);
 }
 
 .song-entry-raga {
-  font-family: var(--font-en);
-  font-size: 0.75rem;
+  font-family: var(--font-hi);
+  font-size: 0.85rem;
   color: var(--ink-faint);
-  font-style: italic;
 }
 
 /* ── Song Page ── */
 .song-page {
-  width: 100%;
-  max-width: none;
+  width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem 2rem 4rem;
   flex: 1;
@@ -374,7 +383,7 @@ body {
 .song-author {
   font-size: var(--size-author);
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   color: var(--ink-light);
   margin-bottom: 0.75rem;
 }
@@ -395,7 +404,7 @@ body {
 .meta-item {
   font-size: var(--size-meta);
   color: var(--ink-faint);
-  font-style: italic;
+  font-style: normal;
 }
 
 .meta-item.raga::before { content: 'Rāga: '; font-style: normal; font-weight: 600; }
@@ -403,7 +412,7 @@ body {
 
 .meta-item.desc {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-top: 0.3rem;
 }
 
@@ -421,15 +430,15 @@ body {
 }
 
 .verse-label {
-  font-size: var(--size-label);
+  font-size: var(--size-subtitle);
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
-  text-align: left;
-  padding-bottom: 0.2rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-align: center;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--rule-light);
   border-bottom: 1px solid var(--rule-light);
-  font-family: var(--font-en);
+  margin: 0.5rem 0;
   line-height: 1.75;
 }
 
@@ -437,6 +446,13 @@ body {
   font-size: var(--size-verse);
   line-height: 1.85;
   color: var(--ink);
+}
+
+.verse-number {
+  font-family: var(--font-hi);
+  color: var(--ink-faint);
+  float: right;
+  margin-left: 1em;
 }
 
 /* Verse type color accents */
@@ -454,7 +470,7 @@ body {
   border-top: 1px solid var(--rule-light);
   border-bottom: 1px solid var(--rule-light);
   margin: 0.5rem 0;
-  font-style: italic;
+  font-style: normal;
 }
 
 /* ── Font families per panel ── */
@@ -464,11 +480,15 @@ body {
 #panel-kn .song-meta,
 #panel-kn .verse-subtitle { font-family: var(--font-kn); }
 
+#panel-kn .verse-text { font-size: calc(var(--size-verse) * 1.15); }
+
 #panel-ta .song-title,
 #panel-ta .song-author,
 #panel-ta .verse-text,
 #panel-ta .song-meta,
 #panel-ta .verse-subtitle { font-family: var(--font-ta); }
+
+#panel-ta .verse-text { word-spacing: 0.5em; }
 
 #panel-hi .song-title,
 #panel-hi .song-author,
@@ -476,11 +496,13 @@ body {
 #panel-hi .song-meta,
 #panel-hi .verse-subtitle { font-family: var(--font-hi); }
 
+#panel-hi .verse-text { font-size: calc(var(--size-verse) * 1.15); }
+
 #panel-en .song-title,
 #panel-en .song-author,
 #panel-en .verse-text,
 #panel-en .song-meta,
-#panel-en .verse-subtitle { font-family: var(--font-en); font-style: italic; }
+#panel-en .verse-subtitle { font-family: var(--font-en); font-style: normal; }
 
 /* Tamil superscripts */
 .verse-text sup {
@@ -499,7 +521,7 @@ body {
   padding: 1rem 1.5rem;
   font-size: 0.8rem;
   color: var(--ink-faint);
-  font-style: italic;
+  font-style: normal;
   font-family: var(--font-kn);
 }
 
@@ -514,27 +536,35 @@ body {
 /* Tablet */
 @media (max-width: 900px) {
   :root {
-    --size-title: 2.2rem;
-    --size-author: 1.4rem;
-    --size-meta: 1.1rem;
-    --size-verse: 1.35rem;
-    --size-label: 1rem;
-    --size-subtitle: 1.2rem;
+    --size-title: 2.6rem;
+    --size-author: 1.5rem;
+    --size-meta: 1.2rem;
+    --size-verse: 1.5rem;
+    --size-label: 1.1rem;
+    --size-subtitle: 1.3rem;
   }
 
   .song-page { padding: 1.25rem 1.5rem 3rem; }
   .lang-panels { padding: 1.5rem 1.5rem 2rem; }
+
+  .categories-container {
+    flex-direction: column;
+  }
+
+  .category-section {
+    max-width: none;
+  }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
   :root {
-    --size-title: 1.8rem;
-    --size-author: 1.2rem;
-    --size-meta: 1rem;
-    --size-verse: 1.2rem;
-    --size-label: 0.9rem;
-    --size-subtitle: 1.1rem;
+    --size-title: 2rem;
+    --size-author: 1.3rem;
+    --size-meta: 1.1rem;
+    --size-verse: 1.3rem;
+    --size-label: 1rem;
+    --size-subtitle: 1.2rem;
   }
 
   html { font-size: 15px; }
@@ -552,24 +582,34 @@ body {
   .tab-btn { font-size: 0.85rem; min-width: 70px; padding: 0.5rem; }
 
   .song-entry {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
   }
-  .song-entry-author { font-size: 0.75rem; }
-  .song-entry-raga { display: none; }
+  .song-entry-main { font-size: 1.05rem; flex-basis: 100%; }
+  .song-entry-author { font-size: 0.8rem; }
+  .song-entry-raga { font-size: 0.75rem; }
 
   .index-page { padding: 1rem; }
   .category-header { padding: 0.6rem 1rem; }
   .song-entry { padding: 0.6rem 1rem; }
+
+  .categories-container {
+    flex-direction: column;
+  }
+
+  .category-section {
+    max-width: none;
+    min-width: auto;
+  }
 }
 
 /* Small mobile */
 @media (max-width: 400px) {
   :root {
-    --size-title: 1.5rem;
-    --size-author: 1rem;
-    --size-verse: 1.1rem;
-    --size-label: 0.8rem;
+    --size-title: 1.7rem;
+    --size-author: 1.1rem;
+    --size-verse: 1.2rem;
+    --size-label: 0.9rem;
   }
 
   .lang-tabs { gap: 0; flex-wrap: wrap; }
