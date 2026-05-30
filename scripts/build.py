@@ -558,7 +558,7 @@ def build(repo_root=None):
     if repo_root is None:
         repo_root = Path(__file__).parent.parent
     else:
-        repo_root = Path(repo_root)
+        repo_root = Path(repo_root).resolve()
 
     lyrics_dir = repo_root / 'lyrics'
     output_dir = repo_root / 'docs'
