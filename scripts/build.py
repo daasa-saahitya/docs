@@ -40,7 +40,7 @@ KN_VOWEL_SIGNS = {
 # Consonant map: kannada → (tamil_base, superscript_or_empty)
 KN_CONSONANTS_TAMIL = {
     'ಕ': ('க', ''),   'ಖ': ('க', '²'),  'ಗ': ('க', '³'),  'ಘ': ('க', '⁴'),
-    'ಙ': ('ந', ''),
+    'ಙ': ('ங', ''),
     'ಚ': ('ச', ''),   'ಛ': ('ச', '²'),
     'ಜ': ('ஜ', ''),   'ಝ': ('ஜ', '²'),
     'ಞ': ('ஞ', ''),
@@ -124,12 +124,73 @@ KANNADA_CONSONANTS = set(KN_CONSONANTS_TAMIL.keys())
 KANNADA_VOWEL_SIGNS = set(KN_VOWEL_SIGNS.keys())
 KANNADA_VOWELS = set(KN_VOWELS.keys())
 HALANTA = '್'  # virama
+ANUSVARA = 'ಂ'
 
 def is_kannada_consonant(ch):
     return ch in KANNADA_CONSONANTS
 
 def is_vowel_sign(ch):
     return ch in KANNADA_VOWEL_SIGNS
+
+# ─────────────────────────────────────────────
+#  VARGA-BASED NASAL MAPPING
+# ─────────────────────────────────────────────
+# Anusvara (ಂ) becomes the nasal of the same varga as the following consonant
+
+# Kannada consonants grouped by varga
+KA_VARGA = {'ಕ', 'ಖ', 'ಗ', 'ಘ', 'ಙ'}  # velar - nasal ಙ
+CA_VARGA = {'ಚ', 'ಛ', 'ಜ', 'ಝ', 'ಞ'}  # palatal - nasal ಞ
+TA_VARGA = {'ಟ', 'ಠ', 'ಡ', 'ಢ', 'ಣ'}  # retroflex - nasal ಣ
+THA_VARGA = {'ತ', 'ಥ', 'ದ', 'ಧ', 'ನ'}  # dental - nasal ನ
+PA_VARGA = {'ಪ', 'ಫ', 'ಬ', 'ಭ', 'ಮ'}  # labial - nasal ಮ
+
+# Nasal consonants for each varga in different scripts
+VARGA_NASALS = {
+    'ka': {'kn': 'ಙ', 'hi': 'ङ', 'ta': 'ங', 'iast': 'ṅ'},
+    'ca': {'kn': 'ಞ', 'hi': 'ञ', 'ta': 'ஞ', 'iast': 'ñ'},
+    'Ta': {'kn': 'ಣ', 'hi': 'ण', 'ta': 'ண', 'iast': 'ṇ'},
+    'ta': {'kn': 'ನ', 'hi': 'न', 'ta': 'ந', 'iast': 'n'},
+    'pa': {'kn': 'ಮ', 'hi': 'म', 'ta': 'ம', 'iast': 'm'},
+}
+
+def get_varga(consonant):
+    """Return the varga name for a Kannada consonant."""
+    if consonant in KA_VARGA:
+        return 'ka'
+    elif consonant in CA_VARGA:
+        return 'ca'
+    elif consonant in TA_VARGA:
+        return 'Ta'
+    elif consonant in THA_VARGA:
+        return 'ta'
+    elif consonant in PA_VARGA:
+        return 'pa'
+    return None
+
+# ─────────────────────────────────────────────
+#  ANUSVARA HELPER
+# ─────────────────────────────────────────────
+
+def get_varga_nasal_for_anusvara(chars, pos, script):
+    """
+    Look ahead from position pos to find the next Kannada consonant,
+    determine its varga, and return the appropriate nasal for the target script.
+    Script should be 'ta', 'hi', or 'iast'.
+    Returns None if anusvara should be kept as-is (no following varga consonant).
+    """
+    n = len(chars)
+    j = pos + 1
+    while j < n:
+        if chars[j] in KANNADA_CONSONANTS:
+            varga = get_varga(chars[j])
+            if varga:
+                return VARGA_NASALS[varga][script]
+            break
+        elif chars[j].isspace() or chars[j] in '|।॥':
+            break
+        j += 1
+    return None
+
 
 # ─────────────────────────────────────────────
 #  TRANSLITERATION ENGINES
@@ -158,6 +219,17 @@ def transliterate_to_tamil(text):
 
         ch = chars[i]
 
+        # Handle anusvara - convert to varga nasal based on following consonant
+        if ch == ANUSVARA:
+            nasal = get_varga_nasal_for_anusvara(chars, i, 'ta')
+            if nasal:
+                result.append(nasal)
+                result.append('்')  # Tamil halanta
+            else:
+                result.append(KN_VOWEL_SIGNS[ch])  # fallback to default ம்
+            i += 1
+            continue
+
         # Standalone vowel
         if ch in KN_VOWELS:
             result.append(KN_VOWELS[ch])
@@ -170,21 +242,29 @@ def transliterate_to_tamil(text):
             i += 1
             # Collect following vowel sign or halanta
             if i < n and chars[i] == HALANTA:
-                # Consonant cluster: add with virama
+                # Consonant cluster: add virama THEN superscript (so circle attaches to base)
+                result.append(base)
+                result.append('்')
+                if sup:
+                    result.append(f'<sup>{sup}</sup>')
+                i += 1
+            elif i < n and chars[i] == ANUSVARA:
+                # Anusvara after consonant - output consonant with inherent 'a',
+                # then handle anusvara on next iteration
                 result.append(base)
                 if sup:
                     result.append(f'<sup>{sup}</sup>')
-                result.append('்')
-                i += 1
+                # Don't consume anusvara - let it be processed in next iteration
             elif i < n and chars[i] in KN_VOWEL_SIGNS:
                 vsign = chars[i]
                 result.append(base)
+                result.append(KN_VOWEL_SIGNS[vsign])
+                # Place superscript AFTER the vowel sign so it renders together
                 if sup:
                     result.append(f'<sup>{sup}</sup>')
-                result.append(KN_VOWEL_SIGNS[vsign])
                 i += 1
             else:
-                # Implicit 'a' vowel
+                # Implicit 'a' vowel - superscript after base consonant
                 result.append(base)
                 if sup:
                     result.append(f'<sup>{sup}</sup>')
@@ -227,13 +307,23 @@ def transliterate_to_devanagari(text):
             continue
 
         ch = chars[i]
+
+        # Handle anusvara - convert to varga nasal based on following consonant
+        if ch == ANUSVARA:
+            nasal = get_varga_nasal_for_anusvara(chars, i, 'hi')
+            if nasal:
+                result.append(nasal)
+                result.append('्')  # Devanagari halanta
+            else:
+                result.append(KN_TO_DEV[ch])  # fallback to ं
+            i += 1
+            continue
+
         if ch in KN_TO_DEV:
             # Consonant with implicit 'a'
             if ch in KANNADA_CONSONANTS:
                 result.append(KN_TO_DEV[ch])
                 i += 1
-                # If next char is NOT a vowel sign or virama, add inherent 'a' marker
-                # (Devanagari handles this natively, no explicit 'a' needed)
             else:
                 result.append(KN_TO_DEV[ch])
                 i += 1
@@ -264,6 +354,17 @@ def transliterate_to_iast(text):
             continue
 
         ch = chars[i]
+
+        # Handle anusvara - convert to varga nasal based on following consonant
+        if ch == ANUSVARA:
+            nasal = get_varga_nasal_for_anusvara(chars, i, 'iast')
+            if nasal:
+                result.append(nasal)
+            else:
+                result.append(KN_TO_IAST[ch])  # fallback to ṃ
+            i += 1
+            continue
+
         if ch in KANNADA_CONSONANTS:
             result.append(KN_TO_IAST[ch])
             i += 1
@@ -271,6 +372,9 @@ def transliterate_to_iast(text):
             if i < n and chars[i] == HALANTA:
                 # No vowel, skip halanta
                 i += 1
+            elif i < n and chars[i] == ANUSVARA:
+                # Anusvara after consonant - add inherent 'a', let anusvara be processed next
+                result.append('a')
             elif i < n and chars[i] in KN_VOWEL_SIGNS:
                 result.append(KN_TO_IAST.get(chars[i], ''))
                 i += 1
@@ -319,11 +423,12 @@ def auto_transliterate(data, engine_name):
     # Title, author
     for field in ['title', 'author', 'raga', 'tala', 'description']:
         kn_val = data.get(f'{field}_kn', '')
-        # If a manual override exists in the yaml, use it; else transliterate
-        result[f'{field}_{lang_key}'] = data.get(
-            f'{field}_{lang_key}',
-            transliterate_field(str(kn_val), engine) if kn_val else ''
-        )
+        # If a manual override exists and is non-empty, use it; else transliterate
+        manual_override = data.get(f'{field}_{lang_key}')
+        if manual_override:
+            result[f'{field}_{lang_key}'] = manual_override
+        else:
+            result[f'{field}_{lang_key}'] = transliterate_field(str(kn_val), engine) if kn_val else ''
 
     # Verses
     result['verses'] = []
@@ -427,11 +532,13 @@ def generate_song_page(data, rel_path, output_dir, template_path):
             text_key = 'text_en'
             sub_key = 'subtitle_en'
 
-        meta_parts = []
-        if raga: meta_parts.append(f'<span class="meta-item raga">Rāga: {raga}</span>')
-        if tala: meta_parts.append(f'<span class="meta-item tala">Tāḷa: {tala}</span>')
-        if desc: meta_parts.append(f'<span class="meta-item desc">{desc}</span>')
-        meta_html = '\n'.join(meta_parts)
+        meta_html = ''
+        if raga or tala:
+            raga_html = f'<span class="meta-item raga">{raga}</span>' if raga else '<span></span>'
+            tala_html = f'<span class="meta-item tala">{tala}</span>' if tala else '<span></span>'
+            meta_html += f'<div class="song-meta-row">{raga_html}{tala_html}</div>\n'
+        if desc:
+            meta_html += f'<span class="meta-item desc">{desc}</span>'
 
         verses_html = ''
         for verse in verses:
@@ -516,15 +623,16 @@ def generate_index(all_songs, output_dir, template_path):
 
         songs_html = ''
         for rel_path, data in songs:
-            title_kn = data.get('title_kn', '')
-            author_kn = data.get('author_kn', '')
-            raga = data.get('raga_kn', '')
+            # Use Devanagari for index display
+            title_hi = data.get('title_hi') or transliterate_to_devanagari(data.get('title_kn', ''))
+            author_hi = data.get('author_hi') or transliterate_to_devanagari(data.get('author_kn', ''))
+            raga_hi = data.get('raga_hi') or transliterate_to_devanagari(data.get('raga_kn', ''))
             href = str(rel_path.with_suffix('.html'))
             songs_html += f'''
 <a href="{href}" class="song-entry">
-  <span class="song-entry-title">{title_kn}</span>
-  <span class="song-entry-author">{author_kn}</span>
-  {f'<span class="song-entry-raga">{raga}</span>' if raga else ''}
+  <span class="song-entry-title">{title_hi}</span>
+  <span class="song-entry-author">{author_hi}</span>
+  {f'<span class="song-entry-raga">{raga_hi}</span>' if raga_hi else ''}
 </a>
 '''
 
@@ -566,14 +674,28 @@ def build(repo_root=None):
 
     # Clean and recreate output
     if output_dir.exists():
-        shutil.rmtree(output_dir)
-    output_dir.mkdir(parents=True)
+        try:
+            shutil.rmtree(output_dir)
+        except PermissionError:
+            # Directory may be locked, try to remove contents instead
+            for item in output_dir.iterdir():
+                try:
+                    if item.is_dir():
+                        shutil.rmtree(item)
+                    else:
+                        item.unlink()
+                except PermissionError:
+                    pass
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     # Copy static assets
     for folder in ['css', 'js']:
         src = repo_root / folder
+        dest = output_dir / folder
+        if dest.exists():
+            shutil.rmtree(dest)
         if src.exists():
-            shutil.copytree(src, output_dir / folder)
+            shutil.copytree(src, dest)
 
     song_template = templates_dir / 'song.html'
     index_template = templates_dir / 'index.html'
@@ -589,12 +711,12 @@ def build(repo_root=None):
             data = load_lyrics_file(yaml_path)
             generate_song_page(data, rel, output_dir, song_template)
             all_songs.append((rel, data))
-            print(f"  ✓ {rel}")
+            print(f"  OK: {rel}")
         except Exception as e:
-            print(f"  ✗ {rel}: {e}", file=sys.stderr)
+            print(f"  FAIL: {rel}: {e}", file=sys.stderr)
 
     generate_index(all_songs, output_dir, index_template)
-    print(f"\nBuild complete → {output_dir}")
+    print(f"\nBuild complete -> {output_dir}")
     print(f"  {len(all_songs)} songs processed")
 
 
