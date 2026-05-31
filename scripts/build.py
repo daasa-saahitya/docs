@@ -119,6 +119,24 @@ KN_TO_IAST = {
     'ಜ್ಞ': 'jñ', 'ಕ್ಷ': 'kṣ', 'ಶ್ರೀ': 'śrī',
 }
 
+# IAST to plain English mapping (for index page display)
+IAST_TO_PLAIN = {
+    'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṛ': 'ri', 'ṝ': 'ri',
+    'ē': 'e', 'ō': 'o', 'ṃ': 'm', 'ḥ': 'h',
+    'ṅ': 'n', 'ñ': 'n', 'ṭ': 't', 'ḍ': 'd', 'ṇ': 'n',
+    'ś': 'sh', 'ṣ': 'sh', 'ḷ': 'l', 'ṟ': 'r', 'ḻ': 'l',
+}
+
+def iast_to_plain_english(text):
+    """Convert IAST romanization to plain English (no diacritics)."""
+    if not text:
+        return ''
+    result = text
+    for iast, plain in IAST_TO_PLAIN.items():
+        result = result.replace(iast, plain)
+        result = result.replace(iast.upper(), plain.upper())
+    return result
+
 # Unicode ranges for classification
 KANNADA_CONSONANTS = set(KN_CONSONANTS_TAMIL.keys())
 KANNADA_VOWEL_SIGNS = set(KN_VOWEL_SIGNS.keys())
@@ -725,18 +743,19 @@ def generate_index(all_songs, output_dir, template_path):
 
     def render_song_entry(rel_path, data, index):
         """Render a single song entry HTML with index number."""
-        title_en = data.get('title_en') or transliterate_to_iast(data.get('title_kn', ''))
-        author_en = data.get('author_en') or transliterate_to_iast(data.get('author_kn', ''))
+        title_iast = data.get('title_en') or transliterate_to_iast(data.get('title_kn', ''))
+        author_iast = data.get('author_en') or transliterate_to_iast(data.get('author_kn', ''))
+        # Convert IAST to plain English for display
+        title_plain = iast_to_plain_english(title_iast).title()
+        author_plain = iast_to_plain_english(author_iast).title()
         title_kn = data.get('title_kn', '')
         author_kn = data.get('author_kn', '')
-        title_en = title_en.title()
-        author_en = author_en.title()
         # Use forward slashes for URLs (works on all platforms including GitHub Pages)
         href = str(rel_path.with_suffix('.html')).replace('\\', '/')
         return f'''
 <a href="{href}" class="song-entry" data-title-kn="{title_kn}" data-author-kn="{author_kn}">
-  <span class="song-entry-main"><span class="song-entry-index">{index}.</span> {title_en}</span>
-  <span class="song-entry-author">{author_en}</span>
+  <span class="song-entry-main"><span class="song-entry-index">{index}.</span> {title_plain}</span>
+  <span class="song-entry-author">{author_plain}</span>
 </a>'''
 
     # Generate HTML for all categories
