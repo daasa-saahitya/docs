@@ -750,12 +750,25 @@ def generate_index(all_songs, output_dir, template_path):
         author_plain = iast_to_plain_english(author_iast).title()
         title_kn = data.get('title_kn', '')
         author_kn = data.get('author_kn', '')
+        # Get first 3 words of English IAST lyrics as preview
+        preview = ''
+        verses = data.get('verses', [])
+        if verses:
+            first_verse = verses[0]
+            en_text = first_verse.get('en') or first_verse.get('text_en', '')
+            if en_text:
+                words = en_text.strip().split()[:3]
+                preview = ' '.join(words)
+                if len(en_text.strip().split()) > 3:
+                    preview += '...'
         # Use forward slashes for URLs (works on all platforms including GitHub Pages)
         href = str(rel_path.with_suffix('.html')).replace('\\', '/')
+        preview_html = f'<span class="song-entry-preview">{preview}</span>' if preview else ''
         return f'''
 <a href="{href}" class="song-entry" data-title-kn="{title_kn}" data-author-kn="{author_kn}">
   <span class="song-entry-main"><span class="song-entry-index">{index}.</span> {title_plain}</span>
   <span class="song-entry-author">{author_plain}</span>
+  {preview_html}
 </a>'''
 
     # Generate HTML for all categories
