@@ -731,7 +731,8 @@ def generate_index(all_songs, output_dir, template_path):
         author_kn = data.get('author_kn', '')
         title_en = title_en.title()
         author_en = author_en.title()
-        href = str(rel_path.with_suffix('.html'))
+        # Use forward slashes for URLs (works on all platforms including GitHub Pages)
+        href = str(rel_path.with_suffix('.html')).replace('\\', '/')
         return f'''
 <a href="{href}" class="song-entry" data-title-kn="{title_kn}" data-author-kn="{author_kn}">
   <span class="song-entry-main"><span class="song-entry-index">{index}.</span> {title_en}</span>
