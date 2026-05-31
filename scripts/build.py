@@ -563,9 +563,9 @@ def generate_song_page(data, rel_path, output_dir, template_path):
 
     # Build all 4 language panels
     langs = [
+        ('hi', 'देवनागरी', 'Devanagari'),
         ('kn', 'ಕನ್ನಡ', 'Kannada'),
         ('ta', 'தமிழ்', 'Tamil'),
-        ('hi', 'देवनागरी', 'Devanagari'),
         ('en', 'English (IAST)', 'IAST'),
     ]
 
