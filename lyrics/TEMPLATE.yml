@@ -10,8 +10,6 @@
 
 verses:
   - type: pallavi
-    kn: |
-      # Pallavi lyrics here
     ta: |
       # Pallavi lyrics here
     hi: |
@@ -20,8 +18,6 @@ verses:
       # Pallavi lyrics here
 
   - type: anupallavi
-    kn: |
-      # Anupallavi lyrics here
     ta: |
       # Anupallavi lyrics here
     hi: |
@@ -37,8 +33,6 @@ verses:
 
   - type: charana
     number: 1
-    kn: |
-      # Charana 1 lyrics here
     ta: |
       # Charana 1 lyrics here
     hi: |
@@ -48,8 +42,6 @@ verses:
 
   - type: charana
     number: 2
-    kn: |
-      # Charana 2 lyrics here
     ta: |
       # Charana 2 lyrics here
     hi: |

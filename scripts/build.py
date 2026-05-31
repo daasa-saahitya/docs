@@ -526,6 +526,23 @@ def generate_song_page(data, rel_path, output_dir, template_path):
     with open(template_path, encoding='utf-8') as f:
         template = f.read()
 
+    # Calculate the correct relative path to root based on depth
+    depth = len(rel_path.parts) - 1  # Number of parent folders
+    if depth == 0:
+        css_path = "css/style.css"
+        js_path = "js/tabs.js"
+        home_path = "index.html"
+    else:
+        prefix = "../" * depth
+        css_path = f"{prefix}css/style.css"
+        js_path = f"{prefix}js/tabs.js"
+        home_path = f"{prefix}index.html"
+
+    # Replace hardcoded paths in template
+    template = template.replace('../../css/style.css', css_path)
+    template = template.replace('../../js/tabs.js', js_path)
+    template = template.replace('../../index.html', home_path)
+
     # Build all 4 language panels
     langs = [
         ('kn', 'ಕನ್ನಡ', 'Kannada'),
@@ -710,11 +727,13 @@ def generate_index(all_songs, output_dir, template_path):
         """Render a single song entry HTML with index number."""
         title_en = data.get('title_en') or transliterate_to_iast(data.get('title_kn', ''))
         author_en = data.get('author_en') or transliterate_to_iast(data.get('author_kn', ''))
+        title_kn = data.get('title_kn', '')
+        author_kn = data.get('author_kn', '')
         title_en = title_en.title()
         author_en = author_en.title()
         href = str(rel_path.with_suffix('.html'))
         return f'''
-<a href="{href}" class="song-entry">
+<a href="{href}" class="song-entry" data-title-kn="{title_kn}" data-author-kn="{author_kn}">
   <span class="song-entry-main"><span class="song-entry-index">{index}.</span> {title_en}</span>
   <span class="song-entry-author">{author_en}</span>
 </a>'''

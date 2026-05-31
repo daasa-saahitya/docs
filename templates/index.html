@@ -23,12 +23,99 @@
   <main class="index-page">
     <div class="index-intro">
       <div class="total-badge">{{TOTAL}} ರಚನೆಗಳು · compositions</div>
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="search-input" placeholder="Search by title, author, category..." autocomplete="off">
+      </div>
+      <div class="search-results-count" id="search-results-count"></div>
     </div>
 
     <div class="categories-container">
       {{CATEGORIES}}
     </div>
   </main>
+
+  <script>
+  (function() {
+    const searchInput = document.getElementById('search-input');
+    const resultsCount = document.getElementById('search-results-count');
+    const songs = document.querySelectorAll('.song-entry');
+    const categories = document.querySelectorAll('.category-section');
+    const subcategories = document.querySelectorAll('.subcategory-section');
+
+    // Collapsible categories
+    document.querySelectorAll('.category-header').forEach(header => {
+      const toggle = document.createElement('span');
+      toggle.className = 'category-toggle';
+      toggle.textContent = '▼';
+      header.appendChild(toggle);
+
+      header.addEventListener('click', () => {
+        header.closest('.category-section').classList.toggle('collapsed');
+      });
+    });
+
+    // Search functionality
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase().trim();
+
+      if (!query) {
+        songs.forEach(s => s.classList.remove('hidden'));
+        categories.forEach(c => c.classList.remove('hidden'));
+        subcategories.forEach(s => s.classList.remove('hidden'));
+        resultsCount.classList.remove('visible');
+        return;
+      }
+
+      let matchCount = 0;
+
+      songs.forEach(song => {
+        const title = song.querySelector('.song-entry-main')?.textContent.toLowerCase() || '';
+        const author = song.querySelector('.song-entry-author')?.textContent.toLowerCase() || '';
+        const matches = title.includes(query) || author.includes(query);
+        song.classList.toggle('hidden', !matches);
+        if (matches) matchCount++;
+      });
+
+      // Hide empty categories/subcategories
+      subcategories.forEach(subcat => {
+        const visibleSongs = subcat.querySelectorAll('.song-entry:not(.hidden)');
+        subcat.classList.toggle('hidden', visibleSongs.length === 0);
+      });
+
+      categories.forEach(cat => {
+        const catName = cat.querySelector('.category-name')?.textContent.toLowerCase() || '';
+        const visibleSongs = cat.querySelectorAll('.song-entry:not(.hidden)');
+        const nameMatch = catName.includes(query);
+
+        if (nameMatch) {
+          cat.classList.remove('hidden');
+          cat.querySelectorAll('.song-entry').forEach(s => s.classList.remove('hidden'));
+          cat.querySelectorAll('.subcategory-section').forEach(s => s.classList.remove('hidden'));
+          matchCount = cat.querySelectorAll('.song-entry').length;
+        } else {
+          cat.classList.toggle('hidden', visibleSongs.length === 0);
+        }
+      });
+
+      resultsCount.textContent = matchCount === 0 ? 'No matches found' : `${matchCount} result${matchCount !== 1 ? 's' : ''} found`;
+      resultsCount.classList.add('visible');
+    });
+
+    // Keyboard shortcut: focus search with /
+    document.addEventListener('keydown', function(e) {
+      if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+      }
+      if (e.key === 'Escape' && document.activeElement === searchInput) {
+        searchInput.value = '';
+        searchInput.dispatchEvent(new Event('input'));
+        searchInput.blur();
+      }
+    });
+  })();
+  </script>
 
   <footer class="site-footer">
     <p>ಶ್ರೀ ಕೃಷ್ಣಾರ್ಪಣಮಸ್ತು · Śrī Kṛṣṇārpaṇamastu</p>

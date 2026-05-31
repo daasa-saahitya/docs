@@ -69,18 +69,35 @@ def process_yaml_file(yaml_path):
     # Process verses
     verses = data.get('verses', [])
     for verse in verses:
-        # Verse text
+        # Verse text - extract only Kannada portion (in case of corruption)
         kn_text = verse.get('kn', '')
         if kn_text:
-            if not verse.get('ta'):
-                verse['ta'] = transliterate_field(kn_text, transliterate_to_tamil)
+            # Extract only the Kannada portion to avoid transliterating corrupted data
+            kn_text_clean = extract_kannada_only(kn_text)
+
+            # Update the kn field if it was corrupted (had non-Kannada text)
+            if kn_text_clean != kn_text.strip():
+                verse['kn'] = kn_text_clean
                 modified = True
-            if not verse.get('hi'):
-                verse['hi'] = transliterate_field(kn_text, transliterate_to_devanagari)
-                modified = True
-            if not verse.get('en'):
-                verse['en'] = transliterate_field(kn_text, transliterate_to_iast)
-                modified = True
+
+            if kn_text_clean:
+                # Only generate ta if it doesn't exist
+                if not verse.get('ta'):
+                    verse['ta'] = transliterate_field(kn_text_clean, transliterate_to_tamil)
+                    modified = True
+                else:
+                    # Check for duplicated content and fix
+                    deduped = deduplicate_text(verse['ta'])
+                    if deduped != verse['ta'].strip():
+                        verse['ta'] = deduped
+                        modified = True
+
+                if not verse.get('hi'):
+                    verse['hi'] = transliterate_field(kn_text_clean, transliterate_to_devanagari)
+                    modified = True
+                if not verse.get('en'):
+                    verse['en'] = transliterate_field(kn_text_clean, transliterate_to_iast)
+                    modified = True
 
         # Verse type (if in Kannada)
         vtype = verse.get('type', '')
@@ -122,6 +139,58 @@ def is_kannada(text):
         if 'ಀ' <= char <= '೿':
             return True
     return False
+
+
+def extract_kannada_only(text):
+    """
+    Extract only the Kannada portion of text (stops at first non-Kannada script line).
+    This handles cases where Tamil/other scripts were accidentally appended.
+    """
+    if not text:
+        return ''
+
+    lines = text.strip().split('\n')
+    kannada_lines = []
+
+    for line in lines:
+        # Check if this line contains Kannada characters
+        has_kannada = any('ಀ' <= char <= '೿' for char in line)
+        # Check if this line contains Tamil characters
+        has_tamil = any('஀' <= char <= '௿' for char in line)
+        # Check if this line contains Devanagari characters
+        has_devanagari = any('ऀ' <= char <= 'ॿ' for char in line)
+
+        # Only include lines that have Kannada and don't have Tamil/Devanagari
+        if has_kannada and not has_tamil and not has_devanagari:
+            kannada_lines.append(line)
+        elif not has_kannada and not has_tamil and not has_devanagari:
+            # Neutral lines (punctuation, whitespace) - include if we have Kannada context
+            if kannada_lines:
+                kannada_lines.append(line)
+
+    return '\n'.join(kannada_lines)
+
+
+def deduplicate_text(text):
+    """
+    Remove duplicate content that was accidentally appended.
+    Detects if the text is the same verse repeated twice.
+    """
+    if not text:
+        return text
+
+    lines = text.strip().split('\n')
+    n = len(lines)
+
+    # Check if text is duplicated (second half equals first half)
+    if n >= 2 and n % 2 == 0:
+        half = n // 2
+        first_half = lines[:half]
+        second_half = lines[half:]
+        if first_half == second_half:
+            return '\n'.join(first_half)
+
+    return text
 
 
 def write_yaml_file(yaml_path, data):
