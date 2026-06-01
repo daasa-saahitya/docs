@@ -39,9 +39,9 @@
 html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
-  background-color: var(--parchment);
+  background-color: #2a1f14;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    radial-gradient(ellipse at center, #3d2b1a 0%, #1a1108 100%);
   color: var(--ink);
   font-family: var(--font-serif-latin);
   line-height: 1.75;
@@ -56,10 +56,17 @@ body {
   background-image: linear-gradient(135deg, #5a2800 0%, #7a3b00 50%, #5a2800 100%);
   border-bottom: 3px solid var(--rule);
   padding: 0;
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid var(--rule);
+  border-radius: 24px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .header-inner {
-  max-width: 860px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1.2rem 1.5rem;
   text-align: center;
@@ -122,10 +129,17 @@ body {
 
 /* ── Index Page ── */
 .index-page {
-  max-width: none;
-  margin: 0;
-  padding: 2rem 2rem 3rem;
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 3rem;
   flex: 1;
+  background: var(--parchment);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--rule);
+  border-radius: 24px;
 }
 
 .index-intro {
@@ -202,7 +216,7 @@ body {
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.5rem;
   cursor: pointer;
   user-select: none;
 }
@@ -215,6 +229,7 @@ body {
   color: var(--accent);
   font-size: 0.7rem;
   transition: transform 0.2s;
+  margin-left: 0.5rem;
 }
 
 .category-section.collapsed .category-toggle {
@@ -240,13 +255,8 @@ body {
 
 .categories-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.category-section {
-  flex: 1 1 45%;
-  min-width: 300px;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /* ── Category Container ── */
@@ -273,6 +283,7 @@ body {
   font-size: 0.75rem;
   font-family: var(--font-en);
   font-weight: 500;
+  margin-left: auto;
 }
 
 .category-content {
@@ -301,8 +312,14 @@ body {
   padding: 0.4rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.5rem;
   border-bottom: 1px solid var(--rule-light);
+  cursor: pointer;
+  user-select: none;
+}
+
+.subcategory-header:hover {
+  background: var(--parchment-dark);
 }
 
 .subcategory-name {
@@ -320,6 +337,22 @@ body {
   padding: 0.1rem 0.4rem;
   font-size: 0.7rem;
   font-family: var(--font-en);
+  margin-left: auto;
+}
+
+.subcategory-toggle {
+  color: var(--accent);
+  font-size: 0.65rem;
+  transition: transform 0.2s;
+  margin-left: 0.5rem;
+}
+
+.subcategory-section.collapsed .subcategory-toggle {
+  transform: rotate(-90deg);
+}
+
+.subcategory-section.collapsed .songs-list {
+  display: none;
 }
 
 .subcategory-section .songs-list {
@@ -621,6 +654,9 @@ body {
   color: var(--ink-faint);
   font-style: normal;
   font-family: var(--font-kn);
+  width: 100%;
+  margin: 0;
+  margin-top: 1.5rem;
 }
 
 .build-date {
@@ -651,6 +687,19 @@ body {
 
   .category-section {
     max-width: none;
+  }
+
+  .site-header,
+  .index-page {
+    max-width: 100%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 16px;
+  }
+
+  .site-header {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -700,6 +749,19 @@ body {
   .category-section {
     max-width: none;
     min-width: auto;
+  }
+
+  .site-header,
+  .index-page {
+    max-width: 100%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .site-header {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }
 

@@ -11,7 +11,7 @@
 
     if (!searchInput) return;
 
-    // Collapsible categories
+    // Collapsible categories - collapsed by default
     var headers = document.querySelectorAll('.category-header');
     for (var i = 0; i < headers.length; i++) {
       (function(header) {
@@ -20,10 +20,31 @@
         toggle.textContent = '▼';
         header.appendChild(toggle);
 
+        // Start collapsed
+        header.parentElement.classList.add('collapsed');
+
         header.addEventListener('click', function() {
           header.parentElement.classList.toggle('collapsed');
         });
       })(headers[i]);
+    }
+
+    // Collapsible subcategories - collapsed by default
+    var subheaders = document.querySelectorAll('.subcategory-header');
+    for (var i = 0; i < subheaders.length; i++) {
+      (function(header) {
+        var toggle = document.createElement('span');
+        toggle.className = 'subcategory-toggle';
+        toggle.textContent = '▼';
+        header.appendChild(toggle);
+
+        // Start collapsed
+        header.parentElement.classList.add('collapsed');
+
+        header.addEventListener('click', function() {
+          header.parentElement.classList.toggle('collapsed');
+        });
+      })(subheaders[i]);
     }
 
     // Search functionality
