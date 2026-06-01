@@ -69,35 +69,21 @@ def process_yaml_file(yaml_path):
     # Process verses
     verses = data.get('verses', [])
     for verse in verses:
-        # Verse text - extract only Kannada portion (in case of corruption)
+        # Verse text - use original Kannada text, do NOT modify it
         kn_text = verse.get('kn', '')
         if kn_text:
-            # Extract only the Kannada portion to avoid transliterating corrupted data
-            kn_text_clean = extract_kannada_only(kn_text)
-
-            # Update the kn field if it was corrupted (had non-Kannada text)
-            if kn_text_clean != kn_text.strip():
-                verse['kn'] = kn_text_clean
+            # Only generate transliterations if they don't exist
+            if not verse.get('ta'):
+                verse['ta'] = transliterate_field(kn_text, transliterate_to_tamil)
                 modified = True
 
-            if kn_text_clean:
-                # Only generate ta if it doesn't exist
-                if not verse.get('ta'):
-                    verse['ta'] = transliterate_field(kn_text_clean, transliterate_to_tamil)
-                    modified = True
-                else:
-                    # Check for duplicated content and fix
-                    deduped = deduplicate_text(verse['ta'])
-                    if deduped != verse['ta'].strip():
-                        verse['ta'] = deduped
-                        modified = True
+            if not verse.get('hi'):
+                verse['hi'] = transliterate_field(kn_text, transliterate_to_devanagari)
+                modified = True
 
-                if not verse.get('hi'):
-                    verse['hi'] = transliterate_field(kn_text_clean, transliterate_to_devanagari)
-                    modified = True
-                if not verse.get('en'):
-                    verse['en'] = transliterate_field(kn_text_clean, transliterate_to_iast)
-                    modified = True
+            if not verse.get('en'):
+                verse['en'] = transliterate_field(kn_text, transliterate_to_iast)
+                modified = True
 
         # Verse type (if in Kannada)
         vtype = verse.get('type', '')
