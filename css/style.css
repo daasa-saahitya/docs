@@ -763,16 +763,24 @@ body {
   }
 
   .site-header,
-  .index-page {
-    width: 95%;
+  .index-page,
+  .song-page {
+    width: 100%;
     max-width: 100%;
-    margin: 0 auto;
-    border-radius: 12px;
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 
   .site-header {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .index-page,
+  .song-page {
+    margin-bottom: 0;
   }
 }
 
