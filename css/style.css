@@ -702,7 +702,8 @@ body {
   }
 
   .site-header,
-  .index-page {
+  .index-page,
+  .song-page {
     width: 90%;
     max-width: 100%;
     margin: 0 auto;
@@ -712,6 +713,10 @@ body {
   .site-header {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+
+  .song-page {
+    margin-bottom: 1.5rem;
   }
 }
 
