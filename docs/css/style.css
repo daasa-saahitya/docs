@@ -111,6 +111,7 @@ body {
 .breadcrumb-nav {
   background: var(--parchment-dark);
   border-bottom: 1px solid var(--rule-light);
+  margin-bottom: 1.5rem;
 }
 
 .breadcrumb-inner {
