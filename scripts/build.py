@@ -216,6 +216,8 @@ def get_varga_nasal_for_anusvara(chars, pos, script):
 
 def transliterate_to_tamil(text):
     """Convert Kannada text to Tamil with superscript notation."""
+    if not text:
+        return ''
     result = []
     i = 0
     chars = list(text)
@@ -312,6 +314,8 @@ def transliterate_to_tamil(text):
 
 def transliterate_to_devanagari(text):
     """Convert Kannada text to Devanagari."""
+    if not text:
+        return ''
     result = []
     i = 0
     chars = list(text)
@@ -361,6 +365,8 @@ def transliterate_to_devanagari(text):
 
 def transliterate_to_iast(text):
     """Convert Kannada text to IAST romanization."""
+    if not text:
+        return ''
     result = []
     i = 0
     chars = list(text)
@@ -753,6 +759,9 @@ def generate_index(all_songs, output_dir, template_path):
         if verses:
             first_verse = verses[0]
             en_text = first_verse.get('en') or first_verse.get('text_en', '')
+            if not en_text:
+                kn_text = first_verse.get('kn', '')
+                en_text = transliterate_to_iast(kn_text) if kn_text else ''
             if en_text:
                 words = en_text.strip().split()[:3]
                 preview = ' '.join(words)
