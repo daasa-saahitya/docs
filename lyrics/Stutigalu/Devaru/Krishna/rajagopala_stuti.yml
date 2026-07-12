@@ -1,0 +1,59 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ರಾಜಗೋಪಾಲ ಸ್ತುತಿ
+author_kn: ರಾಘವೇಂದ್ರ ತೀರ್ಥರು
+
+verses:
+  - type: None
+    number: 1
+    kn: |
+      ಹೃದಿ ಬೋಧದುಗ್ಧರಸವಾಸನಾಕೃತೆ
+      ಪರಿನಿರ್ಮಿತವಿವ್ ಪಯೋಜತಲ್ಲನೌ
+      ಅಪವರ್ಗ ಮಾರ್ಗ ಪರಿ ಬೋಧನಾಯ ಮೆ
+      ಚರಣತವೇಷ ಕಿಮು ಚಿಹ್ನ ಪಲ್ಲವೌ ॥
+   - type: None
+    number: 2
+    kn: |
+      ಉಪರಿ ಶ್ರಿತೇನ ಪುರತಶ್ಚ ನಶ್ವರ-
+      ವ್ಯವಹಾರದೂರಗಗಿರಾಮನರತಮ್
+      ಪ್ರಣವದ್ವಯೇನ ಮಣಿನೂಪುರಾತ್ಮನಾ
+      ಪರಿಕರ್ಮಿತೇ ತವ ಪದೇ ಪದೇ ಮುದಾಮ್ ॥
+  - type: None
+    number: 3
+    kn: |
+      ರುಚಿವಾರಿಪೂನರುಚಿರಂ ಭುಜಾಂತರಂ
+      ಶಿಶಿರಂ ತಾಟಕಮವಗಾಹ್ಯ ತಾವಕಮ್
+      ತ್ಯಜತಿ ಶ್ರಮಂ ವ್ರಜತಿ ಹರ್ಷಮದ್ಯ ಮೇ
+      ಭವಘರ್ಮತಾಪಮಪನೀಯ ದೃಗ್ಗವೀ ॥
+   - type: None
+    number: 4
+    kn: |
+      ಅರುಣಾಧರಂ ರತುಣಚಂದ್ರಸುಂದರಂ
+      ಕರುಣಾಧರಂ ವದನಮೀಶ ತಾವಕಮ್
+      ಸ್ಮಿತಕಾಂತಿಪೂನನವಚನ್ದ್ರಿಕಾಭರೈಃ ॥
+      ಭವಶಾರ್ವರಂ ಕ್ಷಿಪತಿ ಭವ್ಯಚೇತಸಾಮ್ ॥
+  - type: None
+    number: 5
+    kn: |
+      ಪರಿತಃ ಸ್ಥಿತೇಅಪಿ ಚುರೌಘಶಾರ್ವರೈಃ ॥
+      ವಿಲುಠದ್ಭಿರಾನನವಿಧೌ ವಿಧಾವಿತೇ
+      ತಿಲಕೆನ ನದ್ಧಕುಲಕೆನ್ (ಸಾದರಂ) ಸುಂದರಂ
+      ನ ಹಿ ವೇತ್ತಿ ಬಾಲತಮತ್ಯುದಾರಗೀಃ ॥
+   - type: None
+    number: 6
+    kn: |
+      ಅಲಕಾವೃತಾಲಿಕಮುದಾರಮುನ್ನಸಂ
+      ಸ್ಮಿತಪುಲ್ಲಗಂಡತಲಮುಲ್ಲಸನ್ಮುಖಮ್
+      ದರವಾಮಭಾಗನತಮೌಳಿ ಮೋಹನಂ
+      ತವ ದೇವ ನೈವ ಹೃದಯಂ ಜಹಾತು ಮೇ ॥
