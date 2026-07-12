@@ -1,0 +1,79 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ದೇವಿ ಅಂಬುಜವಲ್ಲಿ ರಮಣನೆ
+author_kn: ಗೋಪಾಲ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಭೂಪಾಳಿ
+tala_kn: 
+ankita_kn: ಗೋಪಾಲ ವಿಠ್ಠಲ
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ದೇವಿ ಅಂಬುಜವಲ್ಲಿ ರಮಣನೆ । ಭೂವರಾಹ ದಯಾನಿಧೇ ॥
+
+  # ── Anupallavi ──
+  - type: anupallavi
+    kn: |
+      ಪವಮಾನನ ದಿವ್ಯ ಕರದಲಿ । ಸೇವೆ ಸಂತತ ಕೊಳ್ಳುವೆ ॥
+
+  - type: charana
+    number: 1
+    kn: |
+      ಅವನಿಯೊಳು ಶ್ರೀಮುಷ್ಣ ಕ್ಷೇತ್ರದಿ । ನೀ ವಿಹಾರವ ಮಾಡುವೆ ॥
+      ಭವವಿಮೋಚನ ಭಕ್ತವತ್ಸಲ । ಕವಿಗಳಿಗೆ ಕರುಣಾಕರ ॥
+
+  - type: None
+    number: 2
+    kn: |
+      ಅತ್ಯಗಾಧ ಸುಶೀಲ ಜಾಹ್ನವಿ । ಸುತ್ತು ಷೋಡಶ ತೀರ್ಥದಿ ॥
+      ನಿತ್ಯ ಪುಷ್ಕರಿಣಿಯ ಗರ್ಭದಿ । ನಿತ್ಯ ಇರುವುದು ಕಂಡೆ ನಾ ॥
+  
+  - type: None
+    number: 3
+    kn: |
+      ಮತ್ತು ವರ್ಣಿಪೆ ತೀರ್ಥ ತಟದಲಿ । ಉತ್ತಮಾಗ್ನೇಯ ಭಾಗದಿ ॥
+      ಚಿತ್ತವೇದ್ಯದಿ ಕಲ್ಪತರು ಅ । ಶ್ವತ್ಥ ರೂಪದಿ ಇರುವನ ॥
+
+  - type: None
+    number: 4
+    kn: |
+      ಕರಗಳೆರಡನು ಕಟಿಯಲಿಟ್ಟು । ಕೋರೆಹಲ್ಲನೆ ತೋರುತ ॥
+      ಧರಿಸಿ ಚಿನ್ಮಯ ಸಾಲಿಗ್ರಾಮದ । ಸರವು ಈ ಪರಿ ಬೆಳಗುತ ॥
+
+  - type: None
+    number: 5
+    kn: |
+      ಘನ್ನ ಶ್ವೇತವರಾಹ ಮೂರುತಿ । ಎನ್ನ ಪೂರ್ವದ ಪುಣ್ಯದಿ ॥
+      ನಿನ್ನ ಶುಭಕರ ಪಾದ ಪಂಕಜ । ವನ್ನು ಕಂಡೆನು ಇಂದು ನಾ ॥
+
+  - type: None
+    number: 6
+    kn: |
+      ಸುಂದರಾನನ ಕಂಜ ಮಧುಪನ । ಇಂದು ನೋಡಿದ ಕಾರಣ ॥
+      ಬಂದ ದುರಿತಗಳೆಲ್ಲ ಪೋದವು । ಚಂದ ಶುಭಕರವಾದವು ॥
+  
+  - type: None
+    number: 7
+    kn: |
+      ಮಲ್ಲಮರ್ದನ ವೈಕುಂಠದಿಂದ । ಮೆಲ್ಲಮೆಲ್ಲನೆ ಬಂದೆಯಾ ॥
+      ಝಲ್ಲಿ ಕಾವಣದಲ್ಲಿ ಕುಳಿತು । ಎಲ್ಲ ಭಕ್ತರ ಸಲಹುವೆ ॥
+
+  - type: None
+    number: 8
+    kn: |
+      ಸೂಕರಾಸ್ಯನೆ ನಿನ್ನ ಪಾದಕ । ನೇಕ ವಂದನೆ ಮಾಡುವೆ ॥
+      ಶೋಕಹರ ಗೋಪಾಲವಿಠಲ । ನೀ ಕರುಣಿಸಿ ರಕ್ಷಿಸೋ ॥
