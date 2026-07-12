@@ -1,0 +1,84 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ತಿಳಿಯದೋ ನಿನ್ನಾಟ ತಿರುಪತಿಯ ವೆಂಕಟ
+author_kn: ಕಲ್ಲೂರು ಸುಬ್ಬಣ್ಣ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn: 
+ankita_kn: ವ್ಯಾಸ ವಿಠ್ಠಲ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ತಿಳಿಯದೋ ನಿನ್ನಾಟ ತಿರುಪತಿಯ ವೆಂಕಟ ||
+
+  # ── Anupallavi ──
+  - type: anupallavi
+    kn: |
+      ಪೊಳೆವ ನೀರೊಳು ಗೆಲುವ ಮೋರೆಯ
+      ನೆಲವ ನೋಡುವ ಸುಳಿವ ಕಂಬದಿ |
+      ಇಳೆಯನಳೆಯುವ ಭಳಿರೆ ಭಾರ್ಗವ 
+      ಖಳನ ಛೇದಿಸಿ ಕೊಳಲ ಧ್ವನಿಗೆ ||
+      ನಳಿನಮುಖಿಯರ ನಾಚಿಸುವ ಬಲು 
+      ಹಯದಳದ ಬಹು ಹವಣಿಗಾರನೆ||
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಆರು ಬಲ್ಲರು ನಿಮ್ಮ – ಶ್ರೀ ಲಕುಮಿ ಮನಸಿಗೆತೋರುದಿಹ ಪರಬೊಮ್ಮ 
+      ಉಳಿದವರು ಬಲ್ಲರೆನೀರಜಾಸನ ಬೊಮ್ಮ ! ಇದು ನಿನ್ನ ಮರ್ಮ ||
+      
+      ನೀರೊಳಗೆ ಮನೆ ಭಾರ ಬೆನ್ನಿಲಿ
+      ಕೋರೆ ದಾಡೆಯ ನಾರಸಿಂಹನೆ |
+      ಧರೆಯ ಬೇಡಿದ ಧೀರ ಪುರುಷನೆ
+      ವಾರಿ ಬಂಧನ ಮಾರಜನಕನೆ ||
+      ನಾರಿಯರ ವ್ರತವಳಿದು ಕುದುರೆಯ
+      ನೇರಿ ಮೆರೆಯುವ ಸುಂದರಾಂಗನೆ ||
+
+  - type: None
+    number: 2
+    kn: |
+      ಸಕಲ ಮಾಯವಿದೇನು _ ವೃಕನ ವಾಯುಸಖನ ಸಲಹಿದೆ ನೀನು 
+      ಭಕುತಿಯಿಂದಲಿ ತುತಿಪರಿಗೆ ಸುರಧೇನು ! ಸುರ ಕಾಮಧೇನು ||
+      
+      ನಿಖಿಳ ವೇದೋದ್ಧಾರ ಗಿರಿಧರ 
+      ಅಖಿಳ ಭೂಮಿಯ ತಂದ ನರಹರಿ |
+      ಯುಕುತಿಯಲಿ ನೆಲನಳೆದ ಭಾರ್ಗವ
+      ಮುಕುತಿಗೋಸುಗ ಫಲವ ಸವಿದನೆ ||
+      ರುಕುಮನನುಜೆಯ ರಮಣ ಬೌದ್ಧನೆ
+      ಲಕುಮಿ ರಮಣನೆ ಕಲ್ಕಿರೂಪಿಯೆ ||
+
+  - type: None
+    number: 3
+    kn: |
+      ನಿನ್ನ ರೂಪಿನ ಲೀಲಾ – ನೋಡುವ ಜನಕೆಕಣ್ಣು ಸಾಸಿರವಿಲ್ಲಾ _ 
+      ನಾ ಪಾಡಿ ಪೊಗಳಲು ಪನ್ನಗಾಧಿಪನಲ್ಲ ! ನೀನರಿಯದಿಲ್ಲ ||
+      
+      ಕಣ್ಣು ಮುಚ್ಚದೆ ಬೆನ್ನು ತೋರಿದಿ
+      ಮಣ್ಣು ಕೆದರುವೆ ಚಿಣ್ಣಗೊಲಿದನೆ |
+      ಸಣ್ಣ ವಾಮನ ! ಅಣ್ಣ ರಾಮನೆ ||
+      ಪುಣ್ಯ ಪುರುಷನೆ ಬನ್ನ ಬಡುಕನೆ ||
+      ಹೆಣ್ಣುಗಳ ವ್ರತ ಕೆಡಿಸಿ ತೇಜಿಯ
+      ಬೆನ್ನನೇರಿದ ವ್ಯಾಸ ವಿಠ್ಠಲ ||
