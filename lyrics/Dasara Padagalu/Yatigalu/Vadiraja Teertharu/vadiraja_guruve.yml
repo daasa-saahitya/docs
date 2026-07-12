@@ -1,0 +1,73 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ವಾದಿರಾಜ ಗುರುವೇ
+author_kn: ಕರ್ಪರ ನರಹರಿ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn: ಆದಿ
+ankita_kn: ಕರ್ಪರ
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ವಾದಿರಾಜ ಗುರುವೇ ಪಾದಾರಾಧಕ ಸುರತರುವೆ ||
+
+  # ── Anupallavi ──
+  - type: anupallavi
+    kn: |
+      ಮೋದವ ಕೊಡುವದು ನೀ ದಯದಿಂದಲಿ
+      ಸ್ವಾದಿನಿಲಯ ತವ ಪಾದಕೆ ನಮಿಸುವೆ ||
+
+
+  # ── Another Caraṇa ──
+  - type: Charana
+    number: 1
+    kn: |
+      ಮೇದಿನಿಯೊಳು ಚರಿಸೀ 
+      ಜನರೊಳಘಾದ ಮಹಿಮರೆನಿಸಿ
+      ಮೋದ ಮುನಿಯ ಸುಮತೋದಧಿ ಚಂದಿರ
+      ವಾದಿ ಮದ ಗಜ ಮೃಗಾಧಿಪರೆನಿಸಿದ ||
+  - type: None
+    number: 2
+    kn: |
+      ಯುಕ್ತಿ ಮಲ್ಲಿಕಾದೀ  
+      ಬಹು ಸರಸೋಕ್ತಿ ಸಹಿತವಾಗಿ
+      ಭಕ್ತಿ ಪುಟ್ಟಿಸುವ ರುಕ್ಮಿಣೀಶ 
+      ವಿಜಯಾಖ್ಯ ಗ್ರಂಥದಿ ಚಮತ್ಕೃತಿ ತೋರಿದ ||
+  - type: None
+    number: 3
+    kn: |
+      ಭಾಗವತರ ಪ್ರಿಯಾ - ನಮಿಸುವೆ 
+      ವಾಗೀಶರ ತನಯಾ
+      ಯೋಗಿವರ್ಯ ಕವಿಗೇಯ ದಯಾಕರ
+      ಭೋಗ ಪುರೀಶನ ರೋಗವ ಕಳೆದಿ ||
+  - type: None
+    number: 4
+    kn: |
+      ರಾಜರನ್ನು ಪೊರೆದಿ 
+      ಯತಿಕುಲ ರಾಜರೆನಿಸಿ ಮೆರೆದಿ
+      ವಾಜಿವದನ ಪದ ರಾಜೀವ ಯುಗಲವ 
+      ಪೂಜಿಸಿ ಜಗದಿ ವಿರಾಜಿಸಿದಂಥ ||
+  - type: None
+    number: 5
+    kn: |
+      ಭೂತಭಯವ ಬಿಡಿಸಿ 
+      ಭಜಕರ ಪಾತಕ ಪರಿಹರಿಸಿ
+      ಖ್ಯಾತ ಕಾರ್ಪರ ಕ್ಷೇತ್ರದಿ ನರಮೃಗ 
+      ನಾಥನ ಪರಮಾ ಪ್ರೀತಿಯ ಪಡೆದಿ ||
+
+
+
