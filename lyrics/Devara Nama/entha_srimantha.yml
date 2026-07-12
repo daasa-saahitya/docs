@@ -1,0 +1,65 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಎಂಥಾ ಶ್ರೀಮಂತಾನಂತನೋ
+author_kn: ಪ್ರಸನ್ನ ವೆಂಕಟ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಮೋಹನ
+tala_kn: ಆದಿ
+ankita_kn: ಪ್ರಸನ್ನ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಎಂಥಾ ಶ್ರೀಮಂತಾನಂತನೋ ಶ್ರೀಕಾಂತೆಯ ಕಾಂತ 
+      ಎಂಥಾ ಶ್ರೀಮಂತಾನಂತನೋ
+
+  # ── Anupallavi ──
+  - type: anupallavi
+    kn: |
+      ಬೊಮ್ಮನು ಹೆಮ್ಮಗ ಮೊಮ್ಮಮ್ಮಢರಿ ಮೊಮ್ಮಗಶಣ್ಮ ಶಿರಮ್ಮ ಪರಮ್ಮ 
+      ಅಮ್ಮರ ಸಮ್ಮೋಹ ನಿಮ್ಮಣುಗಮ್ಮರು ನಮ್ಮೊ ನಮ್ಮ ಪರಮ್ಮ ಮಹಿಮ್ಮ ||
+
+  - type: charana
+    number: 1
+    kn: |
+      ಅಂಬರುಹಂಗಳ ಅಂಗನಂತಗತ ಮಂಗಳಪಾಂಗ ವಿಶ್ವಂಗಳ ಮಂಗಳ 
+      ಸಿಂಗರದಂಗುಟ ಸಂಗದ ಗಂಗಜ ಕಂಗಳಘಂಗಳ ಹಿಂಗಿಪಳಾಂಗಾ ||
+
+  - type: None
+    number: 2
+    kn: |
+      ಪನ್ನಗಪನ್ನಶಯನ್ನ ಮಹೋನ್ನತ ಪನ್ನಗವರವಾಹನ್ನ ರತುನ್ನ 
+      ಭವಾನ್ನಸುಖೋನ್ನತ ರನ್ನಗ ರನ್ನಿಜ ನಿನ್ನೆದುರಿನ್ನ್ಯಾರೆನ್ನೊಡೆಯನ್ನೆ ||
+  
+  - type: None
+    number: 3
+    kn: |
+      ಬಲ್ಲ ಕೈವಲ್ಯಜ್ಞರೊಲ್ಲಭ ಸುಲ್ಲಭ ಬಲ್ಲಿದ ಖುಲ್ಲರದಲ್ಲಣನಲ್ಲದೆ
+      ಹುಲ್ಲುದುನನ್ನೊಳವಲ್ಲ ನಿನ್ನಲ್ಲದೆ ಸಲ್ಲದು ಸೊಲ್ಲ ನಿನ್ನಲ್ಲದಿನಿಲ್ಲ ||
+
+  - type: None
+    number: 4
+    kn: |
+      ಅಂಬರದುಂಬಿಗೆ ತುಂಬೆವಿಶ್ವಂಬಸುರದಿಂಬಿಲಿ ನಿಂಬಿಟ್ಟುಕೊಂಬಕೃಪಾಂಬುಧಿ
+      ಇಂಬಕದಂಬಕಬಿಂಬ ಪ್ರಸನ್ವೇಂಕಟನಂಬಿದ ಬಿಂಬನಿವನೆಂಬ ಕುಟುಂಬಿ ||
