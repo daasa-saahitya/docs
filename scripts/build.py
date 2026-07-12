@@ -715,42 +715,39 @@ def format_category_name(folder_name):
 
 
 def generate_index(all_songs, output_dir, template_path):
-    """Generate the main index.html grouping songs by category and sub-category."""
+    """Generate the main index.html with recursive nested collapsible folders."""
     with open(template_path, encoding='utf-8') as f:
         template = f.read()
 
-    # Build nested structure: category -> subcategory -> songs
     from collections import defaultdict
 
-    # Structure: {category: {subcategory: [(rel_path, data), ...], ...}, ...}
-    # If no subcategory, use '_root_' as key
-    hierarchy = defaultdict(lambda: defaultdict(list))
+    # Build a recursive tree structure from file paths
+    # Each node is a dict with children and/or '_songs_' key
+    def make_node():
+        return {'_songs_': []}
+
+    tree = defaultdict(make_node)
 
     for rel_path, data in all_songs:
         parts = rel_path.parts
-        if len(parts) >= 3:
-            # Has category and subcategory: category/subcategory/song.yml
-            category = parts[0]
-            subcategory = parts[1]
-            hierarchy[category][subcategory].append((rel_path, data))
-        elif len(parts) == 2:
-            # Only category: category/song.yml
-            category = parts[0]
-            hierarchy[category]['_root_'].append((rel_path, data))
-        else:
-            # No category
-            hierarchy['other']['_root_'].append((rel_path, data))
+        node = tree
+        for part in parts[:-1]:  # walk folder dirs
+            if part not in node or not isinstance(node[part], dict):
+                node[part] = make_node()
+            node = node[part]
+        node['_songs_'].append((rel_path, data))
 
-    def render_song_entry(rel_path, data, index):
-        """Render a single song entry HTML with index number."""
+    counter = [0]
+
+    def render_song_entry(rel_path, data):
+        counter[0] += 1
+        idx = counter[0]
         title_iast = data.get('title_en') or transliterate_to_iast(data.get('title_kn', ''))
         author_iast = data.get('author_en') or transliterate_to_iast(data.get('author_kn', ''))
-        # Convert IAST to plain English for display
         title_plain = iast_to_plain_english(title_iast).title()
         author_plain = iast_to_plain_english(author_iast).title()
         title_kn = data.get('title_kn', '')
         author_kn = data.get('author_kn', '')
-        # Get first 3 words of English IAST lyrics as preview
         preview = ''
         verses = data.get('verses', [])
         if verses:
@@ -761,71 +758,69 @@ def generate_index(all_songs, output_dir, template_path):
                 preview = ' '.join(words)
                 if len(en_text.strip().split()) > 3:
                     preview += '...'
-        # Use forward slashes for URLs (works on all platforms including GitHub Pages)
         href = str(rel_path.with_suffix('.html')).replace('\\', '/')
         preview_html = f'<span class="song-entry-preview">{preview}</span>' if preview else ''
-        return f'''
-<a href="{href}" class="song-entry" data-title-kn="{title_kn}" data-author-kn="{author_kn}">
-  <span class="song-entry-main"><span class="song-entry-index">{index}.</span> {title_plain}</span>
+        return f'''<a href="{href}" class="song-entry" data-title-kn="{title_kn}" data-author-kn="{author_kn}">
+  <span class="song-entry-main"><span class="song-entry-index">{idx}.</span> {title_plain}</span>
   <span class="song-entry-author">{author_plain}</span>
   {preview_html}
 </a>'''
 
-    # Generate HTML for all categories
+    def count_songs(node):
+        total = len(node.get('_songs_', []))
+        for key, child in node.items():
+            if key != '_songs_' and isinstance(child, dict):
+                total += count_songs(child)
+        return total
+
+    def render_node(node, depth=0, parent_id=''):
+        """Recursively render a folder node. Returns (html, song_count)."""
+        songs = node.get('_songs_', [])
+        children = {k: v for k, v in node.items() if k != '_songs_' and isinstance(v, dict)}
+
+        parts_html = ''
+
+        # Render songs in this folder
+        for rel_path, data in sorted(songs, key=lambda x: (x[1].get('title_en') or transliterate_to_iast(x[1].get('title_kn', ''))).lower()):
+            parts_html += render_song_entry(rel_path, data)
+
+        # Render child folders
+        for name in sorted(children.keys()):
+            child = children[name]
+            child_id = f"{parent_id}-{name.lower().replace(' ', '-')}" if parent_id else name.lower().replace(' ', '-')
+            child_html, child_count = render_node(child, depth + 1, child_id)
+            label = format_category_name(name)
+            parts_html += f'''<div class="folder-section folder-depth-{depth + 1}" id="folder-{child_id}">
+  <div class="folder-header">
+    <h3 class="folder-name">{label}</h3>
+    <span class="folder-count">{child_count}</span>
+  </div>
+  <div class="folder-content">
+    {child_html}
+  </div>
+</div>'''
+
+        total = len(songs) + sum(count_songs(c) for c in children.values())
+        return parts_html, total
+
+    # Render top-level categories
     groups_html = ''
     total_songs = 0
 
-    for category in sorted(hierarchy.keys()):
-        subcategories = hierarchy[category]
-
-        # Count total songs in this category
-        cat_total = sum(len(songs) for songs in subcategories.values())
+    for cat_name in sorted(tree.keys()):
+        cat_node = tree[cat_name]
+        cat_id = cat_name.lower().replace(' ', '-')
+        cat_html, cat_total = render_node(cat_node, 0, cat_id)
         total_songs += cat_total
+        cat_label = format_category_name(cat_name)
 
-        cat_label = format_category_name(category)
-
-        # Build subcategory content
-        subcats_html = ''
-
-        # First, render songs directly in category (no subcategory)
-        song_index = 1
-        if '_root_' in subcategories:
-            root_songs = sorted(subcategories['_root_'], key=lambda x: (x[1].get('title_en') or transliterate_to_iast(x[1].get('title_kn', ''))).lower())
-            for rel_path, data in root_songs:
-                subcats_html += render_song_entry(rel_path, data, song_index)
-                song_index += 1
-
-        # Then, render each subcategory
-        for subcat in sorted(k for k in subcategories.keys() if k != '_root_'):
-            songs = sorted(subcategories[subcat], key=lambda x: (x[1].get('title_en') or transliterate_to_iast(x[1].get('title_kn', ''))).lower())
-            subcat_label = format_category_name(subcat)
-            subcat_count = len(songs)
-
-            songs_html = ''
-            for rel_path, data in songs:
-                songs_html += render_song_entry(rel_path, data, song_index)
-                song_index += 1
-
-            subcats_html += f'''
-<div class="subcategory-section" id="{category}-{subcat}">
-  <div class="subcategory-header">
-    <h3 class="subcategory-name">{subcat_label}</h3>
-    <span class="subcategory-count">{subcat_count}</span>
+        groups_html += f'''<section class="folder-section folder-depth-0" id="folder-{cat_id}">
+  <div class="folder-header">
+    <h2 class="folder-name">{cat_label}</h2>
+    <span class="folder-count">{cat_total}</span>
   </div>
-  <div class="songs-list">
-    {songs_html}
-  </div>
-</div>
-'''
-
-        groups_html += f'''
-<section class="category-section" id="{category}">
-  <div class="category-header">
-    <h2 class="category-name">{cat_label}</h2>
-    <span class="category-count">{cat_total}</span>
-  </div>
-  <div class="category-content">
-    {subcats_html}
+  <div class="folder-content">
+    {cat_html}
   </div>
 </section>
 '''

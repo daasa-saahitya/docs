@@ -251,9 +251,8 @@ body {
 }
 
 /* Hidden items during search */
-.song-entry.hidden,
-.category-section.hidden,
-.subcategory-section.hidden {
+.folder-section.hidden,
+.song-entry.hidden {
   display: none;
 }
 
@@ -269,15 +268,30 @@ body {
   gap: 1.5rem;
 }
 
-/* ── Category Container ── */
-.category-section {
+/* ── Collapsible Folders ── */
+.folder-section {
   border: 1px solid var(--rule-light);
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 1px 4px var(--shadow);
 }
 
-.category-name {
+.folder-header {
+  background: transparent;
+  border-bottom: 1px solid var(--rule-light);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.folder-header:hover {
+  background: var(--parchment-dark);
+}
+
+.folder-name {
   font-family: var(--font-en);
   font-size: 1rem;
   font-weight: 600;
@@ -285,7 +299,7 @@ body {
   letter-spacing: 0.02em;
 }
 
-.category-count {
+.folder-count {
   background: var(--parchment-deeper);
   color: var(--ink-faint);
   border-radius: 10px;
@@ -296,7 +310,22 @@ body {
   margin-left: auto;
 }
 
-.category-content {
+.folder-toggle {
+  color: var(--accent);
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+  margin-left: 0.5rem;
+}
+
+.folder-section.collapsed > .folder-header .folder-toggle {
+  transform: rotate(-90deg);
+}
+
+.folder-section.collapsed > .folder-content {
+  display: none;
+}
+
+.folder-content {
   display: flex;
   flex-direction: column;
   background: var(--parchment);
@@ -304,69 +333,15 @@ body {
   gap: 1rem;
 }
 
-.songs-list {
-  display: flex;
-  flex-direction: column;
-}
+/* Nesting: indent each deeper level */
+.folder-depth-1 { margin-left: 1rem; }
+.folder-depth-2 { margin-left: 1rem; }
+.folder-depth-3 { margin-left: 1rem; }
 
-/* ── Subcategory Container ── */
-.subcategory-section {
-  border: 1px solid var(--rule-light);
-  border-radius: 6px;
-  overflow: hidden;
-  background: var(--parchment);
-}
-
-.subcategory-header {
-  background: var(--parchment);
-  padding: 0.4rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-bottom: 1px solid var(--rule-light);
-  cursor: pointer;
-  user-select: none;
-}
-
-.subcategory-header:hover {
-  background: var(--parchment-dark);
-}
-
-.subcategory-name {
-  font-family: var(--font-en);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--ink-faint);
-  letter-spacing: 0.02em;
-}
-
-.subcategory-count {
-  background: var(--parchment-dark);
-  color: var(--ink-faint);
-  border-radius: 8px;
-  padding: 0.1rem 0.4rem;
-  font-size: 0.7rem;
-  font-family: var(--font-en);
-  margin-left: auto;
-}
-
-.subcategory-toggle {
-  color: var(--accent);
-  font-size: 0.65rem;
-  transition: transform 0.2s;
-  margin-left: 0.5rem;
-}
-
-.subcategory-section.collapsed .subcategory-toggle {
-  transform: rotate(-90deg);
-}
-
-.subcategory-section.collapsed .songs-list {
+/* Hidden items during search */
+.folder-section.hidden,
+.song-entry.hidden {
   display: none;
-}
-
-.subcategory-section .songs-list {
-  padding: 0.5rem 0;
 }
 
 .song-entry {
@@ -704,8 +679,9 @@ body {
     flex-direction: column;
   }
 
-  .category-section {
+  .folder-section {
     max-width: none;
+    margin-left: 0;
   }
 
   .site-header,
@@ -767,7 +743,7 @@ body {
   .song-entry-raga { font-size: 0.7rem; }
 
   .index-page { padding: 1rem; }
-  .category-header { padding: 0.5rem 0.75rem; }
+  .folder-header { padding: 0.5rem 0.75rem; }
   .song-entry { padding: 0.3rem 0.75rem; }
 
   .search-input { font-size: 0.9rem; padding: 0.5rem 0.8rem 0.5rem 2.2rem; }
@@ -776,9 +752,10 @@ body {
     flex-direction: column;
   }
 
-  .category-section {
+  .folder-section {
     max-width: none;
     min-width: auto;
+    margin-left: 0;
   }
 
   .site-header,

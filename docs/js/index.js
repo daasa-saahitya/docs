@@ -6,18 +6,17 @@
     var searchInput = document.getElementById('search-input');
     var resultsCount = document.getElementById('search-results-count');
     var songs = document.querySelectorAll('.song-entry');
-    var categories = document.querySelectorAll('.category-section');
-    var subcategories = document.querySelectorAll('.subcategory-section');
+    var folders = document.querySelectorAll('.folder-section');
 
     if (!searchInput) return;
 
-    // Collapsible categories - collapsed by default
-    var headers = document.querySelectorAll('.category-header');
+    // Collapsible folders - collapsed by default
+    var headers = document.querySelectorAll('.folder-header');
     for (var i = 0; i < headers.length; i++) {
       (function(header) {
         var toggle = document.createElement('span');
-        toggle.className = 'category-toggle';
-        toggle.textContent = '▼';
+        toggle.className = 'folder-toggle';
+        toggle.textContent = '\u25BC';
         header.appendChild(toggle);
 
         // Start collapsed
@@ -29,24 +28,6 @@
       })(headers[i]);
     }
 
-    // Collapsible subcategories - collapsed by default
-    var subheaders = document.querySelectorAll('.subcategory-header');
-    for (var i = 0; i < subheaders.length; i++) {
-      (function(header) {
-        var toggle = document.createElement('span');
-        toggle.className = 'subcategory-toggle';
-        toggle.textContent = '▼';
-        header.appendChild(toggle);
-
-        // Start collapsed
-        header.parentElement.classList.add('collapsed');
-
-        header.addEventListener('click', function() {
-          header.parentElement.classList.toggle('collapsed');
-        });
-      })(subheaders[i]);
-    }
-
     // Search functionality
     searchInput.addEventListener('input', function() {
       var query = this.value.toLowerCase().trim();
@@ -55,11 +36,9 @@
         for (var i = 0; i < songs.length; i++) {
           songs[i].classList.remove('hidden');
         }
-        for (var i = 0; i < categories.length; i++) {
-          categories[i].classList.remove('hidden');
-        }
-        for (var i = 0; i < subcategories.length; i++) {
-          subcategories[i].classList.remove('hidden');
+        for (var i = 0; i < folders.length; i++) {
+          folders[i].classList.remove('hidden');
+          folders[i].classList.add('collapsed');
         }
         resultsCount.classList.remove('visible');
         return;
@@ -67,6 +46,7 @@
 
       var matchCount = 0;
 
+      // Match songs
       for (var i = 0; i < songs.length; i++) {
         var song = songs[i];
         var titleEl = song.querySelector('.song-entry-main');
@@ -83,40 +63,44 @@
         }
       }
 
-      // Hide empty subcategories
-      for (var i = 0; i < subcategories.length; i++) {
-        var subcat = subcategories[i];
-        var visibleSongs = subcat.querySelectorAll('.song-entry:not(.hidden)');
-        if (visibleSongs.length === 0) {
-          subcat.classList.add('hidden');
-        } else {
-          subcat.classList.remove('hidden');
+      // Show folders that contain visible songs (walk bottom-up)
+      // First hide all folders
+      for (var i = 0; i < folders.length; i++) {
+        folders[i].classList.add('hidden');
+        folders[i].classList.remove('collapsed');
+      }
+
+      // Then unhide any folder containing visible songs or visible child folders
+      var changed = true;
+      while (changed) {
+        changed = false;
+        for (var i = 0; i < folders.length; i++) {
+          var folder = folders[i];
+          var visibleSongs = folder.querySelectorAll(':scope > .folder-content > .song-entry:not(.hidden)');
+          var visibleChildren = folder.querySelectorAll(':scope > .folder-content > .folder-section:not(.hidden)');
+          if (visibleSongs.length > 0 || visibleChildren.length > 0) {
+            if (folder.classList.contains('hidden')) {
+              folder.classList.remove('hidden');
+              changed = true;
+            }
+          }
         }
       }
 
-      // Hide empty categories
-      for (var i = 0; i < categories.length; i++) {
-        var cat = categories[i];
-        var catNameEl = cat.querySelector('.category-name');
-        var catName = catNameEl ? catNameEl.textContent.toLowerCase() : '';
-        var visibleSongs = cat.querySelectorAll('.song-entry:not(.hidden)');
-        var nameMatch = catName.indexOf(query) !== -1;
-
-        if (nameMatch) {
-          cat.classList.remove('hidden');
-          var allSongs = cat.querySelectorAll('.song-entry');
-          for (var j = 0; j < allSongs.length; j++) {
-            allSongs[j].classList.remove('hidden');
+      // Also check if folder name matches
+      for (var i = 0; i < folders.length; i++) {
+        var folder = folders[i];
+        var nameEl = folder.querySelector(':scope > .folder-header > .folder-name');
+        var name = nameEl ? nameEl.textContent.toLowerCase() : '';
+        if (name.indexOf(query) !== -1) {
+          folder.classList.remove('hidden');
+          folder.classList.remove('collapsed');
+          // Show all songs inside
+          var innerSongs = folder.querySelectorAll('.song-entry');
+          for (var j = 0; j < innerSongs.length; j++) {
+            innerSongs[j].classList.remove('hidden');
+            matchCount++;
           }
-          var allSubcats = cat.querySelectorAll('.subcategory-section');
-          for (var j = 0; j < allSubcats.length; j++) {
-            allSubcats[j].classList.remove('hidden');
-          }
-          matchCount = allSongs.length;
-        } else if (visibleSongs.length === 0) {
-          cat.classList.add('hidden');
-        } else {
-          cat.classList.remove('hidden');
         }
       }
 
