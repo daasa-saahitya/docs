@@ -1,0 +1,73 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - Kai Pididhu Paalisai Brahmanya Guruve
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಕೈಪಿಡಿದು ಪಾಲಿಸೈ ಬ್ರಹ್ಮಣ್ಯಗುರುವೇ
+author_kn: ಬಾಗೇಪಲ್ಲಿ ಶೇಷ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಗೌಳ
+tala_kn: ಆದಿ
+ankita_kn: ಪ್ರಾಣನಾಥ ವಿಠ್ಠಲ
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಕೈಪಿಡಿದು ಪಾಲಿಸೈ ಬ್ರಹ್ಮಣ್ಯಗುರುವೇ
+
+  # ── Anupallavi ──
+  - type: anupallavi
+    kn: |
+      ಅಯ್ಯನೀನೆಂದು ನಿನ್ನಡಿಗೆ ವಂದಿಸುವೇ
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಮೂಢಮತಿಗಳು ಬಂದು ಬೇಡಿ ಕೊಳ್ಳಲು ಕರುಣ
+      ನೀಡಿ ನಿನ್ನವರನ್ನು ಕಾಯ್ದರೀತಿ
+      ಗಾಢದಿಂದಲಿ ಬಂದು ಮೂಢನಾದೆನ್ನನು
+      ಗೂಢದಿಂದಲಿ ಕಾಯೊ ಗುಣನಿಧಿಯೆ ಗುರುವೇ
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಪುರುಷೋತ್ತಮಾರ್ಯರ ವರಪುತ್ರನೆಂದೆನಿಸಿ
+      ಹರುಷದಿಂದಲಿ ಬಂದ ಭಕ್ತಜನರ
+      ಮೊರೆಯಲಾಲಿಸಿ ಸ್ವಾಮಿ ಸ್ಮರಣೆಯ ಕೊಟ್ಟೆನ್ನ
+      ಹರುಷಪಡಿಸುವ ಗುರುವು ನೀವೆಂದು ನಾ ಬಂದೆ
+ 
+  - type: None
+    number: 3
+    kn: |
+      ವರಕಣ್ವನದಿ ಕೂಲದಲಿ ಕಲ್ಮಷ ತೊಳೆದು
+      ಪೆರ್ಮೆಯಿಂದಲಿ ಶಿಶುವ ಪಾಲಿಸಿದ ಗುರುವೆ
+      ಸಾರ್ವಭೌಮನ ಗುಣವ ಸರ್ವದಾ ಪಾಡುತಲಿ
+      ಸರ್ವಜನರನು ಕಾವೆ ಸರ್ವಕಾಲದಲಿ
+  
+  - type: None
+    number: 4
+    kn: |
+      ಸರ್ವಗುಣಗಣ ಪೂರ್ಣ ಬ್ರಹ್ಮಣ್ಯಪುರ ವಾಸ
+      ನರಹರಿಯ ಪಾದವನು ಸ್ಮರಿಸಿನಿತ್ಯ
+      ಸರಸದಲಿ ಅಬ್ಬೂರು ಪುರವಾಸಿಗಳನೆಲ್ಲ
+      ಅರ್ಭಕರ ತೆರನಂತೆ ರಕ್ಷಿಸುವ ಗುರುವರ್ಯ
+  
+  - type: None
+    number: 5
+    kn: |
+      ಮಣಿದು ಬೇಡುವೆ ನಿನ್ನ ಚರಣದಾಶ್ರಯವಿತ್ತು
+      ಅಣುಗನೆಂದೆನಿಸೆನ್ನ ಸಲಹಬೇಕೊ
+      ಗುಣನಿಧಿ ಶ್ರೀ ಪ್ರಾಣನಾಥ ವಿಠ್ಠಲನ
+      ಘನ ಚರಣ ಸ್ಮರಣೆಯ ನೀಯೊ ಗುರುವೆ

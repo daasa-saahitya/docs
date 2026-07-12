@@ -3,11 +3,13 @@
 # Edit the _ta, _hi, _en fields to correct any transliteration errors
 # ──────────────────────────────────────────────────────────────────
 
-title_kn: ರಾಮಾಯಣ ಹಾಡು
+title_kn: ರಾಮ ಕಥಾಮೃತ
 
 author_kn: ಜಗನ್ನಾಥ ದಾಸರು
 
 raga_kn: ಆರಭಿ
+
+ankita_kn: ಜಗನ್ನಾಥ ವಿಠ್ಠಲ
 
 verses:
   - type: None
