@@ -66,17 +66,15 @@ Same steps, just navigate to the existing `.yml` file and tap the **pencil** (ed
 
 ## Song file format
 
+Only write **Kannada text** — the build script auto-generates Tamil, Devanagari, and IAST transliterations.
+
+See `templates/song-template.yml` for a copy-paste starter.
+
 ```yaml
 title_kn:  ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ    # Kannada title (REQUIRED)
 author_kn: ಪುರಂದರದಾಸ               # Kannada author (REQUIRED)
 raga_kn:   ಮಧ್ಯಮಾವತಿ              # optional
 tala_kn:   ಆದಿ                     # optional
-description_kn: ದಾಸರ ಪದ            # optional extra note
-
-# You can manually override any auto-transliteration:
-title_ta:  ""    # leave blank = auto-generated
-title_hi:  ""
-title_en:  ""
 
 verses:
   - type: pallavi
@@ -92,13 +90,15 @@ verses:
   - type: subtitle
     subtitle_kn: ಚರಣಗಳು
 
-  - type: charana
+  - type: None
     number: 1
+    subtitle_kn: ಧ್ರುವತಾಳ
     kn: |
       ಮೊದಲ ಚರಣ
 
-  - type: charana
+  - type: None
     number: 2
+    subtitle_kn: ಮಟ್ಟತಾಳ
     kn: |
       ಎರಡನೆಯ ಚರಣ
 ```
@@ -108,9 +108,20 @@ verses:
 |------|---------|
 | `pallavi` | Pallavi |
 | `anupallavi` | Anupallavi |
-| `charana` | Caraṇa (add `number: 1`, `number: 2` …) |
+| `None` | Caraṇa (add `number: 1`, `number: 2` … and `subtitle_kn:` for tala name) |
 | `madhyamakala` | Madhyamakāla section |
 | `subtitle` | Mid-song heading (use `subtitle_kn:`) |
+
+### Correcting auto-transliteration
+
+If the auto-generated Tamil/Devanagari/IAST has errors, add the correction to the YAML:
+
+```yaml
+title_kn: ರಾಮ ದೇವರ ಸುಳಾದಿ
+title_ta: ராம தே³வர ஸுளாதி³    # only add if auto-generation is wrong
+```
+
+The build script uses your manual override when present, otherwise auto-generates.
 
 ---
 

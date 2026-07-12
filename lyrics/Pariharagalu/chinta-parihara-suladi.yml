@@ -1,32 +1,16 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics File (Auto-transliterated)
-# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# Daasa Saahitya - Lyrics File
+# Transliterations are auto-generated at build time
 # ──────────────────────────────────────────────────────────────────
 
 title_kn: ಚಿಂತಾ ಪರಿಹಾರ ಸುಳಾದಿ
-title_ta: சிந்தா பரிஹார ஸுளாதி³
-title_hi: चिन्ता परिहार सुळादि
-title_en: cintā parihāra suḷādi
-
 author_kn: ವಿಜಯ ದಾಸರು
-author_ta: விஜய தா³ஸரு
-author_hi: विजय दासरु
-author_en: vijaya dāsaru
-
-
 raga_kn: ಕಾಪಿ
-raga_ta: காபி
-raga_hi: कापि
-raga_en: kāpi
-
 
 verses:
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವ ತಾಳ
-    subtitle_ta: த்⁴ருவ தாள
-    subtitle_hi: ध्रुव ताळ
-    subtitle_en: dhruva tāḷa
     kn: |
       ವ್ಯಾಕುಲವೇನೋ ಮನವೆ ಯಾಕೆ ನಿನಗೆ ನಿತ್ಯ
       ಸಾಕುವ ದಾತಾರ ಶ್ರೀಕಾಂತನನುದಿನ
@@ -39,52 +23,10 @@ verses:
       ಈ ಕುಂಭಿನಿಯ ಮಧ್ಯ ಪ್ರಾಕೃತವಿಡಿದು ಬ -
       ದೂಕುವ ಜೀವಿಗಳ ಸಾಕುವನಾರು
       ಗೋಕುಲಾಂಬುಧಿ ಚಂದ್ರ ವಿಜಯವಿಟ್ಠಲ ಗ್ರಾಸ -
-    ta: |
-      வ்யாகுலவேனோ மனவெ யாகெ நினகெ³ நித்ய
-      ஸாகுவ தா³தார ஸ்ரீகாந்தனனுதி³ன
-      லோக லோகவனெல்ல ஸாகுவ பா⁴ரகர்த
-      பே³கெந்து³ ப்ரதிதி³ன ஜோகெ மாடு³வனோ
-      காக்குலதெவிடி³து³ லௌகிகதொ³ளு பி³த்³து³
-      கூகர்மவனுஸரிஸி ஶோகக்கொளகா³க³தி³ரு
-      நூகு ஸந்தாபவனேகெ ப³கெ³யிந்த³ 
-      வாகு ஸாரிதெ³னிது³ நீ கேளு தரு³ட⁴வாகி³ 
-      ஈ கும்பி⁴னிய மத்⁴ய ப்ராகருதவிடி³து³ ப³ -
-      தூ³குவ ஜீவிக³ள ஸாகுவனாரு
-      கோ³குலாம்பு³தி⁴ சந்த்³ர விஜயவிட்ட²ல க்³ராஸ -
-      ஹாகுவனிரலாகி³ நீ களவளிஸுவரெ ॥
-    hi: |
-      व्याकुलवेनो मनवे याके निनगे नित्य
-      साकुव दातार श्रीकान्तननुदिन
-      लोक लोकवनेल्ल साकुव भारकर्त
-      बेकेन्दु प्रतिदिन जोके माडुवनो
-      काक्कुलतेविडिदु लौकिकदोळु बिद्दु
-      कूकर्मवनुसरिसि शोकक्कोळगागदिरु
-      नूकु सन्तापवनेके बगेयिन्द 
-      वाकु सारिदेनिदु नी केळु दृढ़वागि 
-      ई कुम्भिनिय मध्य प्राकृतविडिदु ब -
-      दूकुव जीविगळ साकुवनारु
-      गोकुलाम्बुधि चन्द्र विजयविट्ठल ग्रास -
-      हाकुवनिरलागि नी कळवळिसुवरे ॥
-    en: |
-      vyākulavēnō manave yāke ninage nitya
-      sākuva dātāra śrīkāntananudina
-      lōka lōkavanella sākuva bhārakarta
-      bēkendu pratidina jōke māḍuvanō
-      kākkulateviḍidu laukikadoḷu biddu
-      kūkarmavanusarisi śōkakkoḷagāgadiru
-      nūku santāpavanēke bageyinda 
-      vāku sāridenidu nī kēḷu dṛḍhavāgi 
-      ī kumbhiniya madhya prākṛtaviḍidu ba -
-      dūkuva jīvigaḷa sākuvanāru
-      gōkulāmbudhi candra vijayaviṭṭhala grāsa -
-      hākuvaniralāgi nī kaḷavaḷisuvare ॥
 
   - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟ ತಾಳ
-    subtitle_ta: மட்ட தாள
-    subtitle_hi: मट्ट ताळ
-    subtitle_en: maṭṭa tāḷa
     kn: |
       ಬರ ಬಂದರೇ ಏನು ಬಾರದಿದ್ದರೆ ಏನು
       ಧರೆಯೆಲ್ಲ ಇಂದು ಕರಗಿಪೋದರೆ ಏನು
@@ -93,40 +35,10 @@ verses:
       ಗಿರಿ ಸಮುದಾಯಗಳು ತೆರಳಿ ಬಂದರೆ ಏನು
       ಹರಿದು ಮುಗಿಲು ಮೇಲೆ ಒರಗಿದರೇನು
       ಧರಣಿಪಾಲಕ ರಂಗ ವಿಜಯವಿಟ್ಠಲರೇಯ
-    ta: |
-      ப³ர ப³ந்த³ரே ஏனு பா³ரதி³த்³த³ரெ ஏனு
-      த⁴ரெயெல்ல இந்து³ கரகி³போத³ரெ ஏனு
-      அரஸாகி³த்³த³வர கருண தப்பித³ரேனு
-      வருஷங்க³ள தடெ³து³ இரலி இத்³த³ரெ ஏனு
-      கி³ரி ஸமுதா³யக³ளு தெரளி ப³ந்த³ரெ ஏனு
-      ஹரிது³ முகி³லு மேலெ ஒரகி³த³ரேனு
-      த⁴ரணிபாலக ரங்க³ விஜயவிட்ட²லரேய 
-      பரமபுருஷ ஹரிய ஶரணகெ³ ப⁴யவேனு ॥
-    hi: |
-      बर बन्दरे एनु बारदिद्दरे एनु
-      धरेयेल्ल इन्दु करगिपोदरे एनु
-      अरसागिद्दवर करुण तप्पिदरेनु
-      वरुषङ्गळ तडेदु इरलि इद्दरे एनु
-      गिरि समुदायगळु तेरळि बन्दरे एनु
-      हरिदु मुगिलु मेले ओरगिदरेनु
-      धरणिपालक रङ्ग विजयविट्ठलरेय 
-      परमपुरुष हरिय शरणगे भयवेनु ॥
-    en: |
-      bara bandarē ēnu bāradiddare ēnu
-      dhareyella indu karagipōdare ēnu
-      arasāgiddavara karuṇa tappidarēnu
-      varuṣaṅgaḷa taḍedu irali iddare ēnu
-      giri samudāyagaḷu teraḷi bandare ēnu
-      haridu mugilu mēle oragidarēnu
-      dharaṇipālaka raṅga vijayaviṭṭhalarēya 
-      paramapuruṣa hariya śaraṇage bhayavēnu ॥
 
   - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟ ತಾಳ
-    subtitle_ta: த்ரிபுட தாள
-    subtitle_hi: त्रिपुट ताळ
-    subtitle_en: tripuṭa tāḷa
     kn: |
       ಶಾರೆ ಹೊನ್ನಿಗೆ ಭತ್ತ ಶಾರೆಯಾದರೆ ಏನು
       ನೂರಾರು ಖಂಡಗ ಕಾಸಿಗಾದರೆ ಏನು
@@ -142,64 +54,10 @@ verses:
       ವಾರವಾರಕೆ ಮನವೆ ಯೋಚನೆಗೊಳಸಲ್ಲ
       ಪೂರೈಸಿ ತಿಳಿಯೊ ಹರಿಯ ಮಹಿಮೆಯನ್ನು
       ನಾರಾಯಣ ರಂಗ ವಿಜಯವಿಟ್ಠಲ ನಿತ್ಯ
-    ta: |
-      ஶாரெ ஹொன்னிகெ³ ப⁴த்த ஶாரெயாத³ரெ ஏனு
-      நூராரு க²ண்ட³க³ காஸிகா³த³ரெ ஏனு
-      ஊரூரலி த⁴ன ஸூரெபி³ட்டரெ ஏனு
-      மாருவ தா⁴ரணி ஏரி ल இளித³ரே ஏனு
-      கோ⁴ராரண்யதொ³ளு போகி³ இத்³த³ரெ ஏனு
-      நீரு இல்லத³ டா²வு தொ³ரிதாரேனு
-      ஆராஜகவாகி³ பீ⁴தி ப³ந்த³ரே ஏனு
-      ஆராத³ரு மோரெ திருஹலேனு
-      மேரெத³ப்பி ஏளுவனதி⁴ ஹெச்சித³ரேனு
-      தா³ரணத³லி தே³ஹ ப³ளலலேனு ஈ -
-      ஶாரீரவெ ஸ்ரீனிவாஸன சரணக்கெ
-      ஆரோபிஸித³ தருவாயத³ல்லி
-      வாரவாரகெ மனவெ யோசனெகொ³ளஸல்ல
-      பூரைஸி திளியொ ஹரிய மஹிமெயன்னு
-      நாராயண ரங்க³ விஜயவிட்ட²ல நித்ய
-      பா⁴ரகர்தனாகி³ பொரெவனு ப்ரதிதி³வஸ ॥
-    hi: |
-      शारे होन्निगे भत्त शारेयादरे एनु
-      नूरारु खण्डग कासिगादरे एनु
-      ऊरूरलि धन सूरेबिट्टरे एनु
-      मारुव धारणि एरि ल इळिदरे एनु
-      घोरारण्यदोळु पोगि इद्दरे एनु
-      नीरु इल्लद ठावु दोरितारेनु
-      आराजकवागि भीति बन्दरे एनु
-      आरादरु मोरे तिरुहलेनु
-      मेरेदप्पि एळुवनधि हेच्चिदरेनु
-      दारणदलि देह बळललेनु ई -
-      शारीरवे श्रीनिवासन चरणक्के
-      आरोपिसिद तरुवायदल्लि
-      वारवारके मनवे योचनेगोळसल्ल
-      पूरैसि तिळियो हरिय महिमेयन्नु
-      नारायण रङ्ग विजयविट्ठल नित्य
-      भारकर्तनागि पोरेवनु प्रतिदिवस ॥
-    en: |
-      śāre honnige bhatta śāreyādare ēnu
-      nūrāru khaṇḍaga kāsigādare ēnu
-      ūrūrali dhana sūrebiṭṭare ēnu
-      māruva dhāraṇi ēri ल iḷidarē ēnu
-      ghōrāraṇyadoḷu pōgi iddare ēnu
-      nīru illada ṭhāvu doritārēnu
-      ārājakavāgi bhīti bandarē ēnu
-      ārādaru mōre tiruhalēnu
-      mēredappi ēḷuvanadhi heccidarēnu
-      dāraṇadali dēha baḷalalēnu ī -
-      śārīrave śrīnivāsana caraṇakke
-      ārōpisida taruvāyadalli
-      vāravārake manave yōcanegoḷasalla
-      pūraisi tiḷiyo hariya mahimeyannu
-      nārāyaṇa raṅga vijayaviṭṭhala nitya
-      bhārakartanāgi porevanu pratidivasa ॥
 
   - type: None
     number: 4
     subtitle_kn: ಅಟ್ಟ ತಾಳ
-    subtitle_ta: அட்ட தாள
-    subtitle_hi: अट्ट ताळ
-    subtitle_en: aṭṭa tāḷa
     kn: |
       ಉದರದೊಳಗೆ ಬಂದು ಉದುಭವಿಸಿದಾಗ
       ವದನಕ್ಕೆ ತಂದು ತೊಡದವರಾರೊ ಬೆಣ್ಣಿಯ
@@ -211,49 +69,10 @@ verses:
       ಮದಡುಮಾನವ ನಿನ್ನ ಉದರ ಚಿಂತಿಯ ಬಿಡು
       ಹೃದಯದೊಳಗೆ ಸಿರಿ ಪದುಮನಾಭವ ಇಡು
       ಒದಗಿ ಸಾಕುವ ತಂದೆ ವಿಜಯವಿಟ್ಠಲನಿರೆ
-    ta: |
-      உத³ரதொ³ளகெ³ ப³ந்து³ உது³ப⁴விஸிதா³க³
-      வத³னக்கெ தந்து³ தொட³த³வராரொ பெ³ண்ணிய
-      ப³தி³க³னு தானாகி³ பதெ³பதெ³கெ³ ஹரி
-      ப³தி³யல்லி நிந்து³ ஹது³ள நோடு³தலித்³து³
-      பொதெ³ வன கி³ரி கு³ஹெ ஹொத³ரினொளித்³த³ரு
-      க்ஷுதெ⁴யாக³கொ³ட³த³ந்தெ மது⁴ரன்னவ தந்து³
-      உத³யாஸ்தமான பி³ட³தெ³ உணிஸுவ ஸத்ய
-      மத³டு³மானவ நின்ன உத³ர சிந்திய பி³டு³
-      ஹருத³யதொ³ளகெ³ ஸிரி பது³மனாப⁴வ இடு³
-      ஒத³கி³ ஸாகுவ தந்தெ³ விஜயவிட்ட²லனிரெ 
-      இதெ³ தை⁴ர்யவிடி³து³ முத³தி³ந்த³ நலிதா³டு³ ॥
-    hi: |
-      उदरदोळगे बन्दु उदुभविसिदाग
-      वदनक्के तन्दु तोडदवरारो बेण्णिय
-      बदिगनु तानागि पदेपदेगे हरि
-      बदियल्लि निन्दु हदुळ नोडुतलिद्दु
-      पोदे वन गिरि गुहे होदरिनोळिद्दरु
-      क्षुधेयागगोडदन्ते मधुरन्नव तन्दु
-      उदयास्तमान बिडदे उणिसुव सत्य
-      मदडुमानव निन्न उदर चिन्तिय बिडु
-      हृदयदोळगे सिरि पदुमनाभव इडु
-      ओदगि साकुव तन्दे विजयविट्ठलनिरे 
-      इदे धैर्यविडिदु मुददिन्द नलिदाडु ॥
-    en: |
-      udaradoḷage bandu udubhavisidāga
-      vadanakke tandu toḍadavarāro beṇṇiya
-      badiganu tānāgi padepadege hari
-      badiyalli nindu haduḷa nōḍutaliddu
-      pode vana giri guhe hodarinoḷiddaru
-      kṣudheyāgagoḍadante madhurannava tandu
-      udayāstamāna biḍade uṇisuva satya
-      madaḍumānava ninna udara cintiya biḍu
-      hṛdayadoḷage siri padumanābhava iḍu
-      odagi sākuva tande vijayaviṭṭhalanire 
-      ide dhairyaviḍidu mudadinda nalidāḍu ॥
 
   - type: None
     number: 5
     subtitle_kn: ಆದಿ ತಾಳ
-    subtitle_ta: ஆதி³ தாள
-    subtitle_hi: आदि ताळ
-    subtitle_en: ādi tāḷa
     kn: |
       ಹಿಂದೆ ಬಹುಜನ್ಮಂಗಳು ಬಂದು ಬಂದು ಪೋದುದಕ್ಕೆ
       ಒಂದು ತೃಣವಾದರೂ ನಿನ್ನಿಂದ ನೀನೇ ಗಳಿಸಲಿಲ್ಲ
@@ -264,54 +83,9 @@ verses:
       ಮುಂದುಗೆಡದಲೆ ಹೇಗೆಂದು ಚಿಂತೆ ಮಾಡದಲೆ
       ಎಂದೆಂದಿಗು ಕಳೆಗುಂದದಲಿರು ಮನವೆ
       ಹಿಂದೆ ಇಂದು ಮುಂದು ಬಿಡದೆ ತಂದೆಯಾಗಿ ಸಾಕುವ ಗೋ -
-    ta: |
-      ஹிந்தெ³ ப³ஹுஜன்மங்க³ளு ப³ந்து³ ப³ந்து³ போது³த³க்கெ
-      ஒந்து³ தருணவாத³ரூ நின்னிந்த³ நீனே க³ளிஸலில்ல
-      இந்தி³ராரமணனு தா ஒந்தொ³ந்து³ பரியல்லி
-      பா³ந்த⁴வனாகி³ நித்ய நிந்து³ பா⁴ரகர்தனாகி³
-      ஒந்து³ நிமிஷ மீரகொ³ட³தெ³ ஸந்தே³ஹ ப³ட³த³ந்தெ
-      சந்த³வாகி³ ஒலிது³ ஆனந்த³ ஸுக² ப³டி³ஸுவ
-      முந்து³கெ³ட³த³லெ ஹேகெ³ந்து³ சிந்தெ மாட³த³லெ
-      எந்தெ³ந்தி³கு³ களெகு³ந்த³த³லிரு மனவெ
-      ஹிந்தெ³ இந்து³ முந்து³ பி³ட³தெ³ தந்தெ³யாகி³ ஸாகுவ கோ³ -
-      விந்த³ விஜயவிட்ட²லங்கெ³ வந்தி³ஸுவது³ பி³ட³தி³ரு ॥
-    hi: |
-      हिन्दे बहुजन्मङ्गळु बन्दु बन्दु पोदुदक्के
-      ओन्दु तृणवादरू निन्निन्द नीने गळिसलिल्ल
-      इन्दिरारमणनु ता ओन्दोन्दु परियल्लि
-      बान्धवनागि नित्य निन्दु भारकर्तनागि
-      ओन्दु निमिष मीरगोडदे सन्देह बडदन्ते
-      चन्दवागि ओलिदु आनन्द सुख बडिसुव
-      मुन्दुगेडदले हेगेन्दु चिन्ते माडदले
-      एन्देन्दिगु कळेगुन्ददलिरु मनवे
-      हिन्दे इन्दु मुन्दु बिडदे तन्देयागि साकुव गो -
-      विन्द विजयविट्ठलङ्गे वन्दिसुवदु बिडदिरु ॥
-    en: |
-      hinde bahujanmaṅgaḷu bandu bandu pōdudakke
-      ondu tṛṇavādarū ninninda nīnē gaḷisalilla
-      indirāramaṇanu tā ondondu pariyalli
-      bāndhavanāgi nitya nindu bhārakartanāgi
-      ondu nimiṣa mīragoḍade sandēha baḍadante
-      candavāgi olidu ānanda sukha baḍisuva
-      mundugeḍadale hēgendu cinte māḍadale
-      endendigu kaḷegundadaliru manave
-      hinde indu mundu biḍade tandeyāgi sākuva gō -
-      vinda vijayaviṭṭhalaṅge vandisuvadu biḍadiru ॥
 
   - type: None
     subtitle_kn: ಜತೆ
-    subtitle_ta: ஜதெ
-    subtitle_hi: जते
-    subtitle_en: jate
     kn: |
       ಅಣುರೇಣು ಪೊಟ್ಟಿಗೆ ನಡೆಸುವ ದೇವನು
-    ta: |
-      அணுரேணு பொட்டிகெ³ நடெ³ஸுவ தே³வனு
-      நனகீ³யதி³ப்பனெ விஜயவிட்ட²ல ஸ்வாமி ॥
-    hi: |
-      अणुरेणु पोट्टिगे नडेसुव देवनु
-      ननगीयदिप्पने विजयविट्ठल स्वामि ॥
-    en: |
-      aṇurēṇu poṭṭige naḍesuva dēvanu
-      nanagīyadippane vijayaviṭṭhala svāmi ॥
 

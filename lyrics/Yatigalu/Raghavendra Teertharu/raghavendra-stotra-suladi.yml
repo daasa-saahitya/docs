@@ -1,36 +1,17 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics File (Auto-transliterated)
-# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# Daasa Saahitya - Lyrics File
+# Transliterations are auto-generated at build time
 # ──────────────────────────────────────────────────────────────────
 
 title_kn: ರಾಘವೇಂದ್ರ ಸ್ತೋತ್ರ ಸುಳಾದಿ
-title_ta: ராக⁴வேந்த்³ர ஸ்தோத்ர ஸுளாதி³
-title_hi: राघवेन्द्र स्तोत्र सुळादि
-title_en: rāghavēndra stōtra suḷādi
-
 author_kn: ಧನ್ವಂತ್ರಿ ವಿಟ್ಟಲ ದಾಸರು
-author_ta: த⁴ன்வந்த்ரி விட்டல தா³ஸரு
-author_hi: धन्वन्त्रि विट्टल दासरु
-author_en: dhanvantri viṭṭala dāsaru
-
 ankita_kn: ಧನ್ವಂತ್ರಿ ವಿಟ್ಟಲ
-ankita_ta: த⁴ன்வந்த்ரி விட்டல
-ankita_hi: धन्वन्त्रि विट्टल
-ankita_en: dhanvantri viṭṭala
-
 raga_kn: ದೇಶ್
-raga_ta: தே³ஶ்
-raga_hi: देश्
-raga_en: dēś
-
 
 verses:
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    subtitle_ta: த்⁴ருவதாள
-    subtitle_hi: ध्रुवताळ
-    subtitle_en: dhruvatāḷa
     kn: |
       ಗುರು ರಾಯ ಮಹರಾಯ ಗುಣಪೂರ್ಣ ರಾಘವೇಂದ್ರ |
       ಧೊರೆಯೆ ಕಾರುಣ್ಯನಿಧಿ ಸುರ ತರುವೆ |
@@ -40,40 +21,10 @@ verses:
       ಪೊರೆದು ವಿಸ್ತರಿಸಿತು ಜಗದಿ ಕೀರ್ತಿ |
       ಧರಣಿ ಪಾಲಕ ಶ್ರೀ ಧನ್ವಂತ್ರಿ ವಿಠಲ |
       ಹರಿಯ ಚರಣಧೇನಿಪ ಮಹ ಪರತರ ಯತಿ ಶ್ರೇಷ್ಠ
-    ta: |
-      கு³ரு ராய மஹராய கு³ணபூர்ண ராக⁴வேந்த்³ர |
-      தொ⁴ரெயெ காருண்யனிதி⁴ ஸுர தருவெ |
-      மருதாவதார மத்⁴வ முனிய ப⁴ஜக ஸ்ரேஷ்ட² |
-      த⁴ரெயொளு பாமரரன்ன உத்³த⁴ரிப மஹிம |
-      வரமணி காமதே⁴னு ஶரணு ஹொக்கவரிகெ³ |
-      பொரெது³ விஸ்தரிஸிது ஜக³தி³ கீர்தி |
-      த⁴ரணி பாலக ஸ்ரீ த⁴ன்வந்த்ரி விட²ல |
-      ஹரிய சரணதே⁴னிப மஹ பரதர யதி ஸ்ரேஷ்ட²
-    hi: |
-      गुरु राय महराय गुणपूर्ण राघवेन्द्र |
-      धोरेये कारुण्यनिधि सुर तरुवे |
-      मरुतावतार मध्व मुनिय भजक श्रेष्ठ |
-      धरेयोळु पामररन्न उद्धरिप महिम |
-      वरमणि कामधेनु शरणु होक्कवरिगे |
-      पोरेदु विस्तरिसितु जगदि कीर्ति |
-      धरणि पालक श्री धन्वन्त्रि विठल |
-      हरिय चरणधेनिप मह परतर यति श्रेष्ठ
-    en: |
-      guru rāya maharāya guṇapūrṇa rāghavēndra |
-      dhoreye kāruṇyanidhi sura taruve |
-      marutāvatāra madhva muniya bhajaka śrēṣṭha |
-      dhareyoḷu pāmararanna uddharipa mahima |
-      varamaṇi kāmadhēnu śaraṇu hokkavarige |
-      poredu vistarisitu jagadi kīrti |
-      dharaṇi pālaka śrī dhanvantri viṭhala |
-      hariya caraṇadhēnipa maha paratara yati śrēṣṭha
 
   - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟತಾಳ
-    subtitle_ta: மட்டதாள
-    subtitle_hi: मट्टताळ
-    subtitle_en: maṭṭatāḷa
     kn: |
       ಲೋಕ ಜನರಿಗೆಲ್ಲ ನೀ ಕೊಡುವಿಯೊ ವರವ |
       ನೇಕವಾಗಿ ಮಹ ಸಾಕಾರ ಕರುಣದಲಿ |
@@ -83,40 +34,10 @@ verses:
       ನೀ ಕರುಣಿಸಿ ನಿತ್ಯ ಸಾಕುವ ದಿನಿತೆಂಬೆ |
       ಲೋಕ ಪಾಲಕ ಶ್ರೀ ಧನ್ವಂತ್ರಿ ವಿಠಲ ನಿನಗೆ ಬೇಕಾದ ಗುಣ ಪೂರ್ಣ |
       ಗುರು ರಾಘವೇಂದ್ರಾರ್ಯ ||
-    ta: |
-      லோக ஜனரிகெ³ல்ல நீ கொடு³வியொ வரவ |
-      நேகவாகி³ மஹ ஸாகார கருணத³லி |
-      வாகு லாலிஸு கு³ருவெ நா கேளுவெவந்து³ |
-      ஏக பு³த்³தி⁴ய நித்து ஸ்ரீகர ஸ்ரீத⁴ரன |
-      நேகவாகி³ துதிப நாகஜனர ஸேவெ |
-      நீ கருணிஸி நித்ய ஸாகுவ தி³னிதெம்பெ³ |
-      லோக பாலக ஸ்ரீ த⁴ன்வந்த்ரி விட²ல நினகெ³ பே³காத³ கு³ண பூர்ண |
-      கு³ரு ராக⁴வேந்த்³ரார்ய ||
-    hi: |
-      लोक जनरिगेल्ल नी कोडुवियो वरव |
-      नेकवागि मह साकार करुणदलि |
-      वाकु लालिसु गुरुवे ना केळुवेवन्दु |
-      एक बुद्धिय नित्तु श्रीकर श्रीधरन |
-      नेकवागि तुतिप नाकजनर सेवे |
-      नी करुणिसि नित्य साकुव दिनितेम्बे |
-      लोक पालक श्री धन्वन्त्रि विठल निनगे बेकाद गुण पूर्ण |
-      गुरु राघवेन्द्रार्य ||
-    en: |
-      lōka janarigella nī koḍuviyo varava |
-      nēkavāgi maha sākāra karuṇadali |
-      vāku lālisu guruve nā kēḷuvevandu |
-      ēka buddhiya nittu śrīkara śrīdharana |
-      nēkavāgi tutipa nākajanara sēve |
-      nī karuṇisi nitya sākuva dinitembe |
-      lōka pālaka śrī dhanvantri viṭhala ninage bēkāda guṇa pūrṇa |
-      guru rāghavēndrārya ||
 
   - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
-    subtitle_ta: த்ரிபுடதாள
-    subtitle_hi: त्रिपुटताळ
-    subtitle_en: tripuṭatāḷa
     kn: |
       ಸಾಧನವನು ಕಾಣೆ ಈ ಧರೆಯೊಳು ಪೂರ್ಣ-
       ಬೋಧರಾಯರ ದಿವ್ಯಕರುಣವೇ ಹೊರತು |
@@ -126,40 +47,10 @@ verses:
       ಮೋದವೀವುದು ಜಗನ್ಮೋದಿ ಗುರುವೆ |
       ಮಾಧವ ಮಹ ಮಹಿಮ ಶ್ರೀ ಧನ್ವಂತ್ರಿವಿಠಲನ್ನ |
       ಸಾಧಿಸಿ ಕೊಡುವಂಥ ಸದ್ಗುಣಿ ರಾಘವೇಂದ್ರ ||
-    ta: |
-      ஸாத⁴னவனு காணெ ஈ த⁴ரெயொளு பூர்ண-
-      போ³த⁴ராயர தி³வ்யகருணவே ஹொரது |
-      நீ த³யவனு மாடெ³ நித்யானுக்³ரஹ மாள்ப-
-      ராத³ காரணதி³ந்த³ நிம்ம தி³வ்ய |
-      பாத³ ஸேவெயன்னித்து பாவன்ன மாடி³ |
-      மோத³வீவுது³ ஜக³ன்மோதி³ கு³ருவெ |
-      மாத⁴வ மஹ மஹிம ஸ்ரீ த⁴ன்வந்த்ரிவிட²லன்ன |
-      ஸாதி⁴ஸி கொடு³வந்த² ஸத்³கு³ணி ராக⁴வேந்த்³ர ||
-    hi: |
-      साधनवनु काणे ई धरेयोळु पूर्ण-
-      बोधरायर दिव्यकरुणवे होरतु |
-      नी दयवनु माडे नित्यानुग्रह माळ्प-
-      राद कारणदिन्द निम्म दिव्य |
-      पाद सेवेयन्नित्तु पावन्न माडि |
-      मोदवीवुदु जगन्मोदि गुरुवे |
-      माधव मह महिम श्री धन्वन्त्रिविठलन्न |
-      साधिसि कोडुवन्थ सद्गुणि राघवेन्द्र ||
-    en: |
-      sādhanavanu kāṇe ī dhareyoḷu pūrṇa-
-      bōdharāyara divyakaruṇavē horatu |
-      nī dayavanu māḍe nityānugraha māḷpa-
-      rāda kāraṇadinda nimma divya |
-      pāda sēveyannittu pāvanna māḍi |
-      mōdavīvudu jaganmōdi guruve |
-      mādhava maha mahima śrī dhanvantriviṭhalanna |
-      sādhisi koḍuvantha sadguṇi rāghavēndra ||
 
   - type: None
     number: 4
     subtitle_kn: ಅಟ್ಟತಾಳ
-    subtitle_ta: அட்டதாள
-    subtitle_hi: अट्टताळ
-    subtitle_en: aṭṭatāḷa
     kn: |
       ಗುರುವೆ ಸದ್ಗುಣರನ್ನ ಶರಣು ಹೊಕ್ಕೆನು ನಿನ್ನ |
       ಪರಿಪಾಲಿಸೊ ಮುನ್ನ ವರಿತನುಗ್ರಹವನ್ನ |
@@ -170,43 +61,10 @@ verses:
       ವರಿಯ ರಾಘವೇಂದ್ರ ಶರಣ ಕರುಣಾಬ್ಧಿ |
       ವರಪ್ರದ ಶ್ರೀ ಧನ್ವಂತ್ರಿ ವಿಠಲನ್ನ ನಿಜ ದಾಸ |
       ಶಿರೋ ಮಣಿಯೆ ನಮೋ ಧೊರೆಯೆ ಶಾಶ್ವತ ಫಲದ ||
-    ta: |
-      கு³ருவெ ஸத்³கு³ணரன்ன ஶரணு ஹொக்கெனு நின்ன |
-      பரிபாலிஸொ முன்ன வரிதனுக்³ரஹவன்ன |
-      மரெயலாக³து³ என்ன வர த³ய பரிபூர்ண |
-      மொரெஹொக்கவனன்னு எரவு நோள்புதெ³ சென்ன |
-      ஹரி ப⁴க்தாக்³ரண்ய வர மத்⁴வ முனியன்ன |
-      ஸ்தி²ரதி³ ப⁴ஜிப பூர்ண பரதர கு³ணக³ண-
-      வரிய ராக⁴வேந்த்³ர ஶரண கருணாப்³தி⁴ |
-      வரப்ரத³ ஸ்ரீ த⁴ன்வந்த்ரி விட²லன்ன நிஜ தா³ஸ |
-      ஶிரோ மணியெ நமோ தொ⁴ரெயெ ஶாஶ்வத ப²லத³ ||
-    hi: |
-      गुरुवे सद्गुणरन्न शरणु होक्केनु निन्न |
-      परिपालिसो मुन्न वरितनुग्रहवन्न |
-      मरेयलागदु एन्न वर दय परिपूर्ण |
-      मोरेहोक्कवनन्नु एरवु नोळ्पुदे चेन्न |
-      हरि भक्ताग्रण्य वर मध्व मुनियन्न |
-      स्थिरदि भजिप पूर्ण परतर गुणगण-
-      वरिय राघवेन्द्र शरण करुणाब्धि |
-      वरप्रद श्री धन्वन्त्रि विठलन्न निज दास |
-      शिरो मणिये नमो धोरेये शाश्वत फलद ||
-    en: |
-      guruve sadguṇaranna śaraṇu hokkenu ninna |
-      paripāliso munna varitanugrahavanna |
-      mareyalāgadu enna vara daya paripūrṇa |
-      morehokkavanannu eravu nōḷpude cenna |
-      hari bhaktāgraṇya vara madhva muniyanna |
-      sthiradi bhajipa pūrṇa paratara guṇagaṇa-
-      variya rāghavēndra śaraṇa karuṇābdhi |
-      varaprada śrī dhanvantri viṭhalanna nija dāsa |
-      śirō maṇiye namō dhoreye śāśvata phalada ||
 
   - type: None
     number: 5
     subtitle_kn: ಆದಿತಾಳ
-    subtitle_ta: ஆதி³தாள
-    subtitle_hi: आदिताळ
-    subtitle_en: āditāḷa
     kn: |
       ವರ ಪ್ರಹ್ಲಾದ ನವತಾರ ವ್ಯಾಸಮುನಿವರ್ಯ-
       ದೆರಡನೆ ಅವತಾರ ವರಯೋಗಿ ಎನಿಸಿ |
@@ -215,46 +73,10 @@ verses:
       ತ್ವರಿತದಿ ತೋರಿಕೊಟ್ಟು ಗುರುವರ ಗುಣವರ್ಯ |
       ಸುರಮುನಿ ರಾಘವೇಂದ್ರ ನರನ ಸಾರಥಿ ಶ್ರೀ ಧನ್ವಂತ್ರಿ ವಿಠಲನ್ನ |
       ಕರುಣ ನೀಕ್ಷಿಸಿ ತಕ್ಷಣದಿ ಉದ್ಧರಿಸುವ ||
-    ta: |
-      வர ப்ரஹ்லாத³ நவதார வ்யாஸமுனிவர்ய-
-      தெ³ரட³னெ அவதார வரயோகி³ எனிஸி |
-      த⁴ரெயொளு விஸ்தரிஸி மஹிமெ தோரி உ-
-      த்³த⁴ரிஸி ஸஜ்ஜனரன்னு மெரெது³ பரம ஸுக² |
-      த்வரிததி³ தோரிகொட்டு கு³ருவர கு³ணவர்ய |
-      ஸுரமுனி ராக⁴வேந்த்³ர நரன ஸாரதி² ஸ்ரீ த⁴ன்வந்த்ரி விட²லன்ன |
-      கருண நீக்ஷிஸி தக்ஷணதி³ உத்³த⁴ரிஸுவ ||
-    hi: |
-      वर प्रह्लाद नवतार व्यासमुनिवर्य-
-      देरडने अवतार वरयोगि एनिसि |
-      धरेयोळु विस्तरिसि महिमे तोरि उ-
-      द्धरिसि सज्जनरन्नु मेरेदु परम सुख |
-      त्वरितदि तोरिकोट्टु गुरुवर गुणवर्य |
-      सुरमुनि राघवेन्द्र नरन सारथि श्री धन्वन्त्रि विठलन्न |
-      करुण नीक्षिसि तक्षणदि उद्धरिसुव ||
-    en: |
-      vara prahlāda navatāra vyāsamunivarya-
-      deraḍane avatāra varayōgi enisi |
-      dhareyoḷu vistarisi mahime tōri u-
-      ddharisi sajjanarannu meredu parama sukha |
-      tvaritadi tōrikoṭṭu guruvara guṇavarya |
-      suramuni rāghavēndra narana sārathi śrī dhanvantri viṭhalanna |
-      karuṇa nīkṣisi takṣṇadi uddharisuva ||
 
   - type: None
     subtitle_kn: ಜತೆ
-    subtitle_ta: ஜதெ
-    subtitle_hi: जते
-    subtitle_en: jate
     kn: |
       ಆನಂದ ಮುನಿಯಿಂದ ವಂದ್ಯ ಶ್ರೀ ಧನ್ವಂತ್ರಿ ವಿಠಲನಿ-
       ಗೆ ನಮಿಸುವ ರಾಘವೇಂದ್ರ ಗುರುವೆ ನಮೋ ನಮೋ ||
-    ta: |
-      ஆனந்த³ முனியிந்த³ வந்த்³ய ஸ்ரீ த⁴ன்வந்த்ரி விட²லனி-
-      கெ³ நமிஸுவ ராக⁴வேந்த்³ர கு³ருவெ நமோ நமோ ||
-    hi: |
-      आनन्द मुनियिन्द वन्द्य श्री धन्वन्त्रि विठलनि-
-      गे नमिसुव राघवेन्द्र गुरुवे नमो नमो ||
-    en: |
-      ānanda muniyinda vandya śrī dhanvantri viṭhalani-
-      ge namisuva rāghavēndra guruve namō namō ||
 

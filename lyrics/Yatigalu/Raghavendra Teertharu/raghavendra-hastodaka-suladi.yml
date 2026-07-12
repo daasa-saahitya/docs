@@ -1,32 +1,16 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics File (Auto-transliterated)
-# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# Daasa Saahitya - Lyrics File
+# Transliterations are auto-generated at build time
 # ──────────────────────────────────────────────────────────────────
 
 title_kn: ರಾಘವೇಂದ್ರ ಹಸ್ತೋದಕ ಸುಳಾದಿ
-title_ta: ராக⁴வேந்த்³ர ஹஸ்தோத³க ஸுளாதி³
-title_hi: राघवेन्द्र हस्तोदक सुळादि
-title_en: rāghavēndra hastōdaka suḷādi
-
 author_kn: ಗುರು ಜಗನ್ನಾಥ ದಾಸರು
-author_ta: கு³ரு ஜக³ன்னாத² தா³ஸரு
-author_hi: गुरु जगन्नाथ दासरु
-author_en: guru jagannātha dāsaru
-
 ankita_kn: ಗುರು ಜಗನ್ನಾಥ ವಿಠಲ
-ankita_ta: கு³ரு ஜக³ன்னாத² விட²ல
-ankita_hi: गुरु जगन्नाथ विठल
-ankita_en: guru jagannātha viṭhala
-
-
 
 verses:
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    subtitle_ta: த்⁴ருவதாள
-    subtitle_hi: ध्रुवताळ
-    subtitle_en: dhruvatāḷa
     kn: |
       ಹರಿಯು ಉಂಡನ್ನ ನಮ್ಮ ಗುರುರಾಘವೇಂದ್ರರಿಗೆ
       ಪರಮ ಭಕುತಿಯಿಂದ ಅರುಪಿಸೋ ಬಗೆಯನು
@@ -43,61 +27,10 @@ verses:
       ಹರಿ ಉಂಡ ಸ್ಥಳದಲ್ಲಿ ವರಬ್ರಹ್ಮಾಂಡ ಉಂಬೋದು
       ವರಶಾಸ್ತ್ರಸಿದ್ಧವಿದು ಗುರುವಂತರ್ಯಾಮಿ ನಮ್ಮ
       ಗುರುಜಗನ್ನಾಥವಿಠಲ ಪರಮ ಹರುಷ ಬಡುವೋನು ॥
-    ta: |
-      ஹரியு உண்ட³ன்ன நம்ம கு³ருராக⁴வேந்த்³ரரிகெ³
-      பரம ப⁴குதியிந்த³ அருபிஸோ ப³கெ³யனு
-      அரிது நித்யாத³ல்லி பரமப⁴குதரு நீடெ³
-      பரமாத³ராத³ல்லி கு³ரு கைய்ய கொம்பு³வனு
-      வர யதிக³ளன்னோத³க கி³ரி ஸாக³ர ஸமவு
-      மரளி நீடோ³து³ ஜல நிருதத³ல்லி
-      வரப்³ரஹ்மசாரிகி³டெ³ ஸரியெனிஸுவோது³ ப²ல
-      வர கரு³ஹஸ்த²னிகி³த்தன்ன எரடு³ எனிஸுவோது³
-      வர வனஸ்த²னிகி³டெ³ வர ஶதவெனிஸுவோது³
-      பரமஹம்ஸரிகி³டெ³ வர அனந்தவாகு³வுதை³ய்ய
-      அரிது ஈ பரியிந்த³ நிருத நீடு³வோதை³ய்ய
-      கு³ரு உண்ட³ மனெயல்லி ஹரி தானும்பு³வோனு
-      ஹரி உண்ட³ ஸ்த²ளத³ல்லி வரப்³ரஹ்மாண்ட³ உம்போ³து³
-      வரஶாஸ்த்ரஸித்³த⁴விது³ கு³ருவந்தர்யாமி நம்ம
-      கு³ருஜக³ன்னாத²விட²ல பரம ஹருஷ ப³டு³வோனு ॥
-    hi: |
-      हरियु उण्डन्न नम्म गुरुराघवेन्द्ररिगे
-      परम भकुतियिन्द अरुपिसो बगेयनु
-      अरितु नित्यादल्लि परमभकुतरु नीडे
-      परमादरादल्लि गुरु कैय्य कोम्बुवनु
-      वर यतिगळन्नोदक गिरि सागर समवु
-      मरळि नीडोदु जल निरुतदल्लि
-      वरब्रह्मचारिगिडे सरियेनिसुवोदु फल
-      वर गृहस्थनिगित्तन्न एरडु एनिसुवोदु
-      वर वनस्थनिगिडे वर शतवेनिसुवोदु
-      परमहंसरिगिडे वर अनन्तवागुवुदैय्य
-      अरितु ई परियिन्द निरुत नीडुवोदैय्य
-      गुरु उण्ड मनेयल्लि हरि तानुम्बुवोनु
-      हरि उण्ड स्थळदल्लि वरब्रह्माण्ड उम्बोदु
-      वरशास्त्रसिद्धविदु गुरुवन्तर्यामि नम्म
-      गुरुजगन्नाथविठल परम हरुष बडुवोनु ॥
-    en: |
-      hariyu uṇḍanna namma gururāghavēndrarige
-      parama bhakutiyinda arupisō bageyanu
-      aritu nityādalli paramabhakutaru nīḍe
-      paramādarādalli guru kaiyya kombuvanu
-      vara yatigaḷannōdaka giri sāgara samavu
-      maraḷi nīḍōdu jala nirutadalli
-      varabrahmacārigiḍe sariyenisuvōdu phala
-      vara gṛhasthanigittanna eraḍu enisuvōdu
-      vara vanasthanigiḍe vara śatavenisuvōdu
-      paramahaṃsarigiḍe vara anantavāguvudaiyya
-      aritu ī pariyinda niruta nīḍuvōdaiyya
-      guru uṇḍa maneyalli hari tānumbuvōnu
-      hari uṇḍa sthaḷadalli varabrahmāṇḍa umbōdu
-      varaśāstrasiddhavidu guruvantaryāmi namma
-      gurujagannāthaviṭhala parama haruṣa baḍuvōnu ॥
 
   - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟತಾಳ
-    subtitle_ta: மட்டதாள
-    subtitle_hi: मट्टताळ
-    subtitle_en: maṭṭatāḷa
     kn: |
       ಅನ್ನ ಸಾಮಗ್ರದಲ್ಲಿ ಇಂದು ಕೇಶವ ಎನ್ನಿ
       ಮುನ್ನೆ ಭಾರತಿ ಪರಮಾನ್ನ ನಾರಾಯಣ
@@ -117,70 +50,10 @@ verses:
       ಮನ್ಯು ವಾಸುದೇವ ಘನ್ನಮಹಿಮ ಗುರುಜ –
       ಗನ್ನಾಥವಿಠಲ ಪಾವನ್ನ ಪದಯುಗ
       ಮನ್ನದೊಳಗೆ ನೆನೆಸುತಿರು ॥
-    ta: |
-      அன்ன ஸாமக்³ரத³ல்லி இந்து³ கேஶவ என்னி
-      முன்னெ பா⁴ரதி பரமான்ன நாராயண
-      இன்னு ப⁴க்ஷகெ ஸூர்யரன்ன மாத⁴வ, கரு⁴தகெ
-      சென்னெ லக்ஷுமி கோ³விந்த³னு என்னி
-      முன்ன க்ஷீரகெ வாணி அன்னி விஷ்ணுதே³வ
-      க⁴ன்ன மண்டி³கெ³ ப்³ரஹ்ம இன்னு மது⁴கா⁴தி
-      பெ³ண்ணெயல்லி வாயு சென்ன த்ரிவிக்ரம
-      முன்ன த³தீ⁴யல்லி ஸோம வருண வாம –
-      நன்ன திளி, ஸூப சென்ன வீப ஸ்ரீத⁴ர
-      முன்னெ ஶாக² பத்ர ஸ்வன்னக³தி³ர மித்ர
-      சென்ன ஹருஷீகேஶ, இன்னு ப²லத³ல்லி
-      க⁴ன்ன ஶேஷானல்லி ரன்ன பது³மனாப⁴
-      முன்னெ ஆம்லத³ல்லி ஸ்வன்னகௌ³ரீ அல்லி
-      அன்னு தா³மோத³ர அன்னாம்ல பதி ருத்³ர
-      சென்ன ஜயாபதி முன்னெ ஶர்கர ஶத –
-      மன்யு வாஸுதே³வ க⁴ன்னமஹிம கு³ருஜ –
-      க³ன்னாத²விட²ல பாவன்ன பத³யுக³
-      மன்னதொ³ளகெ³ நெனெஸுதிரு ॥
-    hi: |
-      अन्न सामग्रदल्लि इन्दु केशव एन्नि
-      मुन्ने भारति परमान्न नारायण
-      इन्नु भक्षके सूर्यरन्न माधव, घृतके
-      चेन्ने लक्षुमि गोविन्दनु एन्नि
-      मुन्न क्षीरके वाणि अन्नि विष्णुदेव
-      घन्न मण्डिगे ब्रह्म इन्नु मधुघाति
-      बेण्णेयल्लि वायु चेन्न त्रिविक्रम
-      मुन्न दधीयल्लि सोम वरुण वाम –
-      नन्न तिळि, सूप चेन्न वीप श्रीधर
-      मुन्ने शाख पत्र स्वन्नगदिर मित्र
-      चेन्न हृषीकेश, इन्नु फलदल्लि
-      घन्न शेषानल्लि रन्न पदुमनाभ
-      मुन्ने आम्लदल्लि स्वन्नगौरी अल्लि
-      अन्नु दामोदर अन्नाम्ल पति रुद्र
-      चेन्न जयापति मुन्ने शर्कर शत –
-      मन्यु वासुदेव घन्नमहिम गुरुज –
-      गन्नाथविठल पावन्न पदयुग
-      मन्नदोळगे नेनेसुतिरु ॥
-    en: |
-      anna sāmagradalli indu kēśava enni
-      munne bhārati paramānna nārāyaṇa
-      innu bhakṣke sūryaranna mādhava, ghṛtake
-      cenne lakṣumi gōvindanu enni
-      munna kṣīrake vāṇi anni viṣṇudēva
-      ghanna maṇḍige brahma innu madhughāti
-      beṇṇeyalli vāyu cenna trivikrama
-      munna dadhīyalli sōma varuṇa vāma –
-      nanna tiḷi, sūpa cenna vīpa śrīdhara
-      munne śākha patra svannagadira mitra
-      cenna hṛṣīkēśa, innu phaladalli
-      ghanna śēṣānalli ranna padumanābha
-      munne āmladalli svannagaurī alli
-      annu dāmōdara annāmla pati rudra
-      cenna jayāpati munne śarkara śata –
-      manyu vāsudēva ghannamahima guruja –
-      gannāthaviṭhala pāvanna padayuga
-      mannadoḷage nenesutiru ॥
 
   - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
-    subtitle_ta: த்ரிபுடதாள
-    subtitle_hi: त्रिपुटताळ
-    subtitle_en: tripuṭatāḷa
     kn: |
       ಪರಿಪರಿ ಉಪಸ್ಕಾರ ಪರಮೇಷ್ಠಿ ಪ್ರದ್ಯುಮ್ನ
       ಅರಿವೋದು ಕಟು ಯಮ ವರ ಅನಿರುದ್ಧನ್ನ
@@ -201,73 +74,10 @@ verses:
       ವರ ಸ್ವಾದೋದಕದಲ್ಲಿ ಇರುತಿಪ್ಪ ಬುಧನಲ್ಲಿ
       ಇರುತಿಹ ಕೃಷ್ಣದೇವ ಗುರುಜಗನ್ನಾಥವಿಠ್ಠಲ –
       ನರಿತು ನೀಡಲು ನಮ್ಮ ಗುರು ಕೈಯ್ಯ ಕೊಂಬೋನು ॥
-    ta: |
-      பரிபரி உபஸ்கார பரமேஷ்டி² ப்ரத்³யும்ன
-      அரிவோது³ கடு யம வர அனிருத்³த⁴ன்ன
-      வர இங்கு³ ஸாஸிவி ஏல மரீசி
-      ஜீரிகி³யல்லி கர்பூர சந்த³ன கே-
-      ஶர ப³கெ³ப³கெ³ வித⁴ பரிமள த்³ரவ்யகெ
-      ஸ்மரனு புருஷோத்தம தே³வனிப்ப
-      வரரஸ இத்யாதி³ கரு⁴த தைல பக்வதி³
-      இருதிஹ ஜயந்தனதோ⁴க்ஷஜ மூருதி
-      ஸ்மரிஸு கூஷ்மாண்ட³ தில மாஷ ஸண்டி³கெ³யலி
-      வர த³க்ஷ நரஹரி தே³வன நெனிஸு
-      இருதிப்ப மனு மாஷ ப⁴க்ஷ அ –
-      த்⁴வர கார்யகச்யுத மூருதியோ
-      ஸுருசி லவணத³ல்லி நிரருதி ஜனார்த⁴ன
-      இருதிஹ ஶாக² ப²ல ரஸகெ ப்ராணோபேந்த்³ர
-      பரமபுருஷ தே³வனிஹனெந்து³ திளிவோது³
-      வரதாம்பூ³ல க³ங்கா³ ஹரினாமானிருவோனு
-      வர ஸ்வாதோ³த³கத³ல்லி இருதிப்ப பு³த⁴னல்லி
-      இருதிஹ கருஷ்ணதே³வ கு³ருஜக³ன்னாத²விட்²ட²ல –
-      நரிது நீட³லு நம்ம கு³ரு கைய்ய கொம்போ³னு ॥
-    hi: |
-      परिपरि उपस्कार परमेष्ठि प्रद्युम्न
-      अरिवोदु कटु यम वर अनिरुद्धन्न
-      वर इङ्गु सासिवि एल मरीचि
-      जीरिगियल्लि कर्पूर चन्दन के-
-      शर बगेबगे विध परिमळ द्रव्यके
-      स्मरनु पुरुषोत्तम देवनिप्प
-      वररस इत्यादि घृत तैल पक्वदि
-      इरुतिह जयन्तनधोक्षज मूरुति
-      स्मरिसु कूष्माण्ड तिल माष सण्डिगेयलि
-      वर दक्ष नरहरि देवन नेनिसु
-      इरुतिप्प मनु माष भक्ष अ –
-      ध्वर कार्यकच्युत मूरुतियो
-      सुरुचि लवणदल्लि निरऋति जनार्धन
-      इरुतिह शाख फल रसके प्राणोपेन्द्र
-      परमपुरुष देवनिहनेन्दु तिळिवोदु
-      वरताम्बूल गङ्गा हरिनामानिरुवोनु
-      वर स्वादोदकदल्लि इरुतिप्प बुधनल्लि
-      इरुतिह कृष्णदेव गुरुजगन्नाथविठ्ठल –
-      नरितु नीडलु नम्म गुरु कैय्य कोम्बोनु ॥
-    en: |
-      paripari upaskāra paramēṣṭhi pradyumna
-      arivōdu kaṭu yama vara aniruddhanna
-      vara iṅgu sāsivi ēla marīci
-      jīrigiyalli karpūra candana kē-
-      śara bagebage vidha parimaḷa dravyake
-      smaranu puruṣōttama dēvanippa
-      vararasa ityādi ghṛta taila pakvadi
-      irutiha jayantanadhōkṣja mūruti
-      smarisu kūṣmāṇḍa tila māṣa saṇḍigeyali
-      vara dakṣ narahari dēvana nenisu
-      irutippa manu māṣa bhakṣ a –
-      dhvara kāryakacyuta mūrutiyō
-      suruci lavaṇadalli niraṛti janārdhana
-      irutiha śākha phala rasake prāṇōpēndra
-      paramapuruṣa dēvanihanendu tiḷivōdu
-      varatāmbūla gaṅgā harināmāniruvōnu
-      vara svādōdakadalli irutippa budhanalli
-      irutiha kṛṣṇadēva gurujagannāthaviṭhṭhala –
-      naritu nīḍalu namma guru kaiyya kombōnu ॥
 
   - type: None
     number: 4
     subtitle_kn: ಅಟ್ಟತಾಳ
-    subtitle_ta: அட்டதாள
-    subtitle_hi: अट्टताळ
-    subtitle_en: aṭṭatāḷa
     kn: |
       ಒಂದೊಂದು ಕವಳ ಗೋವಿಂದನ್ನ ಸ್ಮರಿಸುತ್ತ
       ಇಂದು ನಿಭಾ ಭಕ್ಷ್ಯ ಕವಳಕ್ಕೆ ಅಚ್ಯುತ –
@@ -291,82 +101,10 @@ verses:
       ಸುಂದರ ಗುರುರಾಘವೇಂದ್ರಾಂತರ್ಗತ ನಮ್ಮ
       ಇಂದಿರಾಪತಿ *ಗುರುಜಗನ್ನಾಥವಿಠಲ* ತಾ –
       ನಂದದಿ ಕೈ ಕೊಂಡು ಮನ್ನಿಸಿ ಪೊರೆವೋನು
-    ta: |
-      ஒந்தொ³ந்து³ கவள கோ³விந்த³ன்ன ஸ்மரிஸுத்த
-      இந்து³ நிபா⁴ ப⁴க்ஷ்ய கவளக்கெ அச்யுத –
-      நெந்து³, ஶாக² கவள த⁴ன்வந்த்ரி ஸ்மரிஸுத்த
-      முந்தெ³ பரமான்ன ஒந்தொ³ந்து³ கவளக்கெ
-      அந்து³ விஷ்ணு பாண்டு³ரங்க³ன்ன ஸ்மரிஸுத்த
-      குந்தி³ல்லதா³ பெ³ண்ணெ உம்பு³வோ காலத³ல்லி
-      ஸுந்த³ர மூருதி தாண்ட³வ கருஷ்ணனு
-      ச²ந்த³ த³த்⁴யன்ன கவளக்கெ ஸ்ரீனிவாஸ –
-      நெந்து³ ஸுதைல கரு⁴த பக்வகெ வேங்கட –
-      நெந்து³ கத³லி த்³ராக்ஷி – க²ர்ஜூர தா³டி³ம
-      ச²ந்த³ நாரிகேள சூத தா⁴த்ரி ஜம்பூ³
-      கந்த³மூல ப²ல ப⁴க்ஷண காலக்கெ
-      நந்த³னந்த³ன பா³லகருஷ்ணன்ன ஸ்மரிஸுத்த –
-      ல்லிந்த³ ஜலபானத³ல்லி விஷ்ணுதே³வ
-      நிந்த்³ராதெ³ வரதாம்பூ³ல கவளத³ல்லி
-      ஸுந்த³ர ப்ரத்³யும்ன தே³வன ஸ்மரிஸுத்த
-      ல்லிந்த³ ஆபோஶன த்³வயத³ல்லி வாயுஸ்த²
-      இந்தி³ரா ரமண முகுந்த³ன தே⁴னிஸி
-      நந்தா³தி³ ஈ ரீதி சிந்திஸி நீட³லு
-      ஸுந்த³ர கு³ருராக⁴வேந்த்³ராந்தர்க³த நம்ம
-      இந்தி³ராபதி *கு³ருஜக³ன்னாத²விட²ல* தா –
-      நந்த³தி³ கை கொண்டு³ மன்னிஸி பொரெவோனு
-    hi: |
-      ओन्दोन्दु कवळ गोविन्दन्न स्मरिसुत्त
-      इन्दु निभा भक्ष्य कवळक्के अच्युत –
-      नेन्दु, शाख कवळ धन्वन्त्रि स्मरिसुत्त
-      मुन्दे परमान्न ओन्दोन्दु कवळक्के
-      अन्दु विष्णु पाण्डुरङ्गन्न स्मरिसुत्त
-      कुन्दिल्लदा बेण्णे उम्बुवो कालदल्लि
-      सुन्दर मूरुति ताण्डव कृष्णनु
-      छन्द दध्यन्न कवळक्के श्रीनिवास –
-      नेन्दु सुतैल घृत पक्वके वेङ्कट –
-      नेन्दु कदलि द्राक्षि – खर्जूर दाडिम
-      छन्द नारिकेळ चूत धात्रि जम्बू
-      कन्दमूल फल भक्षण कालक्के
-      नन्दनन्दन बालकृष्णन्न स्मरिसुत्त –
-      ल्लिन्द जलपानदल्लि विष्णुदेव
-      निन्द्रादे वरताम्बूल कवळदल्लि
-      सुन्दर प्रद्युम्न देवन स्मरिसुत्त
-      ल्लिन्द आपोशन द्वयदल्लि वायुस्थ
-      इन्दिरा रमण मुकुन्दन धेनिसि
-      नन्दादि ई रीति चिन्तिसि नीडलु
-      सुन्दर गुरुराघवेन्द्रान्तर्गत नम्म
-      इन्दिरापति *गुरुजगन्नाथविठल* ता –
-      नन्ददि कै कोण्डु मन्निसि पोरेवोनु
-    en: |
-      ondondu kavaḷa gōvindanna smarisutta
-      indu nibhā bhakṣya kavaḷakke acyuta –
-      nendu, śākha kavaḷa dhanvantri smarisutta
-      munde paramānna ondondu kavaḷakke
-      andu viṣṇu pāṇḍuraṅganna smarisutta
-      kundilladā beṇṇe umbuvō kāladalli
-      sundara mūruti tāṇḍava kṛṣṇanu
-      chanda dadhyanna kavaḷakke śrīnivāsa –
-      nendu sutaila ghṛta pakvake vēṅkaṭa –
-      nendu kadali drākṣi – kharjūra dāḍima
-      chanda nārikēḷa cūta dhātri jambū
-      kandamūla phala bhakṣṇa kālakke
-      nandanandana bālakṛṣṇanna smarisutta –
-      llinda jalapānadalli viṣṇudēva
-      nindrāde varatāmbūla kavaḷadalli
-      sundara pradyumna dēvana smarisutta
-      llinda āpōśana dvayadalli vāyustha
-      indirā ramaṇa mukundana dhēnisi
-      nandādi ī rīti cintisi nīḍalu
-      sundara gururāghavēndrāntargata namma
-      indirāpati *gurujagannāthaviṭhala* tā –
-      nandadi kai koṇḍu mannisi porevōnu
 
   - type: None
     number: 5
     subtitle_kn: ಆದಿತಾಳ
-    subtitle_ta: ஆதி³தாள
-    subtitle_hi: आदिताळ
-    subtitle_en: āditāḷa
     kn: |
       ಅರಿತು ಈ ರೀತಿಂದ ನಿರುತ ಹಸ್ತೋದಕ
       ಗುರುಗಳಿಗರ್ಪಿಸಿ ತ್ವರಿತದಿ ಕೈಕೊಂಡು
@@ -385,76 +123,10 @@ verses:
       ಗುರುಗಳ ಪಾದ ಶಿರದ ಪರಿಯಂತ ಸ್ಮರಿಸಲು ಪಾಪ
       ಪರಿಹಾರವಾಗೋದು ಗುರುವಂತರ್ಗತ ನಮ್ಮ
       *ಗುರುಜಗನ್ನಾಥವಿಠ್ಠಲ* ಪರಮ ಹರುಷ ಬಡುವೋನು॥
-    ta: |
-      அரிது ஈ ரீதிந்த³ நிருத ஹஸ்தோத³க
-      கு³ருக³ளிக³ர்பிஸி த்வரிததி³ கைகொண்டு³
-      பரமஸுக²வித்து பரிபாலிபரிஹ –
-      பரத³ல்லி இவரிகெ³ ப³ருவ து³ரித
-      தரிது³ பொரெவரு இல்லவொ இவரன்ன பி³ட்டரெ
-      ஹரியு அல்லவெ மத்தன்யரு ஆரை
-      ஹரி தா முனியே கு³ருக³ளு காயுவரு
-      கு³ருக³ளு முனியே ஹரி தா காயனு
-      வரஶாஸ்த்ர புராணவு பேளோது³
-      கு³ருவெ தாயிதந்தெ³ கு³ருவெ மமதை³வ
-      கு³ருவெ பரிவார கு³ருவெ க³தி நித்ய
-      கு³ருவெ பாலிஸெந்து³ கு³ருக³ள ப⁴ஜிஸெ
-      கு³ருவு தொ³ரெதரெ ஹரி தா தொ³ரெவனு
-      கு³ருவு மரெதரெ ஹரி தா மரெவனு
-      கு³ருக³ள பாத³ ஶிரத³ பரியந்த ஸ்மரிஸலு பாப
-      பரிஹாரவாகோ³து³ கு³ருவந்தர்க³த நம்ம
-      *கு³ருஜக³ன்னாத²விட்²ட²ல* பரம ஹருஷ ப³டு³வோனு॥
-    hi: |
-      अरितु ई रीतिन्द निरुत हस्तोदक
-      गुरुगळिगर्पिसि त्वरितदि कैकोण्डु
-      परमसुखवित्तु परिपालिपरिह –
-      परदल्लि इवरिगे बरुव दुरित
-      तरिदु पोरेवरु इल्लवो इवरन्न बिट्टरे
-      हरियु अल्लवे मत्तन्यरु आरै
-      हरि ता मुनिये गुरुगळु कायुवरु
-      गुरुगळु मुनिये हरि ता कायनु
-      वरशास्त्र पुराणवु पेळोदु
-      गुरुवे तायितन्दे गुरुवे ममदैव
-      गुरुवे परिवार गुरुवे गति नित्य
-      गुरुवे पालिसेन्दु गुरुगळ भजिसे
-      गुरुवु दोरेतरे हरि ता दोरेवनु
-      गुरुवु मरेतरे हरि ता मरेवनु
-      गुरुगळ पाद शिरद परियन्त स्मरिसलु पाप
-      परिहारवागोदु गुरुवन्तर्गत नम्म
-      *गुरुजगन्नाथविठ्ठल* परम हरुष बडुवोनु॥
-    en: |
-      aritu ī rītinda niruta hastōdaka
-      gurugaḷigarpisi tvaritadi kaikoṇḍu
-      paramasukhavittu paripālipariha –
-      paradalli ivarige baruva durita
-      taridu porevaru illavo ivaranna biṭṭare
-      hariyu allave mattanyaru ārai
-      hari tā muniyē gurugaḷu kāyuvaru
-      gurugaḷu muniyē hari tā kāyanu
-      varaśāstra purāṇavu pēḷōdu
-      guruve tāyitande guruve mamadaiva
-      guruve parivāra guruve gati nitya
-      guruve pālisendu gurugaḷa bhajise
-      guruvu doretare hari tā dorevanu
-      guruvu maretare hari tā marevanu
-      gurugaḷa pāda śirada pariyanta smarisalu pāpa
-      parihāravāgōdu guruvantargata namma
-      *gurujagannāthaviṭhṭhala* parama haruṣa baḍuvōnu॥
 
   - type: None
     subtitle_kn: ಜತೆ
-    subtitle_ta: ஜதெ
-    subtitle_hi: जते
-    subtitle_en: jate
     kn: |
       ಚಿಂತಿಸಿ ಪದಾರ್ಥ ಇಂತು ನೀಡಲು ಗುರು –
       ವಂತರ್ಗತ *ಗುರುಜಗನ್ನಾಥವಿಠ್ಠಲ* ಕೊಂಬ
-    ta: |
-      சிந்திஸி பதா³ர்த² இந்து நீட³லு கு³ரு –
-      வந்தர்க³த *கு³ருஜக³ன்னாத²விட்²ட²ல* கொம்ப³
-    hi: |
-      चिन्तिसि पदार्थ इन्तु नीडलु गुरु –
-      वन्तर्गत *गुरुजगन्नाथविठ्ठल* कोम्ब
-    en: |
-      cintisi padārtha intu nīḍalu guru –
-      vantargata *gurujagannāthaviṭhṭhala* komba
 

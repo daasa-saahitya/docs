@@ -1,0 +1,231 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - Lyrics File (Auto-transliterated)
+# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# ──────────────────────────────────────────────────────────────────
+
+title_kn: ರುದ್ರ ದೇವರ ಸುಳಾದಿ
+title_ta: ருத்³ர தே³வர ஸுளாதி³
+title_hi: रुद्र देवर सुळादि
+title_en: rudra dēvara suḷādi
+
+author_kn: ಅಭಿನವ ಪ್ರಾಣೇಶ ದಾಸರು
+author_ta: அபி⁴னவ ப்ராணேஶ தா³ஸரு
+author_hi: अभिनव प्राणेश दासरु
+author_en: abhinava prāṇēśa dāsaru
+
+
+raga_kn: ಹಂಸಾನಂದಿ
+raga_ta: ஹம்ஸானந்தி³
+raga_hi: हंसानन्दि
+raga_en: haṃsānandi
+
+
+verses:
+  - type: None
+    number: 1
+    subtitle_kn: ಧ್ರುವತಾಳ
+    subtitle_ta: த்⁴ருவதாள
+    subtitle_hi: ध्रुवताळ
+    subtitle_en: dhruvatāḷa
+    kn: |
+      ಕಾಮಿತಪ್ರದ ರಘು ರಾಮ ಚಂದ್ರನ ಪಾದ
+      ತಾಮರಸಾಳಿ ಶಿಖಿ ಸೋಮಾರ್ಕ ನಯನನೆ |
+      ಭೀಮ ವಿಕ್ರಮ ಸುತ್ರಾಮಾದಿ ಸುರವಂದ್ಯ
+      ವ್ಯೋಮಕೇಶನೆ ಭವ ವಾಮ ದೇವ ||
+      ಭೂಮಿಜ ವೈರಿ ಸಖ ಭೂಮಿರಥನೆ ನಿನ್ನ
+      ನಾಮ ಸುಧೆಯನುಣಿಸು ಕಾಮಾರಿಯೆ
+      ರಾಮಾ ನಾಮಾಭಿನವ ಪ್ರಾಣೇಶ ವಿಠಲನ
+    ta: |
+      காமிதப்ரத³ ரகு⁴ ராம சந்த்³ரன பாத³
+      தாமரஸாளி ஶிகி² ஸோமார்க நயனனெ |
+      பீ⁴ம விக்ரம ஸுத்ராமாதி³ ஸுரவந்த்³ய
+      வ்யோமகேஶனெ ப⁴வ வாம தே³வ ||
+      பூ⁴மிஜ வைரி ஸக² பூ⁴மிரத²னெ நின்ன
+      நாம ஸுதெ⁴யனுணிஸு காமாரியெ
+      ராமா நாமாபி⁴னவ ப்ராணேஶ விட²லன
+      யாம யாமகெ ப⁴ஜிஸலா மன ப்ரேரிஸு ॥
+    hi: |
+      कामितप्रद रघु राम चन्द्रन पाद
+      तामरसाळि शिखि सोमार्क नयनने |
+      भीम विक्रम सुत्रामादि सुरवन्द्य
+      व्योमकेशने भव वाम देव ||
+      भूमिज वैरि सख भूमिरथने निन्न
+      नाम सुधेयनुणिसु कामारिये
+      रामा नामाभिनव प्राणेश विठलन
+      याम यामके भजिसला मन प्रेरिसु ॥
+    en: |
+      kāmitaprada raghu rāma candrana pāda
+      tāmarasāḷi śikhi sōmārka nayanane |
+      bhīma vikrama sutrāmādi suravandya
+      vyōmakēśane bhava vāma dēva ||
+      bhūmija vairi sakha bhūmirathane ninna
+      nāma sudheyanuṇisu kāmāriye
+      rāmā nāmābhinava prāṇēśa viṭhalana
+      yāma yāmake bhajisalā mana prērisu ॥
+
+  - type: None
+    number: 2
+    subtitle_kn: ಮಟ್ಟತಾಳ
+    subtitle_ta: மட்டதாள
+    subtitle_hi: मट्टताळ
+    subtitle_en: maṭṭatāḷa
+    kn: |
+      ಅದ್ರಿಕುವರಿಲೋಲ ಕ್ಷುದ್ರದಿತಿಜಕಾಲ
+      ನಿದ್ರ ರಹಿತ ಖ್ಯಾತ ಭದ್ರ ಭಕುತಿದಾತ
+      ಅದ್ರಿ ರಜತವಾಸ ಕದ್ರು ವೇಯಾ ಭೂಷಾ
+      ಭದ್ರ ಮೂರ್ತ್ಯಾಭಿನವ ಪ್ರಾಣೇಶವಿಠಲನ
+      ಅದ್ರಿ ಭಕುತಿಯ ನೀಡು ಮಾದ್ರಿಜಾಗ್ರಜ ಗುರುವೇ
+    ta: |
+      அத்³ரிகுவரிலோல க்ஷுத்³ரதி³திஜகால
+      நித்³ர ரஹித க்²யாத ப⁴த்³ர ப⁴குதிதா³த
+      அத்³ரி ரஜதவாஸ கத்³ரு வேயா பூ⁴ஷா
+      ப⁴த்³ர மூர்த்யாபி⁴னவ ப்ராணேஶவிட²லன
+      அத்³ரி ப⁴குதிய நீடு³ மாத்³ரிஜாக்³ரஜ கு³ருவே
+    hi: |
+      अद्रिकुवरिलोल क्षुद्रदितिजकाल
+      निद्र रहित ख्यात भद्र भकुतिदात
+      अद्रि रजतवास कद्रु वेया भूषा
+      भद्र मूर्त्याभिनव प्राणेशविठलन
+      अद्रि भकुतिय नीडु माद्रिजाग्रज गुरुवे
+    en: |
+      adrikuvarilōla kṣudraditijakāla
+      nidra rahita khyāta bhadra bhakutidāta
+      adri rajatavāsa kadru vēyā bhūṣā
+      bhadra mūrtyābhinava prāṇēśaviṭhalana
+      adri bhakutiya nīḍu mādrijāgraja guruvē
+
+  - type: None
+    number: 3
+    subtitle_kn: ತ್ರಿಪುಟತಾಳ
+    subtitle_ta: த்ரிபுடதாள
+    subtitle_hi: त्रिपुटताळ
+    subtitle_en: tripuṭatāḷa
+    kn: |
+      ಗಜಮುಖ ಜನಕನೆ ಕುಜನ ಕುಠಾರನೆ
+      ಅಜ ಸುತ ಬಲ ಸಾಮಜ ಮರ್ದನ
+      ಅಜಿನಾಂಬರ ಧರ ಸುಜನ ಮನ ಮಂದಿರ
+      ವಿಜಯ ಸನ್ನುತ ಪಾದಾಂಬುಜ ಶಂಭುಶಂಕರ
+      ತ್ರಿಜಗಪಾಲಾಭಿನವ ಪ್ರಾಣೇಶವಿಠಲನ
+    ta: |
+      க³ஜமுக² ஜனகனெ குஜன குடா²ரனெ
+      அஜ ஸுத ப³ல ஸாமஜ மர்த³ன
+      அஜினாம்ப³ர த⁴ர ஸுஜன மன மந்தி³ர
+      விஜய ஸன்னுத பாதா³ம்பு³ஜ ஶம்பு⁴ஶங்கர
+      த்ரிஜக³பாலாபி⁴னவ ப்ராணேஶவிட²லன
+      ப⁴ஜனெ பாலிஸு ஜீயா ஸுஜனக³ணகே³ய ॥
+    hi: |
+      गजमुख जनकने कुजन कुठारने
+      अज सुत बल सामज मर्दन
+      अजिनाम्बर धर सुजन मन मन्दिर
+      विजय सन्नुत पादाम्बुज शम्भुशङ्कर
+      त्रिजगपालाभिनव प्राणेशविठलन
+      भजने पालिसु जीया सुजनगणगेय ॥
+    en: |
+      gajamukha janakane kujana kuṭhārane
+      aja suta bala sāmaja mardana
+      ajināmbara dhara sujana mana mandira
+      vijaya sannuta pādāmbuja śambhuśaṅkara
+      trijagapālābhinava prāṇēśaviṭhalana
+      bhajane pālisu jīyā sujanagaṇagēya ॥
+
+  - type: None
+    number: 4
+    subtitle_kn: ಅಟ್ಟತಾಳ
+    subtitle_ta: அட்டதாள
+    subtitle_hi: अट्टताळ
+    subtitle_en: aṭṭatāḷa
+    kn: |
+      ಆರುಮೊಗನ ಪೆತ್ತ ಚಾರು ಚರಿತ್ರನೆ
+      ಮೂರಧಿಕ ಶಾರೀರ ವರ್ಣನೆ
+      ಧಾರುಣಿಯೊಳು ಲಿಂಗಾಕಾರದಿ ಪೂಜ್ಯನೆ
+      ಘೋರ ನಿಸ್ಸಾರ ಸಂಸಾರದೊಳಗೆ ಬಿದ್ದು
+      ಆರೆಂಟು ಅರಿಗಳ ಮೀರಿದೆ ಉಪಟಳ
+      ಆರಲಾರೆನು ದೇವಾ ಪಾರುಗಾಣಿಸು ಭವ
+      ಮಾರ ಶರವ ಹರಿ ಮಾರದೇವನ ವೈರಿ
+      ಈರ ಪಿತನಭಿನವ ಪ್ರಾಣೇಶ ವಿಠಲನ
+    ta: |
+      ஆருமொக³ன பெத்த சாரு சரித்ரனெ
+      மூரதி⁴க ஶாரீர வர்ணனெ
+      தா⁴ருணியொளு லிங்கா³காரதி³ பூஜ்யனெ
+      கோ⁴ர நிஸ்ஸார ஸம்ஸாரதொ³ளகெ³ பி³த்³து³
+      ஆரெண்டு அரிக³ள மீரிதெ³ உபடள
+      ஆரலாரெனு தே³வா பாருகா³ணிஸு ப⁴வ
+      மார ஶரவ ஹரி மாரதே³வன வைரி
+      ஈர பிதனபி⁴னவ ப்ராணேஶ விட²லன
+      சாரு தா³ஸ்யவனீயோ ஶிவ மஹாதே³வ ॥
+    hi: |
+      आरुमोगन पेत्त चारु चरित्रने
+      मूरधिक शारीर वर्णने
+      धारुणियोळु लिङ्गाकारदि पूज्यने
+      घोर निस्सार संसारदोळगे बिद्दु
+      आरेण्टु अरिगळ मीरिदे उपटळ
+      आरलारेनु देवा पारुगाणिसु भव
+      मार शरव हरि मारदेवन वैरि
+      ईर पितनभिनव प्राणेश विठलन
+      चारु दास्यवनीयो शिव महादेव ॥
+    en: |
+      ārumogana petta cāru caritrane
+      mūradhika śārīra varṇane
+      dhāruṇiyoḷu liṅgākāradi pūjyane
+      ghōra nissāra saṃsāradoḷage biddu
+      āreṇṭu arigaḷa mīride upaṭaḷa
+      āralārenu dēvā pārugāṇisu bhava
+      māra śarava hari māradēvana vairi
+      īra pitanabhinava prāṇēśa viṭhalana
+      cāru dāsyavanīyō śiva mahādēva ॥
+
+  - type: None
+    number: 5
+    subtitle_kn: ಆದಿತಾಳ
+    subtitle_ta: ஆதி³தாள
+    subtitle_hi: आदिताळ
+    subtitle_en: āditāḷa
+    kn: |
+      ನಿಟಿಲನಯನ ಸುರ ಕಟಕಾದ್ಯಪನೆ
+      ಕುಟಿಲವ ಬಿಡಿಸಯ್ಯ ಪಟುತರ ದೇವನೆ
+      ಖಟವಪಾಣಿ ಧೂರ್ಜಟಿ ಮೃಗಲಾಂಛನ
+      ಕಠಿಣ ಭವಾಂಬುಧಿ ಘಟಜ ಭಕ್ತಾಮಯ
+      ಅಟವಿ ಧನಂಜಯ ಸ್ಫಟಿಕ ಸನ್ನಿಭಕಾಯ
+      ಚಟುಲಭಿನವ ಪ್ರಾಣೇಶವಿಠಲನೆ ಧ್ಯಾನ
+    ta: |
+      நிடிலனயன ஸுர கடகாத்³யபனெ
+      குடிலவ பி³டி³ஸய்ய படுதர தே³வனெ
+      க²டவபாணி தூ⁴ர்ஜடி மருக³லாஞ்ச²ன
+      கடி²ண ப⁴வாம்பு³தி⁴ க⁴டஜ ப⁴க்தாமய
+      அடவி த⁴னஞ்ஜய ஸ்ப²டிக ஸன்னிப⁴காய
+      சடுலபி⁴னவ ப்ராணேஶவிட²லனெ த்⁴யான
+      க⁴டக க⁴டகத³ல்லி க⁴டனெ மாடி³ஸோ ஶிவனே ॥
+    hi: |
+      निटिलनयन सुर कटकाद्यपने
+      कुटिलव बिडिसय्य पटुतर देवने
+      खटवपाणि धूर्जटि मृगलाञ्छन
+      कठिण भवाम्बुधि घटज भक्तामय
+      अटवि धनञ्जय स्फटिक सन्निभकाय
+      चटुलभिनव प्राणेशविठलने ध्यान
+      घटक घटकदल्लि घटने माडिसो शिवने ॥
+    en: |
+      niṭilanayana sura kaṭakādyapane
+      kuṭilava biḍisayya paṭutara dēvane
+      khaṭavapāṇi dhūrjaṭi mṛgalāñchana
+      kaṭhiṇa bhavāmbudhi ghaṭaja bhaktāmaya
+      aṭavi dhanañjaya sphaṭika sannibhakāya
+      caṭulabhinava prāṇēśaviṭhalane dhyāna
+      ghaṭaka ghaṭakadalli ghaṭane māḍisō śivanē ॥
+
+  - type: None
+    subtitle_kn: ಜತೆ
+    subtitle_ta: ஜதெ
+    subtitle_hi: जते
+    subtitle_en: jate
+    kn: |
+      ಮನದೊಡೆಯನೆ ಎನ್ಮನ ಚಂಚಲವ ಕಳೆ
+    ta: |
+      மனதொ³டெ³யனெ என்மன சஞ்சலவ களெ
+      க⁴ன நிப⁴ அபி⁴னவ ப்ராணேஶ விட²லன ஸக²னெ ॥
+    hi: |
+      मनदोडेयने एन्मन चञ्चलव कळे
+      घन निभ अभिनव प्राणेश विठलन सखने ॥
+    en: |
+      manadoḍeyane enmana cañcalava kaḷe
+      ghana nibha abhinava prāṇēśa viṭhalana sakhane ॥
+

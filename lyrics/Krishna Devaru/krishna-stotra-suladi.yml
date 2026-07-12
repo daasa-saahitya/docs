@@ -1,36 +1,17 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics File (Auto-transliterated)
-# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# Daasa Saahitya - Lyrics File
+# Transliterations are auto-generated at build time
 # ──────────────────────────────────────────────────────────────────
 
 title_kn: ಕೃಷ್ಣ ಸ್ತೋತ್ರ ಸುಳಾದಿ
-title_ta: கருஷ்ண ஸ்தோத்ர ஸுளாதி³
-title_hi: कृष्ण स्तोत्र सुळादि
-title_en: kṛṣṇa stōtra suḷādi
-
 author_kn: ಬೇಲೂರು ವೈಕುಂಠ ವಿಟ್ಟಲ ದಾಸರು
-author_ta: பே³லூரு வைகுண்ட² விட்டல தா³ஸரு
-author_hi: बेलूरु वैकुण्ठ विट्टल दासरु
-author_en: bēlūru vaikuṇṭha viṭṭala dāsaru
-
 ankita_kn: ವೈಕುಂಠ ವಿಟ್ಟಲ
-ankita_ta: வைகுண்ட² விட்டல
-ankita_hi: वैकुण्ठ विट्टल
-ankita_en: vaikuṇṭha viṭṭala
-
 raga_kn: ಬೃಂದಾವನ ಸಾರಂಗ
-raga_ta: பரு³ந்தா³வன ஸாரங்க³
-raga_hi: बृन्दावन सारङ्ग
-raga_en: bṛndāvana sāraṅga
-
 
 verses:
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    subtitle_ta: த்⁴ருவதாள
-    subtitle_hi: ध्रुवताळ
-    subtitle_en: dhruvatāḷa
     kn: |
       ಎಲ್ಲಿಹ ಮಧುರಾಪುರ ಇನ್ನೆಲ್ಲಿಹ ಕಂಸಾಸುರನೆ
       ಎಲ್ಲಿಂದ ಬಂದುದೆ ಬಿಲ್ಲುಹಬ್ಬ ತಾನು
@@ -38,179 +19,53 @@ verses:
       ಎಲ್ಲಿ ನಮ್ಮ ಗೋವಿಂದನೊಡಗೊಂಡುನೊಯ್ದನೆ
       ಎಲ್ಲಿಯ ಮನೆ ನಮಗಿನ್ನೆಲ್ಲಿಯ ಮನೆವಾರತೆ
       ಎಲ್ಲಿ ನಮ್ಮ ವೈಕುಂಠವಿಠ್ಠಲ
-    ta: |
-      எல்லிஹ மது⁴ராபுர இன்னெல்லிஹ கம்ஸாஸுரனெ
-      எல்லிந்த³ ப³ந்து³தெ³ பி³ல்லுஹப்³ப³ தானு
-      எல்லிஹனக்ரூரனிவ தானல்லிந்த³ ப³ந்த³னெ
-      எல்லி நம்ம கோ³விந்த³னொட³கொ³ண்டு³னொய்த³னெ
-      எல்லிய மனெ நமகி³ன்னெல்லிய மனெவாரதெ
-      எல்லி நம்ம வைகுண்ட²விட்²ட²ல 
-      எல்லிக்³ஹோத³ட³ல்லிகெ³ ஹோஹ நோடெ³ கெளதி³ ॥
-    hi: |
-      एल्लिह मधुरापुर इन्नेल्लिह कंसासुरने
-      एल्लिन्द बन्दुदे बिल्लुहब्ब तानु
-      एल्लिहनक्रूरनिव तानल्लिन्द बन्दने
-      एल्लि नम्म गोविन्दनोडगोण्डुनोय्दने
-      एल्लिय मने नमगिन्नेल्लिय मनेवारते
-      एल्लि नम्म वैकुण्ठविठ्ठल 
-      एल्लिग्होदडल्लिगे होह नोडे केळदि ॥
-    en: |
-      elliha madhurāpura innelliha kaṃsāsurane
-      ellinda bandude billuhabba tānu
-      ellihanakrūraniva tānallinda bandane
-      elli namma gōvindanoḍagoṇḍunoydane
-      elliya mane namaginnelliya manevārate
-      elli namma vaikuṇṭhaviṭhṭhala 
-      ellighōdaḍallige hōha nōḍe keḷadi ॥
 
   - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟತಾಳ
-    subtitle_ta: மட்டதாள
-    subtitle_hi: मट्टताळ
-    subtitle_en: maṭṭatāḷa
     kn: |
       ಈತಗೆಲ್ಲಿ ದೊರಕಿತೆ ಮಾತಿನ ಅಕ್ರೂರತನ ನೋಡೇ ಕೆಳದಿ
       ಭೂತಳಕೆ ಪೆಸರಾದಕ್ರೂರಗೆ ಮಾತಿನ ಕ್ರೂರತನ ನೋಡೆ ಕೆಳದಿ
       ಯಾತಕೆ ವೈಕುಂಠವಿಠ್ಠಲ ನಗಲಿಸುವಗೆ
-    ta: |
-      ஈதகெ³ல்லி தொ³ரகிதெ மாதின அக்ரூரதன நோடே³ கெளதி³
-      பூ⁴தளகெ பெஸராத³க்ரூரகெ³ மாதின க்ரூரதன நோடெ³ கெளதி³
-      யாதகெ வைகுண்ட²விட்²ட²ல நக³லிஸுவகெ³
-      மாதின க்ரூரதன நோடெ³ கெளதி³ ॥
-    hi: |
-      ईतगेल्लि दोरकिते मातिन अक्रूरतन नोडे केळदि
-      भूतळके पेसरादक्रूरगे मातिन क्रूरतन नोडे केळदि
-      यातके वैकुण्ठविठ्ठल नगलिसुवगे
-      मातिन क्रूरतन नोडे केळदि ॥
-    en: |
-      ītagelli dorakite mātina akrūratana nōḍē keḷadi
-      bhūtaḷake pesarādakrūrage mātina krūratana nōḍe keḷadi
-      yātake vaikuṇṭhaviṭhṭhala nagalisuvage
-      mātina krūratana nōḍe keḷadi ॥
 
   - type: None
     number: 3
     subtitle_kn: ರೂಪಕತಾಳ
-    subtitle_ta: ரூபகதாள
-    subtitle_hi: रूपकताळ
-    subtitle_en: rūpakatāḷa
     kn: |
       ಬಿಲ್ಲುಹಬ್ಬ ಮಧುರಾಪುರದಲ್ಲಿ ನಿನಗೆ ಕೃಷ್ಣಯ್ಯಾ ನಿನ್ನ
       ಬಿಲ್ಲುಹಬ್ಬ ಸ್ಮರಗೆಮ್ಮನೊಪ್ಪಿಸಿತು ನಿನ್ನ
-    ta: |
-      பி³ல்லுஹப்³ப³ மது⁴ராபுரத³ல்லி நினகெ³ கருஷ்ணய்யா நின்ன
-      பி³ல்லுஹப்³ப³ ஸ்மரகெ³ம்மனொப்பிஸிது நின்ன
-      பி³ல்லு வல்லப⁴ வைகுண்ட²விட்²ட²ல நின்ன பி³ல்லுஹப்³ப³ ॥
-    hi: |
-      बिल्लुहब्ब मधुरापुरदल्लि निनगे कृष्णय्या निन्न
-      बिल्लुहब्ब स्मरगेम्मनोप्पिसितु निन्न
-      बिल्लु वल्लभ वैकुण्ठविठ्ठल निन्न बिल्लुहब्ब ॥
-    en: |
-      billuhabba madhurāpuradalli ninage kṛṣṇayyā ninna
-      billuhabba smaragemmanoppisitu ninna
-      billu vallabha vaikuṇṭhaviṭhṭhala ninna billuhabba ॥
 
   - type: None
     number: 4
     subtitle_kn: ಝಂಪೆತಾಳ
-    subtitle_ta: ஜ²ம்பெதாள
-    subtitle_hi: झम्पेताळ
-    subtitle_en: jhampetāḷa
     kn: |
       ಚರಣಸರಸಿಜವು ನಮ್ಮ ಶಿರದ ಮೇಲಿಡು ಕೃಷ್ಣ
       ಮರಳಿ ನಮ್ಮ ಗೋಕುಲಕ್ಕೆ ಬಾಹವೆಂತ
       ಪರಮಪುರುಷ ಪುರುಷೋತ್ತಮ
       ಮರಳಿ ನಮ್ಮ ಗೋಕುಲಕೆ ಬಾಹದೆಂತು
-    ta: |
-      சரணஸரஸிஜவு நம்ம ஶிரத³ மேலிடு³ கருஷ்ண
-      மரளி நம்ம கோ³குலக்கெ பா³ஹவெந்த
-      பரமபுருஷ புருஷோத்தம
-      மரளி நம்ம கோ³குலகெ பா³ஹதெ³ந்து
-      ஸிரிரமண வைகுண்ட²விட்²ட²ல மரளெ ॥
-    hi: |
-      चरणसरसिजवु नम्म शिरद मेलिडु कृष्ण
-      मरळि नम्म गोकुलक्के बाहवेन्त
-      परमपुरुष पुरुषोत्तम
-      मरळि नम्म गोकुलके बाहदेन्तु
-      सिरिरमण वैकुण्ठविठ्ठल मरळे ॥
-    en: |
-      caraṇasarasijavu namma śirada mēliḍu kṛṣṇa
-      maraḷi namma gōkulakke bāhaventa
-      paramapuruṣa puruṣōttama
-      maraḷi namma gōkulake bāhadentu
-      siriramaṇa vaikuṇṭhaviṭhṭhala maraḷe ॥
 
   - type: None
     number: 5
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
-    subtitle_ta: த்ரிபுடதாள
-    subtitle_hi: त्रिपुटताळ
-    subtitle_en: tripuṭatāḷa
     kn: |
       ಮೂರುತಿ ಮನದಲ್ಲಿ ಕೀರುತಿ ಕಿವಿಯಲ್ಲಿ
       ಇರಿಸು ರಮಾರಮಣನೆ ಅನ್ಯ ವಿ-
       ಚಾರ ನಮಗ್ಯಾತಕಯ್ಯಾ ಮಾರಮಣನೆ
       ವಾರಿಜಾಕ್ಷ ವೈಕುಂಠವಿಠ್ಠಲ
-    ta: |
-      மூருதி மனத³ல்லி கீருதி கிவியல்லி
-      இரிஸு ரமாரமணனெ அன்ய வி-
-      சார நமக்³யாதகய்யா மாரமணனெ
-      வாரிஜாக்ஷ வைகுண்ட²விட்²ட²ல 
-      கருணாகரென்ன மாரமணனெ॥
-    hi: |
-      मूरुति मनदल्लि कीरुति किवियल्लि
-      इरिसु रमारमणने अन्य वि-
-      चार नमग्यातकय्या मारमणने
-      वारिजाक्ष वैकुण्ठविठ्ठल 
-      करुणाकरेन्न मारमणने॥
-    en: |
-      mūruti manadalli kīruti kiviyalli
-      irisu ramāramaṇane anya vi-
-      cāra namagyātakayyā māramaṇane
-      vārijākṣ vaikuṇṭhaviṭhṭhala 
-      karuṇākarenna māramaṇane॥
 
   - type: None
     number: 6
     subtitle_kn: ಅಟ್ಟತಾಳ
-    subtitle_ta: அட்டதாள
-    subtitle_hi: अट्टताळ
-    subtitle_en: aṭṭatāḷa
     kn: |
       ಹರಿ ಕರುಣಾಮೃತಂಬುಧಿಯಲೋಲಾಡಿ
       ಮರಳಿ ವಿಯೋಗ ದು:ಖದಿ ಮುಳುಗಾಡಿ
       ಹರಿ ವಿರಹದಿ ಕಳ್ಳರಾಗಿ ತಿರುಗಿ
       ಮರಳೆ ವಿಯೋಗ
       ಸಿರಿರಮಣ ವೈಕುಂಠವಿಠ್ಠಲರೇಯಾ
-    ta: |
-      ஹரி கருணாமருதம்பு³தி⁴யலோலாடி³
-      மரளி வியோக³ து³:க²தி³ முளுகா³டி³
-      ஹரி விரஹதி³ கள்ளராகி³ திருகி³
-      மரளெ வியோக³
-      ஸிரிரமண வைகுண்ட²விட்²ட²லரேயா 
-      பொரெயபே³கு நின்ன நெரெ நம்பி³த³வர ॥
-    hi: |
-      हरि करुणामृतम्बुधियलोलाडि
-      मरळि वियोग दु:खदि मुळुगाडि
-      हरि विरहदि कळ्ळरागि तिरुगि
-      मरळे वियोग
-      सिरिरमण वैकुण्ठविठ्ठलरेया 
-      पोरेयबेकु निन्न नेरे नम्बिदवर ॥
-    en: |
-      hari karuṇāmṛtambudhiyalōlāḍi
-      maraḷi viyōga du:khadi muḷugāḍi
-      hari virahadi kaḷḷarāgi tirugi
-      maraḷe viyōga
-      siriramaṇa vaikuṇṭhaviṭhṭhalarēyā 
-      poreyabēku ninna nere nambidavara ॥
 
   - type: None
     number: 7
     subtitle_kn: ಆದಿತಾಳ
-    subtitle_ta: ஆதி³தாள
-    subtitle_hi: आदिताळ
-    subtitle_en: āditāḷa
     kn: |
       ಹರಿ ವಿರಹದಿ ಬೆಚ್ಚಂತರಂಗದಿ
       ಸ್ಮರನರಳಂಬಿಗೊಡ್ಡಿದ ಬಹಿರಂಗದಿ
@@ -218,45 +73,9 @@ verses:
       ತಿರುಗುವ ತರುಣಿಯ ಜನರನ್ನ
       ಸಿರಿರಮಣ ವೈಕುಂಠವಿಠಲರೇಯಾ 
       ಪೊರೆಯಬೇಕು ನಿನ್ನ ನೆರೆ ನಂಬಿದವರನ್ನ
-    ta: |
-      ஹரி விரஹதி³ பெ³ச்சந்தரங்க³தி³
-      ஸ்மரனரளம்பி³கொ³ட்³டி³த³ ப³ஹிரங்க³தி³
-      தருணிய ஜனரத்த ஹரி விரஹதி³ கள்ளராகி³
-      திருகு³வ தருணிய ஜனரன்ன
-      ஸிரிரமண வைகுண்ட²விட²லரேயா 
-      பொரெயபே³கு நின்ன நெரெ நம்பி³த³வரன்ன
-      தருணிய ஜனரன்ன ॥
-    hi: |
-      हरि विरहदि बेच्चन्तरङ्गदि
-      स्मरनरळम्बिगोड्डिद बहिरङ्गदि
-      तरुणिय जनरत्त हरि विरहदि कळ्ळरागि
-      तिरुगुव तरुणिय जनरन्न
-      सिरिरमण वैकुण्ठविठलरेया 
-      पोरेयबेकु निन्न नेरे नम्बिदवरन्न
-      तरुणिय जनरन्न ॥
-    en: |
-      hari virahadi beccantaraṅgadi
-      smaranaraḷambigoḍḍida bahiraṅgadi
-      taruṇiya janaratta hari virahadi kaḷḷarāgi
-      tiruguva taruṇiya janaranna
-      siriramaṇa vaikuṇṭhaviṭhalarēyā 
-      poreyabēku ninna nere nambidavaranna
-      taruṇiya janaranna ॥
 
   - type: None
     subtitle_kn: ಜತೆ
-    subtitle_ta: ஜதெ
-    subtitle_hi: जते
-    subtitle_en: jate
     kn: |
       ಗೋಕುಲದ ಗೋಪಾಂಗನೆಯರುಗಳು
-    ta: |
-      கோ³குலத³ கோ³பாங்க³னெயருக³ளு
-      லோகேஶ வைகுண்ட²விட்²ட²லன்ன நெனெத³ரு கோ³குலதி³ ॥
-    hi: |
-      गोकुलद गोपाङ्गनेयरुगळु
-      लोकेश वैकुण्ठविठ्ठलन्न नेनेदरु गोकुलदि ॥
-    en: |
-      gōkulada gōpāṅganeyarugaḷu
-      lōkēśa vaikuṇṭhaviṭhṭhalanna nenedaru gōkuladi ॥
 

@@ -112,6 +112,13 @@ body {
   background: var(--parchment-dark);
   border-bottom: 1px solid var(--rule-light);
   margin-bottom: 1.5rem;
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid var(--rule-light);
+  border-radius: 24px;
+  margin-top: 0;
 }
 
 .breadcrumb-inner {
@@ -703,7 +710,8 @@ body {
 
   .site-header,
   .index-page,
-  .song-page {
+  .song-page,
+  .breadcrumb-nav {
     width: 90%;
     max-width: 100%;
     margin: 0 auto;
@@ -712,6 +720,11 @@ body {
 
   .site-header {
     margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .breadcrumb-nav {
+    margin-top: 0;
     margin-bottom: 0.5rem;
   }
 
@@ -770,7 +783,8 @@ body {
 
   .site-header,
   .index-page,
-  .song-page {
+  .song-page,
+  .breadcrumb-nav {
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -782,6 +796,10 @@ body {
   .site-header {
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .breadcrumb-nav {
+    margin-bottom: 0.5rem;
   }
 
   .index-page,

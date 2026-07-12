@@ -1,36 +1,17 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics File (Auto-transliterated)
-# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# Daasa Saahitya - Lyrics File
+# Transliterations are auto-generated at build time
 # ──────────────────────────────────────────────────────────────────
 
 title_kn: ಯಂತ್ರೋದ್ಧಾರಕ ಪ್ರಾಣದೇವರ ಸುಳಾದಿ
-title_ta: யந்த்ரோத்³தா⁴ரக ப்ராணதே³வர ஸுளாதி³
-title_hi: यन्त्रोद्धारक प्राणदेवर सुळादि
-title_en: yantrōddhāraka prāṇadēvara suḷādi
-
 author_kn: ವಿಜಯ ದಾಸರು
-author_ta: விஜய தா³ஸரு
-author_hi: विजय दासरु
-author_en: vijaya dāsaru
-
 ankita_kn: ವಿಜಯ ವಿಟ್ಟಲ
-ankita_ta: விஜய விட்டல
-ankita_hi: विजय विट्टल
-ankita_en: vijaya viṭṭala
-
 raga_kn: ಮೋಹನ
-raga_ta: மோஹன
-raga_hi: मोहन
-raga_en: mōhana
-
 
 verses:
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    subtitle_ta: த்⁴ருவதாள
-    subtitle_hi: ध्रुवताळ
-    subtitle_en: dhruvatāḷa
     kn: |
       ಯಂತ್ರೋದ್ಧಾರಕ ಹನುಮಾ ಸುರಸಾರ್ವಭೌಮಾ 
       ಮಂತ್ರಧಾರಕ ಎನಗೆ ಮನಸಿನೊಳಗೆ 
@@ -39,37 +20,10 @@ verses:
       ತಂತ್ರವನು ನಡೆಸುವ ಮಂತ್ರಿ ಈತನು ಕಾಣೊ ಸ್ವಾ - 
       ತಂತ್ರ ಪುರುಷ ವಿಜಯವಿಟ್ಠಲನ್ನ ನಿಜಭಕ್ತ 
       ಅಂತ್ರವಿಲ್ಲದ ತನ್ನ ಸ್ತುತಿಪರನ್ನ ಪೊರೆವ ॥
-    ta: |
-      யந்த்ரோத்³தா⁴ரக ஹனுமா ஸுரஸார்வபௌ⁴மா 
-      மந்த்ரதா⁴ரக எனகெ³ மனஸினொளகெ³ 
-      யந்த்ரவாஹகன பூர்ணத³யதி³ந்த³ ஸக - 
-      லாந்தரியாமியாகி³ சராசரத³ல்லீய
-      தந்த்ரவனு நடெ³ஸுவ மந்த்ரி ஈதனு காணொ ஸ்வா - 
-      தந்த்ர புருஷ விஜயவிட்ட²லன்ன நிஜப⁴க்த 
-      அந்த்ரவில்லத³ தன்ன ஸ்துதிபரன்ன பொரெவ ॥
-    hi: |
-      यन्त्रोद्धारक हनुमा सुरसार्वभौमा 
-      मन्त्रधारक एनगे मनसिनोळगे 
-      यन्त्रवाहकन पूर्णदयदिन्द सक - 
-      लान्तरियामियागि चराचरदल्लीय
-      तन्त्रवनु नडेसुव मन्त्रि ईतनु काणो स्वा - 
-      तन्त्र पुरुष विजयविट्ठलन्न निजभक्त 
-      अन्त्रविल्लद तन्न स्तुतिपरन्न पोरेव ॥
-    en: |
-      yantrōddhāraka hanumā surasārvabhaumā 
-      mantradhāraka enage manasinoḷage 
-      yantravāhakana pūrṇadayadinda saka - 
-      lāntariyāmiyāgi carācaradallīya
-      tantravanu naḍesuva mantri ītanu kāṇo svā - 
-      tantra puruṣa vijayaviṭṭhalanna nijabhakta 
-      antravillada tanna stutiparanna poreva ॥
 
   - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟತಾಳ
-    subtitle_ta: மட்டதாள
-    subtitle_hi: मट्टताळ
-    subtitle_en: maṭṭatāḷa
     kn: |
       ವ್ಯಾಸರಾಯರು ತಮ್ಮ ಮೀಸಲ ಮನದಲ್ಲಿ ನಿಜ -
       ಧ್ಯಾಸನ ಧ್ಯಾನದಲಿ ಶ್ರೀಶನ ಪೂಜಿಸಲು 
@@ -77,34 +31,10 @@ verses:
       ಈ ಶಿಲೆಯೊಳಗೆ ಪ್ರಕಾಶಮಾನವಾಗೆ 
       ತ್ರೀಸಾಮಾ ವಿಜಯವಿಟ್ಠಲನ ಸೇವೆ ಹಾ - 
       ರೈಸಿ ಇಲ್ಲೆ ಮೆರೆದೆ ದಾಸರನ ಪೊರೆದೆ  ॥
-    ta: |
-      வ்யாஸராயரு தம்ம மீஸல மனத³ல்லி நிஜ -
-      த்⁴யாஸன த்⁴யானத³லி ஸ்ரீஶன பூஜிஸலு 
-      ஆ ஸமயதொ³ளு நீ ஸுளிது³ நிந்து³ 
-      ஈ ஶிலெயொளகெ³ ப்ரகாஶமானவாகெ³ 
-      த்ரீஸாமா விஜயவிட்ட²லன ஸேவெ ஹா - 
-      ரைஸி இல்லெ மெரெதெ³ தா³ஸரன பொரெதெ³  ॥
-    hi: |
-      व्यासरायरु तम्म मीसल मनदल्लि निज -
-      ध्यासन ध्यानदलि श्रीशन पूजिसलु 
-      आ समयदोळु नी सुळिदु निन्दु 
-      ई शिलेयोळगे प्रकाशमानवागे 
-      त्रीसामा विजयविट्ठलन सेवे हा - 
-      रैसि इल्ले मेरेदे दासरन पोरेदे  ॥
-    en: |
-      vyāsarāyaru tamma mīsala manadalli nija -
-      dhyāsana dhyānadali śrīśana pūjisalu 
-      ā samayadoḷu nī suḷidu nindu 
-      ī śileyoḷage prakāśamānavāge 
-      trīsāmā vijayaviṭṭhalana sēve hā - 
-      raisi ille merede dāsarana porede  ॥
 
   - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
-    subtitle_ta: த்ரிபுடதாள
-    subtitle_hi: त्रिपुटताळ
-    subtitle_en: tripuṭatāḷa
     kn: |
       ಮೂರುಕೋಟಿ ಬೀಜಾಕಾರ ಮಂತ್ರವ ಜಪಿಸಿ 
       ಧಾರಿಯನು ಎರದು ನಿನ್ನಯ ಸುಂದರ 
@@ -113,37 +43,10 @@ verses:
       ಚಾರು ಶೋಭಿತ ತುಂಗಾತೀರದಲ್ಲಿ ವಾಸ 
       ವೀರಾ ವಿಜಯವಿಟ್ಠಲನ್ನ 
       ಕಾರುಣ್ಯದಲಿಗನುಗುಣ್ಯವಾಗಿ ನಿಂದೆ ॥
-    ta: |
-      மூருகோடி பீ³ஜாகார மந்த்ரவ ஜபிஸி 
-      தா⁴ரியனு எரது³ நின்னய ஸுந்த³ர 
-      மூருதியனு நிர்மாணவனு மாடி³த³ரு 
-      ஆருகோணி வலயாகாரா வானரப³த்³த⁴ 
-      சாரு ஶோபி⁴த துங்கா³தீரத³ல்லி வாஸ 
-      வீரா விஜயவிட்ட²லன்ன 
-      காருண்யத³லிக³னுகு³ண்யவாகி³ நிந்தெ³ ॥
-    hi: |
-      मूरुकोटि बीजाकार मन्त्रव जपिसि 
-      धारियनु एरदु निन्नय सुन्दर 
-      मूरुतियनु निर्माणवनु माडिदरु 
-      आरुकोणि वलयाकारा वानरबद्ध 
-      चारु शोभित तुङ्गातीरदल्लि वास 
-      वीरा विजयविट्ठलन्न 
-      कारुण्यदलिगनुगुण्यवागि निन्दे ॥
-    en: |
-      mūrukōṭi bījākāra mantrava japisi 
-      dhāriyanu eradu ninnaya sundara 
-      mūrutiyanu nirmāṇavanu māḍidaru 
-      ārukōṇi valayākārā vānarabaddha 
-      cāru śōbhita tuṅgātīradalli vāsa 
-      vīrā vijayaviṭṭhalanna 
-      kāruṇyadaliganuguṇyavāgi ninde ॥
 
   - type: None
     number: 4
     subtitle_kn: ಅಟ್ಟತಾಳ
-    subtitle_ta: அட்டதாள
-    subtitle_hi: अट्टताळ
-    subtitle_en: aṭṭatāḷa
     kn: |
       ಒಂದು ಕೋಟಿ ಬೀಜ ಮಂತ್ರ-
       ದಿಂದ ಸುತ್ತ ಯಂತ್ರವ ಬರಿಸಿ 
@@ -156,49 +59,10 @@ verses:
       ನಂದ ವಿಜಯವಿಟ್ಠಲನ್ನ 
       ವಂದಿಸಿ ವರಗಳ ಕೊಡುತ 
       ಬಂದ ನರರ ಪಾಲಿಸುತ್ತ ॥
-    ta: |
-      ஒந்து³ கோடி பீ³ஜ மந்த்ர-
-      தி³ந்த³ ஸுத்த யந்த்ரவ ப³ரிஸி 
-      அந்து³ ப்ராண ப்ரதிஷ்டெ²ய மாடி³ 
-      நிந்தி³ரிஸித³ரு நின்ன மந்த³ஹாஸதி³ வ்யாஸமுனிக³ளு 
-      ஒந்து³ கரத³லி ஜபத³மாலெ 
-      ஒந்து³ கரா நாபி⁴ கெளகெ³ 
-      சந்த³தி³ந்த³ பது³மாஸன -
-      தி³ந்த³ குளிது நித்ய நித்யா - 
-      நந்த³ விஜயவிட்ட²லன்ன 
-      வந்தி³ஸி வரக³ள கொடு³த 
-      ப³ந்த³ நரர பாலிஸுத்த ॥
-    hi: |
-      ओन्दु कोटि बीज मन्त्र-
-      दिन्द सुत्त यन्त्रव बरिसि 
-      अन्दु प्राण प्रतिष्ठेय माडि 
-      निन्दिरिसिदरु निन्न मन्दहासदि व्यासमुनिगळु 
-      ओन्दु करदलि जपदमाले 
-      ओन्दु करा नाभि केळगे 
-      चन्ददिन्द पदुमासन -
-      दिन्द कुळितु नित्य नित्या - 
-      नन्द विजयविट्ठलन्न 
-      वन्दिसि वरगळ कोडुत 
-      बन्द नरर पालिसुत्त ॥
-    en: |
-      ondu kōṭi bīja mantra-
-      dinda sutta yantrava barisi 
-      andu prāṇa pratiṣṭheya māḍi 
-      nindirisidaru ninna mandahāsadi vyāsamunigaḷu 
-      ondu karadali japadamāle 
-      ondu karā nābhi keḷage 
-      candadinda padumāsana -
-      dinda kuḷitu nitya nityā - 
-      nanda vijayaviṭṭhalanna 
-      vandisi varagaḷa koḍuta 
-      banda narara pālisutta ॥
 
   - type: None
     number: 5
     subtitle_kn: ಆದಿತಾಳ
-    subtitle_ta: ஆதி³தாள
-    subtitle_hi: आदिताळ
-    subtitle_en: āditāḷa
     kn: |
       ಭೂತ ಪ್ರೇತ ಪಿಶಾಚ ಪೀಡೆ 
       ವಾತ ಶೀತ ಜ್ವರ ಮಿಕ್ಕಾದ 
@@ -207,46 +71,10 @@ verses:
       ಆತುರದಿಂದಲೆ ಕೊಟ್ಟು ಪಾತಕವ ಹರಿಸಿ 
       ಭೂತಭೃತೆ ವಿಜಯವಿಟ್ಠಲನ 
       ದೂತರೊಳು ಶ್ರೇಷ್ಠನೀತಾ ॥
-    ta: |
-      பூ⁴த ப்ரேத பிஶாச பீடெ³ 
-      வாத ஶீத ஜ்வர மிக்காத³ 
-      யாதனெ நானா கடி²ண பீ⁴தி மத்தெ 
-      யாதர்யாதரர்த²பேக்ஷித தெரத³லெ 
-      ஆதுரதி³ந்த³லெ கொட்டு பாதகவ ஹரிஸி 
-      பூ⁴தபரு⁴தெ விஜயவிட்ட²லன 
-      தூ³தரொளு ஸ்ரேஷ்ட²னீதா ॥
-    hi: |
-      भूत प्रेत पिशाच पीडे 
-      वात शीत ज्वर मिक्काद 
-      यातने नाना कठिण भीति मत्ते 
-      यातर्यातरर्थपेक्षित तेरदले 
-      आतुरदिन्दले कोट्टु पातकव हरिसि 
-      भूतभृते विजयविट्ठलन 
-      दूतरोळु श्रेष्ठनीता ॥
-    en: |
-      bhūta prēta piśāca pīḍe 
-      vāta śīta jvara mikkāda 
-      yātane nānā kaṭhiṇa bhīti matte 
-      yātaryātararthapēkṣita teradale 
-      āturadindale koṭṭu pātakava harisi 
-      bhūtabhṛte vijayaviṭṭhalana 
-      dūtaroḷu śrēṣṭhanītā ॥
 
   - type: None
     subtitle_kn: ಜತೆ
-    subtitle_ta: ஜதெ
-    subtitle_hi: जते
-    subtitle_en: jate
     kn: |
       ವ್ಯಾಸಮುನಿ ಪೂಜಿಪ ಯಂತ್ರೋದ್ಧಾರಕ ಹನುಮಾ 
       ಈಶಾನಾ ವಿಜಯವಿಟ್ಠಲನ ದಾಸರ ಪ್ರೇಮಾ ॥
-    ta: |
-      வ்யாஸமுனி பூஜிப யந்த்ரோத்³தா⁴ரக ஹனுமா 
-      ஈஶானா விஜயவிட்ட²லன தா³ஸர ப்ரேமா ॥
-    hi: |
-      व्यासमुनि पूजिप यन्त्रोद्धारक हनुमा 
-      ईशाना विजयविट्ठलन दासर प्रेमा ॥
-    en: |
-      vyāsamuni pūjipa yantrōddhāraka hanumā 
-      īśānā vijayaviṭṭhalana dāsara prēmā ॥
 

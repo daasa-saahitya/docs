@@ -1,30 +1,16 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics File (Auto-transliterated)
-# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# Daasa Saahitya - Lyrics File
+# Transliterations are auto-generated at build time
 # ──────────────────────────────────────────────────────────────────
 
 title_kn: ರಾಘವೇಂದ್ರ ಸ್ತೋತ್ರ ಸುಳಾದಿ
-title_ta: ராக⁴வேந்த்³ர ஸ்தோத்ர ஸுளாதி³
-title_hi: राघवेन्द्र स्तोत्र सुळादि
-title_en: rāghavēndra stōtra suḷādi
-
 author_kn: ಮೋಧಲಕಲ್ಲು ಶೇಷ ದಾಸರು
-author_ta: மோத⁴லகல்லு ஶேஷ தா³ஸரு
-author_hi: मोधलकल्लु शेष दासरु
-author_en: mōdhalakallu śēṣa dāsaru
-
 ankita_kn: ಗುರು ವಿಜಯ ವಿಠಲ
-ankita_ta: கு³ரு விஜய விட²ல
-ankita_hi: गुरु विजय विठल
-ankita_en: guru vijaya viṭhala
 
 verses:
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    subtitle_ta: த்⁴ருவதாள
-    subtitle_hi: ध्रुवताळ
-    subtitle_en: dhruvatāḷa
     kn: |
       ಘನ ದಯಾನಿಧಿಯಾದ ಗುರು ರಾಘವೇಂದ್ರ ನಿಮ್ಮ |
       ವನಜಪಾದಯುಗಕೆ ನಮೊ ನಮೊ |
@@ -42,64 +28,10 @@ verses:
       ಅನುಪಮ ಮಹಿಮನೆ ಅನಿಳ ಪ್ರೀಯಾ |
       ಗುಣಗಣ ಪರಿಪೂರ್ಣ ಗುರು ವಿಜಯ ವಿಠ್ಠಲ ನಿಮ್ಮ |
       ಘನವಾದ ಬಲದಿ ಎನಗೆ ಸುಳಿದನೆಂದು ॥
-    ta: |
-      க⁴ன த³யானிதி⁴யாத³ கு³ரு ராக⁴வேந்த்³ர நிம்ம |
-      வனஜபாத³யுக³கெ நமொ நமொ |
-      ஜனுமாரப்⁴யவாகி³ அபி⁴னமிஸத³லிப்ப |
-      மனுஜன அபராத⁴ வெணிஸத³லெ |
-      வனதி⁴ போலுவ கருணி கோ³வத்ஸ ந்யாயதி³ந்த³ |
-      நினகெ³ நீனெ ப³ந்து³ ஸ்வப்னத³ல்லி |
-      ஸனகாதி³ முனிக³ள மனனக்கெ நிலுகத³ |
-      இனகோடி பா⁴ஸ வேதே³ஶ ப்ரமோத³ தீர்த² |
-      முனிக³ளிந்த³லி கூடி³ ஸந்த³ருஶன வித்து |
-      வினயோக்திக³ள நுடி³த³ கருத்யதி³ந்த³ |
-      ஆனந்த³வாயிது அக⁴தூ³ர நாதெ³ நிந்து³ |
-      த³னுஜாரி ப⁴கதர மணியெ கு³ணியே |
-      எணெ கா³ணெ நிம்ம கருண கடாக்ஷ வீக்ஷணக்கெ |
-      அனுபம மஹிமனெ அனிள ப்ரீயா |
-      கு³ணக³ண பரிபூர்ண கு³ரு விஜய விட்²ட²ல நிம்ம |
-      க⁴னவாத³ ப³லதி³ எனகெ³ ஸுளித³னெந்து³ ॥
-    hi: |
-      घन दयानिधियाद गुरु राघवेन्द्र निम्म |
-      वनजपादयुगके नमो नमो |
-      जनुमारभ्यवागि अभिनमिसदलिप्प |
-      मनुजन अपराध वेणिसदले |
-      वनधि पोलुव करुणि गोवत्स न्यायदिन्द |
-      निनगे नीने बन्दु स्वप्नदल्लि |
-      सनकादि मुनिगळ मननक्के निलुकद |
-      इनकोटि भास वेदेश प्रमोद तीर्थ |
-      मुनिगळिन्दलि कूडि सन्दरुशन वित्तु |
-      विनयोक्तिगळ नुडिद कृत्यदिन्द |
-      आनन्दवायितु अघदूर नादे निन्दु |
-      दनुजारि भकतर मणिये गुणिये |
-      एणे गाणे निम्म करुण कटाक्ष वीक्षणक्के |
-      अनुपम महिमने अनिळ प्रीया |
-      गुणगण परिपूर्ण गुरु विजय विठ्ठल निम्म |
-      घनवाद बलदि एनगे सुळिदनेन्दु ॥
-    en: |
-      ghana dayānidhiyāda guru rāghavēndra nimma |
-      vanajapādayugake namo namo |
-      janumārabhyavāgi abhinamisadalippa |
-      manujana aparādha veṇisadale |
-      vanadhi pōluva karuṇi gōvatsa nyāyadinda |
-      ninage nīne bandu svapnadalli |
-      sanakādi munigaḷa mananakke nilukada |
-      inakōṭi bhāsa vēdēśa pramōda tīrtha |
-      munigaḷindali kūḍi sandaruśana vittu |
-      vinayōktigaḷa nuḍida kṛtyadinda |
-      ānandavāyitu aghadūra nāde nindu |
-      danujāri bhakatara maṇiye guṇiyē |
-      eṇe gāṇe nimma karuṇa kaṭākṣ vīkṣṇakke |
-      anupama mahimane aniḷa prīyā |
-      guṇagaṇa paripūrṇa guru vijaya viṭhṭhala nimma |
-      ghanavāda baladi enage suḷidanendu ॥
 
   - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟತಾಳ
-    subtitle_ta: மட்டதாள
-    subtitle_hi: मट्टताळ
-    subtitle_en: maṭṭatāḷa
     kn: |
       ಸುಖತೀರ್ಥರ ಮತ ವೆಂದೆಂಬ ಧ್ವಜವನ್ನು |
       ವಿಖನಸಾಂಡದ ಮಧ್ಯ ಪ್ರತಿಯಿಲ್ಲದೆ ಮೆರೆಯೆ |
@@ -128,97 +60,10 @@ verses:
       ಭಕುತರಾ ಗ್ರೇಸರನೆ ಭೂವಿ ಭುದರ ಪ್ರೀಯ |
       ನಖಶಿಖ ಪರಿಪೂರ್ಣ ಗುರು ವಿಜಯ ವಿಠ್ಠಲ ನಿಮ್ಮ |
       ಭಕುತಿಗೆ ವಶನಾಗಿ ಇತ್ತಿಹ ಕೀರ್ತಿಯನು ॥
-    ta: |
-      ஸுக²தீர்த²ர மத வெந்தெ³ம்ப³ த்⁴வஜவன்னு |
-      விக²னஸாண்ட³த³ மத்⁴ய ப்ரதியில்லதெ³ மெரெயெ |
-      பக²ரஹிதவாத³ பக்ஷியு தன்னய |
-      பக² சின்ஹிய ஜனித மாருதனிந்த³லி த்⁴வஜவ |
-      ப்ரகடதி³ சரிஸுவ யத்னதி³ந்த³தி³ து³ருள |
-      ஸகுடிலராத³ ஆ வித்³யாரண்ய |
-      முக²ரெல்ல ப³ரலு அமஸ்தி²த நிஶ்சயதி³ |
-      மக²ஶத நிஜனெனிப ஜயராயாசார்ய |
-      ப்ரகட க்³ரந்த²க³ளெம்ப³ பாஶக³ளிந்த³ல்லி |
-      யுகுதியிந்த³லி பி³கி³து³ வீரத்⁴வனிய கை³யெ |
-      உகுதிகெ³ நில்லத³லெ மொலத³ந்தெ ஜரிது³ |
-      தி³க்கு தி³க்கினல்லி பலாயனராகெ³ |
-      த்யெகுத லஜ்ஜெயலிந்த³ ஹதவாஶேஷ்ய நா |
-      க³ குண்டி²தவாத³ ப³லவீர்யனு மேரு |
-      ஶிக²ர வெத்துவெனெம்பொ³ ஸஹஸத³ந்த³த³லி |
-      விகட மதியுக்த து³ருளரு ரோஷத³லி கு – |
-      யுகுதிக³ளிந்த³லி ஸஞ்சரிஸுத ப³ரலு |
-      லகுமி பதிய நேம திளித³ ப்ரௌட⁴ நீனு |
-      ஈ க²ண்ட³தி³ ப³ந்து³ த்³விஜ ஜன்மவ த⁴ரிஸி |
-      ப்ரக்²யாதவாத³ ந்யாயாமருதவன்னு |
-      தர்க தாண்ட³வ சந்த்³ரிக பரிமள மொத³லாத³ |
-      மிக்காத³ க்³ரந்த²வெந்தெம்ப³ வஜ்ரத³லி து³ –
-      ருகுதிக³ளெம்ப³ந்த² கி³ரிக³ள சே²தி³ஸி |
-      ஈ கும்பி⁴ணி மத்⁴ய ப்ரதியில்லதெ³ மெரதெ³ |
-      ப⁴குதரா க்³ரேஸரனெ பூ⁴வி பு⁴த³ர ப்ரீய |
-      நக²ஶிக² பரிபூர்ண கு³ரு விஜய விட்²ட²ல நிம்ம |
-      ப⁴குதிகெ³ வஶனாகி³ இத்திஹ கீர்தியனு ॥
-    hi: |
-      सुखतीर्थर मत वेन्देम्ब ध्वजवन्नु |
-      विखनसाण्डद मध्य प्रतियिल्लदे मेरेये |
-      पखरहितवाद पक्षियु तन्नय |
-      पख चिन्हिय जनित मारुतनिन्दलि ध्वजव |
-      प्रकटदि चरिसुव यत्नदिन्ददि दुरुळ |
-      सकुटिलराद आ विद्यारण्य |
-      मुखरेल्ल बरलु अमस्थित निश्चयदि |
-      मखशत निजनेनिप जयरायाचार्य |
-      प्रकट ग्रन्थगळेम्ब पाशगळिन्दल्लि |
-      युकुतियिन्दलि बिगिदु वीरध्वनिय गैये |
-      उकुतिगे निल्लदले मोलदन्ते जरिदु |
-      दिक्कु दिक्किनल्लि पलायनरागे |
-      त्येकुत लज्जेयलिन्द हतवाशेष्य ना |
-      ग कुण्ठितवाद बलवीर्यनु मेरु |
-      शिखर वेत्तुवेनेम्बो सहसदन्ददलि |
-      विकट मतियुक्त दुरुळरु रोषदलि कु – |
-      युकुतिगळिन्दलि सञ्चरिसुत बरलु |
-      लकुमि पतिय नेम तिळिद प्रौढ़ नीनु |
-      ई खण्डदि बन्दु द्विज जन्मव धरिसि |
-      प्रख्यातवाद न्यायामृतवन्नु |
-      तर्क ताण्डव चन्द्रिक परिमळ मोदलाद |
-      मिक्काद ग्रन्थवेन्तेम्ब वज्रदलि दु –
-      रुकुतिगळेम्बन्थ गिरिगळ छेदिसि |
-      ई कुम्भिणि मध्य प्रतियिल्लदे मेरदे |
-      भकुतरा ग्रेसरने भूवि भुदर प्रीय |
-      नखशिख परिपूर्ण गुरु विजय विठ्ठल निम्म |
-      भकुतिगे वशनागि इत्तिह कीर्तियनु ॥
-    en: |
-      sukhatīrthara mata vendemba dhvajavannu |
-      vikhanasāṇḍada madhya pratiyillade mereye |
-      pakharahitavāda pakṣiyu tannaya |
-      pakha cinhiya janita mārutanindali dhvajava |
-      prakaṭadi carisuva yatnadindadi duruḷa |
-      sakuṭilarāda ā vidyāraṇya |
-      mukharella baralu amasthita niścayadi |
-      makhaśata nijanenipa jayarāyācārya |
-      prakaṭa granthagaḷemba pāśagaḷindalli |
-      yukutiyindali bigidu vīradhvaniya gaiye |
-      ukutige nilladale moladante jaridu |
-      dikku dikkinalli palāyanarāge |
-      tyekuta lajjeyalinda hatavāśēṣya nā |
-      ga kuṇṭhitavāda balavīryanu mēru |
-      śikhara vettuvenembo sahasadandadali |
-      vikaṭa matiyukta duruḷaru rōṣadali ku – |
-      yukutigaḷindali sañcarisuta baralu |
-      lakumi patiya nēma tiḷida prauḍha nīnu |
-      ī khaṇḍadi bandu dvija janmava dharisi |
-      prakhyātavāda nyāyāmṛtavannu |
-      tarka tāṇḍava candrika parimaḷa modalāda |
-      mikkāda granthaventemba vajradali du –
-      rukutigaḷembantha girigaḷa chēdisi |
-      ī kumbhiṇi madhya pratiyillade merade |
-      bhakutarā grēsarane bhūvi bhudara prīya |
-      nakhaśikha paripūrṇa guru vijaya viṭhṭhala nimma |
-      bhakutige vaśanāgi ittiha kīrtiyanu ॥
 
   - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
-    subtitle_ta: த்ரிபுடதாள
-    subtitle_hi: त्रिपुटताळ
-    subtitle_en: tripuṭatāḷa
     kn: |
       ಕಲಿಯುಗದಿ ಜನರು ಕಲಿ ಕಲ್ಮಷದಲಿಂದ |
       ಬಲವಂತವಾದ ತ್ರಿವಿಧ ತಾಪಗಳನು |
@@ -230,46 +75,10 @@ verses:
       ನಿಲಯವಲ್ಲದೆ ನಿನಗೆ ಅನ್ಯ ಕೃತ್ಯಗಳಿಲ್ಲ |
       ನಳಿನ ಸಂಭವ ಜನಕ ಗುರು ವಿಜಯ ವಿಠ್ಠಲ ನಿನಗೆ |
       ಒಲಿದಿಪ್ಪಾಧಿಕಧಿಕವಾಗಿ ಬಿಡದೆ ॥
-    ta: |
-      கலியுக³தி³ ஜனரு கலி கல்மஷத³லிந்த³ |
-      ப³லவந்தவாத³ த்ரிவித⁴ தாபக³ளனு |
-      விலயகை³ஸுவ உபாயவனரியதெ³ |
-      மலயுக்தவாத³ ப⁴வ ஶரதி⁴யல்லி |
-      நெலெயாகி³ மக்³னராகி³ நிவருத்தி வர்த்மாவன்னு |
-      திளியத³லெ து³ஹக²ப³டு³வ ஸுஜன |
-      ஒளகெ³ தாரகனாகி³ ஈ நதி³ய தீரத³ல்லி |
-      நிலயவல்லதெ³ நினகெ³ அன்ய கருத்யக³ளில்ல |
-      நளின ஸம்ப⁴வ ஜனக கு³ரு விஜய விட்²ட²ல நினகெ³ |
-      ஒலிதி³ப்பாதி⁴கதி⁴கவாகி³ பி³ட³தெ³ ॥
-    hi: |
-      कलियुगदि जनरु कलि कल्मषदलिन्द |
-      बलवन्तवाद त्रिविध तापगळनु |
-      विलयगैसुव उपायवनरियदे |
-      मलयुक्तवाद भव शरधियल्लि |
-      नेलेयागि मग्नरागि निवृत्ति वर्त्मावन्नु |
-      तिळियदले दुःखबडुव सुजन |
-      ओळगे तारकनागि ई नदिय तीरदल्लि |
-      निलयवल्लदे निनगे अन्य कृत्यगळिल्ल |
-      नळिन सम्भव जनक गुरु विजय विठ्ठल निनगे |
-      ओलिदिप्पाधिकधिकवागि बिडदे ॥
-    en: |
-      kaliyugadi janaru kali kalmaṣadalinda |
-      balavantavāda trividha tāpagaḷanu |
-      vilayagaisuva upāyavanariyade |
-      malayuktavāda bhava śaradhiyalli |
-      neleyāgi magnarāgi nivṛtti vartmāvannu |
-      tiḷiyadale duḥkhabaḍuva sujana |
-      oḷage tārakanāgi ī nadiya tīradalli |
-      nilayavallade ninage anya kṛtyagaḷilla |
-      naḷina sambhava janaka guru vijaya viṭhṭhala ninage |
-      olidippādhikadhikavāgi biḍade ॥
 
   - type: None
     number: 4
     subtitle_kn: ಅಟ್ಟತಾಳ
-    subtitle_ta: அட்டதாள
-    subtitle_hi: अट्टताळ
-    subtitle_en: aṭṭatāḷa
     kn: |
       ಸೂಚನೆ ಮಾಡಿದ ಸೊಬಗಿನ ತೆರದಂತೆ |
       ಯೋಚನೆ ಯಾತಕ್ಕೆನ್ನನು ಉದ್ಧರಿಪದಕ್ಕೆ |
@@ -286,61 +95,10 @@ verses:
       ಮೋಚನೆ ಮಾಡುವದು ಭವ ಬಂಧದಲಿಂದ |
       ಶ್ರೀ ಚಕ್ರಪಾಣಿ ಗುರುವಿಜಯ ವಿಠ್ಠಲ ರೇಯನ |
       ಯೋಚನೆ ಮಾಡುವ ಯೋಗವೆ ಬೋಧಿಸು ॥
-    ta: |
-      ஸூசனெ மாடி³த³ ஸொப³கி³ன தெரத³ந்தெ |
-      யோசனெ யாதக்கென்னனு உத்³த⁴ரிபத³க்கெ |
-      ஊசக்³ஞானானந்த³ ப³லவீர்யனு நீனு |
-      நீசவாத³ தே³ஹ தா⁴ரணவனு மாடி³ அ –
-      நூசிதவாகி³த்³த³ காம க்ரோத⁴ங்க³ளு |
-      ஆசரணெய மாள்ப அத⁴ம நாத³வ நானு |
-      ஸூசரித்ரவாத³ ஶுசியாத³ மனுஜங்கெ³ |
-      நீச அஶுசியாத³ நரனு அதி⁴கனெந்து³ |
-      பூ⁴சக்ரத³லி அவர தே³ஹ தெத்தவனாகி³ |
-      ஆசரிஸிதெ³ ப³லு ஹீன கருத்யங்க³ளு |
-      ஸூசனெ மாடி³த்³து³ ஸொப³கு³ நோட³த³லெ |
-      யோசனெ மாடி³த்³து³ ஸார்த²க மாள்பது³ |
-      மோசனெ மாடு³வது³ ப⁴வ ப³ந்த⁴த³லிந்த³ |
-      ஸ்ரீ சக்ரபாணி கு³ருவிஜய விட்²ட²ல ரேயன |
-      யோசனெ மாடு³வ யோக³வெ போ³தி⁴ஸு ॥
-    hi: |
-      सूचने माडिद सोबगिन तेरदन्ते |
-      योचने यातक्केन्ननु उद्धरिपदक्के |
-      ऊचज्ञानानन्द बलवीर्यनु नीनु |
-      नीचवाद देह धारणवनु माडि अ –
-      नूचितवागिद्द काम क्रोधङ्गळु |
-      आचरणेय माळ्प अधम नादव नानु |
-      सूचरित्रवाद शुचियाद मनुजङ्गे |
-      नीच अशुचियाद नरनु अधिकनेन्दु |
-      भूचक्रदलि अवर देह तेत्तवनागि |
-      आचरिसिदे बलु हीन कृत्यङ्गळु |
-      सूचने माडिद्दु सोबगु नोडदले |
-      योचने माडिद्दु सार्थक माळ्पदु |
-      मोचने माडुवदु भव बन्धदलिन्द |
-      श्री चक्रपाणि गुरुविजय विठ्ठल रेयन |
-      योचने माडुव योगवे बोधिसु ॥
-    en: |
-      sūcane māḍida sobagina teradante |
-      yōcane yātakkennanu uddharipadakke |
-      ūcajñānānanda balavīryanu nīnu |
-      nīcavāda dēha dhāraṇavanu māḍi a –
-      nūcitavāgidda kāma krōdhaṅgaḷu |
-      ācaraṇeya māḷpa adhama nādava nānu |
-      sūcaritravāda śuciyāda manujaṅge |
-      nīca aśuciyāda naranu adhikanendu |
-      bhūcakradali avara dēha tettavanāgi |
-      ācariside balu hīna kṛtyaṅgaḷu |
-      sūcane māḍiddu sobagu nōḍadale |
-      yōcane māḍiddu sārthaka māḷpadu |
-      mōcane māḍuvadu bhava bandhadalinda |
-      śrī cakrapāṇi guruvijaya viṭhṭhala rēyana |
-      yōcane māḍuva yōgave bōdhisu ॥
 
   - type: None
     number: 5
     subtitle_kn: ಆದಿತಾಳ
-    subtitle_ta: ஆதி³தாள
-    subtitle_hi: आदिताळ
-    subtitle_en: āditāḷa
     kn: |
       ಪರಿಶುದ್ಧವಾದ ನಿನ್ನ ಭಕುತಿಗೆ ವಶನಾಗಿ |
       ಹರಿ ತನ್ನ ಪರಿವಾರ ಸಮೇತನಾಗಿ ನಿಂದು |
@@ -352,54 +110,10 @@ verses:
       ತ್ಸರಸಿಜದಲ್ಲಿ ಹರಿ ಪೊಳೆವಂತೆ ಮಾಡುವದು |
       ಪರಿಪೂರ್ಣ ಕೃಪಾನಿಧೆ ಗುರು ವಿಜಯ ವಿಠ್ಠಲನ್ನ |
       ಶರಣರ ಅಭಿಮಾನಿ ಔದಾರ್ಯ ಗುಣಮಣಿ ॥
-    ta: |
-      பரிஶுத்³த⁴வாத³ நின்ன ப⁴குதிகெ³ வஶனாகி³ |
-      ஹரி தன்ன பரிவார ஸமேதனாகி³ நிந்து³ |
-      மொரெஹொக்க ஜனரிகெ³ பரிபூர்ண ஸுக²வித்து |
-      பரி பரி கீர்திக³ளு தந்தீ³வ நிமகெ³ந்து³ |
-      பரமாப்தனாகி³ தவபாத³ ஸாரிதெ³னு |
-      தூ³ர நோட³த³லெ கருணமாடி³ வேக³ |
-      ஸுரரித்த ஶாபதி³ந்த³ கடி³கெ³ மாடி³ என்ன ஹரு –
-      த்ஸரஸிஜத³ல்லி ஹரி பொளெவந்தெ மாடு³வது³ |
-      பரிபூர்ண கருபானிதெ⁴ கு³ரு விஜய விட்²ட²லன்ன |
-      ஶரணர அபி⁴மானி ஔதா³ர்ய கு³ணமணி ॥
-    hi: |
-      परिशुद्धवाद निन्न भकुतिगे वशनागि |
-      हरि तन्न परिवार समेतनागि निन्दु |
-      मोरेहोक्क जनरिगे परिपूर्ण सुखवित्तु |
-      परि परि कीर्तिगळु तन्दीव निमगेन्दु |
-      परमाप्तनागि तवपाद सारिदेनु |
-      दूर नोडदले करुणमाडि वेग |
-      सुररित्त शापदिन्द कडिगे माडि एन्न हृ –
-      त्सरसिजदल्लि हरि पोळेवन्ते माडुवदु |
-      परिपूर्ण कृपानिधे गुरु विजय विठ्ठलन्न |
-      शरणर अभिमानि औदार्य गुणमणि ॥
-    en: |
-      pariśuddhavāda ninna bhakutige vaśanāgi |
-      hari tanna parivāra samētanāgi nindu |
-      morehokka janarige paripūrṇa sukhavittu |
-      pari pari kīrtigaḷu tandīva nimagendu |
-      paramāptanāgi tavapāda sāridenu |
-      dūra nōḍadale karuṇamāḍi vēga |
-      suraritta śāpadinda kaḍige māḍi enna hṛ –
-      tsarasijadalli hari poḷevante māḍuvadu |
-      paripūrṇa kṛpānidhe guru vijaya viṭhṭhalanna |
-      śaraṇara abhimāni audārya guṇamaṇi ॥
 
   - type: None
     subtitle_kn: ಜತೆ
-    subtitle_ta: ஜதெ
-    subtitle_hi: जते
-    subtitle_en: jate
     kn: |
       ಗುರುಕುಲ ತಿಲಕನೆ ಗುರು ರಾಘವೇಂದ್ರಾಖ್ಯ |
       ಸುರ ಕಲ್ಪತರು ಗುರು ವಿಜಯ ವಿಠ್ಠಲ ಪ್ರೀಯ ॥
-    ta: |
-      கு³ருகுல திலகனெ கு³ரு ராக⁴வேந்த்³ராக்²ய |
-      ஸுர கல்பதரு கு³ரு விஜய விட்²ட²ல ப்ரீய ॥
-    hi: |
-      गुरुकुल तिलकने गुरु राघवेन्द्राख्य |
-      सुर कल्पतरु गुरु विजय विठ्ठल प्रीय ॥
-    en: |
-      gurukula tilakane guru rāghavēndrākhya |
-      sura kalpataru guru vijaya viṭhṭhala prīya ॥
+

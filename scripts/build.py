@@ -638,7 +638,7 @@ def generate_song_page(data, rel_path, output_dir, template_path):
             # Get label - either from subtitle_* fields (for tala names) or from type field (pallavi/charana)
             if verse.get(subtitle_key) or verse.get('subtitle_kn'):
                 label = verse.get(subtitle_key) or verse.get('subtitle_kn', '')
-            elif vtype:
+            elif vtype and vtype != 'None':
                 label = verse_label(vtype, lang)
             else:
                 label = ''
@@ -651,10 +651,10 @@ def generate_song_page(data, rel_path, output_dir, template_path):
                 text_html = text_html.rstrip()
                 text_html += f'<span class="verse-number">॥{vnum}॥</span>'
 
+            label_html = f'<div class="verse-label">{label}</div>\n' if label else ''
             verses_html += f'''
 <div class="verse verse-{vtype}">
-  <div class="verse-label">{label}</div>
-  <div class="verse-text">{text_html}</div>
+  {label_html}<div class="verse-text">{text_html}</div>
 </div>
 '''
 

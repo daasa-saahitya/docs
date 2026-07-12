@@ -1,36 +1,17 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics File (Auto-transliterated)
-# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# Daasa Saahitya - Lyrics File
+# Transliterations are auto-generated at build time
 # ──────────────────────────────────────────────────────────────────
 
 title_kn: ವ್ಯಾಸರಾಜ ಸ್ತೋತ್ರ ಸುಳಾದಿ
-title_ta: வ்யாஸராஜ ஸ்தோத்ர ஸுளாதி³
-title_hi: व्यासराज स्तोत्र सुळादि
-title_en: vyāsarāja stōtra suḷādi
-
 author_kn: ಪುರಂದರ ದಾಸರು
-author_ta: புரந்த³ர தா³ஸரு
-author_hi: पुरन्दर दासरु
-author_en: purandara dāsaru
-
 ankita_kn: ಪುರಂದರ ವಿಠಲ
-ankita_ta: புரந்த³ர விட²ல
-ankita_hi: पुरन्दर विठल
-ankita_en: purandara viṭhala
-
 raga_kn: ವಲಜಿ
-raga_ta: வலஜி
-raga_hi: वलजि
-raga_en: valaji
-
 
 verses:
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    subtitle_ta: த்⁴ருவதாள
-    subtitle_hi: ध्रुवताळ
-    subtitle_en: dhruvatāḷa
     kn: |
       ವ್ಯಾಸರಾಯರ ಚರಣಕಮಲ ದರ್ಶನವೆನ -
       ಗೇಸು ಜನ್ಮದ ಸುಕೃತ ಫಲ ದೊರಕಿತೊ ಎನ್ನ
@@ -39,37 +20,10 @@ verses:
       ವಾಸುದೇವನ ಪೂಜೆಗಧಿಕಾರಿ ನಾನಾದೆ
       ದೋಷರಹಿತನಾದೆ ಪುರಂದರವಿಠ್ಠಲನ್ನ
       ದಾಸರ ಕರುಣವು ಎನ್ನ ಮೇಲಿರಲಿಕ್ಕೆ ॥
-    ta: |
-      வ்யாஸராயர சரணகமல த³ர்ஶனவென -
-      கே³ஸு ஜன்மத³ ஸுகருத ப²ல தொ³ரகிதொ என்ன
-      ஸாஸிர குலகோடி பாவனவாயிது
-      ஸ்ரீஶன ப⁴ஜிஸுவுத³க்கதி⁴காரி நானாதெ³
-      வாஸுதே³வன பூஜெக³தி⁴காரி நானாதெ³
-      தோ³ஷரஹிதனாதெ³ புரந்த³ரவிட்²ட²லன்ன
-      தா³ஸர கருணவு என்ன மேலிரலிக்கெ ॥
-    hi: |
-      व्यासरायर चरणकमल दर्शनवेन -
-      गेसु जन्मद सुकृत फल दोरकितो एन्न
-      सासिर कुलकोटि पावनवायितु
-      श्रीशन भजिसुवुदक्कधिकारि नानादे
-      वासुदेवन पूजेगधिकारि नानादे
-      दोषरहितनादे पुरन्दरविठ्ठलन्न
-      दासर करुणवु एन्न मेलिरलिक्के ॥
-    en: |
-      vyāsarāyara caraṇakamala darśanavena -
-      gēsu janmada sukṛta phala dorakito enna
-      sāsira kulakōṭi pāvanavāyitu
-      śrīśana bhajisuvudakkadhikāri nānāde
-      vāsudēvana pūjegadhikāri nānāde
-      dōṣarahitanāde purandaraviṭhṭhalanna
-      dāsara karuṇavu enna mēliralikke ॥
 
   - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟತಾಳ
-    subtitle_ta: மட்டதாள
-    subtitle_hi: मट्टताळ
-    subtitle_en: maṭṭatāḷa
     kn: |
       ಗುರು ಉಪದೇಶವಿಲ್ಲದ ಜ್ಞಾನವು
       ಗುರು ಉಪದೇಶವಿಲ್ಲದ ಸ್ನಾನವು
@@ -84,55 +38,10 @@ verses:
       ದುರಿತಭಯವೆಲ್ಲ ಪರಿಹರಿಸಿದನಾಗಿ
       ವರ ಮಹಾಮಂತ್ರ ಉಪದೇಶಿಸಿದನಾಗಿ 
       ವರ ಮಹಾಮಂತ್ರ ಉಪದೇಶಿಸಿದನಾಗಿ ॥
-    ta: |
-      கு³ரு உபதே³ஶவில்லத³ க்³ஞானவு
-      கு³ரு உபதே³ஶவில்லத³ ஸ்னானவு
-      கு³ரு உபதே³ஶவில்லத³ த்⁴யானவு
-      கு³ரு உபதே³ஶவில்லத³ ஜபவு
-      கு³ரு உபதே³ஶவில்லத³ தபவு
-      கு³ரு உபதே³ஶவில்லத³ மந்த்ர
-      கு³ரு உபதே³ஶவில்லத³ தந்த்ர
-      உரக³ன உபவாஸத³ந்தெ காணிரோ
-      கு³ரு வ்யாஸராயன கருணதி³ந்த³லி எனகெ³
-      புரந்த³ரவிட்²ட²லனே பரனெந்த³ருஹி
-      து³ரிதப⁴யவெல்ல பரிஹரிஸித³னாகி³
-      வர மஹாமந்த்ர உபதே³ஶிஸித³னாகி³ 
-      வர மஹாமந்த்ர உபதே³ஶிஸித³னாகி³ ॥
-    hi: |
-      गुरु उपदेशविल्लद ज्ञानवु
-      गुरु उपदेशविल्लद स्नानवु
-      गुरु उपदेशविल्लद ध्यानवु
-      गुरु उपदेशविल्लद जपवु
-      गुरु उपदेशविल्लद तपवु
-      गुरु उपदेशविल्लद मन्त्र
-      गुरु उपदेशविल्लद तन्त्र
-      उरगन उपवासदन्ते काणिरो
-      गुरु व्यासरायन करुणदिन्दलि एनगे
-      पुरन्दरविठ्ठलने परनेन्दरुहि
-      दुरितभयवेल्ल परिहरिसिदनागि
-      वर महामन्त्र उपदेशिसिदनागि 
-      वर महामन्त्र उपदेशिसिदनागि ॥
-    en: |
-      guru upadēśavillada jñānavu
-      guru upadēśavillada snānavu
-      guru upadēśavillada dhyānavu
-      guru upadēśavillada japavu
-      guru upadēśavillada tapavu
-      guru upadēśavillada mantra
-      guru upadēśavillada tantra
-      uragana upavāsadante kāṇirō
-      guru vyāsarāyana karuṇadindali enage
-      purandaraviṭhṭhalanē paranendaruhi
-      duritabhayavella pariharisidanāgi
-      vara mahāmantra upadēśisidanāgi 
-      vara mahāmantra upadēśisidanāgi ॥
 
   - type: None
     number: 3
     subtitle_kn: ರೂಪಕತಾಳ
-    subtitle_ta: ரூபகதாள
-    subtitle_hi: रूपकताळ
-    subtitle_en: rūpakatāḷa
     kn: |
       ಅಂಕಿತವಿಲ್ಲದ ದೇಹ ನಿಷೇಧ
       ಅಂಕಿತವಿಲ್ಲದ ಕಾವ್ಯ ಶೋಭಿಸದು
@@ -140,34 +49,10 @@ verses:
       ಕ್ರಾಂಕಿತವನ್ನು ಮಾಡಿ ಎನ್ನಂಗಕ್ಕೆ 
       ಪಂಕಜನಾಭ ಪುರಂದರವಿಠ್ಠಲನ್ನ
       ಅಂಕಿತ ಎನಗಿತ್ತು ಗುರುವ್ಯಾಸ ಮುನಿರಾಯಾ ॥
-    ta: |
-      அங்கிதவில்லத³ தே³ஹ நிஷேத⁴
-      அங்கிதவில்லத³ காவ்ய ஶோபி⁴ஸது³
-      அங்கிதவில்லதி³ரபா³ரதெ³ந்து³ ச -
-      க்ராங்கிதவன்னு மாடி³ என்னங்க³க்கெ 
-      பங்கஜனாப⁴ புரந்த³ரவிட்²ட²லன்ன
-      அங்கித எனகி³த்து கு³ருவ்யாஸ முனிராயா ॥
-    hi: |
-      अङ्कितविल्लद देह निषेध
-      अङ्कितविल्लद काव्य शोभिसदु
-      अङ्कितविल्लदिरबारदेन्दु च -
-      क्राङ्कितवन्नु माडि एन्नङ्गक्के 
-      पङ्कजनाभ पुरन्दरविठ्ठलन्न
-      अङ्कित एनगित्तु गुरुव्यास मुनिराया ॥
-    en: |
-      aṅkitavillada dēha niṣēdha
-      aṅkitavillada kāvya śōbhisadu
-      aṅkitavilladirabāradendu ca -
-      krāṅkitavannu māḍi ennaṅgakke 
-      paṅkajanābha purandaraviṭhṭhalanna
-      aṅkita enagittu guruvyāsa munirāyā ॥
 
   - type: None
     number: 3
     subtitle_kn: ಝಂಪೆತಾಳ
-    subtitle_ta: ஜ²ம்பெதாள
-    subtitle_hi: झम्पेताळ
-    subtitle_en: jhampetāḷa
     kn: |
       ನ್ಯಾಯಾಮೃತ ತರ್ಕತಾಂಡವ ಚಂದ್ರಿಕೆ ಮೊದಲಾದ
       ನ್ಯಾಯ ಗ್ರಂಥವ ರಚಿಸಿ ತನ್ನ ಭಕ್ತರಿಗಿತ್ತು
@@ -175,34 +60,10 @@ verses:
       ಬಾಯಿ ಮುದ್ರಿಸಿದ ಮಧ್ವರಾಯರ ಕರುಣದಿಂದ
       ಶ್ರೀಯರಸ ಪುರಂದರವಿಠ್ಠಲನ್ನ ದಾಸರೊಳು
       ನಾಯಕನೆಂದೆನಿಸಿ ಗುರುವ್ಯಾಸ ಮುನಿರಾಯ ॥
-    ta: |
-      ந்யாயாமருத தர்கதாண்ட³வ சந்த்³ரிகெ மொத³லாத³
-      ந்யாய க்³ரந்த²வ ரசிஸி தன்ன ப⁴க்தரிகி³த்து
-      மாயாவாதி³ மொத³லாத³ இப்பத்தொந்து³ குபா⁴ஷ்யக
-      பா³யி முத்³ரிஸித³ மத்⁴வராயர கருணதி³ந்த³
-      ஸ்ரீயரஸ புரந்த³ரவிட்²ட²லன்ன தா³ஸரொளு
-      நாயகனெந்தெ³னிஸி கு³ருவ்யாஸ முனிராய ॥
-    hi: |
-      न्यायामृत तर्कताण्डव चन्द्रिके मोदलाद
-      न्याय ग्रन्थव रचिसि तन्न भक्तरिगित्तु
-      मायावादि मोदलाद इप्पत्तोन्दु कुभाष्यक
-      बायि मुद्रिसिद मध्वरायर करुणदिन्द
-      श्रीयरस पुरन्दरविठ्ठलन्न दासरोळु
-      नायकनेन्देनिसि गुरुव्यास मुनिराय ॥
-    en: |
-      nyāyāmṛta tarkatāṇḍava candrike modalāda
-      nyāya granthava racisi tanna bhaktarigittu
-      māyāvādi modalāda ippattondu kubhāṣyaka
-      bāyi mudrisida madhvarāyara karuṇadinda
-      śrīyarasa purandaraviṭhṭhalanna dāsaroḷu
-      nāyakanendenisi guruvyāsa munirāya ॥
 
   - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
-    subtitle_ta: த்ரிபுடதாள
-    subtitle_hi: त्रिपुटताळ
-    subtitle_en: tripuṭatāḷa
     kn: |
       ಶೇಷಾವೇಶ ಪ್ರಹ್ಲಾದನವತಾರವೆನಿಸಿದೆ
       ವ್ಯಾಸರಾಯನೆಂಬೊ ಪೆಸರು ನಿನಗಂದಂತೆ
@@ -212,40 +73,10 @@ verses:
       ಭಾಸುರ ಕೀರ್ತಿಯನು ಪಡೆದೆ ನೀನು ಗುರುರಾಯ
       ವಾಸುದೇವ ಪುರಂದರವಿಠ್ಠಲನ್ನ ದಾಸರೊಳು
       ಲೇಶ ನಿನ್ನಂತೆ ವೆಗ್ಗಳರ ಕಾಣೆನು ನಾನು ॥
-    ta: |
-      ஶேஷாவேஶ ப்ரஹ்லாத³னவதாரவெனிஸிதெ³
-      வ்யாஸராயனெம்பொ³ பெஸரு நினக³ந்த³ந்தெ
-      தே³ஶாதி⁴பகெ³ ப³ந்த³ குஹயோக³வனு நூகீ
-      நீ ஸிம்ஹாஸனவேரி மெரெதெ³ ஜக³வரியெ
-      வ்யாஸாப்³தி⁴யனு பி³கி³ஸி காஶீதே³ஶதொ³ளகெ³ல்ல
-      பா⁴ஸுர கீர்தியனு படெ³தெ³ நீனு கு³ருராய
-      வாஸுதே³வ புரந்த³ரவிட்²ட²லன்ன தா³ஸரொளு
-      லேஶ நின்னந்தெ வெக்³க³ளர காணெனு நானு ॥
-    hi: |
-      शेषावेश प्रह्लादनवतारवेनिसिदे
-      व्यासरायनेम्बो पेसरु निनगन्दन्ते
-      देशाधिपगे बन्द कुहयोगवनु नूकी
-      नी सिंहासनवेरि मेरेदे जगवरिये
-      व्यासाब्धियनु बिगिसि काशीदेशदोळगेल्ल
-      भासुर कीर्तियनु पडेदे नीनु गुरुराय
-      वासुदेव पुरन्दरविठ्ठलन्न दासरोळु
-      लेश निन्नन्ते वेग्गळर काणेनु नानु ॥
-    en: |
-      śēṣāvēśa prahlādanavatāraveniside
-      vyāsarāyanembo pesaru ninagandante
-      dēśādhipage banda kuhayōgavanu nūkī
-      nī siṃhāsanavēri merede jagavariye
-      vyāsābdhiyanu bigisi kāśīdēśadoḷagella
-      bhāsura kīrtiyanu paḍede nīnu gururāya
-      vāsudēva purandaraviṭhṭhalanna dāsaroḷu
-      lēśa ninnante veggaḷara kāṇenu nānu ॥
 
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    subtitle_ta: த்⁴ருவதாள
-    subtitle_hi: ध्रुवताळ
-    subtitle_en: dhruvatāḷa
     kn: |
       ಸಿರಿ ನಾರಾಯಣಯೋಗಿ ಶ್ರೀಪಾದರಾಯರಲ್ಲಿ
       ವರವಿದ್ಯಾಭ್ಯಾಸವ ಮಾಡಿದೆ ನೀನು
@@ -255,67 +86,19 @@ verses:
       ಕರುಣಿಸಿ ಮಠವನುದ್ಧರಿಸಿದ ಕಾರಣ
       ಗುರುವ್ಯಾಸರಾಯರೆ ಪರಮ ಗುರುಗಳು ಕಾಣಿರೊ
       ಪುರಂದರವಿಠ್ಠಲ ಪರದೈವ ಜಗಕೆ ॥
-    ta: |
-      ஸிரி நாராயணயோகி³ ஸ்ரீபாத³ராயரல்லி
-      வரவித்³யாப்⁴யாஸவ மாடி³தெ³ நீனு
-      த⁴ரியொளு விஜயீந்த்³ர வாதி³ராஜரெம்ப³
-      பரமஶிஷ்யர படெ³து³ மெரதெ³ கீருதியல்லி
-      ஸுரேந்த்³ரரு புத்ரபி⁴க்ஷவ பே³டெ³ விஜேந்த்³ரன்ன
-      கருணிஸி மட²வனுத்³த⁴ரிஸித³ காரண
-      கு³ருவ்யாஸராயரெ பரம கு³ருக³ளு காணிரொ
-      புரந்த³ரவிட்²ட²ல பரதை³வ ஜக³கெ ॥
-    hi: |
-      सिरि नारायणयोगि श्रीपादरायरल्लि
-      वरविद्याभ्यासव माडिदे नीनु
-      धरियोळु विजयीन्द्र वादिराजरेम्ब
-      परमशिष्यर पडेदु मेरदे कीरुतियल्लि
-      सुरेन्द्ररु पुत्रभिक्षव बेडे विजेन्द्रन्न
-      करुणिसि मठवनुद्धरिसिद कारण
-      गुरुव्यासरायरे परम गुरुगळु काणिरो
-      पुरन्दरविठ्ठल परदैव जगके ॥
-    en: |
-      siri nārāyaṇayōgi śrīpādarāyaralli
-      varavidyābhyāsava māḍide nīnu
-      dhariyoḷu vijayīndra vādirājaremba
-      paramaśiṣyara paḍedu merade kīrutiyalli
-      surēndraru putrabhikṣva bēḍe vijēndranna
-      karuṇisi maṭhavanuddharisida kāraṇa
-      guruvyāsarāyare parama gurugaḷu kāṇiro
-      purandaraviṭhṭhala paradaiva jagake ॥
 
   - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
-    subtitle_ta: த்ரிபுடதாள
-    subtitle_hi: त्रिपुटताळ
-    subtitle_en: tripuṭatāḷa
     kn: |
       ವರಮಧ್ವಮತವೆಂಬೊ ಸಾಗರದೊಳು ಅವ -
       ತರಿಸಿದೆ ಪೂರ್ಣ ಚಂದ್ರಮನಂತೆ ನೀನು
       ಧರಿಯೊಳು ಬ್ರಹ್ಮಣ್ಯರ ವರಕುವರನೆಂದೆನಿಸಿದೆ ನೀನು
       ಪುರಂದರವಿಠ್ಠಲನ್ನ ಕರುಣಾಕರ ಕರುಣವ ಪಡೆದೆ ॥
-    ta: |
-      வரமத்⁴வமதவெம்பொ³ ஸாக³ரதொ³ளு அவ -
-      தரிஸிதெ³ பூர்ண சந்த்³ரமனந்தெ நீனு
-      த⁴ரியொளு ப்³ரஹ்மண்யர வரகுவரனெந்தெ³னிஸிதெ³ நீனு
-      புரந்த³ரவிட்²ட²லன்ன கருணாகர கருணவ படெ³தெ³ ॥
-    hi: |
-      वरमध्वमतवेम्बो सागरदोळु अव -
-      तरिसिदे पूर्ण चन्द्रमनन्ते नीनु
-      धरियोळु ब्रह्मण्यर वरकुवरनेन्देनिसिदे नीनु
-      पुरन्दरविठ्ठलन्न करुणाकर करुणव पडेदे ॥
-    en: |
-      varamadhvamatavembo sāgaradoḷu ava -
-      tariside pūrṇa candramanante nīnu
-      dhariyoḷu brahmaṇyara varakuvaranendeniside nīnu
-      purandaraviṭhṭhalanna karuṇākara karuṇava paḍede ॥
 
   - type: None
     number: 4
     subtitle_kn: ಅಟ್ಟತಾಳ
-    subtitle_ta: அட்டதாள
-    subtitle_hi: अट्टताळ
-    subtitle_en: aṭṭatāḷa
     kn: |
       ಈಸು ಮುನಿಗಳು ಇದ್ದರೇನು ಮಾಡಿದರಯ್ಯ
       ವ್ಯಾಸರಾಯ ಮಧ್ವಮತವನುದ್ಧರಿಸಿದ
@@ -332,61 +115,10 @@ verses:
       ಈಶ ಬೊಮ್ಮ ಇಂದ್ರಾದಿಗಳಿಗೆ ಈಶನೆಂದು ಡಂಗುರವ 
       ಪೊಯಿಸಿ ಮೆರೆದೆ ಜಗವರಿಯೆ ದಾಸರೊಳು 
       ನೀ ಸಮರ್ಥನು ಸಂನ್ಯಾಸಿ ಶಿರೋಮಣಿ ॥
-    ta: |
-      ஈஸு முனிக³ளு இத்³த³ரேனு மாடி³த³ரய்ய
-      வ்யாஸராய மத்⁴வமதவனுத்³த⁴ரிஸித³
-      காஶி க³தா³த⁴ர மிஸ்ரன கூட³
-      வாத³வ மாடி³ ஸோலிஸி
-      தா³ஸன்ன மாடி³கொண்டெ³ தா⁴ருணியொள
-      ராஸிம்ஹ மிஸ்ரனெ யோகி³ மொத³லாத³ பக்ஷ
-      காஶீ மிஸ்ர பக்ஷத⁴ர வாஜிபேய லிங்க³ண்ணன வி -
-      த்³வாம்ஸரு நூரெண்டு மந்தி³ ப³ரலு
-      ஜயிஸிதெ³ ஜயபத்ரிகெய கொண்டு³ மெரெதெ³
-      வாஸுதே³வ கோ³பால கருஷ்ணகெ³ வி -
-      பூ⁴ஷணவ மாடி³ ஹாகிஸிதெ³
-      ஸ்ரீஶ புரந்த³ரவிட்²ட²லன்ன 
-      ஈஶ பொ³ம்ம இந்த்³ராதி³க³ளிகெ³ ஈஶனெந்து³ ட³ங்கு³ரவ 
-      பொயிஸி மெரெதெ³ ஜக³வரியெ தா³ஸரொளு 
-      நீ ஸமர்த²னு ஸந்ன்யாஸி ஶிரோமணி ॥
-    hi: |
-      ईसु मुनिगळु इद्दरेनु माडिदरय्य
-      व्यासराय मध्वमतवनुद्धरिसिद
-      काशि गदाधर मिश्रन कूड
-      वादव माडि सोलिसि
-      दासन्न माडिकोण्डे धारुणियोळ
-      रासिंह मिश्रने योगि मोदलाद पक्ष
-      काशी मिश्र पक्षधर वाजिपेय लिङ्गण्णन वि -
-      द्वांसरु नूरेण्टु मन्दि बरलु
-      जयिसिदे जयपत्रिकेय कोण्डु मेरेदे
-      वासुदेव गोपाल कृष्णगे वि -
-      भूषणव माडि हाकिसिदे
-      श्रीश पुरन्दरविठ्ठलन्न 
-      ईश बोम्म इन्द्रादिगळिगे ईशनेन्दु डङ्गुरव 
-      पोयिसि मेरेदे जगवरिये दासरोळु 
-      नी समर्थनु सन्न्यासि शिरोमणि ॥
-    en: |
-      īsu munigaḷu iddarēnu māḍidarayya
-      vyāsarāya madhvamatavanuddharisida
-      kāśi gadādhara miśrana kūḍa
-      vādava māḍi sōlisi
-      dāsanna māḍikoṇḍe dhāruṇiyoḷa
-      rāsiṃha miśrane yōgi modalāda pakṣ
-      kāśī miśra pakṣdhara vājipēya liṅgaṇṇana vi -
-      dvāṃsaru nūreṇṭu mandi baralu
-      jayiside jayapatrikeya koṇḍu merede
-      vāsudēva gōpāla kṛṣṇage vi -
-      bhūṣaṇava māḍi hākiside
-      śrīśa purandaraviṭhṭhalanna 
-      īśa bomma indrādigaḷige īśanendu ḍaṅgurava 
-      poyisi merede jagavariye dāsaroḷu 
-      nī samarthanu sannyāsi śirōmaṇi ॥
 
   - type: None
     number: 5
     subtitle_kn: ಆದಿತಾಳ
-    subtitle_ta: ஆதி³தாள
-    subtitle_hi: आदिताळ
-    subtitle_en: āditāḷa
     kn: |
       ಮಾನಸ ಪೂಜೆಯನು ನೀ ಮಾಡೆ
       ದಾನವಾಂತಕ ರಂಗನು ಮೆಚ್ಚೆ
@@ -396,49 +128,10 @@ verses:
       ಶ್ರೀನಿವಾಸ ಪುರಂದರವಿಠ್ಠಲನ
       ಗಾನವ ಮಾಡುತ ಆಡುತ ಪಾಡುತ
       ಏನೆಂಬೆ ನಿಮ್ಮ ಮಹಿಮೆಯ ಮಾನವನಾವ ಬಲ್ಲನು ॥
-    ta: |
-      மானஸ பூஜெயனு நீ மாடெ³
-      தா³னவாந்தக ரங்க³னு மெச்செ
-      தானெ ப³ந்து³ கோ³பால கருஷ்ண
-      க்³ஞானிக³ளரஸனெ கு³ருவ்யாஸராய
-      ஏனெம்பெ³னு நின்ன மஹிமெயனு
-      ஸ்ரீனிவாஸ புரந்த³ரவிட்²ட²லன
-      கா³னவ மாடு³த ஆடு³த பாடு³த
-      ஏனெம்பெ³ நிம்ம மஹிமெய மானவனாவ ப³ல்லனு ॥
-    hi: |
-      मानस पूजेयनु नी माडे
-      दानवान्तक रङ्गनु मेच्चे
-      ताने बन्दु गोपाल कृष्ण
-      ज्ञानिगळरसने गुरुव्यासराय
-      एनेम्बेनु निन्न महिमेयनु
-      श्रीनिवास पुरन्दरविठ्ठलन
-      गानव माडुत आडुत पाडुत
-      एनेम्बे निम्म महिमेय मानवनाव बल्लनु ॥
-    en: |
-      mānasa pūjeyanu nī māḍe
-      dānavāntaka raṅganu mecce
-      tāne bandu gōpāla kṛṣṇa
-      jñānigaḷarasane guruvyāsarāya
-      ēnembenu ninna mahimeyanu
-      śrīnivāsa purandaraviṭhṭhalana
-      gānava māḍuta āḍuta pāḍuta
-      ēnembe nimma mahimeya mānavanāva ballanu ॥
 
   - type: None
     subtitle_kn: ಜತೆ
-    subtitle_ta: ஜதெ
-    subtitle_hi: जते
-    subtitle_en: jate
     kn: |
       ಗುರುವ್ಯಾಸರಾಯರ ಕರುಣ ಕಟಾಕ್ಷದಿ
       ಪುರಂದರವಿಠ್ಠಲನ್ನ ಚರಣವ ಕಂಡೆನಾ ॥
-    ta: |
-      கு³ருவ்யாஸராயர கருண கடாக்ஷதி³
-      புரந்த³ரவிட்²ட²லன்ன சரணவ கண்டெ³னா ॥
-    hi: |
-      गुरुव्यासरायर करुण कटाक्षदि
-      पुरन्दरविठ्ठलन्न चरणव कण्डेना ॥
-    en: |
-      guruvyāsarāyara karuṇa kaṭākṣdi
-      purandaraviṭhṭhalanna caraṇava kaṇḍenā ॥
 

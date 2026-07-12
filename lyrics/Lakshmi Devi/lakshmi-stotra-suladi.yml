@@ -1,32 +1,16 @@
 # ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - Lyrics File (Auto-transliterated)
-# Edit the _ta, _hi, _en fields to correct any transliteration errors
+# Daasa Saahitya - Lyrics File
+# Transliterations are auto-generated at build time
 # ──────────────────────────────────────────────────────────────────
 
 title_kn: ಲಕ್ಷ್ಮಿ ಸ್ತೋತ್ರ ಸುಳಾದಿ
-title_ta: லக்ஷ்மி ஸ்தோத்ர ஸுளாதி³
-title_hi: लक्ष्मि स्तोत्र सुळादि
-title_en: lakṣmi stōtra suḷādi
-
 author_kn: ಗೋಪಾಲ ದಾಸರು
-author_ta: கோ³பால தா³ஸரு
-author_hi: गोपाल दासरु
-author_en: gōpāla dāsaru
-
-
 raga_kn: ಅರಭಿ
-raga_ta: அரபி⁴
-raga_hi: अरभि
-raga_en: arabhi
-
 
 verses:
   - type: None
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    subtitle_ta: த்⁴ருவதாள
-    subtitle_hi: ध्रुवताळ
-    subtitle_en: dhruvatāḷa
     kn: |
       ಇಂದಿರಾದೇವಿ ಮಾತೆ ತಂದೆ ವಿಠಲನ ಅರ-
       ವಿಂದ ಚರಣಕಿನ್ನು ಅಂದಿಗೆ ಗೆಜ್ಜೆಯಾದೆ
@@ -51,88 +35,10 @@ verses:
       ಕುಂದಿಲ್ಲದೋಲಗವ ನಂದಾದಿ ಕೊಳುತ ಮುಕ್ತ-
       ರಿಂದ ಸೇವಿತಳಾಗಿ ಎಂದೆಂದು ಬಿಡದಲೆ
       ಸಂದೇಹವಿಲ್ಲದೆ ಗೋಪಾಲವಿಠ್ಠಲನ್ನ
-    ta: |
-      இந்தி³ராதே³வி மாதெ தந்தெ³ விட²லன அர-
-      விந்த³ சரணகின்னு அந்தி³கெ³ கெ³ஜ்ஜெயாதெ³
-      ஹொந்தி³கெயாத³ ஊரு ஜானு கைய மேலெ
-      செந்த³த³ ஸ்வரூப பீதாம்ப³ரொட்³யாணாதெ³
-      மந்த³ரத⁴ரனொக்ஷ ஸ்த²ளத³லி நீ நிந்தெ³
-      கந்த³ரத³லி சித்ரவைசித்ர்ய பரி
-      க³ந்த⁴வு பத³க ஹாரங்க³ளு புஷ்ப துலஸி -
-      யிந்தொ³ப்புவ அலங்கார நந்த³ ஶோபி⁴தளாதெ³
-      ஒந்தொ³ந்து³ ஹஸ்தத³ல்லி ஆயுத⁴க³ளாதெ³
-      செந்து³ள்ள கடெ³ய தோள்ப³ந்தி³ பு⁴ஜகீர்தி
-      குந்து³ இல்லதெ³ கர்ணகுண்ட³ல நானாபரி
-      அந்த³வாத³ரளெலெ ஸுந்த³ர கிரீடவு
-      ஸந்தி³ஸந்தி³கெ³ நானாப⁴ரணாலங்காரளாதெ³
-      இந்தி³ரேஶன ப்ரதி அவயவக³ளலின்னு
-      இந்தி³ரெ ப்ரதி ப்ரதி வஸ்துவாதெ³
-      கந்த³ர்பனய்யன ஆனந்த³ பெ³ரெது³
-      ஆனந்த³ பெ³ரெது³ ஸுக²ஸுரிதெ³ நீ
-      ஒந்த³ரக⁴ளிகெ³ அக³லதெ³ இன்னு
-      கந்த³ பொ³ம்மனு மத்தெ நந்தி³வாஹன
-      அமரேந்த்³ர ஸனக ஸனந்த³ரிந்த³லின்னு
-      குந்தி³ல்லதோ³லக³வ நந்தா³தி³ கொளுத முக்த-
-      ரிந்த³ ஸேவிதளாகி³ எந்தெ³ந்து³ பி³ட³த³லெ
-      ஸந்தே³ஹவில்லதெ³ கோ³பாலவிட்²ட²லன்ன
-      பொந்தி³ ஸுக²த³லி செந்த³தி³ மெரெதெ³ ॥
-    hi: |
-      इन्दिरादेवि माते तन्दे विठलन अर-
-      विन्द चरणकिन्नु अन्दिगे गेज्जेयादे
-      होन्दिकेयाद ऊरु जानु कैय मेले
-      चेन्दद स्वरूप पीताम्बरोड्याणादे
-      मन्दरधरनोक्ष स्थळदलि नी निन्दे
-      कन्दरदलि चित्रवैचित्र्य परि
-      गन्धवु पदक हारङ्गळु पुष्प तुलसि -
-      यिन्दोप्पुव अलङ्कार नन्द शोभितळादे
-      ओन्दोन्दु हस्तदल्लि आयुधगळादे
-      चेन्दुळ्ळ कडेय तोळ्बन्दि भुजकीर्ति
-      कुन्दु इल्लदे कर्णकुण्डल नानापरि
-      अन्दवादरळेले सुन्दर किरीटवु
-      सन्दिसन्दिगे नानाभरणालङ्कारळादे
-      इन्दिरेशन प्रति अवयवगळलिन्नु
-      इन्दिरे प्रति प्रति वस्तुवादे
-      कन्दर्पनय्यन आनन्द बेरेदु
-      आनन्द बेरेदु सुखसुरिदे नी
-      ओन्दरघळिगे अगलदे इन्नु
-      कन्द बोम्मनु मत्ते नन्दिवाहन
-      अमरेन्द्र सनक सनन्दरिन्दलिन्नु
-      कुन्दिल्लदोलगव नन्दादि कोळुत मुक्त-
-      रिन्द सेवितळागि एन्देन्दु बिडदले
-      सन्देहविल्लदे गोपालविठ्ठलन्न
-      पोन्दि सुखदलि चेन्ददि मेरेदे ॥
-    en: |
-      indirādēvi māte tande viṭhalana ara-
-      vinda caraṇakinnu andige gejjeyāde
-      hondikeyāda ūru jānu kaiya mēle
-      cendada svarūpa pītāmbaroḍyāṇāde
-      mandaradharanokṣ sthaḷadali nī ninde
-      kandaradali citravaicitrya pari
-      gandhavu padaka hāraṅgaḷu puṣpa tulasi -
-      yindoppuva alaṅkāra nanda śōbhitaḷāde
-      ondondu hastadalli āyudhagaḷāde
-      cenduḷḷa kaḍeya tōḷbandi bhujakīrti
-      kundu illade karṇakuṇḍala nānāpari
-      andavādaraḷele sundara kirīṭavu
-      sandisandige nānābharaṇālaṅkāraḷāde
-      indirēśana prati avayavagaḷalinnu
-      indire prati prati vastuvāde
-      kandarpanayyana ānanda beredu
-      ānanda beredu sukhasuride nī
-      ondaraghaḷige agalade innu
-      kanda bommanu matte nandivāhana
-      amarēndra sanaka sanandarindalinnu
-      kundilladōlagava nandādi koḷuta mukta-
-      rinda sēvitaḷāgi endendu biḍadale
-      sandēhavillade gōpālaviṭhṭhalanna
-      pondi sukhadali cendadi merede ॥
 
   - type: None
     number: 2
     subtitle_kn: ಮಟ್ಟತಾಳ
-    subtitle_ta: மட்டதாள
-    subtitle_hi: मट्टताळ
-    subtitle_en: maṭṭatāḷa
     kn: |
       ಹರಿ ಅನಿರುದ್ಧನಾಗೆ ಸಿರಿ ಶಾಂತಿದೇವಿಯಾದೆ
       ಹರಿ ಪ್ರದ್ಯುಮ್ನನಾಗೆ ಸಿರಿಕೃತಿದೇವಿ ಆದೆ
@@ -142,43 +48,10 @@ verses:
       ಮರಳಿ ಚತುರವತಾರಗಳಾದೆ
       ಪರಿಪರಿ ಅವತಾರಕ್ಕೆ ಪರಿಪರಿ ರೂಪಳಾದೆ
       ಶರಣರ ಪಾಲಕ ಗೋಪಾಲವಿಠ್ಠಲನ್ನ
-    ta: |
-      ஹரி அனிருத்³த⁴னாகெ³ ஸிரி ஶாந்திதே³வியாதெ³
-      ஹரி ப்ரத்³யும்னனாகெ³ ஸிரிகருதிதே³வி ஆதெ³
-      ஹரி ஸங்கர்ஷணனாகெ³ ஸிரி ஜயதே³வி ஆதெ³
-      ஹரி வாஸுதே³வனாகெ³ ஸிரி மாயாதே³வியாதெ³
-      எரடெ³ரட³வதாரக்கெ மரளி
-      மரளி சதுரவதாரக³ளாதெ³
-      பரிபரி அவதாரக்கெ பரிபரி ரூபளாதெ³
-      ஶரணர பாலக கோ³பாலவிட்²ட²லன்ன
-      சரண கமலவன்னு பரிபரி ஸேவிஸுத ॥
-    hi: |
-      हरि अनिरुद्धनागे सिरि शान्तिदेवियादे
-      हरि प्रद्युम्ननागे सिरिकृतिदेवि आदे
-      हरि सङ्कर्षणनागे सिरि जयदेवि आदे
-      हरि वासुदेवनागे सिरि मायादेवियादे
-      एरडेरडवतारक्के मरळि
-      मरळि चतुरवतारगळादे
-      परिपरि अवतारक्के परिपरि रूपळादे
-      शरणर पालक गोपालविठ्ठलन्न
-      चरण कमलवन्नु परिपरि सेविसुत ॥
-    en: |
-      hari aniruddhanāge siri śāntidēviyāde
-      hari pradyumnanāge sirikṛtidēvi āde
-      hari saṅkarṣaṇanāge siri jayadēvi āde
-      hari vāsudēvanāge siri māyādēviyāde
-      eraḍeraḍavatārakke maraḷi
-      maraḷi caturavatāragaḷāde
-      paripari avatārakke paripari rūpaḷāde
-      śaraṇara pālaka gōpālaviṭhṭhalanna
-      caraṇa kamalavannu paripari sēvisuta ॥
 
   - type: None
     number: 3
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
-    subtitle_ta: த்ரிபுடதாள
-    subtitle_hi: त्रिपुटताळ
-    subtitle_en: tripuṭatāḷa
     kn: |
       ಧರೆಯ ರೂಪದಿ ಹರಿಗೆ ಕುಳ್ಳಿರೆ ಗದ್ದುಗೆಯಾದೆ
       ಮೆರೆವ ಅವ್ಯಾಕೃತ ಗಗನವೆ ಕೊಡೆಯಾದೆ
@@ -193,58 +66,10 @@ verses:
       ಅರಿವಂತೆ ಅಜಗಿನ್ನು ತಪತಪವೆಂದು ಅ -
       ಶರೀರ ಹಿತ ನುಡಿದೆ ಅವ್ಯಾಕೃತಕಭಿಮಾನಿ
       ಪರಿಪೂರ್ಣ ಗುಣಭರಿತ ಗೋಪಾಲವಿಠ್ಠಲನ್ನ
-    ta: |
-      த⁴ரெய ரூபதி³ ஹரிகெ³ குள்ளிரெ க³த்³து³கெ³யாதெ³
-      மெரெவ அவ்யாகருத க³க³னவெ கொடெ³யாதெ³
-      எரடெ³ரடொ³ந்து³ ரூபதி³ ஹரியித்தலு ரமா
-      மரளி ஸ்ரீரூபதி³ ஹரியிந்த³ பெ³ரெது³
-      ஸ்வரமணன ரமிஸி யோக³னித்³ரெய மாடி³
-      ஹரியாக்³ஞதி³ந்த³ அம்ப்⁴ரணிரூபளாதெ³
-      பரிபரி ஸ்ருதியிந்த³ ஸருஷ்டிய ரசிஸெந்து³
-      ஹரிய கொண்டா³டி³தெ³ ஹருஷதி³ நலிதெ³
-      ஹரிய நாபி⁴யலின்னு ஸரஸிஜ ரூபதி³
-      விரிஞ்சியனெ படெ³தெ³ கருணாகரெ மத்தெ
-      அரிவந்தெ அஜகி³ன்னு தபதபவெந்து³ அ -
-      ஶரீர ஹித நுடி³தெ³ அவ்யாகருதகபி⁴மானி
-      பரிபூர்ண கு³ணப⁴ரித கோ³பாலவிட்²ட²லன்ன
-      கருணதி³ந்தெ³ரடெ³ரடு³ ஸருஷ்டிய ரசிஸிதெ³ ॥
-    hi: |
-      धरेय रूपदि हरिगे कुळ्ळिरे गद्दुगेयादे
-      मेरेव अव्याकृत गगनवे कोडेयादे
-      एरडेरडोन्दु रूपदि हरियित्तलु रमा
-      मरळि श्रीरूपदि हरियिन्द बेरेदु
-      स्वरमणन रमिसि योगनिद्रेय माडि
-      हरियाज्ञदिन्द अम्भ्रणिरूपळादे
-      परिपरि श्रुतियिन्द सृष्टिय रचिसेन्दु
-      हरिय कोण्डाडिदे हरुषदि नलिदे
-      हरिय नाभियलिन्नु सरसिज रूपदि
-      विरिञ्चियने पडेदे करुणाकरे मत्ते
-      अरिवन्ते अजगिन्नु तपतपवेन्दु अ -
-      शरीर हित नुडिदे अव्याकृतकभिमानि
-      परिपूर्ण गुणभरित गोपालविठ्ठलन्न
-      करुणदिन्देरडेरडु सृष्टिय रचिसिदे ॥
-    en: |
-      dhareya rūpadi harige kuḷḷire gaddugeyāde
-      mereva avyākṛta gaganave koḍeyāde
-      eraḍeraḍondu rūpadi hariyittalu ramā
-      maraḷi śrīrūpadi hariyinda beredu
-      svaramaṇana ramisi yōganidreya māḍi
-      hariyājñdinda ambhraṇirūpaḷāde
-      paripari śrutiyinda sṛṣṭiya racisendu
-      hariya koṇḍāḍide haruṣadi nalide
-      hariya nābhiyalinnu sarasija rūpadi
-      viriñciyane paḍede karuṇākare matte
-      arivante ajaginnu tapatapavendu a -
-      śarīra hita nuḍide avyākṛtakabhimāni
-      paripūrṇa guṇabharita gōpālaviṭhṭhalanna
-      karuṇadinderaḍeraḍu sṛṣṭiya raciside ॥
 
   - type: None
     number: 4
     subtitle_kn: ಅಟ್ಟತಾಳ
-    subtitle_ta: அட்டதாள
-    subtitle_hi: अट्टताळ
-    subtitle_en: aṭṭatāḷa
     kn: |
       ಹರಿಯಾಜ್ಞೆಯಿಂದಲಿ ಜಡ ಪ್ರಕೃತಿ ದೆಸೆಯಿಂದ
       ವರ ತ್ರಿಗುಣಾತ್ಮಕವಾದಂಥ ಮಹತತ್ವ
@@ -252,37 +77,10 @@ verses:
       ಭರಿತವಾದಂಥ ಅಹಂಕಾರ ತತ್ವ
       ಪರಿಪರಿ ಸೃಷ್ಟಿಸಿದೆ ವರಮಾಯಾ ನೋವಿಲ್ಲದೆ
       ಪರಮದಯಾಳು ಗೋಪಾಲವಿಠ್ಠಲನು
-    ta: |
-      ஹரியாக்³ஞெயிந்த³லி ஜட³ ப்ரகருதி தெ³ஸெயிந்த³
-      வர த்ரிகு³ணாத்மகவாத³ந்த² மஹதத்வ
-      அத³ரிந்த³ வைகாரிக தைஜஸ தாமஸவன்னு
-      ப⁴ரிதவாத³ந்த² அஹங்கார தத்வ
-      பரிபரி ஸருஷ்டிஸிதெ³ வரமாயா நோவில்லதெ³
-      பரமத³யாளு கோ³பாலவிட்²ட²லனு
-      கருணிஸுவனு நீ கரவிடி³த³வர ॥
-    hi: |
-      हरियाज्ञेयिन्दलि जड प्रकृति देसेयिन्द
-      वर त्रिगुणात्मकवादन्थ महतत्व
-      अदरिन्द वैकारिक तैजस तामसवन्नु
-      भरितवादन्थ अहङ्कार तत्व
-      परिपरि सृष्टिसिदे वरमाया नोविल्लदे
-      परमदयाळु गोपालविठ्ठलनु
-      करुणिसुवनु नी करविडिदवर ॥
-    en: |
-      hariyājñeyindali jaḍa prakṛti deseyinda
-      vara triguṇātmakavādantha mahatatva
-      adarinda vaikārika taijasa tāmasavannu
-      bharitavādantha ahaṅkāra tatva
-      paripari sṛṣṭiside varamāyā nōvillade
-      paramadayāḷu gōpālaviṭhṭhalanu
-      karuṇisuvanu nī karaviḍidavara ॥
 
   - type: None
     number: 5
     subtitle_kn: ಆದಿತಾಳ
-    subtitle_ta: ஆதி³தாள
-    subtitle_hi: आदिताळ
-    subtitle_en: āditāḷa
     kn: |
       ಮಹತ್ತತ್ವ ದೆಸೆಯಿಂದ ಬೊಮ್ಮನ ಸೃಷ್ಟಿಸಿದೆ
       ಅಹಂಕಾರ ವೈಕಾರಿಕದಿಂದ ಮನಸ್ಸು
@@ -296,63 +94,9 @@ verses:
       ಆ ಹರಿ ಕರುಣಾಪೂರ್ಣ ಕಟಾಕ್ಷದಿ
       ಈ ಮಹಾ ಜಗಕೆಲ್ಲ ಪ್ರೇಮದಿಂದ ಸಲಹುವೆ
       ಮೋಹನಮೂರುತಿ ಗೋಪಾಲವಿಠ್ಠಲನ್ನ
-    ta: |
-      மஹத்தத்வ தெ³ஸெயிந்த³ பொ³ம்மன ஸருஷ்டிஸிதெ³
-      அஹங்கார வைகாரிகதி³ந்த³ மனஸ்ஸு
-      ஆ மஹா இந்த்³ரியக³ளிக³பி⁴மானி தே³வதெக³ளன்னு
-      அஹங்கார பஞ்ச தன்மாத்ரெயன்னு ஸருஷ்டிஸிதெ³
-      அஹங்கார தைஜஸதி³ந்த³ சக்ஷுராதி³
-      இஹ இந்த்³ரியக³ளன்னெல்ல ஸருஷ்டிஸிதெ³
-      அஹங்கார தாமஸதி³ந்த³லி பஞ்ச 
-      மஹாபூ⁴தங்க³ள ஸருஷ்டிஸிதெ³
-      மோஹதி³ந்த³ ஸகல தத்வேஶரன்னு ஸருஷ்டிஸிதெ³
-      ஆ ஹரி கருணாபூர்ண கடாக்ஷதி³
-      ஈ மஹா ஜக³கெல்ல ப்ரேமதி³ந்த³ ஸலஹுவெ
-      மோஹனமூருதி கோ³பாலவிட்²ட²லன்ன
-      ஸாஹஸவில்லதெ³ ரஹஸ்ய பூஜிபெ ॥
-    hi: |
-      महत्तत्व देसेयिन्द बोम्मन सृष्टिसिदे
-      अहङ्कार वैकारिकदिन्द मनस्सु
-      आ महा इन्द्रियगळिगभिमानि देवतेगळन्नु
-      अहङ्कार पञ्च तन्मात्रेयन्नु सृष्टिसिदे
-      अहङ्कार तैजसदिन्द चक्षुरादि
-      इह इन्द्रियगळन्नेल्ल सृष्टिसिदे
-      अहङ्कार तामसदिन्दलि पञ्च 
-      महाभूतङ्गळ सृष्टिसिदे
-      मोहदिन्द सकल तत्वेशरन्नु सृष्टिसिदे
-      आ हरि करुणापूर्ण कटाक्षदि
-      ई महा जगकेल्ल प्रेमदिन्द सलहुवे
-      मोहनमूरुति गोपालविठ्ठलन्न
-      साहसविल्लदे रहस्य पूजिपे ॥
-    en: |
-      mahattatva deseyinda bommana sṛṣṭiside
-      ahaṅkāra vaikārikadinda manassu
-      ā mahā indriyagaḷigabhimāni dēvategaḷannu
-      ahaṅkāra pañca tanmātreyannu sṛṣṭiside
-      ahaṅkāra taijasadinda cakṣurādi
-      iha indriyagaḷannella sṛṣṭiside
-      ahaṅkāra tāmasadindali pañca 
-      mahābhūtaṅgaḷa sṛṣṭiside
-      mōhadinda sakala tatvēśarannu sṛṣṭiside
-      ā hari karuṇāpūrṇa kaṭākṣdi
-      ī mahā jagakella prēmadinda salahuve
-      mōhanamūruti gōpālaviṭhṭhalanna
-      sāhasavillade rahasya pūjipe ॥
 
   - type: None
     subtitle_kn: ಜತೆ
-    subtitle_ta: ஜதெ
-    subtitle_hi: जते
-    subtitle_en: jate
     kn: |
       ನಮೋ ನಮೋ ನಿನ್ನ ಪಾದಕಮಲವೆ ಮೊರೆ ಹೊಕ್ಕೆ
-    ta: |
-      நமோ நமோ நின்ன பாத³கமலவெ மொரெ ஹொக்கெ
-      மமதெ புட்டிஸெனகெ³ கோ³பாலவிட²ல நல்லி ॥
-    hi: |
-      नमो नमो निन्न पादकमलवे मोरे होक्के
-      ममते पुट्टिसेनगे गोपालविठल नल्लि ॥
-    en: |
-      namō namō ninna pādakamalave more hokke
-      mamate puṭṭisenage gōpālaviṭhala nalli ॥
 
