@@ -1,0 +1,67 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ರಾಮ ರಾಮ ರಾಮ ಸೀತಾ ರಾಮ ಎನ್ನಿರೋ
+author_kn: ಪುರಂದರ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ತಿಲಂಗ
+tala_kn: ರೂಪಕ
+ankita_kn: ಪುರಂದರ ವಿಠ್ಠಲ
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ರಾಮ ರಾಮ ರಾಮ ರಾಮ ರಾಮ ಎನ್ನಿರೋ |ಸೀತಾ|
+
+  # ── Anupallavi ──
+  - type: anupallavi
+    kn: |
+      ನೇಮದಿಂದ ಭಜಿಸುವವರ ಕಾಮಿತಗಳ ಕೊಡುವ ನಾಮ ||
+
+  - type: Charana
+    number: 1
+    kn: |
+      ಭರದಿ ಯಮನ ಭಟರು ಬಂದು ಹೊರಡು ಎಂದು ಮೆಟ್ಟಿ ತುಳಿದು
+      ಕೊರಳಿಗಾತ್ಮ ಸೇರಿದಾಗ ಹರಿಯ ಧ್ಯಾನ ಬಾರದಯ್ಯ ||
+  - type: None
+    number: 2
+    kn: |
+      ಇಂದ್ರಿಯಂಗಳೆಲ್ಲ ಕೂಡಿ ಬಂದು ತನುವ ಮುಸುಕಿದಾಗ
+      ಸಿಂಧು ಸುತೆಯ ಪತಿಯ ನಾಮ ಅಂದಿಗೊದಗಲರಿಯದಯ್ಯ ||
+  - type: None
+    number: 3
+    kn: |
+      ಶ್ವಾಸೋಛ್ವಾಸವೆರಡು ಕಂಠ ವಾಸವಾಗಿ ಸಿಲುಕಿದಾಗ
+      ವಾಸುದೇವ ಕೃಷ್ಣನ ನಾಮ ಆ ಸಮಯಕೊದಗದಯ್ಯ ||
+  - type: None
+    number: 4
+    kn: |
+      ಶೃಂಗಾರದ ದೇಹವೆಲ್ಲ ಅಂಗಬಡಿದು ಮುರಿದು ಬಿದ್ದು
+      ಕಂಗಳಿಗಾತ್ಮ ಸೇರಿದಾಗ ಶ್ರೀ ರಂಗನ ನಾಮ ಒದಗದಯ್ಯ ||
+  - type: None
+    number: 5
+    kn: |
+      ವಾತ ಪಿತ್ತವೆರಡು ಕೂಡಿ ಶ್ಲೇಷ್ಮ ಬಂದು ಒದಗಿದಾಗ
+      ಧಾತುಗುಂದಿದಾಗ ರಘುನಾಥ ಧ್ಯಾನ ಒದಗದೋ ||
+  - type: None
+    number: 6
+    kn: |
+      ಕಲ್ಲಿಪನಂತೆ ಇರುವ ಜೀವ ನಿಲ್ಲದಂತೆ ಮರಣ ವ್ಯಾಳೆ
+      ಫುಲ್ಲನಾಭ ಕೃಷ್ಣನೆಂಬೊ ಸೊಲ್ಲು ಬಾಯಿಗೆ ಒದಗದೋ ||
+  - type: None
+    number: 7
+    kn: |
+      ಭ್ರಷ್ಟ ಜನ್ಮದಲ್ಲಿ ಹುಟ್ಟಿ ದುಷ್ಟ ಕರ್ಮಗಳನೆ ಮಾಡಿ
+      ಬಿಟ್ಟು ಹೋಗ್ವ ಸಮಯ ಪುರಂದರ ವಿಠ್ಠಲ ನಾಮ ಒದಗದಯ್ಯ ||
