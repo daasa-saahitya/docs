@@ -1,0 +1,84 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಅಧಿಕ ಮಾಸ ಹಾಡು
+author_kn: ಕವಿ/ದಾಸರ ಹೆಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಅಧಿಕ ಮಾಸ ಬಂದು ಅಧಿಕಾನಂದ ತಂದು
+      ಅಗಣಿತ ಮಹಿಮನ  ಆರಾಧಿ ಸಲೆಂದು
+      ಅಧಿಕ ಅಧಿಕವಾಗಿ ಅನುಗ್ರಹ ಪೊಂದಲು
+      ಅಪೂಪ ದಾನಗಳ ನೀಡೆ ನ್ನಲು
+
+  - type: Charana
+    number: 1
+    kn: |
+      ಅಷ್ಟ ವಸುಗಳು  ಏಕಾದಶ ರುದ್ರರು
+      ದ್ವಾದಶ ಆದಿತ್ಯ ರ ಸಹಿತವಾಗಿ
+      ವಷಟ್ಕಾರ ಮತ್ತು ಭಗಧಾತು ಎಂದು 
+      ಮುವತ್ತ ಮೂರು ರಂಗೋಲಿ ಹಾಕಿ      II
+  - type: None
+    number: 2
+    kn: |
+      ಅಧಿಕ ಮಾಸದಲ್ಲಿ ಮುದಮನ ದಿಂದ
+      ಭಕ್ತರಿಗೆ ದಾನವ ಮಾಡಲು
+      ಅಧಿಕ ಅಧಿಕವಾಗಿ ಫಲ ಬರುವುದೆಂದು
+      ಪದುಮನಾಭನ ದಯೆ ಸಿಗುವುದೆಂದೂ   II
+  - type: None
+    number: 3
+    kn: |
+      ವ್ರತ ನೇಮ ಉಪವಾಸ ದಂಪತ್ತು ಭೋಜನ
+      ಲಕ್ಷ ಬತ್ತಿ ಲಕ್ಷ ನಮಸ್ಕಾರಾವು
+      ಏಕ ಭುಕ್ತಿ ದಿಕ್ಕು ಬದಲಿಸಿ ಊಟ
+      ಧಾರಣೆ ಪಾರಣೆ ವಿಷ್ಣುಪಂಚಕವು       II
+  - type: None
+    number: 4
+    kn: |
+      ಲಕ್ಷ ಪುಷ್ಪಾರ್ಚನೆ ಮೌನವ್ರತವು ಬಳಿಕ
+      ಅರಿಸಿನ ಕುಂಕುಮ ಮರದ ಬಾಗಿನವು
+      ವಸ್ತ್ರಗಳ ದಾನ ಭಾಗವತ ಶ್ರವಣ
+      ಪುರಾಣಾದಿಗಳ ಮನನವು II
+  - type: None
+    number: 5
+    kn: |
+      ವನಿತ್ಯ ದಾನಗಳ ದಾನ ವಿವಿಧ ಫಲಗಳ ದಾನ
+      ನಿತ್ಯ ಗೆಜ್ಜೆವಸ್ತ್ರದ ದಾನವು
+      ನಾರೀಕೇಳದ ದಾನ ಕಲ್ಲು ಸಕ್ಕರೆ ದಾನ
+      ಖರ್ಜೂರದಾ ದಾನಗಳು II
+
+  - type: None
+    number: 6
+    kn: |
+      ಹಾಲು  ಮೊಸರಿನ ದಾನ ಅಡಿಕೆ ವಿಳೆದೆಲೆ ದಾನ
+      ಸಾಲಿಗ್ರಾಮದ ದಾನಗಳು
+      ಭಾಗವತ ಗ್ರಂಥದ ದಾನವು
+      ಮುವ್ವತ್ತ ಮೂರು ದಾಸರ ಪದ ಗಾಯನವು  II
+ 
+   - type: None
+    number: 7
+    kn: |
+      ದಿನದಿನವು ಮನೆಯಲ್ಲಿ ಶಾಂತಿಯು ನೆಲೆಸುವುದು
+      ಅನುದಿನ ಆನಂದವಾಗುವುದು
+      ಸಚ್ಚಿದಾನಂದ ನ ದಯೆ ಸಿಗಲೆಂದು
+      ಮಧ್ವೇಶ ಕೃಷ್ಣನಲಿ ಬೇಡುವುದು  II
+
+
+
+
