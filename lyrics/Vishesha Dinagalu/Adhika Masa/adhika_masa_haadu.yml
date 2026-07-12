@@ -12,10 +12,12 @@
 
 # REQUIRED: Kannada title and author
 title_kn: ಅಧಿಕ ಮಾಸ ಹಾಡು
+author_kn: 
 
 # OPTIONAL: Raga, Tala, Ankita
 raga_kn: ಮಧ್ಯಮಾವತಿ
 tala_kn: ಏಕ
+ankita_kn: ಮಧ್ವೇಶ ವಿಠ್ಠಲ
 
 verses:
   # ── Pallavi ──
