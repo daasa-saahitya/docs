@@ -1,0 +1,65 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಕಂಡು ಕಂಡು ನೀ ಎನ್ನ ಕೈ ಬಿಡುವರೇ ಕೃಷ್ಣಾ
+author_kn: ಪುರಂದರ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಸಹಾನಾ
+tala_kn: ಖಂಡ ಚಾಪು
+ankita_kn: ಪುರಂದರವಿಠಲ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಕಂಡು ಕಂಡು ನೀ ಎನ್ನ ಕೈ ಬಿಡುವರೇ ಕೃಷ್ಣಾ
+
+  # ── Anupallavi ──
+  - type: anupallavi
+    kn: |
+      ಪುಂಡರೀಕಾಕ್ಷ ಶ್ರೀ ಪುರುಷೋತ್ತಮ
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಬಂಧುಗಳು ಎನಗಿಲ್ಲ ಬದುಕಿನಲಿ ಸುಖವಿಲ್ಲ
+      ನಿಂದೆಯಲಿ ನೊಂದೆನೈ ನೀರಜಾಕ್ಷ
+      ತಂದೆತಾಯಿಯು ನೀನೆ ಬಂಧುಬಳಗವು ನೀನೆ
+      ಎಂದೆಂದಿಗೂ ನಿನ್ನ ನಂಬಿದೆನೋ ಕೃಷ್ಣಾ
+
+  - type: None
+    number: 2
+    kn: |
+      ಕ್ಷಣವೊಂದು ಯುಗವಾಗಿ ತೃಣಕಿಂತ ಕಡೆಯಾಗಿ
+      ಎಣಿಸಲಾರದ ಭವದಿ ಕಡುನೊಂದೆ ನಾನು
+      ಸನಕಾದಿ ಮುನಿವಂದ್ಯ ವನಜಸಂಭವ ಜನಕ
+      ಫಣಿಶಾಯಿ ಪ್ರಹ್ಲಾದಗೊಲಿದ ಶ್ರೀಕೃಷ್ಣಾ   
+  
+  - type: None
+    number: 3
+    kn: |
+      ಭಕ್ತವತ್ಸಲನೆಂಬೊ ಬಿರುದು ಪೊತ್ತಮೇಲೆ
+      ಭಕ್ತರಾಧೀನನಾಗಿರಬೇಡವೆ
+      ಮುಕ್ತಿದಾಯಕ ದೇವ ಪುರಂದರವಿಠಲನೆ 
+      ಶಕ್ತ  ನೀನಹುದೆಂದು ನಂಬಿದೆನೊ ಶ್ರೀಕೃಷ್ಣಾ 
+

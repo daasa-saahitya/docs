@@ -778,6 +778,8 @@ def generate_index(all_songs, output_dir, template_path):
         songs = node.get('_songs_', [])
         children = {k: v for k, v in node.items() if k != '_songs_' and isinstance(v, dict)}
 
+        # Reset counter for each folder
+        counter[0] = 0
         parts_html = ''
 
         # Render songs in this folder
