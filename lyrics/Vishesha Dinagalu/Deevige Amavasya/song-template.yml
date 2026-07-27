@@ -12,12 +12,6 @@
 
 # REQUIRED: Kannada title and author
 title_kn: ದಿವಶಿ ಗೌರಿ ಹಾಡು
-author_kn: 
-
-# OPTIONAL: Raga, Tala, Ankita
-raga_kn:
-tala_kn:
-ankita_kn:
 
 # OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
 # title_ta:
