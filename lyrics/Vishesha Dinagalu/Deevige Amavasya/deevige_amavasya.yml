@@ -12,6 +12,7 @@
 
 # REQUIRED: Kannada title and author
 title_kn: ದಿವಶಿ ಗೌರಿ ಹಾಡು
+author_kn:
 
 # OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
 # title_ta:
@@ -36,7 +37,7 @@ verses:
       ಹುಟ್ಟಿದಾಗಿನಿಂದ ಹೆಣ್ಣುಮಗುವು ಮದುವೆಆಗುವ ವರೆಗು ||
 
   # ── Caraṇa with tala name ──
-  - type: charana
+  - type: Charana
     number: 1
     kn: |
       ಭೀಮನ ಅಮಾವಾಸ್ಯೆ  ಎಂದು ಕೆಲವರು ಭಕ್ತಿಂದಪೂಜಿಪರು
@@ -85,7 +86,7 @@ verses:
       ಸತಿ ಪತಿಯರು ಬಹಳ ಸಂತೋಷದಿ ತಮ್ಮ ಊರಿಗೆ ಬರಲು
       ಮಗಸೊಸೆಯನು ಕಂಡು ರಾಜನು ಹರುಷವಗೊಂಡನಾಗ ||
    
-   - type: None
+  - type: None
     number: 7
     kn: |
       ಹಿರಿಯರ ದಯವ ದಿವುಸಿಗೌರಿ ಪೂಜೆ ಫಲಿಸಿತು ನಮಗೆನುತ
