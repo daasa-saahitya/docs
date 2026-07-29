@@ -1,0 +1,60 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - Kai Pididhu Paalisai Brahmanya Guruve
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಜಯರಾಯರ ನೋಡಿರೋ
+author_kn: ವಿಜಯ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಹಂಸದ್ವನಿ
+tala_kn: ಆದಿ
+ankita_kn: ವಿಜಯ ವಿಠಲ
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಜಯರಾಯರ ನೋಡಿರೋ ಸಜ್ಜನರೆಲ್ಲ
+      ಜಯರಾಯರ ನೋಡಿರೋ ||
+
+  # ── Anupallavi ──
+  - type: anupallavi
+    kn: |
+      ಜಯರಾಯರ ನೋಡಿ ಜಪಿಸಿ ಮನದಿ ಪಾಡಿ |
+      ಜಯವಾಗುವುದು ನಿಮಗೆ ಭಯನಾಶ ಸಂತತ ||
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ದುರುಳಮತವೆಂಬೊ ಕರಿಗೆ ಅಂಕುಶವಿತ್ತು
+      ಸುರಸಾದ ಗ್ರಂಥ ಆನಂದಮುನಿ |
+      ವಿರಚಿಸಿ ಇರಲಾಗಿ ಪರಮಭಕ್ತಿಯಿಂದ ವಿ
+      ಸ್ತರ ಮಾಡಿದಾ ಕರದ ಕನ್ನಡಿಯಂತೆ ||
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ವಾದಿಗಳನ್ನೆಲ್ಲಾ ಜೈಸಿ ಡಂಗುರ ಹೊಯ್ಸಿ
+      ಭೇದಾರ್ಥ ಸುಜ್ಞಾನ ಸತ್ಯವೆನಿಸಿ |
+      ಈ ಧರಿಯೊಳಗೆ ಹರಿಪರ ದೈವವೆಂದು
+      ಸಾಧಿಸಿ ಉದ್ದಂಡವಾದ ಗುರುತಿಲಕ || 
+ 
+  - type: None
+    number: 3
+    kn: |
+      ಅಕ್ಷೋಭ್ಯತೀರ್ಥರ ಕರದಿಂದ ಜನಿಸಿ
+      ಮೋಕ್ಷಕೆ ಜಯ ಪತ್ರಿಕೆ ಕೊಡಿಸಿ |
+      ಪಕ್ಷಿವಾಹನ ಸಿರಿ ವಿಜಯವಿಠ್ಠಲನನ್ನ
+      ನೀಕ್ಷಿಸುವದಕೆ ಉಪದೇಶ ಕೊಡುವ ಋಷಿ || 
+  
