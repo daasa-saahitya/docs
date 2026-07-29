@@ -11,13 +11,13 @@
 # ──────────────────────────────────────────────────────────────────
 
 # REQUIRED: Kannada title and author
-title_kn: ರಂಗನಾಥನ ನೋಡುವ ಬನ್ನಿ|
-author_kn: ಪುರಂದರ ದಾಸರು
+title_kn: ರಂಗನಾಥನ ನೋಡುವ ಬನ್ನಿ
+author_kn: ಶ್ರೀಪಾದ ರಾಜರು
 
 # OPTIONAL: Raga, Tala, Ankita
-raga_kn: ಕಲ್ಯಾಣಿ
-tala_kn: ಆದಿ
-ankita_kn: ಪುರಂದರ ವಿಠಲ
+raga_kn: 
+tala_kn: 
+ankita_kn: ರಂಗ ವಿಠಲ
 
 # OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
 # title_ta:
