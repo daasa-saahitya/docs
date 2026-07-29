@@ -1,0 +1,58 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ರಂಗನಾಥನ ನೋಡುವ ಬನ್ನಿ|
+author_kn: ಪುರಂದರ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಕಲ್ಯಾಣಿ
+tala_kn: ಆದಿ
+ankita_kn: ಪುರಂದರ ವಿಠಲ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ರಂಗನಾಥನ ನೋಡುವ ಬನ್ನಿ|
+      ಶ್ರೀರಂಗನ ದಿವ್ಯ ವಿಮಾನದಲ್ಲಿಹನ ||
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+       ಕಮನೀಯಗಾತ್ರನ ಕರುಣಾಂತರಂಗನ
+       ಕಾಮಿತಾರ್ಥವೀವ ಕಲ್ಪವೃಕ್ಷನ |
+       ಕಮಲದಳ ನೇತ್ರನ ಕಸ್ತೂರಿರಂಗನ 
+       ಕಾಮಧೇನು ಕಾವೇರಿರಂಗನ ||
+  - type: None
+    number: 2
+    kn: |
+       ವಾಸುಕಿಶಯನನ ವಾರಿಧಿನಿಲಯನ 
+       ವಾಸುದೇವ ವಾರಿಜನಾಭನ |
+       ವಾಸವಾದಿ ಭಕ್ತ ಹೃದಯಾಂಬುಜದಲ್ಲಿ
+       ವಾಸವಾಗಿರುತಿಹ ವಸುದೇವಸುತನ ||
+  - type: None
+    number: 3
+    kn: |
+       ಮಂಗಳಗಾತ್ರನ ಮಂಜುಳಭಾಷನ
+       ಗಂಗಾಜನಕನ ಅಜಪಿತನ |
+       ಸಂಗೀತಲೋಲನ ಸಾಧುಸಮ್ಮತನ
+       ರಂಗವಿಠ್ಠಲನ ರಾಜೀವನೇತ್ರನ ||
