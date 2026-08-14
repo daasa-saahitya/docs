@@ -1,0 +1,62 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ನಾಗ ಚತುರ್ತಿ ಆರತಿ ಹಾಡು
+author_kn: 
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn:
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+
+  # ── Caraṇa with tala name ──
+  - type: None
+    number: 1
+    kn: |
+      ತಾರಕ್ಕ ಉಪದೇಶಿ ದೇವಿ ಪರಾಕ್ಕು
+      ಕಾವೋದು ಕರುಣೆ ನೀನೇ ಪರಾಕ್ಕು
+      ಬೇಡಿದವರಿಗೆಲ್ಲಾ ಕೊಡುವಿ ಪರಾಕ್ಕು
+      ಸ್ವಾಮಿ ಸುಬ್ಬರಾಯ ನೀನೇ ಪರಾಕೆಂದು,
+      ಮೇರು ವೈಯ್ಯಾರತಿಯ ಬೆಳಗಿರೇ
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಸಂಜೀವಿ ತನಯ ನೀ ಕೆರದಿ ಪರಾಕ್ಕು
+      ಪಂಚಗಳಿಗೆ ಮಕ್ಕಳಿತ್ತಿ ಪರಾಕ್ಕು
+      ಅಂಧಕಾರಿಗೆ ಕಣ್ಣು ಕೊಡುವಿ ಪರಾಕ್ಕು
+      ಸ್ವಾಮಿ ಸುಬ್ಬರಾಯ ನೀನೇ ಪರಾಕೆಂದು,
+      ಮಾಣಿಕ್ಯದಾರತಿಯ ಬೆಳಗಿರೇ
+
+  # ── More Caraṇas ──
+  - type: None
+    number: 3
+    kn: |
+      ಓಡ ಹುಟ್ಟಿದವರನ್ನು ಉದ್ಧಾರ ಮಾಡಯ್ಯ
+      ಹಡದು ನಿನ್ನ ಹೆಸರನು ಇಡುವೆ ಸುಬ್ಬಯ್ಯ
+      ಬಡತನ ಬಿಡಿಸಿ ಭಾಗ್ಯವ ಕೊಡಿಸಯ್ಯ
+      ನಿನ್ನ ಗುಡಿಯ ಮುಂದೆ ಬಿದ್ದು ಹೊರಳುವೆ
+      
+      ಹವಳದಾರತಿಯ ಬೆಳಗಿರೇ,
+      ಸುಬ್ಬಯ್ಯಗೆ ಆರತಿಯ ಬೆಳಗಿರೇ
+    
