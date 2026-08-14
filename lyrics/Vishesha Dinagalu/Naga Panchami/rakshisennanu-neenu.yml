@@ -59,7 +59,7 @@ verses:
 
   # ── Subtitle (mid-song heading) ──
   - type: subtitle
-  number: 3
+    number: 3
     kn: |
       ವಂದಿಪೆ ವಿನುತ ನಂದನ ಶಾಮ
       ಸುಂದರವಿಠಲನ | ಶ್ಯಂದನ ಶೂರ   [೫]
