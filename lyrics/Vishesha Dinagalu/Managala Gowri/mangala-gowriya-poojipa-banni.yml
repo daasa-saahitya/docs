@@ -1,0 +1,79 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಮಂಗಳಗೌರಿಯ ಪೂಜಿಪ ಬನ್ನಿ
+author_kn: ಮಧ್ವೇಶ ಕೃಷ್ಣನ
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn:
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Caraṇa with tala name ──
+  - type: None
+    number: 1
+    kn: |
+      ಮಂಗಳ ಗೌರಿಯ ಪೂಜಿಪ ಬನ್ನಿ 
+      ಮಂಗಳ ಗೌರಿಯ ಧ್ಯಾನಿಪ ಬನ್ನಿ
+      ಮಂಗಳ ಪದಗಳ ಹಾಡುವ ಬನ್ನಿ 
+      ಮಂಗಳಾರತಿಯ ಬೆಳಗುವ ಬನ್ನಿ||
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+       ಮನೆಯ ಸಾರಿಸಿ ರಂಗವಾಲಿಗಳಹಾಕಿ 
+       ಪೀಠವ ತಂದಿಟ್ಟು ವಸ್ತ್ರವ ಪರಚಿ
+       ತಂಡುಲವ ಹಾಕಿ ಗೌರಿಯನಿಟ್ಟು 
+       ಶ್ರಧ್ಧೆಯಿಂದಲಿ ಅಣಿಮಾಡಿ ||
+
+  - type: None
+    number: 3
+    kn: |
+       ಭಕ್ತಿ ಶ್ರಧ್ಧೆಯಿಂದ ಪೂಜೆಗೆನುತ 
+       ಪರಿಪರಿ ಪುಷ್ಪಗಳ ತಂದಿರಿಸಿ
+       ಕ್ಯಾದಿಗಿ ಕುಸುಮ ಮಲ್ಲಿಗೆ ಪತ್ರ 
+       ಫಲಗಳ ಬ್ಯಾಗದಿಂದಲಿ ತಂದಿರಿಸಿ||
+
+  - type: None
+    number: 4
+    kn: |
+       ಜೋಡು ದೀಪಗಳಹಚ್ಚಿ ಕಡ್ಡಿ ಬತ್ತಿಯ 
+       ಸಹಿತನಾರಿಕೇಳವ ಇಡುತ್ತಲಿ
+       ಅರಿಷಿಣ ಕುಂಕುಮ ಗೆಜ್ಜೆ ವಸ್ತ್ರ 
+       ಏರಿಸಿ ಅಡಕೆ ವೀಳೆದೆಲೆ  ಇಡುತತಲಿ||
+  
+  - type: None
+    number: 5
+    kn: |
+       ಗಂಧ ಕುಂಕುಮ ದೀಪ ಧೂಪದಿ 
+       ಪುಜಿಸಿ ಕಡ್ಡಿಬತ್ತಿ ಆರತಿಮಾಡಿ
+       ಕಪ್ಪನೆ ಹಿಡಿದು ಒಪ್ಪಾಗಿ ತಂದು 
+       ಮುತೈದೆಯರಿಗೆ ನೀಡುತ್ತಲಿ||
+  
+  - type: None
+    number: 6
+    kn: |
+      ಐದು ಹೂರಣದ ಆರತಿಮಾಡಿ 
+      ಐದು ಗಂಟಿನ ದಾರ ಕಟ್ಟಿ
+      ಮುತೈದೆತನವು ಸ್ಥಿರವಾಗಿ ಇರಲೆಂದು 
+      ಮಧ್ವೇಶಕೃಷ್ಣನ  ಬೇಡುತ್ತಲಿ||
