@@ -1,0 +1,67 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಹರಿಯೊಡಗೂಡಿ ಸಿರಿದೇವಿ ಬಾರೆ |
+author_kn: ವಿಜಯರಾಘವ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn: ವಿಜಯರಾಘವ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಹರಿಯೊಡಗೂಡಿ ಸಿರಿದೇವಿ ಬಾರೆ |
+      ಹರಿಗೆ ನೈವೇದ್ಯವ ನೀನಿಡು ಬಾರೆ ॥ 
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಸುವರ್ಣ ಪಾತ್ರೆಯೋಳ್ ಸಣ್ಣಕ್ಕಿ ಅನ್ನ |
+      ಬೆಳ್ಳಿಯ ತಟ್ಟೆಯೊಳು ಬಗೆ ಬಗೆ ಭಕ್ಷ್ಯ ||
+      ಚಿನ್ನದ್ದರಿವಾಣದಿ | ಚಿತ್ರಾನ್ನ ಶಾಲ್ಯಾನ್ನ |
+      ರಜತ ಪಾತ್ರೆಯೊಳು ಪರಮಾನ್ನ || 
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಬೆಳ್ಳಿಯ ಗಿಂಡಿಲಿ ಪನ್ನೀರು ನೀರು |
+      ಚಿನ್ನದ ದೊನ್ನೆಲಿ ಪಾನಕ ಖೀರು ||
+      ಚಿತ್ತಾರದ ಬಟ್ಟಲೊಳು ಕಟ್ಟಿನ ಸಾರು |
+      ಚಿನ್ಮಯರೂಪಗೆ ದೇಂಡಿಯ ಮೊಸರು || 
+
+
+
+  - type: None
+    number: 3
+    kn: |
+      ವಿವಿಧ ಅಡಿಗೆಗಳು ವಿಧ ವಿಧ ತಿನಿಸು |
+      ವಿವಿಧ ಫಲಗಳು ಮಾವು ಹಲಸು ॥
+      ವಿಜಯರಾಘವಗೆ ವಿಶ್ವಾಸದಿ ಬಡಿಸು |
+      ವೀಳ್ಯ ತಾಂಬೂಲವ ನೀಡಿ ಆದರಿಸು || 
+ 
+
+
+

@@ -1,0 +1,85 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಮಂಗಳಾರತಿ ತಂದು ಬೆಳಗಿರೆ
+author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ 
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಮಂಗಳಾರತಿ ತಂದು ಬೆಳಗಿರೆ
+      ಅಂಬುಜಾಸನ ರಾಣಿಗೆ
+      ಅಂಬೆಗೆ ಜಗದಾಂಬೆಗೆ ಮೂಕಾಂಬೆಗೆ
+      ಶಶಿ ಬಿಂಬೆಗೆ ||
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಶುದ್ಧ ಸ್ನಾನವ ಮಾಡಿ ನದಿಯಲಿ
+      ವಜ್ರಪೀಠದಿ ನೆಲೆಸಿರೆ
+      ತಿದ್ದಿ ತಿಲಕವ ತೀಡಿದಂಥ
+      ಮುದ್ದು ಮಂಗಳ ಗೌರಿಗೆ || 
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಎರೆದು ಪೀತಾಂಬರವನುಡಿಸಿ
+      ಸರ್ವಾಭರಣವ ರಚಿಸಿದ
+      ಹರಳಿನೋಲೆ ವಜ್ರಮೂಗುತಿ
+      ವರಮಹಾಲಕ್ಷ್ಮಿ ದೇವಿಗೆ ||
+
+
+  - type: None
+    number: 3
+    kn: |
+      ಹುಟ್ಟುಬಡವೆಯ ಕಷ್ಟಕಳೆದು
+      ಕೊಟ್ಟಳರಸನ ಸಿರಿಯನು
+      ಹೆತ್ತ ಕುಮರನ ತೋರಿದಂಥ
+      ಶುಕ್ರವಾರದ ಲಕ್ಷ್ಮಿಗೆ ||
+
+  - type: None
+    number: 4
+    kn: |
+      ನಿಗಮ ವೇದ್ಯಳೆ ನಿನ್ನ ಗುಣಗಳ
+      ಬಗೆಬಗೆಯಲಿ ವರ್ಣಿಪೆ
+      ತೆಗೆದು ಭಾಗ್ಯವ ನೀಡು ಏನುತ
+      ಜಗದೊಡೆಯನ ಭೀಮೇಶ ಕೃಷ್ಣನ ರಾಣಿಗೆ ||
+
+
+  - type: None
+    number: 5
+    kn: |
+      ಹುಟ್ಟು ಬಡವಿಯ ಕಷ್ಟ ಕಳೆದು ಕೊಟ್ಟಳರಸನ ಸಿರಿಯನು|
+      ಹೆತ್ತಕುವರನ ತೋರಿದಂಥ ಶುಕ್ರವಾರದ ಗೌರಿಗೆ||
+
+  - type: None
+    number: 6
+    kn: |
+      ನಿಗಮವೇದ್ಯಳೇ ನಿನ್ನ ಮಹಿಮೆಯ ಬಗೆಬಗೆಯಿಂದಲಿ ಪೊಗಳುವೆ|
+      ತೆರೆದು ಭಾಗ್ಯವ ನೀಡುವಂಥ ಭೀಮೇಶಕೃಷ್ಣನ ಮಡದಿಗೆ||

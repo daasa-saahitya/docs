@@ -1,0 +1,69 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಹೂವ ಮುಡಿಸಿದ ಸ್ವಾಮಿ ರುಕ್ಮಿಣಿ
+author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಹೂವ ಮುಡಿಸಿದ ಸ್ವಾಮಿ ರುಕ್ಮಿಣಿ
+      ಭಾಮೇರಿಬ್ಬರಿಗೆ ರಂಗಯ್ಯ ||
+      
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಬಂದು ರುಕ್ಮಿಣಿ ಭಾಮೇರಿಂದತಿ
+      ಸಂಭ್ರಮ್ಮದಿಂದ ರಂಗಯ್ಯ
+      ಕುಂದಣದ ಹಸೆಮ್ಯಾಲೆ ಕುಳಿತಿರೆ
+      ಚೆಂದದಲಿ ನಗುತ
+      ಚಂದ್ರವದನ ತಾ ಚತುರ್ಭುಜದಿಂದಲಿ
+      ಅಂಗನೆಯರ ಆಲಿಂಗನೆ ಮಾಡುತ ||
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಹೂವ ಮುಡಿಸುತ ವಾರಿಜಾಕ್ಷೇರ ವಾರೆನೋಟದಿ
+      ನೋಡಿ ನಗುತ ರಂಗಯ್ಯ
+      ಸಾರಸಮುಖಿ ಸಹಿತ ಸರಸ-
+      ವಾಡುತ ನಾರದರು
+      ನಮ್ಮಿಬ್ಬರ ಕದನಕೆ ಹೂಡಿದರೆ
+      ಹುಚ್ಚಾದಿರೆಂದೆನುತ ||
+
+  - type: None
+    number: 3
+    kn: |
+      ಮಲ್ಲೆ ಮಲ್ಲಿಗೆಮೊಗ್ಗು ಶಾವಂತಿಗೆ
+      ಕಲ್ಲಾ ್ಹರದ ಕಮಲ ರಂಗಯ್ಯ
+      ಒಳ್ಳೆ ತಾವರೆ ಅರಳು ಮೊಗ್ಗುಗಳು
+      ಝಲ್ಲೆ ಕುಸುಮಗಳು
+      ಎಲ್ಲ ತನಕೈಯಲ್ಲಿ ಪಿಡಿದು ಚೆಲ್ವ ಭೀ-
+      ಮೇಶ ಕೃಷ್ಣ ರುಕ್ಮಿಣಿಗೆ ||
+
+

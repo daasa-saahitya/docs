@@ -1,0 +1,77 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಎತ್ತಿರೇ ನವರತ್ನದಾರುತಿ ಕರ್ತೃರಂಗನ ರಾಣಿಗೆ
+author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ 
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಎತ್ತಿರೇ ನವರತ್ನದಾರುತಿ ಕರ್ತೃರಂಗನ ರಾಣಿಗೆ||
+
+  - type: anupallavi
+    kn: |
+      ಉತ್ತಮೋತ್ತಮಲೋಲನಾದ ವಿಷ್ಣುವಿನ ಕಲ್ಯಾಣಿಗೆ||
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಶುದ್ಧ ಸ್ನಾನವ ಮಾಡಿ ನದಿಯಲಿ ವಜ್ರಪೀಠದಿ ಕುಳಿಸಿರೇ|
+      ತಿದ್ದಿ ತಿಲಕವ ತೀಡಿದಂಥ ಮುದ್ದು ಮಂಗಳಗೌರಿಗೆ||
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಎರೆದು ಪೀತಾಂಬರವನುಡಿಸಿ ಸರ್ವಾಭರಣವನಿಡಿಸಿರೇ|
+      ಹರಳಿನೋಲೆ ಮೂಗುತಿ ಇಟ್ಟ ಮುದ್ದು ಮಹಾಲಕ್ಷ್ಮೀ ದೇವಿಗೆ||
+
+  - type: None
+    number: 3
+    kn: |
+      ಅಚ್ಚಮಲ್ಲಿಗೆ ಲಕ್ಷ ಸಂಪಿಗೆ ಎತ್ತಿರೇ ನಿಮ್ಮ ಪಾದಕೆ|
+      ಉತ್ತಮೋತ್ತಮಲೋಲನಾದ ವಿಷ್ಣುವಿನ ಕಲ್ಯಾಣಿಗೆ||
+
+
+  - type: None
+    number: 4
+    kn: |
+      ಹರಿಯ ವಂಚಿಸಿ ಕರವೀರದೊಳು ಭರದಿ ಸ್ಥಿರವಾಗಿರುವೊಳೇ|
+      ಪರಮಭಕ್ತರಿಗೆ ವರವ ಕೊಡುವ ನಿಗರ್ವಿಗೊಲಿಯುವ ದೇವಿಗೆ||
+
+  - type: None
+    number: 5
+    kn: |
+      ಹುಟ್ಟು ಬಡವಿಯ ಕಷ್ಟ ಕಳೆದು ಕೊಟ್ಟಳರಸನ ಸಿರಿಯನು|
+      ಹೆತ್ತಕುವರನ ತೋರಿದಂಥ ಶುಕ್ರವಾರದ ಗೌರಿಗೆ||
+
+  - type: None
+    number: 6
+    kn: |
+      ನಿಗಮವೇದ್ಯಳೇ ನಿನ್ನ ಮಹಿಮೆಯ ಬಗೆಬಗೆಯಿಂದಲಿ ಪೊಗಳುವೆ|
+      ತೆರೆದು ಭಾಗ್ಯವ ನೀಡುವಂಥ ಭೀಮೇಶಕೃಷ್ಣನ ಮಡದಿಗೆ||

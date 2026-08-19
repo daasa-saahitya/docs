@@ -1,0 +1,63 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ ಉಡುರಾಜಮುಖಿಗೆ
+author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ ಉಡುರಾಜಮುಖಿಗೆ
+      ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ
+      ಕಡಲೆ ಕೊಬ್ಬರಿ ಬಟ್ಟಲೊಳು ಬಾಳೆಫಲಗ-
+      ಳ್ವುಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ ||
+
+      
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಜಂಬುನೇರಲ ಗೊನೆ ಜಾಂಬೂಫಲಗಳು
+      ನಿಂಬೆ ದಾಳಿಂಬ್ರ ಔದುಂಬ್ರ ಫಲಗಳು ||
+
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಉತ್ತತ್ತಿ ದ್ರಾಕ್ಷಿ ಕಿತ್ತಳೆ ಸೀತಾಫಲವು
+      ಅಕ್ಕಿ ಅಂಜೂರ ಉತ್ತತ್ತಿ ಫಲಗಳು||
+
+
+  - type: None
+    number: 3
+    kn: |
+      ಶ್ರೇಷ್ಠ ಭೀಮೇಶ ಕೃಷ್ಣನ ಪಟ್ಟದರಸಿ
+      ಗ್ಹಚ್ಚಿ ಕುಂಕುಮ ವೀಳ್ಯ ಕೊಟ್ಟು ರುಕ್ಮಿಣಿಗೆ ||
+
+
+

@@ -1,0 +1,59 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಹೂವ ಕೊಡೆ ನೀ ವರವ ಕೊಡೆ
+author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ವಂದಿಸಿ ಬೇಡುವೆ ನಾ ವರಗಳ
+      ವಂದಿಸಿ ಬೇಡುವೆ ನಾ||
+
+  - type: anupallavi
+    kn: |
+      ವಂದಿಸಿ ಬೇಡವೆ ಇಂದಿರೆ ಮುಡಿದಂಥ ಕುಂದ ಮಂದಾರ ನಾಗಸಂಪಿಗೆ||
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಹಸಿರು ಶ್ಯಾವಂತಿಗೆ ಕುಸುಮ ಮಲ್ಲಿಗೆದಂಡೆ|
+      ಎಸೆವೋ ಕ್ಯಾದಿಗೆ ಪಾರಿಜಾತದ ವರಗಳ ನಾ||
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಕಟ್ಟಿದ್ದ ಮಾಂಗಲ್ಯ ಕುಂಕುಮ ಗಾಜಿನಬಳೆ|
+      ಮುತ್ತೈದೆತನ ಸಂಪತ್ತು ಸಂತಾನಕೆ ನಾ||
+
+  - type: None
+    number: 3
+    kn: |
+      ಕಮಲಾಕಾಂತ ಭೀಮೇಶಕೃಷ್ಣನ ರಾಣಿ ಮುಡಿದ|
+      ಕಮಲ ಮಲ್ಲಿಗೆ ಕಾಮಿತಾರ್ಥದ ವರಗಳ ನಾ||

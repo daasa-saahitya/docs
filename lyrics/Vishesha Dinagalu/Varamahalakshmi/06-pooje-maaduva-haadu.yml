@@ -1,0 +1,75 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಇಂದಿರೆ ನಿನ್ನ ಪೂಜೆ ಛೆಂದಾಗಿ ಮಾಡುವೆ ನಾನು ||
+author_kn: ತಿರುಪತಿ ಪಾಂಡುರಂಗೀ ಹುಚ್ಚಾಚಾರ್ಯರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn:
+tala_kn:
+ankita_kn: ಇಂದಿರೇಶ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಇಂದಿರೆ ನಿನ್ನ ಪೂಜೆ ಛೆಂದಾಗಿ ಮಾಡುವೆ ನಾನು ||
+  
+  # ── Caraṇa with tala name ──
+  - type: anupallavi
+    kn: |
+      ಮಂದಹಾಸದಿ ಮೋದದಿಂದಲೇ ನೋಡು ದಯದಿ ||
+
+      
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಜರದ ಪೀತಾಂಬರ ಕರದೊಳು ಧರಿಸಿರುವೆನೆ
+      ಎರಕೋ ಹರಿಯ ಕೂಡ ಸರಸಿಜದಳ ನೇತ್ರಿಯೇ || 
+
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಮಂದಾರ ಮಲ್ಲಿಗೆ ಕುಂದದ ಚಂಪಕ ಜಾಜಿ
+     ತಂದು ನಿಂತಿಹೆ ಹರಿಸುಂದರಿ ಸರಸದಿ ಮುಡಿಯೇ || 
+
+  - type: None
+    number: 3
+    kn: |
+      ಗಂಧಕುಂಕುಮ ವೀಳ್ಯಾ ಬುಂದ್ಯಾ ಭಕ್ಷಗಳನು
+      ಬಂದು ಹರಿಯ ಕೂಡಿ ಛೆಂದಾಗಿ ಭುಂಜಿಸು ಬೇಗ || 
+
+  - type: None
+    number: 4
+    kn: |
+      ಹರಡಿ ಕಂಕಣ ದುಂಡು ಹೆರಳು ಭಂಗಾರಗಳನು
+      ಹರುಷದಿಂದಲಿ ಕೃಷ್ಣನರಸಿ ತಂದಿಹೆ ನಿನಗೆ || 
+
+ 
+  - type: None
+    number: 5
+    kn: |
+      ಚಂದ್ರಶೇಖರ ಸುರವೃಂದಾದಿ ವಂದಿತ ಚರಣೆ
+      ಇಂದಿರೇಶನ ಸಹ ಬಂದಿಲ್ಲಿ ತೋರಿಸು ಮುಖವಾ || 
+
