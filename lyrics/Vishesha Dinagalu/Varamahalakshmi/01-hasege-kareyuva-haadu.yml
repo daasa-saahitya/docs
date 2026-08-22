@@ -11,12 +11,12 @@
 # ──────────────────────────────────────────────────────────────────
 
 # REQUIRED: Kannada title and author
-title_kn: ಲಕ್ಷ್ಮೀ ಬಾರಮ್ಮ ಮುತ್ತೈದೆ ಬಾರಮ್ಮ
+title_kn: 01 ಲಕ್ಷ್ಮೀ ಬಾರಮ್ಮ ಮುತ್ತೈದೆ ಬಾರಮ್ಮ
 author_kn: ಕಮಲನಾಭ ದಾಸರು
 
 # OPTIONAL: Raga, Tala, Ankita
-raga_kn:
-tala_kn:
+raga_kn: ಮಧ್ಯಮಾವತಿ
+tala_kn: ಆದಿ
 ankita_kn: ಕಮಲನಾಭ ವಿಠ್ಠಲ
 
 # OPTIONAL: Override auto-transliteration (leave empty = auto-generated)

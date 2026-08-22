@@ -11,12 +11,12 @@
 # ──────────────────────────────────────────────────────────────────
 
 # REQUIRED: Kannada title and author
-title_kn: ಹರಿಯೊಡಗೂಡಿ ಸಿರಿದೇವಿ ಬಾರೆ |
+title_kn: 06 ಹರಿಯೊಡಗೂಡಿ ಸಿರಿದೇವಿ ಬಾರೆ |
 author_kn: ವಿಜಯರಾಘವ ದಾಸರು
 
 # OPTIONAL: Raga, Tala, Ankita
-raga_kn:
-tala_kn:
+raga_kn: ಮೋಹನ
+tala_kn: ಆದಿ
 ankita_kn: ವಿಜಯರಾಘವ
 
 # OPTIONAL: Override auto-transliteration (leave empty = auto-generated)

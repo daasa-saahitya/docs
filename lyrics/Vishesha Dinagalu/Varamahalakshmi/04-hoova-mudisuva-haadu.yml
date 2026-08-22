@@ -11,12 +11,12 @@
 # ──────────────────────────────────────────────────────────────────
 
 # REQUIRED: Kannada title and author
-title_kn: ಹೂವ ಮುಡಿಸಿದ ಸ್ವಾಮಿ ರುಕ್ಮಿಣಿ
+title_kn: 04 ಹೂವ ಮುಡಿಸಿದ ಸ್ವಾಮಿ ರುಕ್ಮಿಣಿ
 author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
 
 # OPTIONAL: Raga, Tala, Ankita
-raga_kn:
-tala_kn:
+raga_kn: ಆರಭಿ
+tala_kn: ಆದಿ
 ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ
 
 # OPTIONAL: Override auto-transliteration (leave empty = auto-generated)

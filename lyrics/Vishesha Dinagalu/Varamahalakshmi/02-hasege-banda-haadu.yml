@@ -1,0 +1,62 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: 02 ಬಂದಳು ನೋಡೇ ಮಂದಿರದೊಳು
+author_kn: ಜಗನ್ನಾಥ ದಾಸರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಬೃಂದಾವನ ಸಾರಂಗ
+tala_kn: ಆದಿ
+ankita_kn: ಜಗನ್ನಾಥ ವಿಠ್ಠಲ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಬಂದಳು ನೋಡೇ ಮಂದಿರದೊಳು ಭಾಗ್ಯದಲಕ್ಷ್ಮೀ |
+      ಭಾಗ್ಯದಲಕ್ಷ್ಮೀ ಬಂದಾಳು ನೋಡೇ || 
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಅಂದುಗೆ ಕಿರು ಗೆಜ್ಜೆ ಘಿಲ್ ಘಿಲ್ಲೇನುತ ||
+      ಘಿಲ್ ಘಿಲ್ ಘಿಲ್ ಘಿಲ್ ಘಿಲ್ಲೇನುತಾ |
+      ಮುದ್ದು ಪಾದದಿ ಹೆಜ್ಜೆಯನಿಕ್ಕುತ್ತಾ ||
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಎಡ ಬಲದಲ್ಲಿ ಗಜಗಳಿಂದ ಪೂಜೆಗೊಳ್ಳುತ |
+      ಬಿಡದೆ ತನ್ನ ಕರ ಕಮಲದಿ ಅಭಯ ಕೊಡುತಲಿ || 
+
+  - type: None
+    number: 3
+    kn: |
+      ಅತಿ ಹರುಷದಿ ಹಿತದಿ ತನ್ನ ಪತಿಯ ಸಹಿತಾಗಿ |
+      ವಾರಿನೋಟದಿಂದ ಭಕ್ತರಿಗೆ ವರವ ಕೊಡುತಲಿ || 
+
+  - type: None
+    number: 4
+    kn: |
+      ಸೃಷ್ಟಿಗೊಡೆಯ ತಂದೆ ಜಗನ್ನಾಥವಿಠ್ಠಲನ |
+      ಪಟ್ಟದರಸಿ ಅರ್ತಿಯಿಂದಲಿ ಭಕ್ತರ ಮನೆಗೆ ||

@@ -11,12 +11,12 @@
 # ──────────────────────────────────────────────────────────────────
 
 # REQUIRED: Kannada title and author
-title_kn: ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ ಉಡುರಾಜಮುಖಿಗೆ
+title_kn: 05 ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ ಉಡುರಾಜಮುಖಿಗೆ
 author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
 
 # OPTIONAL: Raga, Tala, Ankita
-raga_kn:
-tala_kn:
+raga_kn: ಕುರಿಂಜಿ
+tala_kn: ಏಕ
 ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ
 
 # OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
