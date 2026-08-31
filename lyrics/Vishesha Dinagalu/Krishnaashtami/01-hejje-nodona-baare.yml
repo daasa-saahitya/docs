@@ -1,0 +1,63 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಹೆಜ್ಜೆ ನೋಡೋಣ ಬಾರೆ ಗೋಪಾಲಕೃಷ್ಣನ
+author_kn: ಶ್ರೀ ವಾದಿರಾಜ ತೀರ್ಥರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಶುದ್ಧ ಧನ್ಯಾಸಿ
+tala_kn:
+ankita_kn: ಹಯವದನ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಹೆಜ್ಜೆ ನೋಡೋಣ ಬಾರೆ 
+      ಗೋಪಾಲಕೃಷ್ಣನ ಗೆಜ್ಜೆಯ ಕಾಲಿನ 
+      ಅರ್ಜುನಸಾರಥಿ ಮೂರ್ಜಗದೊಡೆಯನ
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಮಚ್ಛನಾಗಿ ವೇದವ ತಂದವನಂತೆ ಕೂರ್ಮನಾಗಿ
+      [ಭೂಧರ]ಪೊತ್ತವನಂತೆವರಹ 
+      ನರಹರಿಯಾಗಿ ದುರುಳರ ಸೀಳಿದಚೆಲುವ 
+      ರೂಪದಿ ದಾನವ ಬೇಡಿ ತುಳಿದ ಪುಟ್ಟ
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಸೂರ್ಯಕೋಟಿ ಪ್ರಕಾಶದಿ ಮೆರೆವನ
+      ಚಂದ್ರಕೋಟಿ ಶೀತಲದಿಂದ ಬರುವನ
+      ಮಂದೆಯ ಕಾಯುತ ಮೈಯ್ಯೆಲ್ಲ ಧೂಳ್ಗಳು
+      ಚೆಂದದಿಂದ ಕೊಳಲನೂದುತ ಬರುತಿಹ
+
+  # ── More Caraṇas ──
+  - type: None
+    number: 3
+    kn: |
+      ಮಾತೃದ್ರೋಹವ ಮಾಡಿದ ಪರಶುರಾಮನ
+      ಪಿತೃವಾಕ್ಯವ ಸಲಿಸಿದ ಶ್ರೀರಾಮನ 
+      ಕೃಷ್ಣಾವತಾರನಬೌದ್ಧ ಸ್ವರೂಪನ 
+      ಹಯವನೇರಿದ ಕಲ್ಕಿಹಯವದನನ ದಿವ್ಯ

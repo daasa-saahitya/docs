@@ -1,0 +1,62 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಈ ಮುದ್ದು ಕೃಷ್ಣನ ಈ ಕ್ಷಣದ ಸುಖವೆ ಸಾಕು
+author_kn: ಶ್ರೀ ವಾದಿರಾಜ ತೀರ್ಥರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ದುರ್ಗಾ
+tala_kn:
+ankita_kn: ಹಯವದನ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಈ ಮುದ್ದು ಕೃಷ್ಣನ ಈ ಕ್ಷಣದ ಸುಖವೆ ಸಾಕು
+      ಶ್ರೀಮಧ್ವಮುನಿಯ ಮನೆದೈವ ಉಡುಪಿನ ಕೃಷ್ಣನ
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ಚೆಲುವ ಚರಣದ್ವಂದ್ವ ಜಂಘೆ ಜಾನೂರ ಕಟಿ | 
+      ವಳಿಪಂಕ್ತಿ ಜಠರ ವಕ್ಷ ಕಂಬು ಕಂದರದಿ | 
+      ನಳಿತೋಳು ಮುದ್ದುಮುಖ ನಯನ ನಾಸಿಕ ಕರ್ಣ | 
+      ಸುಳಿಗುರುಳು ಮಸ್ತಕದ ನಳಿನನಾಭನ ಸೊಬಗು ||
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಕಿರುಗೆಜ್ಜೆ ಕಡೆ ಪೆಂಡೆ ಕಟಿಸೂತ್ರ | 
+      ವರ ಹಾರ ಪದಕ ಶ್ರೀವಶ್ಸ ಕೌಸ್ತುಭರತ್ನ | 
+      ಉರು ಮುದ್ರೆ ಕಂಕಣಾಂಗದ ಕುಂಡಲ ಪ್ರಭೆಯ | 
+      ಸಿರಿನಾಮ ಮಕುಟ ನಾಸಿಕದ ವರಮಣೆಯ ||
+
+  # ── More Caraṇas ──
+  - type: None
+    number: 3
+    kn: |
+      ಸಕಲ ದೇವೋತ್ತಮನೆ ಸರ್ವಗುಣ ಪೂರ್ಣನೆ |
+      ಅಕಳಂಕ ಅಖಿಳಾಗಮಸ್ತುತನೆ ಅಪ್ರಾಕೃತನೆ | 
+      ಅಖಿಳ ಜುವೋತ್ತಮರ ಭಿನ್ನ ಹಯವದನ ನೆ | 
+      ಮುಕುರ ಕಡೆಗೋಲು ನೇಣುಗಳು ಪಿಡಿದಿಪ್ಪನೆ ||

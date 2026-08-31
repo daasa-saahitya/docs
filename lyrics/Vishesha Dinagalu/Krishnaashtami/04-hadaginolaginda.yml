@@ -1,0 +1,94 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಹಡಗಿನೋಳಗಿಂದ ಬಂದ
+author_kn: ಶ್ರೀ ವಾದಿರಾಜ ತೀರ್ಥರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಶೋಭಾನೆ ಶೈಲಿ
+tala_kn:
+ankita_kn: ಹಯವದನ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+
+  # ── Caraṇa with tala name ──
+  - type: None
+    number: 1
+    kn: |
+      ಹಡಗಿನೋಳಗಿಂದ ಬಂದ ಕಡುಮುದ್ದು
+      ಶ್ರೀಕೃಷ್ಣ ಕಡಗೋಲಾಣೆ ನಾ ಪಿಡಿದಾಣೆ
+      ಕಡಗೋಲಾಣೆ ನಾ ಪಿಡಿಯುತ್ತ ದೇವಕಿಗೆ
+      ಒಡಯಗಾರತಿಯ ಬೆಳಗೀರೇ ಶೋಭಾನೆ
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಮಧ್ವಸರೋವರದಲ್ಲಿ ಶುದ್ಧ ಪೂಜೆಯಗೊಂಬೆ
+      ಮುದ್ದು ರುಕ್ಮಿಣಿಯ ಅರಸನೇ
+      ಮುದ್ದು ರುಕ್ಮಿಣಿಯ ಅರಸ ಶ್ರೀಕೃಷ್ಣಗೆ
+      ಮುತ್ತಿನಾರುತಿಯ ಬೆಳಗಿರೆ ೧
+
+  # ── More Caraṇas ──
+  - type: None
+    number: 3
+    kn: |
+      ಆಚಾರ್ಯರ ಕೈಯಿಂದ ಅಧಿಕ ಪೂಜೆಯಗೊಂಬ
+      ಕಾ೦ತೆರುಕ್ಮಿಣಿಯಾ ಅರಸನೇ ಕಾ೦ತೆ ರುಕ್ಮಿಣಿಯ
+      ಅರಸ ಶ್ರೀಕೃಷ್ಣಗೆ ಕಾ೦ಚನದಾರುತಿಯ ಬೆಳಗಿರೇ
+
+  - type: None
+    number: 4
+    kn: |
+      ಎಳೆ ತುಳಸಿಯ ಮಾಲೆ ಕೊರಳೊಳು ಧರಿಸಿಹ
+      ವರಮದ್ವಮುನಿಗೆ ಒಲುಮೆಯ
+      ವರಮದ್ವಮುನಿಗೆ ಒಲುಮೆಯ ಶ್ರೀಕೃಷ್ಣ
+      ಮಂಗಳಾರುತಿಯ ಬೆಳಗಿರೇ
+
+  - type: None
+    number: 5
+    kn: |
+      ಹೊತ್ತಾರಿನ ಪೂಜೆಗೆ ಸಜ್ಜಿಗೆ ಬಾಳೆಹಣ್ಣು
+      ಮುತ್ತಿನಬಟ್ಟು ಹೋಳೆಯುತ್ತಾ ಮುತ್ತಿನ ಬಟ್ಟೂ
+      ಹೋಳೆಯುತ್ತ ಶ್ರೀ ಕೃಷ್ಣ ಮೂರ್ತಿಗಾರುತಿಯ
+      ಬೆಳಗಿರೇ
+
+  - type: None
+    number: 6
+    kn: |
+      ಸೋದರ ಮಾವನ್ನು ಮಧುರೇಲಿ ಮಡುಹಿದ
+      ಸತ್ಯಭಾಮೆಯರ ಅರಸನೇ ಸತ್ಯಭಾಮೆಯರ
+      ಅರಸ ಶ್ರೀಕೃಷ್ಣಗೆ ಚಿನ್ನದಾರುತಿಯ ಬೆಳಗಿರೇ
+
+  - type: None
+    number: 6
+    kn: |
+      ಕಲ್ಲು ಕಡಿದವ ಬ೦ದ ಬಿಲ್ಲು ಮುರಿದವ
+      ಬ೦ದ ನಿಲ್ಲದೆದು ಪೂಜೆಗೆ ಪತೀಬ೦ದ
+      ಪತಿಬ೦ದ ಶ್ರೀಕೃಷ್ಣ ಹೂವಿನಾರತಿಯ ಬೆಳಗೀರೆ
+
+  - type: None
+    number: 7
+    kn: |
+      ಪಾಂಡವ ಪ್ರಿಯಗೆ ಚಾರಣರ
+      ಮಧ೯ನಗೆ ತಾಯಿಯ ಸೆರೆಯ ಬಿಡಿಸಿದಗೆ
+      ತಾಯಿಯ ಸೆರೆಯ ಬಿಡಿಸಿದ ಹಯವದನ
+      ದೇವಗಾರುತಿಯ ಬೆಳಗಿರೇ

@@ -1,0 +1,63 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಶ್ರಾವಣ ಅಷ್ಟಮಿ ನಡುರಾತ್ರಿಯಲ್ಲಿ
+author_kn: ಶ್ರೀ ವಾದಿರಾಜ ತೀರ್ಥರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಶೋಭಾನೆ ಶೈಲಿ
+tala_kn:
+ankita_kn: ಹಯವದನ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+
+  # ── Caraṇa with tala name ──
+  - type: None
+    number: 1
+    kn: |
+      ಶ್ರಾವಣ ಅಷ್ಟಮಿ ನಡುರಾತ್ರಿಯಲ್ಲಿ ರೋಹಿಣಿ ನಕ್ಷತ್ರ ಶುಭಲಗ್ನದಲ್ಲಿ
+      ಕಾಮಜನಕ ಕೃಷ್ಣ ಹುಟ್ಟಿದನೆಂದು ತಾಯಿ ದೇವಕೀದೇವಿ ತೂಗಿದಳು ಕೃಷ್ಣನ
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಚತುರ್ವೇದ ನಾಲ್ಕು ಸರಪಣಿಯ ಹಾಕಿ ಚತುರ್ವರ್ಗವೆಂಬೊ ತೊಟ್ಟಿಲನೆ ಕಟ್ಟಿ
+      ಚತುರ್ಮುಖ ಬ್ರಹ್ಮನ ಪಡೆದೆ ನೀ ಎಂದು ಯತಿಮುನಿಗಳು ಕೃಷ್ಣನಾ ಪಾಡಿ ತೂಗಿದರು
+
+  # ── More Caraṇas ──
+  - type: None
+    number: 3
+    kn: |
+      ಅರಳೆಲೆ ಮಾಗಾಯಿ ಕೌಸ್ತುಭಗಳಿಂದ ಹುಲಿಯುಗುರು ನಿನಗೆ ಒಪ್ಪುವ ಅಂದ
+      ಕಡಗ ಕಂಕಣ ವಂಕಿ ತೋಳುಗಳಿಂದ ಪರಮಾತ್ಮ ಮಲಗಿದಾ ಕೃಪೆಯಿಂದ ||
+
+  - type: None
+    number: 4
+    kn: |
+      ಆಕಾಶವೇ ಮೇಲು ಮಂಟಪದ ಕಟ್ಟು ಬೇಕೆಂಬೋ ನಕ್ಷತ್ರಮಾಲೆಗಳನಿಟ್ಟು
+      ಲೋಕಗಳನ್ನೆಲ್ಲಾ ತನ್ನಾತ್ಮದೊಳಿಟ್ಟು ಯಾಕಯ್ಯ ಮಲಗಿದೊ ತೊಟ್ಟಿಲೊಳಗುಟ್ಟು 
+
+  - type: None
+    number: 5
+    kn: |
+      ಲಾಲಿ ಬಾಲ ಮುಕುಂದ ಲಾಲಿ ಲಾಲಿ ಲಾಲಿ ಲಾಲಿ ಶುಭಕರದ ಲಾಲಿ 
+      ಲಾಲಿ ಶ್ರೀ ಜಗದ ಆನಂದ ಲಾಲಿ ಲಾಲಿ ಶ್ರೀ ಹಯವದನ ಲಾಲಿ ರಂಗ ಲಾಲಿ ||

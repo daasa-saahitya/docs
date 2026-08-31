@@ -1,0 +1,55 @@
+# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - New Song Template
+#
+# HOW TO USE:
+# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 2. Fill in the Kannada fields below
+# 3. Commit → GitHub Actions auto-builds the site
+#
+# The build script auto-transliterates to Tamil, Devanagari, and IAST.
+# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
+# ──────────────────────────────────────────────────────────────────
+
+# REQUIRED: Kannada title and author
+title_kn: ಅನ್ನವನುಣಿಸಿದ ರತಿ ಹರುಷದಿಂದನಂದಗೋಪನ ಕಂದನಿಗೆ 
+author_kn: ಶ್ರೀ ವಾದಿರಾಜ ತೀರ್ಥರು
+
+# OPTIONAL: Raga, Tala, Ankita
+raga_kn: ಮಾಂಡ್
+tala_kn:
+ankita_kn: ಹಯವದನ
+
+# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
+# title_ta:
+# title_hi:
+# title_en:
+# author_ta:
+# author_hi:
+# author_en:
+
+verses:
+  # ── Pallavi ──
+  - type: pallavi
+    kn: |
+      ಅನ್ನವನುಣಿಸಿದ ರತಿ ಹರುಷದಿಂದನಂದಗೋಪನ ಕಂದನಿಗೆ 
+
+  # ── Caraṇa with tala name ──
+  - type: charana
+    number: 1
+    kn: |
+      ವೃಂದಾವನದಲ್ಲಿ ನಲಿನಲಿದಾಡಿದಗೋಪಿಯ ಕಂದನಿಗೆಮಂದರೋದ್ಧರ 
+      ಅರವಿಂದ ಮೂರುತಿಗೆಇಂದಿರೆ ಅರಸ ಶ್ರೀಹರಿ ಗೋವಿಂದನಿಗೆ
+
+  # ── Another Caraṇa ──
+  - type: None
+    number: 2
+    kn: |
+      ಪಂಚಭಕ್ಷ್ಯವೆ ಪರಮಾನ್ನ ಶಾಲ್ಯಾನ್ನವೆಚಿತ್ರಾನ್ನಗಳ ಬಡಿಸಿಚಂಚಲಾಕ್ಷಿಯರು 
+      ಚಿನ್ನದ ತಟ್ಟೇಲಿಕಂಜಲೋಚನ ಕೃಷ್ಣಗಾರತಿ ಬೆಳಗುತ್ತ
+
+  # ── More Caraṇas ──
+  - type: None
+    number: 3
+    kn: |
+      ದಧಿಘೃತಬಾಂಡವನೊಡೆದು ಬ್ರಹ್ಮಾಂಡಬಾಯಲಿ ತೋರಿದ 
+      ಹರಿಗೆಹದಿನಾರು ಸಾವಿರ ಗೋಪೇರನೊಡಗೂಡಿಕೊಳಲನೂದುವ ಹಯವದನ ಮೂರುತಿಗೆ
