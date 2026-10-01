@@ -12,34 +12,64 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <div class="site-brand">
-        <span class="brand-kn">दास साहित्य</span>
-        <span class="brand-en">Daasa Sāhitya</span>
-      </div>
+      <span class="brand-kn">दास साहित्य</span>
+      <span class="brand-en">Daasa Sāhitya</span>
       <div class="site-subtitle">ಹರಿದಾಸ ಸಾಹಿತ್ಯ ಸಂಗ್ರಹ · A Treasury of Devotional Literature</div>
     </div>
   </header>
 
   <main class="index-page">
-    <div class="index-intro">
-      <div class="total-badge">{{TOTAL}} ರಚನೆಗಳು · compositions</div>
-      <div class="search-container">
-        <span class="search-icon">🔍</span>
-        <input type="text" class="search-input" id="search-input" placeholder="Search by title, author, category..." autocomplete="off">
+    <section class="filter-panel" aria-label="Filters">
+      <div class="filter-bar">
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input type="search" class="search-input" id="search-input"
+                 placeholder="Search title, author, lyric…" autocomplete="off">
+        </div>
+        <button type="button" class="reset-button" id="reset-filters">Reset</button>
       </div>
-      <div class="search-results-count" id="search-results-count"></div>
-    </div>
 
-    <div class="categories-container">
-      {{CATEGORIES}}
-    </div>
+      <div class="filter-grid">
+        <fieldset class="filter-group">
+          <legend>Category <span class="legend-kn">ವರ್ಗ</span></legend>
+          <div class="option-list" id="filter-category"></div>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend>Type <span class="legend-kn">ಪ್ರಕಾರ</span></legend>
+          <div class="option-list" id="filter-type"></div>
+        </fieldset>
+
+        <div class="filter-group">
+          <label class="filter-legend" for="filter-on">On whom? <span class="legend-kn">ಯಾರ ಮೇಲೆ</span></label>
+          <div class="tag-input" data-field="on_who" id="filter-on"></div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-legend" for="filter-author">Author <span class="legend-kn">ಕವಿ</span></label>
+          <div class="tag-input" data-field="author" id="filter-author"></div>
+        </div>
+      </div>
+
+      <p class="filter-status" id="filter-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <ul class="song-list" id="song-list">
+      {{SONGS}}
+    </ul>
+
+    <p class="empty-state" id="empty-state" hidden>No compositions match these filters.</p>
   </main>
 
   <footer class="site-footer">
     <p>ಶ್ರೀ ಕೃಷ್ಣಾರ್ಪಣಮಸ್ತು · Śrī Kṛṣṇārpaṇamastu</p>
-    <p class="build-date">Updated: {{BUILD_DATE}}</p>
+    <p class="build-date">Updated: {{BUILD_DATE}} · {{TOTAL}} compositions</p>
   </footer>
 
+  <script id="ds-index-data" type="application/json">{{INDEX_JSON}}</script>
+  <script>
+    window.DS_INDEX = JSON.parse(document.getElementById('ds-index-data').textContent);
+  </script>
   <script src="js/tabs.js"></script>
   <script src="js/index.js"></script>
 </body>

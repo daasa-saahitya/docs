@@ -1,43 +1,45 @@
 #!/usr/bin/env python3
 """
-Daasa Saahitya - Site Builder
-Reads YAML lyrics files, transliterates Kannada → Tamil (with superscripts),
-Devanagari, and IAST English, then generates static HTML pages.
+Daasa Saahitya - site builder.
+
+Reads lyrics YAML, auto-transliterates Kannada to Tamil / Devanagari / IAST,
+and generates a static site: one page per song plus a filterable index.
+
+    python scripts/build.py .
 """
 
-import os
-import re
-import sys
 import json
-import yaml
+import re
 import shutil
+import sys
+from datetime import date
 from pathlib import Path
-from datetime import datetime
 
-# ─────────────────────────────────────────────
-#  KANNADA → TAMIL MAPPING (with superscripts)
-# ─────────────────────────────────────────────
-# Format: kannada_char → tamil_equivalent
-# Superscripts encode phonetic distinctions missing from Tamil script.
+import yaml
+
+sys.path.insert(0, str(Path(__file__).parent))
+from align import CATEGORIES, ON_KEY, ON_WHO, TYPES  # noqa: E402
+
+# ──────────────────────────────────────────────────────────────────────────
+#  Kannada → Tamil (with superscripts)
+# ──────────────────────────────────────────────────────────────────────────
 
 KN_VOWELS = {
-    'ಅ': 'அ',  'ಆ': 'ஆ',  'ಇ': 'இ',  'ಈ': 'ஈ',
-    'ಉ': 'உ',  'ಊ': 'ஊ',  'ಋ': 'ரு', 'ೠ': 'ரூ',
-    'ಎ': 'எ',  'ಏ': 'ஏ',  'ಐ': 'ஐ',
-    'ಒ': 'ஒ',  'ಓ': 'ஓ',  'ಔ': 'ஔ',
+    'ಅ': 'அ', 'ಆ': 'ஆ', 'ಇ': 'இ', 'ಈ': 'ஈ',
+    'ಉ': 'உ', 'ಊ': 'ஊ', 'ಋ': 'ரு', 'ೠ': 'ரூ',
+    'ಎ': 'எ', 'ಏ': 'ஏ', 'ಐ': 'ஐ',
+    'ಒ': 'ஒ', 'ಓ': 'ஓ', 'ಔ': 'ஔ',
     'ಅಂ': 'அம்', 'ಅಃ': 'அஹ',
 }
 
 KN_VOWEL_SIGNS = {
-    'ಾ': 'ா',  'ಿ': 'ி',  'ೀ': 'ீ',
-    'ು': 'ு',  'ೂ': 'ூ',  'ೃ': 'ரு',
-    'ೆ': 'ெ',  'ೇ': 'ே',  'ೈ': 'ை',
-    'ೊ': 'ொ',  'ೋ': 'ோ',  'ೌ': 'ௌ',
-    'ಂ': 'ம்', 'ಃ': 'ஹ', '್': '்',
-    '಼': '',
+    'ಾ': 'ா', 'ಿ': 'ி', 'ೀ': 'ீ',
+    'ು': 'ு', 'ೂ': 'ூ', 'ೃ': 'ரு',
+    'ೆ': 'ெ', 'ೇ': 'ே', 'ೈ': 'ை',
+    'ೊ': 'ொ', 'ೋ': 'ோ', 'ೌ': 'ௌ',
+    'ಂ': 'ம்', 'ಃ': 'ஹ', '್': '்', '಼': '',
 }
 
-# Consonant map: kannada → (tamil_base, superscript_or_empty)
 KN_CONSONANTS_TAMIL = {
     'ಕ': ('க', ''),   'ಖ': ('க', '²'),  'ಗ': ('க', '³'),  'ಘ': ('க', '⁴'),
     'ಙ': ('ங', ''),
@@ -56,30 +58,24 @@ KN_CONSONANTS_TAMIL = {
     'ಱ': ('ற', ''),   'ೞ': ('ழ', ''),
 }
 
-# Special conjuncts (must be checked BEFORE individual consonants)
 SPECIAL_CONJUNCTS_TAMIL = {
-    'ಜ್ಞ': 'க்³ஞ',
-    'ಕ್ಷ': 'க்ஷ',
-    'ಶ್ರೀ': 'ஸ்ரீ',
-    'ಶ್ರ': 'ஸ்ர',
+    'ಜ್ಞ': 'க்³ஞ', 'ಕ್ಷ': 'க்ஷ', 'ಶ್ರೀ': 'ஸ்ரீ', 'ಶ್ರ': 'ஸ்ர',
 }
 
-# ─────────────────────────────────────────────
-#  KANNADA → DEVANAGARI MAPPING
-# ─────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────
+#  Kannada → Devanagari
+# ──────────────────────────────────────────────────────────────────────────
+
 KN_TO_DEV = {
-    # Vowels
     'ಅ': 'अ', 'ಆ': 'आ', 'ಇ': 'इ', 'ಈ': 'ई',
     'ಉ': 'उ', 'ಊ': 'ऊ', 'ಋ': 'ऋ', 'ೠ': 'ॠ',
     'ಎ': 'ए', 'ಏ': 'ए', 'ಐ': 'ऐ',
     'ಒ': 'ओ', 'ಓ': 'ओ', 'ಔ': 'औ',
-    # Vowel signs
     'ಾ': 'ा', 'ಿ': 'ि', 'ೀ': 'ी',
     'ು': 'ु', 'ೂ': 'ू', 'ೃ': 'ृ',
     'ೆ': 'े', 'ೇ': 'े', 'ೈ': 'ै',
     'ೊ': 'ो', 'ೋ': 'ो', 'ೌ': 'ौ',
     'ಂ': 'ं', 'ಃ': 'ः', '್': '्', '಼': '',
-    # Consonants
     'ಕ': 'क', 'ಖ': 'ख', 'ಗ': 'ग', 'ಘ': 'घ', 'ಙ': 'ङ',
     'ಚ': 'च', 'ಛ': 'छ', 'ಜ': 'ज', 'ಝ': 'झ', 'ಞ': 'ञ',
     'ಟ': 'ट', 'ಠ': 'ठ', 'ಡ': 'ड', 'ಢ': 'ढ़', 'ಣ': 'ण',
@@ -88,26 +84,23 @@ KN_TO_DEV = {
     'ಯ': 'य', 'ರ': 'र', 'ಲ': 'ल', 'ವ': 'व',
     'ಶ': 'श', 'ಷ': 'ष', 'ಸ': 'स', 'ಹ': 'ह',
     'ಳ': 'ळ', 'ಱ': 'र', 'ೞ': 'ल',
-    # Special conjuncts
     'ಜ್ಞ': 'ज्ञ', 'ಕ್ಷ': 'क्ष', 'ಶ್ರೀ': 'श्री',
 }
 
-# ─────────────────────────────────────────────
-#  KANNADA → IAST (Latin) MAPPING
-# ─────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────
+#  Kannada → IAST
+# ──────────────────────────────────────────────────────────────────────────
+
 KN_TO_IAST = {
-    # Vowels (standalone)
     'ಅ': 'a', 'ಆ': 'ā', 'ಇ': 'i', 'ಈ': 'ī',
     'ಉ': 'u', 'ಊ': 'ū', 'ಋ': 'ṛ', 'ೠ': 'ṝ',
     'ಎ': 'e', 'ಏ': 'ē', 'ಐ': 'ai',
     'ಒ': 'o', 'ಓ': 'ō', 'ಔ': 'au',
-    # Vowel signs (mātras)
     'ಾ': 'ā', 'ಿ': 'i', 'ೀ': 'ī',
     'ು': 'u', 'ೂ': 'ū', 'ೃ': 'ṛ',
     'ೆ': 'e', 'ೇ': 'ē', 'ೈ': 'ai',
     'ೊ': 'o', 'ೋ': 'ō', 'ೌ': 'au',
     'ಂ': 'ṃ', 'ಃ': 'ḥ', '್': '', '಼': '',
-    # Consonants (base form, 'a' vowel implicit, added in transliteration logic)
     'ಕ': 'k', 'ಖ': 'kh', 'ಗ': 'g', 'ಘ': 'gh', 'ಙ': 'ṅ',
     'ಚ': 'c', 'ಛ': 'ch', 'ಜ': 'j', 'ಝ': 'jh', 'ಞ': 'ñ',
     'ಟ': 'ṭ', 'ಠ': 'ṭh', 'ಡ': 'ḍ', 'ಢ': 'ḍh', 'ಣ': 'ṇ',
@@ -119,7 +112,6 @@ KN_TO_IAST = {
     'ಜ್ಞ': 'jñ', 'ಕ್ಷ': 'kṣ', 'ಶ್ರೀ': 'śrī',
 }
 
-# IAST to plain English mapping (for index page display)
 IAST_TO_PLAIN = {
     'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṛ': 'ri', 'ṝ': 'ri',
     'ē': 'e', 'ō': 'o', 'ṃ': 'm', 'ḥ': 'h',
@@ -127,42 +119,16 @@ IAST_TO_PLAIN = {
     'ś': 'sh', 'ṣ': 'sh', 'ḷ': 'l', 'ṟ': 'r', 'ḻ': 'l',
 }
 
-def iast_to_plain_english(text):
-    """Convert IAST romanization to plain English (no diacritics)."""
-    if not text:
-        return ''
-    result = text
-    for iast, plain in IAST_TO_PLAIN.items():
-        result = result.replace(iast, plain)
-        result = result.replace(iast.upper(), plain.upper())
-    return result
-
-# Unicode ranges for classification
-KANNADA_CONSONANTS = set(KN_CONSONANTS_TAMIL.keys())
-KANNADA_VOWEL_SIGNS = set(KN_VOWEL_SIGNS.keys())
-KANNADA_VOWELS = set(KN_VOWELS.keys())
-HALANTA = '್'  # virama
+KANNADA_CONSONANTS = set(KN_CONSONANTS_TAMIL)
+HALANTA = '್'
 ANUSVARA = 'ಂ'
 
-def is_kannada_consonant(ch):
-    return ch in KANNADA_CONSONANTS
+KA_VARGA = {'ಕ', 'ಖ', 'ಗ', 'ಘ', 'ಙ'}
+CA_VARGA = {'ಚ', 'ಛ', 'ಜ', 'ಝ', 'ಞ'}
+TA_VARGA = {'ಟ', 'ಠ', 'ಡ', 'ಢ', 'ಣ'}
+THA_VARGA = {'ತ', 'ಥ', 'ದ', 'ಧ', 'ನ'}
+PA_VARGA = {'ಪ', 'ಫ', 'ಬ', 'ಭ', 'ಮ'}
 
-def is_vowel_sign(ch):
-    return ch in KANNADA_VOWEL_SIGNS
-
-# ─────────────────────────────────────────────
-#  VARGA-BASED NASAL MAPPING
-# ─────────────────────────────────────────────
-# Anusvara (ಂ) becomes the nasal of the same varga as the following consonant
-
-# Kannada consonants grouped by varga
-KA_VARGA = {'ಕ', 'ಖ', 'ಗ', 'ಘ', 'ಙ'}  # velar - nasal ಙ
-CA_VARGA = {'ಚ', 'ಛ', 'ಜ', 'ಝ', 'ಞ'}  # palatal - nasal ಞ
-TA_VARGA = {'ಟ', 'ಠ', 'ಡ', 'ಢ', 'ಣ'}  # retroflex - nasal ಣ
-THA_VARGA = {'ತ', 'ಥ', 'ದ', 'ಧ', 'ನ'}  # dental - nasal ನ
-PA_VARGA = {'ಪ', 'ಫ', 'ಬ', 'ಭ', 'ಮ'}  # labial - nasal ಮ
-
-# Nasal consonants for each varga in different scripts
 VARGA_NASALS = {
     'ka': {'kn': 'ಙ', 'hi': 'ङ', 'ta': 'ங', 'iast': 'ṅ'},
     'ca': {'kn': 'ಞ', 'hi': 'ञ', 'ta': 'ஞ', 'iast': 'ñ'},
@@ -171,743 +137,502 @@ VARGA_NASALS = {
     'pa': {'kn': 'ಮ', 'hi': 'म', 'ta': 'ம', 'iast': 'm'},
 }
 
+
+def iast_to_plain(text):
+    for iast, plain in IAST_TO_PLAIN.items():
+        text = text.replace(iast, plain).replace(iast.upper(), plain.upper())
+    return text
+
+
 def get_varga(consonant):
-    """Return the varga name for a Kannada consonant."""
-    if consonant in KA_VARGA:
-        return 'ka'
-    elif consonant in CA_VARGA:
-        return 'ca'
-    elif consonant in TA_VARGA:
-        return 'Ta'
-    elif consonant in THA_VARGA:
-        return 'ta'
-    elif consonant in PA_VARGA:
-        return 'pa'
-    return None
-
-# ─────────────────────────────────────────────
-#  ANUSVARA HELPER
-# ─────────────────────────────────────────────
-
-def get_varga_nasal_for_anusvara(chars, pos, script):
-    """
-    Look ahead from position pos to find the next Kannada consonant,
-    determine its varga, and return the appropriate nasal for the target script.
-    Script should be 'ta', 'hi', or 'iast'.
-    Returns None if anusvara should be kept as-is (no following varga consonant).
-    """
-    n = len(chars)
-    j = pos + 1
-    while j < n:
-        if chars[j] in KANNADA_CONSONANTS:
-            varga = get_varga(chars[j])
-            if varga:
-                return VARGA_NASALS[varga][script]
-            break
-        elif chars[j].isspace() or chars[j] in '|।॥':
-            break
-        j += 1
+    for varga, letters in (
+        ('ka', KA_VARGA), ('ca', CA_VARGA), ('Ta', TA_VARGA),
+        ('ta', THA_VARGA), ('pa', PA_VARGA),
+    ):
+        if consonant in letters:
+            return varga
     return None
 
 
-# ─────────────────────────────────────────────
-#  TRANSLITERATION ENGINES
-# ─────────────────────────────────────────────
+def varga_nasal(chars, pos, script):
+    """Anusvara takes the nasal of the varga of the consonant that follows."""
+    for char in chars[pos + 1:]:
+        if char in KANNADA_CONSONANTS:
+            varga = get_varga(char)
+            return VARGA_NASALS[varga][script] if varga else None
+        if char.isspace() or char in '|।॥':
+            break
+    return None
+
 
 def transliterate_to_tamil(text):
-    """Convert Kannada text to Tamil with superscript notation."""
     if not text:
         return ''
+
     result = []
-    i = 0
     chars = list(text)
-    n = len(chars)
+    i, n = 0, len(chars)
 
     while i < n:
-        # Check 3-char special conjuncts first
-        chunk3 = ''.join(chars[i:i+3])
-        chunk2 = ''.join(chars[i:i+2])
-
-        if chunk3 in SPECIAL_CONJUNCTS_TAMIL:
-            result.append(SPECIAL_CONJUNCTS_TAMIL[chunk3])
+        if ''.join(chars[i:i + 3]) in SPECIAL_CONJUNCTS_TAMIL:
+            result.append(SPECIAL_CONJUNCTS_TAMIL[''.join(chars[i:i + 3])])
             i += 3
             continue
-        if chunk2 in SPECIAL_CONJUNCTS_TAMIL:
-            result.append(SPECIAL_CONJUNCTS_TAMIL[chunk2])
+        if ''.join(chars[i:i + 2]) in SPECIAL_CONJUNCTS_TAMIL:
+            result.append(SPECIAL_CONJUNCTS_TAMIL[''.join(chars[i:i + 2])])
             i += 2
             continue
 
-        ch = chars[i]
+        char = chars[i]
 
-        # Handle anusvara - convert to varga nasal based on following consonant
-        if ch == ANUSVARA:
-            nasal = get_varga_nasal_for_anusvara(chars, i, 'ta')
+        if char == ANUSVARA:
+            nasal = varga_nasal(chars, i, 'ta')
             if nasal:
-                result.append(nasal)
-                result.append('்')  # Tamil halanta
+                result.append(nasal + '்')
             else:
-                result.append(KN_VOWEL_SIGNS[ch])  # fallback to default ம்
+                result.append(KN_VOWEL_SIGNS[char])
             i += 1
             continue
 
-        # Standalone vowel
-        if ch in KN_VOWELS:
-            result.append(KN_VOWELS[ch])
+        if char in KN_VOWELS:
+            result.append(KN_VOWELS[char])
             i += 1
             continue
 
-        # Consonant
-        if ch in KN_CONSONANTS_TAMIL:
-            base, sup = KN_CONSONANTS_TAMIL[ch]
+        if char in KN_CONSONANTS_TAMIL:
+            base, sup = KN_CONSONANTS_TAMIL[char]
             i += 1
-            # Collect following vowel sign or halanta
+
             if i < n and chars[i] == HALANTA:
-                # Consonant cluster: add virama THEN superscript (so circle attaches to base)
-                result.append(base)
-                result.append('்')
-                if sup:
-                    result.append(sup)
+                result.append(base + '்')
                 i += 1
-            elif i < n and chars[i] == ANUSVARA:
-                # Anusvara after consonant - output consonant with inherent 'a',
-                # then handle anusvara on next iteration
-                result.append(base)
-                if sup:
-                    result.append(sup)
-                # Don't consume anusvara - let it be processed in next iteration
             elif i < n and chars[i] in KN_VOWEL_SIGNS:
-                vsign = chars[i]
-                result.append(base)
-                result.append(KN_VOWEL_SIGNS[vsign])
-                # Place superscript AFTER the vowel sign so it renders together
-                if sup:
-                    result.append(sup)
+                result.append(base + KN_VOWEL_SIGNS[chars[i]])
                 i += 1
             else:
-                # Implicit 'a' vowel - superscript after base consonant
                 result.append(base)
-                if sup:
-                    result.append(sup)
-                result.append('')  # Tamil has inherent 'a' in most contexts
+
+            if sup:
+                result.append(sup)
             continue
 
-        # Vowel sign standalone
-        if ch in KN_VOWEL_SIGNS:
-            result.append(KN_VOWEL_SIGNS[ch])
-            i += 1
-            continue
-
-        # Pass-through (spaces, punctuation, digits, pipe etc.)
-        result.append(ch)
+        if char in KN_VOWEL_SIGNS:
+            result.append(KN_VOWEL_SIGNS[char])
+        else:
+            result.append(char)
         i += 1
 
     output = ''.join(result)
-
-    # Tamil words cannot start with ன, ங, ண - replace with ந at word boundaries
-    import re
-    output = re.sub(r'(^|[\s।॥|])ன', r'\1ந', output)
-    output = re.sub(r'(^|[\s।॥|])ங', r'\1ந', output)
-    output = re.sub(r'(^|[\s।॥|])ண', r'\1ந', output)
-
+    for initial in ('ன', 'ங', 'ண'):
+        output = re.sub(r'(^|[\s।॥|])' + initial, r'\1ந', output)
     return output
 
 
 def transliterate_to_devanagari(text):
-    """Convert Kannada text to Devanagari."""
     if not text:
         return ''
-    result = []
-    i = 0
-    chars = list(text)
-    n = len(chars)
 
-    # Check longest match first for special conjuncts
     special = {k: v for k, v in KN_TO_DEV.items() if len(k) > 1}
+    result = []
+    chars = list(text)
+    i, n = 0, len(chars)
 
     while i < n:
-        matched = False
-        for length in [3, 2]:
-            chunk = ''.join(chars[i:i+length])
-            if chunk in special:
-                result.append(special[chunk])
-                i += length
-                matched = True
-                break
+        matched = next(
+            (length for length in (3, 2) if ''.join(chars[i:i + length]) in special),
+            None,
+        )
         if matched:
+            result.append(special[''.join(chars[i:i + matched])])
+            i += matched
             continue
 
-        ch = chars[i]
-
-        # Handle anusvara - convert to varga nasal based on following consonant
-        if ch == ANUSVARA:
-            nasal = get_varga_nasal_for_anusvara(chars, i, 'hi')
-            if nasal:
-                result.append(nasal)
-                result.append('्')  # Devanagari halanta
-            else:
-                result.append(KN_TO_DEV[ch])  # fallback to ं
-            i += 1
-            continue
-
-        if ch in KN_TO_DEV:
-            # Consonant with implicit 'a'
-            if ch in KANNADA_CONSONANTS:
-                result.append(KN_TO_DEV[ch])
-                i += 1
-            else:
-                result.append(KN_TO_DEV[ch])
-                i += 1
+        char = chars[i]
+        if char == ANUSVARA:
+            nasal = varga_nasal(chars, i, 'hi')
+            result.append(nasal + '्' if nasal else KN_TO_DEV[char])
+        elif char in KN_TO_DEV:
+            result.append(KN_TO_DEV[char])
         else:
-            result.append(ch)
-            i += 1
+            result.append(char)
+        i += 1
+
     return ''.join(result)
 
 
 def transliterate_to_iast(text):
-    """Convert Kannada text to IAST romanization."""
     if not text:
         return ''
-    result = []
-    i = 0
-    chars = list(text)
-    n = len(chars)
+
     special = {k: v for k, v in KN_TO_IAST.items() if len(k) > 1}
+    result = []
+    chars = list(text)
+    i, n = 0, len(chars)
 
     while i < n:
-        matched = False
-        for length in [3, 2]:
-            chunk = ''.join(chars[i:i+length])
-            if chunk in special:
-                result.append(special[chunk])
-                i += length
-                matched = True
-                break
+        matched = next(
+            (length for length in (3, 2) if ''.join(chars[i:i + length]) in special),
+            None,
+        )
         if matched:
+            result.append(special[''.join(chars[i:i + matched])])
+            i += matched
             continue
 
-        ch = chars[i]
+        char = chars[i]
 
-        # Handle anusvara - convert to varga nasal based on following consonant
-        if ch == ANUSVARA:
-            nasal = get_varga_nasal_for_anusvara(chars, i, 'iast')
-            if nasal:
-                result.append(nasal)
-            else:
-                result.append(KN_TO_IAST[ch])  # fallback to ṃ
+        if char == ANUSVARA:
+            result.append(varga_nasal(chars, i, 'iast') or KN_TO_IAST[char])
             i += 1
             continue
 
-        if ch in KANNADA_CONSONANTS:
-            result.append(KN_TO_IAST[ch])
+        if char in KANNADA_CONSONANTS:
+            result.append(KN_TO_IAST[char])
             i += 1
-            # Check following char
             if i < n and chars[i] == HALANTA:
-                # No vowel, skip halanta
                 i += 1
-            elif i < n and chars[i] == ANUSVARA:
-                # Anusvara after consonant - add inherent 'a', let anusvara be processed next
-                result.append('a')
             elif i < n and chars[i] in KN_VOWEL_SIGNS:
-                result.append(KN_TO_IAST.get(chars[i], ''))
+                result.append(KN_TO_IAST[chars[i]])
                 i += 1
-            else:
-                result.append('a')  # inherent 'a'
-        elif ch in KN_TO_IAST:
-            result.append(KN_TO_IAST[ch])
+            elif not (i < n and chars[i] == ANUSVARA):
+                result.append('a')
+        elif char in KN_TO_IAST:
+            result.append(KN_TO_IAST[char])
             i += 1
         else:
-            result.append(ch)
+            result.append(char)
             i += 1
 
     return ''.join(result)
 
 
-# ─────────────────────────────────────────────
-#  YAML LOADER
-# ─────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────
+#  Lyrics loading + transliteration
+# ──────────────────────────────────────────────────────────────────────────
 
-def load_lyrics_file(path):
-    with open(path, encoding='utf-8') as f:
-        return yaml.safe_load(f)
-
-def transliterate_field(text, engine):
-    """Transliterate a possibly multi-line Kannada string."""
-    if not text:
-        return ''
-    lines = text.split('\n')
-    return '\n'.join(engine(line) for line in lines)
-
-def auto_transliterate(data, engine_name):
-    """
-    Given a lyrics dict and engine name ('tamil'|'devanagari'|'iast'),
-    return transliterated versions of all text fields.
-    """
-    if engine_name == 'tamil':
-        engine = transliterate_to_tamil
-    elif engine_name == 'devanagari':
-        engine = transliterate_to_devanagari
-    else:
-        engine = transliterate_to_iast
-
-    lang_key = {'tamil': 'ta', 'devanagari': 'hi', 'iast': 'en'}[engine_name]
-
-    result = {}
-    # Title, author
-    for field in ['title', 'author', 'raga', 'tala', 'ankita']:
-        kn_val = data.get(f'{field}_kn', '')
-        # If a manual override exists and is non-empty, use it; else transliterate
-        manual_override = data.get(f'{field}_{lang_key}')
-        if manual_override:
-            result[f'{field}_{lang_key}'] = manual_override
-        else:
-            result[f'{field}_{lang_key}'] = transliterate_field(str(kn_val), engine) if kn_val else ''
-
-    # Verses
-    result['verses'] = []
-    for verse in data.get('verses', []):
-        v = dict(verse)
-        kn_text = verse.get('kn', '')
-
-        # Check for pre-transliterated text (ta, hi, en) first, then text_ta, text_hi, text_en
-        pre_trans = verse.get(lang_key, '') or verse.get(f'text_{lang_key}', '')
-        if pre_trans:
-            v[f'text_{lang_key}'] = pre_trans
-        else:
-            v[f'text_{lang_key}'] = transliterate_field(kn_text, engine) if kn_text else ''
-
-        # Subtitle
-        if 'subtitle_kn' in verse:
-            pre_sub = verse.get(f'subtitle_{lang_key}', '')
-            if pre_sub:
-                v[f'subtitle_{lang_key}'] = pre_sub
-            else:
-                v[f'subtitle_{lang_key}'] = transliterate_field(verse['subtitle_kn'], engine)
-
-        # Verse type translation
-        if verse.get(f'type_{lang_key}'):
-            v[f'type_{lang_key}'] = verse[f'type_{lang_key}']
-
-        result['verses'].append(v)
-    return result
-
-
-# ─────────────────────────────────────────────
-#  HTML GENERATION
-# ─────────────────────────────────────────────
-
-VERSE_TYPE_LABELS = {
-    'pallavi':    {'kn': 'ಪಲ್ಲವಿ',    'ta': 'பல்லவி',   'hi': 'पल्लवि',    'en': 'Pallavi'},
-    'anupallavi': {'kn': 'ಅನುಪಲ್ಲವಿ', 'ta': 'அனுபல்லவி','hi': 'अनुपल्लवि', 'en': 'Anupallavi'},
-    'charana':    {'kn': 'ಚರಣ',       'ta': 'சரண',      'hi': 'चरण',       'en': 'Caraṇa'},
-    'madhyamakala':{'kn':'ಮಧ್ಯಮಕಾಲ', 'ta': 'மத்யமகால','hi': 'मध्यमकाल',  'en': 'Madhyamakāla'},
-    # Suladi talas
-    'dhruva':     {'kn': 'ಧ್ರುವ',     'ta': 'த்ருவ',    'hi': 'ध्रुव',     'en': 'Dhruva'},
-    'mathya':     {'kn': 'ಮಠ್ಯ',      'ta': 'மட்ய',     'hi': 'मठ्य',      'en': 'Maṭhya'},
-    'rupaka':     {'kn': 'ರೂಪಕ',      'ta': 'ரூபக',     'hi': 'रूपक',      'en': 'Rūpaka'},
-    'jhampe':     {'kn': 'ಝಂಪೆ',      'ta': 'ஜம்பே',    'hi': 'झंपे',      'en': 'Jhampe'},
-    'trividi':    {'kn': 'ತ್ರಿವಿಡಿ',   'ta': 'த்ரிவிடி',  'hi': 'त्रिविडि',   'en': 'Triviḍi'},
-    'atta':       {'kn': 'ಅಟ್ಟ',      'ta': 'அட்ட',     'hi': 'अट्ट',      'en': 'Aṭṭa'},
+TRANSLIT = {
+    'ta': transliterate_to_tamil,
+    'hi': transliterate_to_devanagari,
+    'en': transliterate_to_iast,
 }
 
-def get_verse_label(vtype, lang, number=None):
-    """
-    Get the label for a verse type in the specified language.
-    If vtype is in Kannada (e.g., 'ಧ್ರುವತಾಳ'), transliterate it.
-    If vtype is in English and in VERSE_TYPE_LABELS, use predefined labels.
-    """
-    # Check if it's a known English key
-    if vtype in VERSE_TYPE_LABELS:
-        labels = VERSE_TYPE_LABELS[vtype]
-        label = labels.get(lang, vtype.capitalize())
-    else:
-        # Assume it's in Kannada - transliterate based on target language
-        if lang == 'kn':
-            label = vtype
-        elif lang == 'ta':
-            label = transliterate_to_tamil(vtype)
-        elif lang == 'hi':
-            label = transliterate_to_devanagari(vtype)
-        else:  # 'en' / IAST
-            label = transliterate_to_iast(vtype)
+LANGUAGES = [
+    ('hi', 'देवनागरी'),
+    ('kn', 'ಕನ್ನಡ'),
+    ('ta', 'தமிழ்'),
+    ('en', 'English (IAST)'),
+]
 
-    if number:
-        label += f' {number}'
-    return label
+VERSE_TYPE_LABELS = {
+    'pallavi':     {'kn': 'ಪಲ್ಲವಿ',     'ta': 'பல்லவி',   'hi': 'पल्लवि',    'en': 'Pallavi'},
+    'anupallavi':  {'kn': 'ಅನುಪಲ್ಲವಿ',  'ta': 'அனுபல்லவி', 'hi': 'अनुपल्लवि', 'en': 'Anupallavi'},
+    'charana':     {'kn': 'ಚರಣ',        'ta': 'சரண',      'hi': 'चरण',       'en': 'Caraṇa'},
+    'madhyamakala': {'kn': 'ಮಧ್ಯಮಕಾಲ',  'ta': 'மத்யமகால', 'hi': 'मध्यमकाल',  'en': 'Madhyamakāla'},
+    'dhruva':      {'kn': 'ಧ್ರುವ',      'ta': 'த்ருவ',    'hi': 'ध्रुव',     'en': 'Dhruva'},
+    'mathya':      {'kn': 'ಮಠ್ಯ',      'ta': 'மட்ய',     'hi': 'मठ्य',      'en': 'Maṭhya'},
+    'rupaka':      {'kn': 'ರೂಪಕ',      'ta': 'ரூபக',     'hi': 'रूपक',      'en': 'Rūpaka'},
+    'jhampe':      {'kn': 'ಝಂಪೆ',      'ta': 'ஜம்பே',    'hi': 'झंपे',      'en': 'Jhampe'},
+    'trividi':     {'kn': 'ತ್ರಿವಿಡಿ',   'ta': 'த்ரிவிடி',  'hi': 'त्रिविडि',   'en': 'Triviḍi'},
+    'atta':        {'kn': 'ಅಟ್ಟ',       'ta': 'அட்ட',     'hi': 'अट्ट',      'en': 'Aṭṭa'},
+}
 
-def verse_label(vtype, lang, number=None):
-    """Wrapper for backwards compatibility - calls get_verse_label."""
-    return get_verse_label(vtype, lang, number)
 
-def lines_to_html(text):
-    """Convert newline-separated text to HTML with <br> tags."""
+def transliterate(text, lang):
     if not text:
         return ''
-    lines = [l for l in text.strip().split('\n')]
-    return '<br>\n'.join(lines)
+    return '\n'.join(TRANSLIT[lang](line) for line in str(text).split('\n'))
 
-def generate_song_page(data, rel_path, output_dir, template_path):
-    """Generate a full HTML page for one song."""
-    with open(template_path, encoding='utf-8') as f:
-        template = f.read()
 
-    # Calculate the correct relative path to root based on depth
-    depth = len(rel_path.parts) - 1  # Number of parent folders
-    if depth == 0:
-        css_path = "css/style.css"
-        js_path = "js/tabs.js"
-        home_path = "index.html"
+def verse_label(vtype, lang, number=None):
+    if vtype in VERSE_TYPE_LABELS:
+        label = VERSE_TYPE_LABELS[vtype].get(lang) or vtype.capitalize()
+    elif lang == 'kn':
+        label = vtype
     else:
-        prefix = "../" * depth
-        css_path = f"{prefix}css/style.css"
-        js_path = f"{prefix}js/tabs.js"
-        home_path = f"{prefix}index.html"
+        label = TRANSLIT[lang](vtype)
+    return f'{label} {number}' if number else label
 
-    # Replace hardcoded paths in template
-    template = template.replace('../../css/style.css', css_path)
-    template = template.replace('../../js/tabs.js', js_path)
-    template = template.replace('../../index.html', home_path)
 
-    # Build all 4 language panels
-    langs = [
-        ('hi', 'देवनागरी', 'Devanagari'),
-        ('kn', 'ಕನ್ನಡ', 'Kannada'),
-        ('ta', 'தமிழ்', 'Tamil'),
-        ('en', 'English (IAST)', 'IAST'),
-    ]
+def load_lyrics(path):
+    """Load one YAML file into a normalised record with all four scripts."""
+    with open(path, encoding='utf-8') as handle:
+        raw = yaml.safe_load(handle) or {}
 
-    # Auto-transliterate missing fields
-    ta_data = auto_transliterate(data, 'tamil')
-    hi_data = auto_transliterate(data, 'devanagari')
-    en_data = auto_transliterate(data, 'iast')
+    record = {
+        'title': {},
+        'author': {},
+        'raga': {},
+        'tala': {},
+        'ankita': {},
+        'verses': [],
+    }
 
-    panels_html = ''
-    for idx, (lang, native_name, eng_name) in enumerate(langs):
-        active = 'active' if idx == 0 else ''
+    for field in ('title', 'author', 'raga', 'tala', 'ankita'):
+        kannada = str(raw.get(f'{field}_kn') or '').strip()
+        record[field]['kn'] = kannada
+        for lang in TRANSLIT:
+            override = raw.get(f'{field}_{lang}')
+            record[field][lang] = str(override) if override else transliterate(kannada, lang)
 
-        if lang == 'kn':
-            title = data.get('title_kn', '')
-            author = data.get('author_kn', '')
-            raga = data.get('raga_kn', '')
-            tala = data.get('tala_kn', '')
-            ankita = data.get('ankita_kn', '')
-            verses = data.get('verses', [])
-            text_key = 'kn'
-            sub_key = 'subtitle_kn'
-        elif lang == 'ta':
-            title = ta_data.get('title_ta', '')
-            author = ta_data.get('author_ta', '')
-            raga = ta_data.get('raga_ta', '')
-            tala = ta_data.get('tala_ta', '')
-            ankita = ta_data.get('ankita_ta', '')
-            verses = ta_data['verses']
-            text_key = 'text_ta'
-            sub_key = 'subtitle_ta'
-        elif lang == 'hi':
-            title = hi_data.get('title_hi', '')
-            author = hi_data.get('author_hi', '')
-            raga = hi_data.get('raga_hi', '')
-            tala = hi_data.get('tala_hi', '')
-            ankita = hi_data.get('ankita_hi', '')
-            verses = hi_data['verses']
-            text_key = 'text_hi'
-            sub_key = 'subtitle_hi'
-        else:
-            title = en_data.get('title_en', '')
-            author = en_data.get('author_en', '')
-            raga = en_data.get('raga_en', '')
-            tala = en_data.get('tala_en', '')
-            ankita = en_data.get('ankita_en', '')
-            verses = en_data['verses']
-            text_key = 'text_en'
-            sub_key = 'subtitle_en'
+    for verse in raw.get('verses') or []:
+        verse = dict(verse)
+        kannada = str(verse.get('kn') or '').strip()
+        rendered = {'kn': kannada, 'type': str(verse.get('type') or '').strip(),
+                    'number': verse.get('number'), 'subtitle': {}}
 
-        meta_html = ''
-        if raga or tala:
-            raga_html = f'<span class="meta-item raga">{raga}</span>' if raga else '<span></span>'
-            tala_html = f'<span class="meta-item tala">{tala}</span>' if tala else '<span></span>'
-            meta_html += f'<div class="song-meta-row">{raga_html}{tala_html}</div>\n'
+        for lang in TRANSLIT:
+            override = verse.get(lang) or verse.get(f'text_{lang}')
+            rendered[lang] = str(override) if override else transliterate(kannada, lang)
 
-        ankita_html = f'<h3 class="song-ankita">{ankita}</h3>' if ankita else ''
+        subtitle_kn = str(verse.get('subtitle_kn') or '').strip()
+        rendered['subtitle']['kn'] = subtitle_kn
+        for lang in TRANSLIT:
+            override = verse.get(f'subtitle_{lang}')
+            rendered['subtitle'][lang] = str(override) if override else transliterate(subtitle_kn, lang)
 
-        verses_html = ''
-        subtitle_key = f'subtitle_{lang}'
-        for verse in verses:
-            vtype = verse.get('type', '')
-            vnum = verse.get('number', '')
+        record['verses'].append(rendered)
 
-            # Handle mid-song subtitle heading (type: subtitle)
-            if vtype == 'subtitle':
-                sub_text = verse.get(subtitle_key) or verse.get('subtitle_kn', '')
-                verses_html += f'<h3 class="verse-subtitle">{sub_text}</h3>\n'
-                continue
+    for field in ('category', ON_KEY, 'types'):
+        values = raw.get(field)
+        if values is None:
+            values = raw.get('on') if field == ON_KEY else None
+        record[field] = values if isinstance(values, list) else ([values] if values else [])
 
-            # Get label - either from subtitle_* fields (for tala names) or from type field (pallavi/charana)
-            if verse.get(subtitle_key) or verse.get('subtitle_kn'):
-                label = verse.get(subtitle_key) or verse.get('subtitle_kn', '')
-            elif vtype and vtype != 'None':
-                label = verse_label(vtype, lang)
-            else:
-                label = ''
+    return record
 
-            text = verse.get(text_key) or verse.get('kn', '')
-            text_html = lines_to_html(text)
 
-            # Append number to the right end of last line if present
-            if vnum:
-                text_html = text_html.rstrip()
-                text_html += f'<span class="verse-number">॥{vnum}॥</span>'
+def plain_title(record):
+    return iast_to_plain(record['title']['en']).strip().title()
 
-            label_html = f'<div class="verse-label">{label}</div>\n' if label else ''
-            verses_html += f'''
-<div class="verse verse-{vtype}">
-  {label_html}<div class="verse-text">{text_html}</div>
-</div>
-'''
 
-        panels_html += f'''
-<div class="lang-panel {active}" id="panel-{lang}" data-lang="{lang}">
+def plain_author(record):
+    return iast_to_plain(record['author']['en']).strip().title()
+
+
+def preview_line(record):
+    for verse in record['verses']:
+        text = verse['en'].strip()
+        if text:
+            words = text.split()
+            return iast_to_plain(' '.join(words[:4])) + ('…' if len(words) > 4 else '')
+    return ''
+
+
+def slugify(text):
+    slug = re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
+    return slug or 'song'
+
+
+# ──────────────────────────────────────────────────────────────────────────
+#  HTML output
+# ──────────────────────────────────────────────────────────────────────────
+
+def escape(text):
+    return (str(text).replace('&', '&amp;').replace('<', '&lt;')
+            .replace('>', '&gt;').replace('"', '&quot;'))
+
+
+def lines_to_html(text):
+    return '<br>\n'.join(line for line in (text or '').strip().split('\n'))
+
+
+def render_verses(record, lang):
+    html = ''
+    for verse in record['verses']:
+        subtitle = verse['subtitle'][lang] or verse['subtitle']['kn']
+
+        if verse['type'] == 'subtitle':
+            if subtitle:
+                html += f'<h3 class="verse-subtitle">{escape(subtitle)}</h3>\n'
+            continue
+
+        label = subtitle or (verse_label(verse['type'], lang) if verse['type'] else '')
+        body = lines_to_html(verse[lang] or verse['kn'])
+        if verse['number'] not in (None, ''):
+            body += f'<span class="verse-number">॥{verse["number"]}॥</span>'
+
+        label_html = f'<div class="verse-label">{escape(label)}</div>\n' if label else ''
+        kind = slugify(verse['type']) if verse['type'] else 'plain'
+        html += (f'<div class="verse verse-{kind}">\n  {label_html}'
+                 f'<div class="verse-text">{body}</div>\n</div>\n')
+    return html
+
+
+def render_badges(record):
+    badges = []
+    for value in record['category']:
+        badges.append(f'<span class="badge badge-category">{escape(value)}</span>')
+    for value in record[ON_KEY]:
+        badges.append(f'<span class="badge badge-on">{escape(value)}</span>')
+    for value in record['types']:
+        badges.append(f'<span class="badge badge-type">{escape(value)}</span>')
+    return ''.join(badges)
+
+
+def render_song_page(record, song, output_dir, template):
+    tabs = ''.join(
+        f'<button class="tab-btn{" active" if index == 0 else ""}" data-target="{lang}">{label}</button>'
+        for index, (lang, label) in enumerate(LANGUAGES)
+    )
+
+    panels = ''
+    for index, (lang, _) in enumerate(LANGUAGES):
+        active = ' active' if index == 0 else ''
+        meta = ''
+        if record['raga'][lang] or record['tala'][lang]:
+            raga = record['raga'][lang] or record['raga']['kn']
+            tala = record['tala'][lang] or record['tala']['kn']
+            meta = ('<div class="song-meta-row">'
+                    f'<span class="meta-item raga">{escape(raga)}</span>'
+                    f'<span class="meta-item tala">{escape(tala)}</span></div>')
+        ankita = record['ankita'][lang] or record['ankita']['kn']
+
+        panels += f'''
+<div class="lang-panel{active}" id="panel-{lang}" data-lang="{lang}">
   <div class="song-header">
-    <h1 class="song-title">{title}</h1>
-    <h2 class="song-author">{author}</h2>
-    {ankita_html}
-    <div class="song-meta">{meta_html}</div>
+    <h1 class="song-title">{escape(record['title'][lang] or record['title']['kn'])}</h1>
+    <h2 class="song-author">{escape(record['author'][lang] or record['author']['kn'])}</h2>
+    <div class="song-badges">{render_badges(record)}</div>
+    {'<h3 class="song-ankita">' + escape(ankita) + '</h3>' if ankita else ''}
+    <div class="song-meta">{meta}</div>
   </div>
   <div class="song-body">
-    {verses_html}
+    {render_verses(record, lang)}
   </div>
 </div>
 '''
 
-    # Tab buttons
-    tabs_html = ''
-    for idx, (lang, native_name, eng_name) in enumerate(langs):
-        active = 'active' if idx == 0 else ''
-        tabs_html += f'<button class="tab-btn {active}" data-target="{lang}">{native_name}</button>\n'
+    html = template
+    for token, value in (
+        ('{{CSS}}', '../css/style.css'),
+        ('{{JS}}', '../js/tabs.js'),
+        ('{{HOME}}', '../index.html'),
+        ('{{PAGE_TITLE}}', escape(record['title']['kn'] or song['title'])),
+        ('{{BREADCRUMB}}', f'<a href="../index.html">Home</a> › {escape(record["title"]["kn"] or song["title"])}'),
+        ('{{TABS}}', tabs),
+        ('{{PANELS}}', panels),
+    ):
+        html = html.replace(token, value)
 
-    # Breadcrumb - handle nested categories
-    parts = rel_path.parts
-    depth = len(parts) - 1  # Number of parent folders
-    back_path = '../' * depth + 'index.html'
-
-    breadcrumb = f'<a href="{back_path}">Home</a>'
-    if len(parts) >= 2:
-        # Category
-        cat = parts[0]
-        cat_label = format_category_name(cat)
-        breadcrumb += f' › <a href="{back_path}#{cat}">{cat_label}</a>'
-    if len(parts) >= 3:
-        # Sub-category
-        subcat = parts[1]
-        subcat_label = format_category_name(subcat)
-        breadcrumb += f' › <a href="{back_path}#{cat}-{subcat}">{subcat_label}</a>'
-    breadcrumb += f' › {data.get("title_kn", "")}'
-
-    html = template.replace('{{TABS}}', tabs_html)
-    html = html.replace('{{PANELS}}', panels_html)
-    html = html.replace('{{BREADCRUMB}}', breadcrumb)
-    html = html.replace('{{PAGE_TITLE}}', data.get('title_kn', 'Song'))
-
-    out_path = output_dir / rel_path.with_suffix('.html')
+    out_path = output_dir / song['href']
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, 'w', encoding='utf-8') as f:
-        f.write(html)
-
+    out_path.write_text(html, encoding='utf-8')
     return out_path
 
 
-def format_category_name(folder_name):
-    """Convert folder name to display name (e.g., 'lakshmi_devi' -> 'Lakshmi Devi')."""
-    return folder_name.replace('_', ' ').replace('-', ' ').title()
-
-
-def generate_index(all_songs, output_dir, template_path):
-    """Generate the main index.html with recursive nested collapsible folders."""
-    with open(template_path, encoding='utf-8') as f:
-        template = f.read()
-
-    from collections import defaultdict
-
-    # Build a recursive tree structure from file paths
-    # Each node is a dict with children and/or '_songs_' key
-    def make_node():
-        return {'_songs_': []}
-
-    tree = defaultdict(make_node)
-
-    for rel_path, data in all_songs:
-        parts = rel_path.parts
-        node = tree
-        for part in parts[:-1]:  # walk folder dirs
-            if part not in node or not isinstance(node[part], dict):
-                node[part] = make_node()
-            node = node[part]
-        node['_songs_'].append((rel_path, data))
-
-    counter = [0]
-
-    def render_song_entry(rel_path, data):
-        counter[0] += 1
-        idx = counter[0]
-        title_iast = data.get('title_en') or transliterate_to_iast(data.get('title_kn', ''))
-        author_iast = data.get('author_en') or transliterate_to_iast(data.get('author_kn', ''))
-        title_plain = iast_to_plain_english(title_iast).title()
-        author_plain = iast_to_plain_english(author_iast).title()
-        title_kn = data.get('title_kn', '')
-        author_kn = data.get('author_kn', '')
-        preview = ''
-        verses = data.get('verses', [])
-        if verses:
-            first_verse = verses[0]
-            en_text = first_verse.get('en') or first_verse.get('text_en', '')
-            if not en_text:
-                kn_text = first_verse.get('kn', '')
-                en_text = transliterate_to_iast(kn_text) if kn_text else ''
-            if en_text:
-                words = en_text.strip().split()[:3]
-                preview = ' '.join(words)
-                if len(en_text.strip().split()) > 3:
-                    preview += '...'
-        href = str(rel_path.with_suffix('.html')).replace('\\', '/')
-        preview_html = f'<span class="song-entry-preview">{preview}</span>' if preview else ''
-        return f'''<a href="{href}" class="song-entry" data-title-kn="{title_kn}" data-author-kn="{author_kn}">
-  <span class="song-entry-main"><span class="song-entry-index">{idx}.</span> {title_plain}</span>
-  <span class="song-entry-author">{author_plain}</span>
-  {preview_html}
-</a>'''
-
-    def count_songs(node):
-        total = len(node.get('_songs_', []))
-        for key, child in node.items():
-            if key != '_songs_' and isinstance(child, dict):
-                total += count_songs(child)
-        return total
-
-    def render_node(node, depth=0, parent_id=''):
-        """Recursively render a folder node. Returns (html, song_count)."""
-        songs = node.get('_songs_', [])
-        children = {k: v for k, v in node.items() if k != '_songs_' and isinstance(v, dict)}
-
-        # Reset counter for each folder
-        counter[0] = 0
-        parts_html = ''
-
-        # Render songs in this folder
-        for rel_path, data in sorted(songs, key=lambda x: (x[1].get('title_en') or transliterate_to_iast(x[1].get('title_kn', ''))).lower()):
-            parts_html += render_song_entry(rel_path, data)
-
-        # Render child folders
-        for name in sorted(children.keys()):
-            child = children[name]
-            child_id = f"{parent_id}-{name.lower().replace(' ', '-')}" if parent_id else name.lower().replace(' ', '-')
-            child_html, child_count = render_node(child, depth + 1, child_id)
-            label = format_category_name(name)
-            parts_html += f'''<div class="folder-section folder-depth-{depth + 1}" id="folder-{child_id}">
-  <div class="folder-header">
-    <h3 class="folder-name">{label}</h3>
-    <span class="folder-count">{child_count}</span>
-  </div>
-  <div class="folder-content">
-    {child_html}
-  </div>
-</div>'''
-
-        total = len(songs) + sum(count_songs(c) for c in children.values())
-        return parts_html, total
-
-    # Render top-level categories
-    groups_html = ''
-    total_songs = 0
-
-    for cat_name in sorted(tree.keys()):
-        cat_node = tree[cat_name]
-        cat_id = cat_name.lower().replace(' ', '-')
-        cat_html, cat_total = render_node(cat_node, 0, cat_id)
-        total_songs += cat_total
-        cat_label = format_category_name(cat_name)
-
-        groups_html += f'''<section class="folder-section folder-depth-0" id="folder-{cat_id}">
-  <div class="folder-header">
-    <h2 class="folder-name">{cat_label}</h2>
-    <span class="folder-count">{cat_total}</span>
-  </div>
-  <div class="folder-content">
-    {cat_html}
-  </div>
-</section>
+def render_index(template, songs, output_dir):
+    entries = ''.join(
+        f'''<li class="song-entry" data-id="{song['id']}">
+  <a class="song-link" href="{song['href']}">
+    <span class="song-title">{escape(song['title'])}</span>
+    <span class="song-author">{escape(song['author'])}</span>
+    <span class="song-badges">{render_badges(song)}</span>
+    <span class="song-preview">{escape(song['preview'])}</span>
+  </a>
+</li>
 '''
+        for song in songs
+    )
 
-    html = template.replace('{{CATEGORIES}}', groups_html)
-    html = html.replace('{{TOTAL}}', str(total_songs))
-    html = html.replace('{{BUILD_DATE}}', datetime.now().strftime('%d %B %Y'))
+    index = {
+        'songs': [
+            {key: song[key] for key in ('id', 'href', 'title', 'author', 'preview', 'category', ON_KEY, 'types')}
+            for song in songs
+        ],
+        'categories': CATEGORIES,
+        'types': TYPES,
+        'onWho': ON_WHO,
+    }
 
-    out_path = output_dir / 'index.html'
-    with open(out_path, 'w', encoding='utf-8') as f:
-        f.write(html)
-    return out_path
+    # '<' is escaped so the payload can never terminate the host <script> element.
+    payload = json.dumps(index, ensure_ascii=False).replace('<', '\\u003c')
+
+    html = template
+    for token, value in (
+        ('{{TOTAL}}', str(len(songs))),
+        ('{{BUILD_DATE}}', date.today().strftime('%d %B %Y')),
+        ('{{SONGS}}', entries),
+        ('{{INDEX_JSON}}', payload),
+    ):
+        html = html.replace(token, value)
+
+    (output_dir / 'index.html').write_text(html, encoding='utf-8')
 
 
-# ─────────────────────────────────────────────
-#  MAIN BUILD
-# ─────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────
+#  Build
+# ──────────────────────────────────────────────────────────────────────────
 
-def build(repo_root=None):
-    if repo_root is None:
-        repo_root = Path(__file__).parent.parent
-    else:
-        repo_root = Path(repo_root).resolve()
-
+def build(repo_root):
+    repo_root = Path(repo_root).resolve()
     lyrics_dir = repo_root / 'lyrics'
     output_dir = repo_root / 'docs'
     templates_dir = repo_root / 'templates'
 
-    # Clean and recreate output
     if output_dir.exists():
-        try:
-            shutil.rmtree(output_dir)
-        except PermissionError:
-            # Directory may be locked, try to remove contents instead
-            for item in output_dir.iterdir():
-                try:
-                    if item.is_dir():
-                        shutil.rmtree(item)
-                    else:
-                        item.unlink()
-                except PermissionError:
-                    pass
+        shutil.rmtree(output_dir, ignore_errors=True)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Copy static assets
-    for folder in ['css', 'js']:
-        src = repo_root / folder
-        dest = output_dir / folder
-        if dest.exists():
-            shutil.rmtree(dest)
-        if src.exists():
-            shutil.copytree(src, dest)
+    for folder in ('css', 'js'):
+        source = repo_root / folder
+        if source.exists():
+            shutil.copytree(source, output_dir / folder, dirs_exist_ok=True)
 
-    song_template = templates_dir / 'song.html'
-    index_template = templates_dir / 'index.html'
+    song_template = (templates_dir / 'song.html').read_text(encoding='utf-8')
+    index_template = (templates_dir / 'index.html').read_text(encoding='utf-8')
 
-    all_songs = []
-    yaml_files = list(lyrics_dir.rglob('*.yml')) + list(lyrics_dir.rglob('*.yaml'))
+    yaml_files = sorted(
+        list(lyrics_dir.rglob('*.yml')) + list(lyrics_dir.rglob('*.yaml')),
+        key=lambda p: str(p).lower(),
+    )
 
-    print(f"Found {len(yaml_files)} lyrics files.")
+    songs = []
+    seen_slugs = {}
+    failures = []
 
-    for yaml_path in sorted(yaml_files):
+    for yaml_path in yaml_files:
         rel = yaml_path.relative_to(lyrics_dir)
         try:
-            data = load_lyrics_file(yaml_path)
-            generate_song_page(data, rel, output_dir, song_template)
-            all_songs.append((rel, data))
-            print(f"  OK: {rel}")
-        except Exception as e:
-            print(f"  FAIL: {rel}: {e}", file=sys.stderr)
+            record = load_lyrics(yaml_path)
 
-    generate_index(all_songs, output_dir, index_template)
-    print(f"\nBuild complete -> {output_dir}")
-    print(f"  {len(all_songs)} songs processed")
+            stem = slugify(rel.stem)
+            slug = stem
+            if slug in seen_slugs:
+                seen_slugs[stem] += 1
+                slug = f'{stem}-{seen_slugs[stem]}'
+            else:
+                seen_slugs[stem] = 1
+
+            song = {
+                'id': slug,
+                'href': f'songs/{slug}.html',
+                'title': plain_title(record) or rel.stem.replace('_', ' ').title(),
+                'author': plain_author(record) or 'Unknown',
+                'preview': preview_line(record),
+                'category': record['category'],
+                ON_KEY: record[ON_KEY],
+                'types': record['types'],
+            }
+
+            render_song_page(record, song, output_dir, song_template)
+            songs.append(song)
+            print(f'  OK  {rel}  ->  {song["href"]}')
+        except Exception as error:
+            failures.append((rel, error))
+            print(f'  FAIL {rel}: {error}', file=sys.stderr)
+
+    songs.sort(key=lambda s: (s['category'][0] if s['category'] else '', s['title'].lower()))
+    for index, song in enumerate(songs):
+        song['order'] = index
+
+    render_index(index_template, songs, output_dir)
+
+    print(f'\nBuilt {len(songs)} songs -> {output_dir}')
+    if failures:
+        print(f'{len(failures)} file(s) failed.', file=sys.stderr)
+        return 1
+    return 0
 
 
 if __name__ == '__main__':
-    root = sys.argv[1] if len(sys.argv) > 1 else None
-    build(root)
+    sys.exit(build(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).parent.parent))

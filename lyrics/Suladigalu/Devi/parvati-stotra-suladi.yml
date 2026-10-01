@@ -1,38 +1,21 @@
-# ──────────────────────────────────────────────────────────────────
-# Daasa Saahitya - New Song Template
-#
-# HOW TO USE:
-# 1. Copy this file to lyrics/<category>/your-song-name.yml
-# 2. Fill in the Kannada fields below
-# 3. Commit → GitHub Actions auto-builds the site
-#
-# The build script auto-transliterates to Tamil, Devanagari, and IAST.
-# Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
-# ──────────────────────────────────────────────────────────────────
+# Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-# REQUIRED: Kannada title and author
 title_kn: ಪಾರ್ವತಿ ದೇವಿ ಸ್ತೋತ್ರ ಸುಳಾದಿ
 author_kn: ಅಭಿನವ ಪ್ರಾಣೇಶ ದಾಸರು
-
-# OPTIONAL: Raga, Tala, Ankita
+category:
+  - Suladi
+on_who:
+  - Devi
+types: []
 raga_kn: ಕಲ್ಯಾಣಿ
-tala_kn: 
+tala_kn:
 ankita_kn: ಅಭಿನವ ಪ್ರಾಣೇಶ ವಿಠಲ
-
-# OPTIONAL: Override auto-transliteration (leave empty = auto-generated)
-# title_ta:
-# title_hi:
-# title_en:
-# author_ta:
-# author_hi:
-# author_en:
-
 verses:
-  # ── Caraṇa with tala name ──
-  - type: None
+  - type: ''
     number: 1
     subtitle_kn: ಧ್ರುವತಾಳ
-    kn: |
+    kn:
+    |
       ಉಮಾ ಕಾತ್ಯಾಯನಿ ಪಾರ್ವತಿ ಕಲ್ಯಾಣಿ |
       ಬೊಮ್ಮ ಭೃಕುಟಿ ಸಂಭೂತ ದೇವನ ರಾಣಿ |
       ಕಮ್ಮಗೊಲನ ಜನನಿ ದಾಕ್ಷಾಯಿಣಿ |
@@ -42,11 +25,11 @@ verses:
       ಬೊಮ್ಮನ ಅಭಿನವ ಪ್ರಾಣೇಶವಿಠಲನ |
       ಸುಮನ ಚರಣಗಳಲ್ಲಿ ಮನವ ಪ್ರೇರಿಸು ತಾಯೆ || 1 ||
 
-  # ── Another Caraṇa ──
-  - type: None
+  - type: ''
     number: 2
     subtitle_kn: ಮಟ್ಟತಾಳ
-    kn: |
+    kn:
+    |
       ಚಂಡಿದುರ್ಗೆ ಭೂತಗಣ ಸಂಸೇವಿತಳೆ |
       ರುಂಡಾಹಿಮಾಲಾಧರ ಹೃನ್ಮಂದಿರಳೆ |
       ಉಂಡು ವಿಷವ ನಿನ್ನ ಗಂಡನು ಬಳಲಿ |
@@ -56,11 +39,11 @@ verses:
       ಪಂಡರ ಅಭಿನವ ಪ್ರಾಣೇಶವಿಠಲನ |
       ಪುಂಡರೀಕ ಚರಣ ಬಂಡುಣಿ ಎನಿಸಮ್ಮ || 2 ||
 
-  # ── Another Caraṇa ──
-  - type: None
+  - type: ''
     number: 3
     subtitle_kn: ತ್ರಿವಿಡಿತಾಳ
-    kn: |
+    kn:
+    |
       ಅರುಮೊಗನ ಪೆತ್ತ ಚಾರು ಚರಿತ್ರಳೆ |
       ವಾರಣಾರಿ ವೃಕ್ಷ್ಯಶ್ಯಂದನಳೆ |
       ಶ್ರೀರಜಪತಿ ರಾಮನಾಮ ಮಂತ್ರವ ಜಪಿಸಿ |
@@ -71,10 +54,11 @@ verses:
       ಮಾರಮಣ ಅಭಿನವ ಪ್ರಾಣೇಶ ವಿಠಲನ |
       ಚಾರು ಚರಣಗಳಲ್ಲಿ ಮನವ ಪ್ರೇರಿಸು ತಾಯಿ || 3 ||
 
-  - type: None
+  - type: ''
     number: 4
     subtitle_kn: ಅಟ್ಟತಾಳ
-    kn: |
+    kn:
+    |
       ಹರಿಸರ್ವೋತ್ತಮನೆಂಬ ಸ್ಥಿರವಾದ ಜ್ಞಾನವ |
       ಕರುಣಿಸು ಕರುಣಿಸು ಶೆರಗೊಡ್ಡಿ ಬೇಡುವೆ |
       ದುರುಳ ದಾನವರಂತೆ ಪರಮೇಶ ಶಿವನೆಂದು |
@@ -84,10 +68,11 @@ verses:
       ಸಿರಿವರ ಅಭಿನವ ಪ್ರಾಣೇಶ ವಿಠಲನ |
       ಚರಣವಿರಜ ಭೃಂಗೆ ದೀನ ದಯಪಾಂಗೆ || 4 ||
 
-  - type: None
+  - type: ''
     number: 5
     subtitle_kn: ಅದಿತಾಳ
-    kn: |
+    kn:
+    |
       ಭಾಸುರ ಚರಿತಳೆ ಭೂಸುರ ವಿನುತಳೆ |
       ಸಾಸಿರ ನಾಮನ ತೋಷದಿ ಭಜಿಪಳೆ |
       ವಾಸವಾದಿ ದಿವಿಜೇಶ ಗಣಾರ್ಚಿತೆ |
@@ -96,9 +81,10 @@ verses:
       ಮೇಷ ಅಭಿನವ ಪ್ರಾಣೇಶ ವಿಠಲನ |
       ದಾಸ್ಯತನವಿತ್ತು ಪೋಷಿಸುವದೆಮ್ಮಾ || 5 ||
 
-  - type: None
+  - type: ''
     number: 6
     subtitle_kn: ಜತೆ
-    kn: |
+    kn:
+    |
       ಅಜನಾಮ ಅಭಿನವ ಪ್ರಾಣೇಶ ವಿಠಲನ |
       ನಿಜ ದಾಸನೆಂದೆನಿಸು ಸುಜನ ಪೋಷಕಳೆ || 6 ||
