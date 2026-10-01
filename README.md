@@ -21,7 +21,7 @@ Site regenerates in docs/ and goes live in ~2 minutes
 
 The index has no folders. Everything is one flat list you narrow down:
 
-- **Search bar** — matches title, author, and lyrics in any script.
+- **Search bar + Search button** — matches title, author, and lyrics in any script. Results refresh when you press Search, so half-finished selections do not shuffle the list.
 - **Category** checkboxes — Dasara Pada, Sampradaya Haadu, Suladi, Stuti, Stotra, Gadya, Kavya, Kathe.
 - **Type** checkboxes — Aavahana, Aagamana, Namaskaara, Pooje, Aarati, Kathe, Vairagya, Parihara.
 - **On who?** tags — Devaru, Devi, Yatigalu, Dasaru. Type to autocomplete.

@@ -30,6 +30,7 @@
 
   const dom = {
     search: document.getElementById('search-input'),
+    searchButton: document.getElementById('search-button'),
     status: document.getElementById('filter-status'),
     list: document.getElementById('song-list'),
     empty: document.getElementById('empty-state'),
@@ -39,6 +40,8 @@
     onWho: document.getElementById('filter-on'),
     author: document.getElementById('filter-author')
   };
+
+  const clearTags = [];
 
   const authors = Array.from(
     new Set(DS.songs.map((song) => song.author).filter(Boolean))
@@ -88,7 +91,10 @@
     window.history.replaceState(null, '', window.location.pathname + (query ? '?' + query : ''));
   }
 
+  // Results are only refreshed when Search is pressed, so half-finished
+  // filter selections never change the list under the user.
   function apply() {
+    state.query = dom.search.value;
     const shown = visible();
     const keep = new Set(shown.map((song) => song.id));
 
@@ -121,7 +127,6 @@
       input.addEventListener('change', () => {
         if (input.checked) state[field].add(value);
         else state[field].delete(value);
-        apply();
       });
 
       const text = document.createElement('span');
@@ -169,7 +174,6 @@
           selected.delete(value);
           state[field].delete(value);
           renderChips();
-          apply();
         });
 
         chip.appendChild(remove);
@@ -215,7 +219,6 @@
       input.value = '';
       renderChips();
       renderSuggestions();
-      apply();
       input.focus();
     }
 
@@ -232,7 +235,6 @@
           selected.delete(last);
           state[field].delete(last);
           renderChips();
-          apply();
         }
       } else if (event.key === 'Escape') {
         input.value = '';
@@ -313,17 +315,21 @@
     buildCheckboxes(dom.category, DS.categories, 'category');
     buildCheckboxes(dom.type, DS.types, 'type');
 
-    const clearTags = [
+    clearTags.push(
       buildTagInput(dom.onWho, onWhoOptions, Array.from(state.on_who)),
       buildTagInput(dom.author, authors, Array.from(state.author))
-    ];
+    );
 
     restoreControls();
 
-    dom.search.addEventListener('input', () => {
-      state.query = dom.search.value;
-      apply();
+    const runSearch = () => apply();
+
+    dom.search.addEventListener('input', () => { state.query = dom.search.value; });
+    dom.search.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') { event.preventDefault(); runSearch(); }
     });
+
+    dom.searchButton.addEventListener('click', runSearch);
 
     dom.reset.addEventListener('click', () => {
       reset();

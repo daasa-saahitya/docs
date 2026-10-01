@@ -26,28 +26,32 @@
           <input type="search" class="search-input" id="search-input"
                  placeholder="Search title, author, lyric…" autocomplete="off">
         </div>
-        <button type="button" class="reset-button" id="reset-filters">Reset</button>
+        <button type="button" class="search-button" id="search-button">Search</button>
       </div>
 
       <div class="filter-grid">
         <fieldset class="filter-group">
-          <legend>Category <span class="legend-kn">ವರ್ಗ</span></legend>
+          <legend>Category</legend>
           <div class="option-list" id="filter-category"></div>
         </fieldset>
 
         <fieldset class="filter-group">
-          <legend>Type <span class="legend-kn">ಪ್ರಕಾರ</span></legend>
+          <legend>Type</legend>
           <div class="option-list" id="filter-type"></div>
         </fieldset>
 
         <div class="filter-group">
-          <label class="filter-legend" for="filter-on">On whom? <span class="legend-kn">ಯಾರ ಮೇಲೆ</span></label>
+          <label class="filter-legend" for="filter-on">On whom?</label>
           <div class="tag-input" data-field="on_who" id="filter-on"></div>
         </div>
 
         <div class="filter-group">
-          <label class="filter-legend" for="filter-author">Author <span class="legend-kn">ಕವಿ</span></label>
+          <label class="filter-legend" for="filter-author">Author</label>
           <div class="tag-input" data-field="author" id="filter-author"></div>
+        </div>
+
+        <div class="filter-actions">
+          <button type="button" class="reset-button" id="reset-filters">Reset</button>
         </div>
       </div>
 
