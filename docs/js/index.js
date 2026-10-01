@@ -5,22 +5,19 @@
   const DS = window.DS_INDEX;
   if (!DS) return;
 
-  const songs = DS.songs.map(function (song) {
-    const badges = []
-      .concat(song.category || [])
-      .concat(song.on_who || [])
-      .concat(song.types || [])
-      .join(' ')
-      .toLowerCase();
+  // Strip case and combining marks so "rāma" matches a typed "rama".
+  const normalize = (text) =>
+    String(text || '').toLowerCase().replace(/[̀-ͯ]/g, '');
 
-    return {
-      id: song.id,
-      title: (song.title || '').toLowerCase(),
-      author: (song.author || '').toLowerCase(),
-      preview: (song.preview || '').toLowerCase(),
-      badges: badges,
-      haystack: ((song.title || '') + ' ' + (song.author || '') + ' ' + (song.preview || '')).toLowerCase()
-    };
+  const songs = DS.songs.map((song) => {
+    song.category = song.category || [];
+    song.types = song.types || [];
+    song.on_who = song.on_who || [];
+    song.searchAuthor = normalize(song.author);
+    song.haystack = normalize(
+      (song.title || '') + ' ' + (song.author || '') + ' ' + (song.preview || '')
+    );
+    return song;
   });
 
   const state = {
@@ -43,48 +40,61 @@
     author: document.getElementById('filter-author')
   };
 
-  const authors = Array.from(new Set(DS.songs.map(function (s) { return s.author; })
-    .filter(Boolean))).sort();
+  const authors = Array.from(
+    new Set(DS.songs.map((song) => song.author).filter(Boolean))
+  ).sort();
 
-  const onWhoOptions = Array.from(new Set(DS.onWho.concat(
-    DS.songs.reduce(function (all, s) { return all.concat(s.on_who || []); }, [])
-  ))).sort();
+  const onWhoOptions = Array.from(
+    new Set(DS.onWho.concat(DS.songs.flatMap((song) => song.on_who || [])))
+  ).sort();
 
   // ── Filtering ──
 
-  function normalize(text) {
-    return text.toLowerCase().replace(/[\u0300-\u036f]/g, '');
-  }
-
-  function matches(song, terms) {
-    return terms.every(function (term) { return song.haystack.indexOf(term) !== -1; });
+  function matchesField(values, chosen) {
+    return !chosen.size || values.some((value) => chosen.has(value));
   }
 
   function visible() {
     const terms = normalize(state.query).split(/\s+/).filter(Boolean);
-    return songs.filter(function (song) {
-      if (!matches(song, terms)) return false;
-      if (state.category.size && !song.category.some(function (c) { return state.category.has(c); })) return false;
-      if (state.type.size && !song.types.some(function (t) { return state.type.has(t); })) return false;
-      if (state.on_who.size && !song.on_who.some(function (o) { return state.on_who.has(o); })) return false;
-      if (state.author.size && !state.author.has(song.author)) return false;
+
+    return songs.filter((song) => {
+      if (!terms.every((term) => song.haystack.includes(term))) return false;
+      if (!matchesField(song.category, state.category)) return false;
+      if (!matchesField(song.types, state.type)) return false;
+      if (!matchesField(song.on_who, state.on_who)) return false;
+      if (state.author.size
+        && !Array.from(state.author).some((a) => normalize(a) === song.searchAuthor)) {
+        return false;
+      }
       return true;
     });
   }
 
   function activeCount() {
-    return state.category.size + state.type.size + state.on_who.size + state.author.size
-      + (state.query.trim() ? 1 : 0);
+    const sets = state.category.size + state.type.size + state.on_who.size + state.author.size;
+    return sets + (state.query.trim() ? 1 : 0);
+  }
+
+  function syncUrl() {
+    const params = new URLSearchParams();
+    if (state.query.trim()) params.set('q', state.query.trim());
+
+    ['category', 'type', 'on_who', 'author'].forEach((field) => {
+      const values = Array.from(state[field]);
+      if (values.length) params.set(field, values.join(','));
+    });
+
+    const query = params.toString();
+    window.history.replaceState(null, '', window.location.pathname + (query ? '?' + query : ''));
   }
 
   function apply() {
     const shown = visible();
-    const list = dom.list.children;
-    const keep = new Set(shown.map(function (song) { return song.id; }));
+    const keep = new Set(shown.map((song) => song.id));
 
-    for (let i = 0; i < list.length; i++) {
-      list[i].hidden = !keep.has(list[i].dataset.id);
-    }
+    Array.from(dom.list.children).forEach((entry) => {
+      entry.hidden = !keep.has(entry.dataset.id);
+    });
 
     dom.empty.hidden = shown.length !== 0;
     dom.list.hidden = shown.length === 0;
@@ -101,15 +111,15 @@
   // ── Checkbox groups ──
 
   function buildCheckboxes(container, values, field) {
-    values.forEach(function (value) {
+    values.forEach((value) => {
       const label = document.createElement('label');
       label.className = 'option';
 
       const input = document.createElement('input');
       input.type = 'checkbox';
       input.value = value;
-      input.addEventListener('change', function () {
-        if (this.checked) state[field].add(value);
+      input.addEventListener('change', () => {
+        if (input.checked) state[field].add(value);
         else state[field].delete(value);
         apply();
       });
@@ -117,8 +127,7 @@
       const text = document.createElement('span');
       text.textContent = value;
 
-      label.appendChild(input);
-      label.appendChild(text);
+      label.append(input, text);
       container.appendChild(label);
     });
   }
@@ -128,6 +137,7 @@
   function buildTagInput(container, options, initial) {
     const field = container.dataset.field;
     const selected = new Set(initial);
+
     const chips = document.createElement('div');
     chips.className = 'tag-chips';
 
@@ -141,25 +151,23 @@
     list.className = 'tag-suggestions';
     list.hidden = true;
 
-    container.appendChild(chips);
-    container.appendChild(input);
-    container.appendChild(list);
+    container.append(chips, input, list);
 
     function renderChips() {
       chips.textContent = '';
-      selected.forEach(function (value) {
+      selected.forEach((value) => {
         const chip = document.createElement('span');
         chip.className = 'tag-chip';
-        chip.textContent = value;
+        chip.appendChild(document.createTextNode(value));
 
         const remove = document.createElement('button');
         remove.type = 'button';
         remove.className = 'tag-remove';
         remove.textContent = '×';
         remove.setAttribute('aria-label', 'Remove ' + value);
-        remove.addEventListener('click', function () {
+        remove.addEventListener('click', () => {
           selected.delete(value);
-          state[container.dataset.field].delete(value);
+          state[field].delete(value);
           renderChips();
           apply();
         });
@@ -173,20 +181,21 @@
       const query = normalize(input.value.trim());
       list.textContent = '';
 
-      const matches = options.filter(function (option) {
-        return !selected.has(option) && (!query || normalize(option).indexOf(query) !== -1);
-      }).slice(0, 12);
+      const matches = options
+        .filter((option) => !selected.has(option)
+          && (!query || normalize(option).includes(query)))
+        .slice(0, 12);
 
       if (!matches.length) {
         list.hidden = true;
         return;
       }
 
-      matches.forEach(function (option) {
+      matches.forEach((option) => {
         const item = document.createElement('li');
         item.className = 'tag-suggestion';
         item.textContent = option;
-        item.addEventListener('mousedown', function (event) {
+        item.addEventListener('mousedown', (event) => {
           event.preventDefault();
           add(option);
         });
@@ -197,9 +206,12 @@
     }
 
     function add(value) {
-      if (!value || selected.has(value)) return;
-      selected.add(value);
-      state[container.dataset.field].add(value);
+      const exact = options.find((option) => normalize(option) === normalize(value));
+      const firstSuggestion = list.hidden ? '' : list.firstElementChild.textContent;
+      const key = exact || firstSuggestion;
+      if (!key || selected.has(key)) return;
+      selected.add(key);
+      state[field].add(key);
       input.value = '';
       renderChips();
       renderSuggestions();
@@ -210,18 +222,15 @@
     input.addEventListener('input', renderSuggestions);
     input.addEventListener('focus', renderSuggestions);
 
-    input.addEventListener('keydown', function (event) {
+    input.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ',') {
         event.preventDefault();
-        const exact = options.filter(function (option) {
-          return normalize(option) === normalize(input.value.trim());
-        })[0];
-        add(exact || input.value.trim());
+        add(input.value.trim());
       } else if (event.key === 'Backspace' && !input.value) {
         const last = Array.from(selected).pop();
         if (last) {
           selected.delete(last);
-          state[container.dataset.field].delete(last);
+          state[field].delete(last);
           renderChips();
           apply();
         }
@@ -231,48 +240,55 @@
       }
     });
 
-    document.addEventListener('click', function (event) {
+    document.addEventListener('click', (event) => {
       if (!container.contains(event.target)) list.hidden = true;
     });
 
     renderChips();
-    initial.forEach(function (value) { state[field].add(value); });
+    initial.forEach((value) => state[field].add(value));
+
+    return function clear() {
+      selected.clear();
+      input.value = '';
+      list.hidden = true;
+      renderChips();
+    };
   }
 
-  // ── URL state (shareable / bookmarkable result links) ──
-
-  function syncUrl() {
-    const params = new URLSearchParams();
-
-    if (state.query.trim()) params.set('q', state.query.trim());
-    ['category', 'type', 'on_who', 'author'].forEach(function (field) {
-      const values = Array.from(state[field]);
-      if (values.length) params.set(field, values.join(','));
-    });
-
-    const query = params.toString();
-    const url = window.location.pathname + (query ? '?' + query : '');
-    window.history.replaceState(null, '', url);
-  }
+  // ── URL state (shareable result links) ──
 
   function restoreUrl() {
     const params = new URLSearchParams(window.location.search);
     state.query = params.get('q') || '';
+    dom.search.value = state.query;
 
-    ['category', 'type', 'on_who', 'author'].forEach(function (field) {
-      const raw = params.get(field);
-      if (raw) raw.split(',').filter(Boolean).forEach(function (value) {
-        state[field].add(value);
-      });
+    ['category', 'type', 'on_who'].forEach((field) => {
+      (params.get(field) || '').split(',').filter(Boolean).forEach((value) => state[field].add(value));
     });
 
-    dom.search.value = state.query;
+    (params.get('author') || '').split(',').filter(Boolean).forEach((value) => {
+      const match = authors.find((author) => normalize(author) === normalize(value));
+      if (match) state.author.add(match);
+    });
+
+    // Any unmatched tag in the URL would never match a song.
+    ['category', 'type', 'on_who', 'author'].forEach((field) => {
+      const vocabulary = field === 'category' ? DS.categories
+        : field === 'type' ? DS.types
+        : field === 'on_who' ? onWhoOptions
+        : authors;
+      Array.from(state[field]).forEach((value) => {
+        if (!vocabulary.some((option) => normalize(option) === normalize(value))) {
+          state[field].delete(value);
+        }
+      });
+    });
   }
 
   function restoreControls() {
-    ['category', 'type'].forEach(function (field) {
+    ['category', 'type'].forEach((field) => {
       const container = field === 'category' ? dom.category : dom.type;
-      Array.from(container.querySelectorAll('input')).forEach(function (input) {
+      Array.from(container.querySelectorAll('input')).forEach((input) => {
         input.checked = state[field].has(input.value);
       });
     });
@@ -280,10 +296,12 @@
 
   function reset() {
     state.query = '';
-    Object.keys(state).forEach(function (field) {
-      if (state[field] instanceof Set) state[field].clear();
-    });
+    ['category', 'type', 'on_who', 'author'].forEach((field) => state[field].clear());
     dom.search.value = '';
+    [dom.category, dom.type].forEach((container) => {
+      container.querySelectorAll('input').forEach((input) => { input.checked = false; });
+    });
+    clearTags.forEach((clear) => clear());
     apply();
   }
 
@@ -294,22 +312,25 @@
 
     buildCheckboxes(dom.category, DS.categories, 'category');
     buildCheckboxes(dom.type, DS.types, 'type');
-    buildTagInput(dom.onWho, onWhoOptions, Array.from(state.on_who));
-    buildTagInput(dom.author, authors, Array.from(state.author));
+
+    const clearTags = [
+      buildTagInput(dom.onWho, onWhoOptions, Array.from(state.on_who)),
+      buildTagInput(dom.author, authors, Array.from(state.author))
+    ];
 
     restoreControls();
 
-    dom.search.addEventListener('input', function () {
-      state.query = this.value;
+    dom.search.addEventListener('input', () => {
+      state.query = dom.search.value;
       apply();
     });
 
-    dom.reset.addEventListener('click', function () {
+    dom.reset.addEventListener('click', () => {
       reset();
       dom.search.focus();
     });
 
-    document.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', (event) => {
       const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName);
       if (event.key === '/' && !typing) {
         event.preventDefault();

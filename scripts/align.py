@@ -69,24 +69,18 @@ PATH_ON_WHO = {
     'vishesha dinagalu/ganesha chaturthi': 'Devaru',
 }
 
-TYPE_KEYWORDS = [
-    ('aarati', 'Aarati'),
-    ('arati', 'Aarati'),
-    ('hasege', 'Aarati'),
-    ('namaskaara', 'Namaskaara'),
-    ('namaskara', 'Namaskaara'),
-    ('aavahana', 'Aavahana'),
-    ('avahana', 'Aavahana'),
-    ('aagamana', 'Aagamana'),
-    ('agamina', 'Aagamana'),
-    ('naivedya', 'Pooje'),
-    ('poojipa', 'Pooje'),
-    ('pooja', 'Pooje'),
-    ('pooje', 'Pooje'),
-    ('vairagya', 'Vairagya'),
-    ('parihara', 'Parihara'),
-    ('kathe', 'Kathe'),
-]
+# Matched against the filename, the Kannada title, and the IAST title.
+# Extend this table as you tag more songs by hand.
+TYPE_KEYWORDS = {
+    'Aavahana': ['aavahana', 'avahana', 'ಆವಾಹನ', 'ಆವಾಹನ'],
+    'Aagamana': ['aagamana', 'agamina', 'ಆಗಮನ', 'ವರವ ಕೊಡೆ'],
+    'Namaskaara': ['namaskaara', 'namaskara', 'ನಮಸ್ಕಾರ'],
+    'Pooje': ['pooje', 'pooja', 'poojipa', 'naivedya', 'ಪೂಜೆ', 'ಪೂಜಿಪ', 'ನೈವೇದ್ಯ'],
+    'Aarati': ['aarati', 'arati', 'hasege', 'ಆರತಿ'],
+    'Kathe': ['kathe', 'ಕಥೆ'],
+    'Vairagya': ['vairagya', 'ವೈರಾಗ್ಯ'],
+    'Parihara': ['parihara', 'ಪರಿಹಾರ'],
+}
 
 # ── Canonical emission ───────────────────────────────────────────────────
 
@@ -195,6 +189,7 @@ def infer_metadata(rel_path, data):
         stem,
         as_text(data.get('title_kn')).lower(),
         as_text(data.get('title_en')).lower(),
+        as_text(data.get('title_ta')).lower(),
     ])
 
     category = ''
@@ -210,11 +205,10 @@ def infer_metadata(rel_path, data):
                 on_who = value
                 break
 
-    types = []
-    for keyword, value in TYPE_KEYWORDS:
-        if keyword in haystack and value not in types:
-            types.append(value)
-    types.sort(key=TYPES.index)
+    types = [
+        value for value in TYPES
+        if any(keyword in haystack for keyword in TYPE_KEYWORDS[value])
+    ]
 
     return category, on_who, types
 

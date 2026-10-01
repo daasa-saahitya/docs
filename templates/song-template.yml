@@ -2,9 +2,15 @@
 # Daasa Saahitya - New Song Template
 #
 # HOW TO USE:
-# 1. Copy this file to lyrics/<category>/your-song-name.yml
+# 1. Copy this file to lyrics/<folder>/your-song-name.yml
 # 2. Fill in the Kannada fields below
-# 3. Commit → GitHub Actions auto-builds the site
+# 3. Run: python scripts/align.py --apply   (normalises indentation)
+# 4. Commit → GitHub Actions auto-builds the site
+#
+# YAML is indentation sensitive. `scripts/align.py` rewrites the file with
+# canonical 2-space indentation and fills in the metadata below from the
+# folder path and the title, so you only need to write what align.py cannot
+# guess. It never overwrites values you have set by hand.
 #
 # The build script auto-transliterates to Tamil, Devanagari, and IAST.
 # Only add _ta, _hi, _en fields if you need to CORRECT an auto-transliteration.
@@ -13,6 +19,20 @@
 # REQUIRED: Kannada title and author
 title_kn: ಹಾಡಿನ ಹೆಸರು
 author_kn: ಕವಿ/ದಾಸರ ಹೆಸರು
+
+# FILTERABLE METADATA - these drive the checkboxes and tag inputs on the index.
+# One of: Dasara Pada, Sampradaya Haadu, Suladi, Stuti, Stotra, Gadya, Kavya, Kathe
+category:
+#  - Dasara Pada
+
+# Who the song is addressed to. One or more of: Devaru, Devi, Yatigalu, Dasaru
+on_who: []
+#  - Devaru
+
+# Ritual form. Zero or more of:
+# Aavahana, Aagamana, Namaskaara, Pooje, Aarati, Kathe, Vairagya, Parihara
+types: []
+#  - Aarati
 
 # OPTIONAL: Raga, Tala, Ankita
 raga_kn:

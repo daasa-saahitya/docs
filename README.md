@@ -14,8 +14,22 @@ Push to GitHub (or commit from the GitHub web/app)
         ↓
 GitHub Actions auto-runs scripts/build.py
         ↓
-Site regenerates in site/ and goes live in ~2 minutes
+Site regenerates in docs/ and goes live in ~2 minutes
 ```
+
+## Finding a song on the homepage
+
+The index has no folders. Everything is one flat list you narrow down:
+
+- **Search bar** — matches title, author, and lyrics in any script.
+- **Category** checkboxes — Dasara Pada, Sampradaya Haadu, Suladi, Stuti, Stotra, Gadya, Kavya, Kathe.
+- **Type** checkboxes — Aavahana, Aagamana, Namaskaara, Pooje, Aarati, Kathe, Vairagya, Parihara.
+- **On who?** tags — Devaru, Devi, Yatigalu, Dasaru. Type to autocomplete.
+- **Author** tags — every author in the collection. Type to autocomplete.
+- `/` focuses search, `Esc` resets everything.
+
+Filters combine with AND. Each combination is written to the URL, so you can
+bookmark or share exactly what you are looking at.
 
 ---
 
@@ -23,21 +37,26 @@ Site regenerates in site/ and goes live in ~2 minutes
 
 ```
 lyrics/                   ← ONLY edit here
-  dasara-padagalu/
-    song-name.yml
-  stuti/
-  suladi/
-  stotra/
-  guru-parampara/
-  sampradaya-pooja-vidhana/
-  sthri-dharma/
+  Devara Nama/
+  Gurugalu Nama/
+  Suladigalu/
+  Vishesha Dinagalu/
+  Kavyagalu/
+  Stutigalu/
+  Stotragalu/
   ... (add as many subfolders as you want)
+    song-name.yml
 
-scripts/build.py          ← transliteration + site builder (don't edit unless needed)
+Folder names are only a convenience for you. They are not navigation on the
+site — they are read once by scripts/align.py to guess category / on_who.
+
+scripts/align.py          ← YAML normaliser + metadata inference (run --apply)
+scripts/build.py          ← transliteration + site builder (auto-generates docs/)
 templates/                ← HTML layout (edit for design changes)
 css/style.css             ← all styles
+js/index.js               ← filter + search logic
 js/tabs.js                ← tab switching
-site/                     ← AUTO-GENERATED. Never edit manually.
+docs/                     ← AUTO-GENERATED. Never edit manually (published by GitHub Pages)
 .github/workflows/build.yml ← automation trigger
 ```
 
@@ -50,8 +69,9 @@ site/                     ← AUTO-GENERATED. Never edit manually.
 2. Navigate to `lyrics/<category>/`
 3. Click **Add file → Create new file**
 4. Name it: `your-song-name.yml`
-5. Paste your content (see format below)
-6. Click **Commit changes** → site rebuilds automatically
+5. Paste your content (see `templates/song-template.yml`)
+6. (Optional but recommended) After committing, the build will run; if you want to ensure indentation is perfect, run `python scripts/align.py --apply` locally before committing.
+7. Click **Commit changes** → site rebuilds automatically
 
 ### Option B — GitHub mobile app
 1. Open the GitHub app → your repo
@@ -69,6 +89,44 @@ Same steps, just navigate to the existing `.yml` file and tap the **pencil** (ed
 Only write **Kannada text** — the build script auto-generates Tamil, Devanagari, and IAST transliterations.
 
 See `templates/song-template.yml` for a copy-paste starter.
+
+### Filterable metadata
+
+These four fields drive the index page. `scripts/align.py` fills them in from
+the folder path and the title when they are empty, so you only need to write
+what it cannot guess.
+
+```yaml
+category:               # one of the CATEGORIES below
+  - Dasara Pada
+
+on_who:                 # any of: Devaru, Devi, Yatigalu, Dasaru
+  - Devaru
+
+types:                  # any of the TYPES below
+  - Aarati
+  - Pooje
+```
+
+| CATEGORIES | TYPES |
+|------------|-------|
+| Dasara Pada, Sampradaya Haadu, Suladi, Stuti, Stotra, Gadya, Kavya, Kathe | Aavahana, Aagamana, Namaskaara, Pooje, Aarati, Kathe, Vairagya, Parihara |
+
+### Normalising the YAML
+
+Lyrics YAML is indentation sensitive. `scripts/align.py` rewrites every file
+with canonical 2-space indentation and literal block scalars, so a file pasted
+from anywhere still parses.
+
+```bash
+python scripts/align.py            # dry run, lists what would change
+python scripts/align.py --apply    # rewrite the files
+```
+
+It is idempotent and non-destructive: values you have set by hand are never
+overwritten, only empty ones are filled.
+
+### Full file format
 
 ```yaml
 title_kn:  ಭಾಗ್ಯದ ಲಕ್ಷ್ಮಿ ಬಾರಮ್ಮ    # Kannada title (REQUIRED)
@@ -163,8 +221,9 @@ Navigate to the file → click the **⋮** or **trash** icon → Delete → Comm
 git clone https://github.com/daasa-saahitya/docs.git
 cd docs
 pip install pyyaml
+python scripts/align.py --apply
 python scripts/build.py .
-# Open site/index.html in your browser
+# Open docs/index.html in your browser
 ```
 
 ---
@@ -173,7 +232,7 @@ python scripts/build.py .
 
 In your repo → **Settings → Pages**:
 - Source: **Deploy from a branch**
-- Branch: `main` · Folder: `/site`
+- Branch: `main` · Folder: `/docs`
 - Save → your site will be at https://daasa-saahitya.github.io/docs/
 
 ---
