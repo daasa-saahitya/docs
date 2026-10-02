@@ -2,30 +2,25 @@
 
 title_kn: ವಾದಿರಾಜ ಗುರುವೇ
 author_kn: ಕರ್ಪರ ನರಹರಿ ದಾಸರು
-category:
-  - Dasara Pada
-on_who:
-  - Yatigalu
+category: [Dasara Pada]
+on_who: [Vadirajaru]
 types: []
-raga_kn:
+raga_kn: ಕರಹರಪ್ರಿಯ
 tala_kn: ಆದಿ
 ankita_kn: ಕರ್ಪರ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ವಾದಿರಾಜ ಗುರುವೇ ಪಾದಾರಾಧಕ ಸುರತರುವೆ ||
 
   - type: anupallavi
-    kn:
-    |
+    kn: |
       ಮೋದವ ಕೊಡುವದು ನೀ ದಯದಿಂದಲಿ
       ಸ್ವಾದಿನಿಲಯ ತವ ಪಾದಕೆ ನಮಿಸುವೆ ||
 
   - type: Charana
     number: 1
-    kn:
-    |
+    kn: |
       ಮೇದಿನಿಯೊಳು ಚರಿಸೀ
       ಜನರೊಳಘಾದ ಮಹಿಮರೆನಿಸಿ
       ಮೋದ ಮುನಿಯ ಸುಮತೋದಧಿ ಚಂದಿರ
@@ -33,8 +28,7 @@ verses:
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಯುಕ್ತಿ ಮಲ್ಲಿಕಾದೀ
       ಬಹು ಸರಸೋಕ್ತಿ ಸಹಿತವಾಗಿ
       ಭಕ್ತಿ ಪುಟ್ಟಿಸುವ ರುಕ್ಮಿಣೀಶ
@@ -42,8 +36,7 @@ verses:
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಭಾಗವತರ ಪ್ರಿಯಾ - ನಮಿಸುವೆ
       ವಾಗೀಶರ ತನಯಾ
       ಯೋಗಿವರ್ಯ ಕವಿಗೇಯ ದಯಾಕರ
@@ -51,8 +44,7 @@ verses:
 
   - type: ''
     number: 4
-    kn:
-    |
+    kn: |
       ರಾಜರನ್ನು ಪೊರೆದಿ
       ಯತಿಕುಲ ರಾಜರೆನಿಸಿ ಮೆರೆದಿ
       ವಾಜಿವದನ ಪದ ರಾಜೀವ ಯುಗಲವ
@@ -60,8 +52,7 @@ verses:
 
   - type: ''
     number: 5
-    kn:
-    |
+    kn: |
       ಭೂತಭಯವ ಬಿಡಿಸಿ
       ಭಜಕರ ಪಾತಕ ಪರಿಹರಿಸಿ
       ಖ್ಯಾತ ಕಾರ್ಪರ ಕ್ಷೇತ್ರದಿ ನರಮೃಗ
