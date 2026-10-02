@@ -77,7 +77,7 @@ FESTIVALS = [
     'Jyeshta Devi Vrata',
     'Gowri Tritiya',
     'Diwashi Gowri Vrata',
-    'Ananta Chaturshashi',
+    'Ananta Chaturdashi',
     'Guru Poornima',
     'Navaratri',
     'Makara Shankaranti',
