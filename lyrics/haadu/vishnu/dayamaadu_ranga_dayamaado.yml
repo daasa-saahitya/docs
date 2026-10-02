@@ -1,33 +1,30 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
-
 title_kn: ದಯಮಾಡೊ ರಂಗ ದಯಮಾಡೊ
 author_kn: ಪುರಂದರ ದಾಸರು
-category:
-  - Dasara Pada
-on_who:
-  - Devaru
-types: [Aavahana]
+category: [Haadu]
+on_who: [Vishnu, Ranga]
+types: [Dayamadu / Karunisu]
+festivals: []
 raga_kn: ಕಲ್ಯಾಣಿ
-tala_kn: ಆದಿ
-ankita_kn: ಪುರಂದರ ವಿಠಲ
+tala_kn: ಆದಿ ತಾಳ
+ankita_kn: ಪುರಂದರ ವಿಠ್ಠಲ
+
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ದಯಮಾಡೊ ರಂಗ ದಯಮಾಡೊ
       ದಯಮಾಡೊ ನಿನ್ನ ದಾಸನು ನಾನೆಂದು
 
+  # ── Anupallavi ──
   - type: anupallavi
-    kn:
-    |
+    kn: |
       ಹಲವು ಕಾಲದಿ ನಿನ್ನ ಹಂಬಲ ಎನಗೆ
       ಒಲಿದು ಪಾಲಿಸಬೇಕು ವಾರಿಜನಾಭ
 
+  # ── Caraṇa with tala name ──
   - type: charana
-    kn:
-    |
+    kn: |
       ಇಹಪರಗತಿ ನೀನೇ ಇಂದಿರಾರಮಣ
       ಸಹಾಯ ನಿನ್ನದೇ ತೋರಿ ಕರುಣ |
-
       ಕರಿರಾಜವರದನೇ ಕಾಮಿತ ಫಲದ
       ಪುರಂದರ ವಿಠಲ ಹರಿಸಾರ್ವಭೌಮ ||
