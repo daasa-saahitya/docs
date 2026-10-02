@@ -1,39 +1,33 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-title_kn: 01 ಲಕ್ಷ್ಮೀ ಬಾರಮ್ಮ ಮುತ್ತೈದೆ ಬಾರಮ್ಮ
+title_kn: ಲಕ್ಷ್ಮೀ ಬಾರಮ್ಮ ಮುತ್ತೈದೆ ಬಾರಮ್ಮ
 author_kn: ಕಮಲನಾಭ ದಾಸರು
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devi
-types:
-  - Aarati
+category: [Dasara Pada]
+on_who: [Lakshmi]
+types: [Aavahana (Baaro/Baare)]
+festivals: [Varamahalakshmi]
 raga_kn: ಮಧ್ಯಮಾವತಿ
 tala_kn: ಆದಿ
 ankita_kn: ಕಮಲನಾಭ ವಿಠ್ಠಲ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಲಕ್ಷ್ಮೀ ಬಾರಮ್ಮ ಮುತ್ತೈದೆ ಬಾರಮ್ಮ ||
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಲಕ್ಷ್ಮೀ ರಮಣನ ವಕ್ಷಸ್ಥಳದಲಿ |
       ರಕ್ಷಿತಳಾದ ಸುಲಕ್ಷಣ ದೇವಿ ||
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಗೆಜ್ಜೆಯ ಕಾಲಿನ ನಾದಗಳಿಂದಲಿ |
       ಸಜ್ಜನರಿಗೆ ನೀ ಅಭಯವ ಕೊಡುತಲಿ ||
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಕಮಲನಾಭ ವಿಠ್ಠಲನೊಡಗೂಡುತ |
       ಭ್ರಮರ ಕುಂತಳೆ ಸೌಭಾಗ್ಯದ ನಿಧಿಯೆ ||

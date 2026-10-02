@@ -1,48 +1,41 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-title_kn: 02 ಬಂದಳು ನೋಡೇ ಮಂದಿರದೊಳು
+title_kn: ಬಂದಳು ನೋಡೇ ಮಂದಿರದೊಳು
 author_kn: ಜಗನ್ನಾಥ ದಾಸರು
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devi
-types:
-  - Aarati
+category: [Dasara Pada]
+on_who: [Lakshmi]
+types: [Aagamana (Banda/Bandalu)]
+festivals: [Varamahalakshmi]
 raga_kn: ಬೃಂದಾವನ ಸಾರಂಗ
 tala_kn: ಆದಿ
 ankita_kn: ಜಗನ್ನಾಥ ವಿಠ್ಠಲ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಬಂದಳು ನೋಡೇ ಮಂದಿರದೊಳು ಭಾಗ್ಯದಲಕ್ಷ್ಮೀ |
       ಭಾಗ್ಯದಲಕ್ಷ್ಮೀ ಬಂದಾಳು ನೋಡೇ ||
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಅಂದುಗೆ ಕಿರು ಗೆಜ್ಜೆ ಘಿಲ್ ಘಿಲ್ಲೇನುತ ||
       ಘಿಲ್ ಘಿಲ್ ಘಿಲ್ ಘಿಲ್ ಘಿಲ್ಲೇನುತಾ |
       ಮುದ್ದು ಪಾದದಿ ಹೆಜ್ಜೆಯನಿಕ್ಕುತ್ತಾ ||
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಎಡ ಬಲದಲ್ಲಿ ಗಜಗಳಿಂದ ಪೂಜೆಗೊಳ್ಳುತ |
       ಬಿಡದೆ ತನ್ನ ಕರ ಕಮಲದಿ ಅಭಯ ಕೊಡುತಲಿ ||
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಅತಿ ಹರುಷದಿ ಹಿತದಿ ತನ್ನ ಪತಿಯ ಸಹಿತಾಗಿ |
       ವಾರಿನೋಟದಿಂದ ಭಕ್ತರಿಗೆ ವರವ ಕೊಡುತಲಿ ||
 
   - type: ''
     number: 4
-    kn:
-    |
+    kn: |
       ಸೃಷ್ಟಿಗೊಡೆಯ ತಂದೆ ಜಗನ್ನಾಥವಿಠ್ಠಲನ |
       ಪಟ್ಟದರಸಿ ಅರ್ತಿಯಿಂದಲಿ ಭಕ್ತರ ಮನೆಗೆ ||

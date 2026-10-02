@@ -1,27 +1,23 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-title_kn: 06 ಹರಿಯೊಡಗೂಡಿ ಸಿರಿದೇವಿ ಬಾರೆ |
+title_kn: ಹರಿಯೊಡಗೂಡಿ ಸಿರಿದೇವಿ ಬಾರೆ
 author_kn: ವಿಜಯರಾಘವ ದಾಸರು
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devi
-types:
-  - Pooje
+category: [Dasara Pada]
+on_who: [Lakshmi]
+types: [Naivedya]
+festivals: [Varamahalakshmi]
 raga_kn: ಮೋಹನ
 tala_kn: ಆದಿ
 ankita_kn: ವಿಜಯರಾಘವ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಹರಿಯೊಡಗೂಡಿ ಸಿರಿದೇವಿ ಬಾರೆ |
       ಹರಿಗೆ ನೈವೇದ್ಯವ ನೀನಿಡು ಬಾರೆ ॥
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಸುವರ್ಣ ಪಾತ್ರೆಯೋಳ್ ಸಣ್ಣಕ್ಕಿ ಅನ್ನ |
       ಬೆಳ್ಳಿಯ ತಟ್ಟೆಯೊಳು ಬಗೆ ಬಗೆ ಭಕ್ಷ್ಯ ||
       ಚಿನ್ನದ್ದರಿವಾಣದಿ | ಚಿತ್ರಾನ್ನ ಶಾಲ್ಯಾನ್ನ |
@@ -29,8 +25,7 @@ verses:
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಬೆಳ್ಳಿಯ ಗಿಂಡಿಲಿ ಪನ್ನೀರು ನೀರು |
       ಚಿನ್ನದ ದೊನ್ನೆಲಿ ಪಾನಕ ಖೀರು ||
       ಚಿತ್ತಾರದ ಬಟ್ಟಲೊಳು ಕಟ್ಟಿನ ಸಾರು |
@@ -38,8 +33,7 @@ verses:
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ವಿವಿಧ ಅಡಿಗೆಗಳು ವಿಧ ವಿಧ ತಿನಿಸು |
       ವಿವಿಧ ಫಲಗಳು ಮಾವು ಹಲಸು ॥
       ವಿಜಯರಾಘವಗೆ ವಿಶ್ವಾಸದಿ ಬಡಿಸು |

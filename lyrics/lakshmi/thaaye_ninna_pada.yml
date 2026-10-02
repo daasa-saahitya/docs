@@ -1,40 +1,34 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-title_kn: 03 ತಾಯೇ ನಿನ ಪದತೋಯಜ
+title_kn: ತಾಯೇ ನಿನ ಪದತೋಯಜ
 author_kn: ತಪ್ರಾಣೇಶ ದಾಸರು
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devi
-types:
-  - Namaskaara
+category: [Dasara Pada]
+on_who: [Lakshmi]
+types: [Namaskaara]
+festivals: [Varamahalakshmi]
 raga_kn: ಸೆಂಜುರುಟ್ಟಿ
 tala_kn: ಆದಿ
 ankita_kn: ಪ್ರಾಣೇಶ ವಿಠ್ಠಲ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ತಾಯೇ ನಿನ ಪದತೋಯಜಕೆರಗುವೆ |
       ಮಾಯದೇವಿ ಹರಿಕಾಯನಿವಾಸೆ |
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಬುದ್ಧಿಯ ಪ್ರೇರಿಸೆ ಪ್ರದ್ಯುಮ್ನನ ಸತಿ
       ಕರ್ದಮಜಾಲಯೆ ಭದ್ರಶರೀರೆ ||
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಇಂಗಡಲಾತ್ಮಜೆ ಅಂಗನಕುಲಮಣಿ
       ರಂಗನ ಪದಕಂಜಭೃಂಗೆ ಕರುಣದಿ ||
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಪ್ರಾಣೇಶವಿಠಲನ ಮಾನಿನಿ ಎನ್ನಯ
       ಹೀನತೆಯೆಣಿಸದೆ ಪೋಣಿಸಿಮತಿಯ||

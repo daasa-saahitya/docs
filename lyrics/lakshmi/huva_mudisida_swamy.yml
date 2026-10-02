@@ -1,26 +1,22 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-title_kn: 04 ಹೂವ ಮುಡಿಸಿದ ಸ್ವಾಮಿ ರುಕ್ಮಿಣಿ
+title_kn: ಹೂವ ಮುಡಿಸಿದ ಸ್ವಾಮಿ
 author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devi
-types: []
+category: [Dasara Pada]
+on_who: [Lakshmi]
+types: [Huva Mudisuva]
 raga_kn: ಆರಭಿ
 tala_kn: ಆದಿ
 ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಹೂವ ಮುಡಿಸಿದ ಸ್ವಾಮಿ ರುಕ್ಮಿಣಿ
       ಭಾಮೇರಿಬ್ಬರಿಗೆ ರಂಗಯ್ಯ ||
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಬಂದು ರುಕ್ಮಿಣಿ ಭಾಮೇರಿಂದತಿ
       ಸಂಭ್ರಮ್ಮದಿಂದ ರಂಗಯ್ಯ
       ಕುಂದಣದ ಹಸೆಮ್ಯಾಲೆ ಕುಳಿತಿರೆ
@@ -30,8 +26,7 @@ verses:
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಹೂವ ಮುಡಿಸುತ ವಾರಿಜಾಕ್ಷೇರ ವಾರೆನೋಟದಿ
       ನೋಡಿ ನಗುತ ರಂಗಯ್ಯ
       ಸಾರಸಮುಖಿ ಸಹಿತ ಸರಸ-
@@ -41,8 +36,7 @@ verses:
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಮಲ್ಲೆ ಮಲ್ಲಿಗೆಮೊಗ್ಗು ಶಾವಂತಿಗೆ
       ಕಲ್ಲಾ ್ಹರದ ಕಮಲ ರಂಗಯ್ಯ
       ಒಳ್ಳೆ ತಾವರೆ ಅರಳು ಮೊಗ್ಗುಗಳು

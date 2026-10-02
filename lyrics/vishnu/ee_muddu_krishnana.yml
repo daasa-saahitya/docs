@@ -2,25 +2,22 @@
 
 title_kn: ಈ ಮುದ್ದು ಕೃಷ್ಣನ ಈ ಕ್ಷಣದ ಸುಖವೆ ಸಾಕು
 author_kn: ಶ್ರೀ ವಾದಿರಾಜ ತೀರ್ಥರು
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devaru
-types: []
+category: [Dasara Pada]
+on_who: [Krishna]
+types: [Alankara]
+festivals: [Krishna Jayanti]
 raga_kn: ದುರ್ಗಾ
 tala_kn:
 ankita_kn: ಹಯವದನ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಈ ಮುದ್ದು ಕೃಷ್ಣನ ಈ ಕ್ಷಣದ ಸುಖವೆ ಸಾಕು
       ಶ್ರೀಮಧ್ವಮುನಿಯ ಮನೆದೈವ ಉಡುಪಿನ ಕೃಷ್ಣನ
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಚೆಲುವ ಚರಣದ್ವಂದ್ವ ಜಂಘೆ ಜಾನೂರ ಕಟಿ |
       ವಳಿಪಂಕ್ತಿ ಜಠರ ವಕ್ಷ ಕಂಬು ಕಂದರದಿ |
       ನಳಿತೋಳು ಮುದ್ದುಮುಖ ನಯನ ನಾಸಿಕ ಕರ್ಣ |
@@ -28,8 +25,7 @@ verses:
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಕಿರುಗೆಜ್ಜೆ ಕಡೆ ಪೆಂಡೆ ಕಟಿಸೂತ್ರ |
       ವರ ಹಾರ ಪದಕ ಶ್ರೀವಶ್ಸ ಕೌಸ್ತುಭರತ್ನ |
       ಉರು ಮುದ್ರೆ ಕಂಕಣಾಂಗದ ಕುಂಡಲ ಪ್ರಭೆಯ |
@@ -37,8 +33,7 @@ verses:
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಸಕಲ ದೇವೋತ್ತಮನೆ ಸರ್ವಗುಣ ಪೂರ್ಣನೆ |
       ಅಕಳಂಕ ಅಖಿಳಾಗಮಸ್ತುತನೆ ಅಪ್ರಾಕೃತನೆ |
       ಅಖಿಳ ಜುವೋತ್ತಮರ ಭಿನ್ನ ಹಯವದನ ನೆ |

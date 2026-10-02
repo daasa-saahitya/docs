@@ -1,27 +1,23 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-title_kn: 07 ಹೂವ ಕೊಡೆ ನೀ ವರವ ಕೊಡೆ
+title_kn: ಹೂವ ಕೊಡೆ ನೀ ವರವ ಕೊಡೆ
 author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devi
-types:
-  - Aagamana
+category: [Dasara Pada]
+on_who: [Lakshmi]
+types: [Huva / Varava Kodu]
+festivals: [Varamahalakshmi]
 raga_kn: ನಾದನಾಮಕ್ರಿಯೆ
-tala_kn:
+tala_kn: ಚಾಪು
 ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಹೂವ ಕೊಡೆ ನೀ ವರವ ಕೊಡೆ
       ದೇವಿ ನಿನ್ನಯ ಮುಡಿಮ್ಯಾಲಿದ್ದ ಮಲ್ಲಿಗೆ||
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಕಟ್ಟ್ಟುವೊ ತೊಟ್ಟ್ಟಿಲ್ಹುಟ್ಟುವೊ ಗಂಡು ಮಕ್ಕಳು
       ಮುತ್ತೈದೆತನವ ಮುದದಿಂದ
       ಮುತ್ತೈದೆತನವ ಮುದದಿ ಬೇಡುವೆ
@@ -29,8 +25,7 @@ verses:
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಅಂದಣ ರಥ ಬಂದ್ಹೋಗುವೋ ಹೆಣ್ಣು ಮಕ್ಕಳು
       ಬಂಧುಗಳಿಗೆಲ್ಲ ಬಲುಕ್ಷೇಮ
       ಬಂಧುಗಳಿಗೆಲ್ಲ ಬಲುಕ್ಷೇಮ ಇರುವಂತೆ
@@ -38,8 +33,7 @@ verses:
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ದಂಪತಿ ನಲಿಸುತ ಸಂಪತ್ತು ಸೌಭಾಗ್ಯ
       ಇಂಥ ಮಂದಿರಕೆ ಬಹುಮಾನ
       ಇಂಥ ಮಂದಿರಕೆ ಬಹುಮಾನಯಿರುವಂತೆ
@@ -47,8 +41,7 @@ verses:
 
   - type: ''
     number: 4
-    kn:
-    |
+    kn: |
       ಅನ್ನ ಗೋವ್ಗಳು ದಿವ್ಯ ಕನ್ಯಾ ಭೂದಾನ
       ಹಿರಣ್ಯದಾನಗಳ ಹಿತದಿಂದ
       ಹಿರಣ್ಯದಾನಗಳ ಹಿತದಿಂದ ಮಾಡುವಂತೆ
@@ -56,8 +49,7 @@ verses:
 
   - type: ''
     number: 5
-    kn:
-    |
+    kn: |
       ಇಂದಿಗೆ ಮನೋಭೀಷ್ಟ ಎಂದೆಂದಿಗೆ ನಿನಪಾದ
       ಹೊಂದಿರಲೆಂದೂ ಮರೆಯದೆ
       ಹೊಂದಿರಲೆಂದೂ ಮರೆಯದೆ ಭೀಮೇಶಕೃಷ್ಣನ

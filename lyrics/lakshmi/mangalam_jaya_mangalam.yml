@@ -1,41 +1,36 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-title_kn: 09 ಮಂಗಳಂ ಜಯ ಮಂಗಳಂ
+title_kn: ಮಂಗಳಂ ಜಯ ಮಂಗಳಂ
 author_kn: ತಿರುಪತಿ ಪಾಂಡುರಂಗಿ ಹುಚ್ಚಾಚಾರ್ಯರು
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devi
-types: []
+category: [Dasara Pada]
+on_who: [Lakshmi]
+types: [Mangala]
+festivals: [Varamahalakshmi]
 raga_kn: ಕಾನಡಾ
 tala_kn: ಆದಿ
 ankita_kn: ಇಂದಿರೇಶ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಮಂಗಳಂ ಜಯ ಮಂಗಳಂ ||
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ವರ ಪೀತಾಂಬರನುಟ್ಟಿಹಳು ಜರದಾಕುಪ್ಪಸ ತೊಟ್ಟಿಹಳು |
       ಹರಿತಾ ಹರುಷದಿ ಕರದಲಿ ಮುಡಿಸಿದ ಸುರಸುಮ
       ತುರುಬಿನೊಳಿಟ್ಟಿಹಳು ||
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಕಡಗ ಕಾಲಂದಿಗೆನಿಟ್ಟಿಹಳು | ನಡುವಿಗಾಭರಣವನಿಟ್ಟಿಹಳು
       ಕೊರಳೊಳು ಅಡ್ಡಿಕೆ ಕಟ್ಟಿಹಳು | ತನ್ನ ಬೆರಳೊಳು
       ಮುದ್ರಿಕೆ ಇಟ್ಟಿಹಳು ।।
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಚಂದ್ರಿಕಸಾಧಿಕ ಸನ್ಮುಖಳು | ಮಂದಹಾಸ್ಯರತಿ ಸುರಿಸುವಳು |
       ಇಂದಿರೇಶನ ಪರಮುತ್ಸಂಗದೊಳ್ ಹೊಂದಿ
       ಸಂತತ ಕುಳಿತಿಹಳು II

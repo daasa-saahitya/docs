@@ -1,27 +1,23 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
-
 title_kn: ಹೆಜ್ಜೆ ನೋಡೋಣ ಬಾರೆ ಗೋಪಾಲಕೃಷ್ಣನ
 author_kn: ಶ್ರೀ ವಾದಿರಾಜ ತೀರ್ಥರು
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devaru
+category: [Dasara Pada]
+on_who: [Krishna]
 types: []
+festivals: [Krishna Jayanti]
 raga_kn: ಶುದ್ಧ ಧನ್ಯಾಸಿ
-tala_kn:
+tala_kn: ಚಾಪು
 ankita_kn: ಹಯವದನ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಹೆಜ್ಜೆ ನೋಡೋಣ ಬಾರೆ
       ಗೋಪಾಲಕೃಷ್ಣನ ಗೆಜ್ಜೆಯ ಕಾಲಿನ
       ಅರ್ಜುನಸಾರಥಿ ಮೂರ್ಜಗದೊಡೆಯನ
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಮಚ್ಛನಾಗಿ ವೇದವ ತಂದವನಂತೆ ಕೂರ್ಮನಾಗಿ
       [ಭೂಧರ]ಪೊತ್ತವನಂತೆವರಹ
       ನರಹರಿಯಾಗಿ ದುರುಳರ ಸೀಳಿದಚೆಲುವ
@@ -29,8 +25,7 @@ verses:
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಸೂರ್ಯಕೋಟಿ ಪ್ರಕಾಶದಿ ಮೆರೆವನ
       ಚಂದ್ರಕೋಟಿ ಶೀತಲದಿಂದ ಬರುವನ
       ಮಂದೆಯ ಕಾಯುತ ಮೈಯ್ಯೆಲ್ಲ ಧೂಳ್ಗಳು
@@ -38,8 +33,7 @@ verses:
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಮಾತೃದ್ರೋಹವ ಮಾಡಿದ ಪರಶುರಾಮನ
       ಪಿತೃವಾಕ್ಯವ ಸಲಿಸಿದ ಶ್ರೀರಾಮನ
       ಕೃಷ್ಣಾವತಾರನಬೌದ್ಧ ಸ್ವರೂಪನ

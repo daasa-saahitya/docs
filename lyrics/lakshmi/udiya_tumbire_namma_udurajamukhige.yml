@@ -1,19 +1,17 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
 
-title_kn: 05 ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ ಉಡುರಾಜಮುಖಿಗೆ
+title_kn: ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ ಉಡುರಾಜಮುಖಿಗೆ
 author_kn: ಹರಪನಹಳ್ಳಿ ಭೀಮವ್ವ
-category:
-  - Sampradaya Haadu
-on_who:
-  - Devi
-types: []
+category: [Dasara Pada]
+on_who: [Lakshmi]
+types: [Udi Tumbuva]
+festivals: [Varamahalakshmi]
 raga_kn: ಕುರಿಂಜಿ
 tala_kn: ಏಕ
 ankita_kn: ಭೀಮೇಶಕೃಷ್ಣ
 verses:
   - type: pallavi
-    kn:
-    |
+    kn: |
       ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ ಉಡುರಾಜಮುಖಿಗೆ
       ಉಡಿಯ ತುಂಬಿರೆ ನಮ್ಮ
       ಕಡಲೆ ಕೊಬ್ಬರಿ ಬಟ್ಟಲೊಳು ಬಾಳೆಫಲಗ-
@@ -21,21 +19,18 @@ verses:
 
   - type: charana
     number: 1
-    kn:
-    |
+    kn: |
       ಜಂಬುನೇರಲ ಗೊನೆ ಜಾಂಬೂಫಲಗಳು
       ನಿಂಬೆ ದಾಳಿಂಬ್ರ ಔದುಂಬ್ರ ಫಲಗಳು ||
 
   - type: ''
     number: 2
-    kn:
-    |
+    kn: |
       ಉತ್ತತ್ತಿ ದ್ರಾಕ್ಷಿ ಕಿತ್ತಳೆ ಸೀತಾಫಲವು
       ಅಕ್ಕಿ ಅಂಜೂರ ಉತ್ತತ್ತಿ ಫಲಗಳು||
 
   - type: ''
     number: 3
-    kn:
-    |
+    kn: |
       ಶ್ರೇಷ್ಠ ಭೀಮೇಶ ಕೃಷ್ಣನ ಪಟ್ಟದರಸಿ
       ಗ್ಹಚ್ಚಿ ಕುಂಕುಮ ವೀಳ್ಯ ಕೊಟ್ಟು ರುಕ್ಮಿಣಿಗೆ ||
