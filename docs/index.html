@@ -30,24 +30,34 @@
       </div>
 
       <div class="filter-grid">
-        <fieldset class="filter-group">
-          <legend>Category</legend>
-          <div class="option-list" id="filter-category"></div>
-        </fieldset>
-
-        <fieldset class="filter-group">
-          <legend>Type</legend>
-          <div class="option-list" id="filter-type"></div>
-        </fieldset>
-
-        <div class="filter-group">
-          <label class="filter-legend" for="filter-on">On whom?</label>
-          <div class="tag-input" data-field="on_who" id="filter-on"></div>
+        <div class="filter-group filter-group-wide">
+          <span class="filter-legend">On whom?</span>
+          <div class="tag-input" id="filter-on"></div>
         </div>
 
         <div class="filter-group">
-          <label class="filter-legend" for="filter-author">Author</label>
-          <div class="tag-input" data-field="author" id="filter-author"></div>
+          <span class="filter-legend">Category</span>
+          <div class="tag-input" id="filter-category"></div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-legend">Type</span>
+          <div class="tag-input" id="filter-type"></div>
+        </div>
+
+        <div class="filter-group filter-group-wide">
+          <span class="filter-legend">Festival / Vrata / Jayanti</span>
+          <div class="tag-input" id="filter-festivals"></div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-legend">Author</span>
+          <div class="tag-input" id="filter-author"></div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-legend">Ankita</span>
+          <div class="tag-input" id="filter-ankita"></div>
         </div>
 
         <div class="filter-actions">
@@ -61,33 +71,37 @@
     <ul class="song-list" id="song-list">
       <li class="song-entry" data-id="dayamaado-ranga">
   <a class="song-link" href="songs/dayamaado-ranga.html">
-    <span class="song-title">Dayamado Rmga Dayamado</span>
-    <span class="song-author">Purmdara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Devaru</span><span class="badge badge-type">Aavahana</span></span>
-    <span class="song-preview">dayamado rmga dayamado dayamado…</span>
+    <span class="song-title">Dayamado Ranga Dayamado</span>
+    <span class="song-author">Purandara Dasaru</span>
+    <span class="song-ankita">purandara vithala</span>
+    <span class="song-types"><span class="badge badge-type">Aavahana</span></span>
+    <span class="song-preview">dayamado ranga dayamado dayamado…</span>
   </a>
 </li>
 <li class="song-entry" data-id="devi-ambujavalli">
   <a class="song-link" href="songs/devi-ambujavalli.html">
     <span class="song-title">Devi Ambujavalli Ramanane</span>
     <span class="song-author">Gopala Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita">gopala viththala</span>
+    <span class="song-types"></span>
     <span class="song-preview">devi ambujavalli ramanane ।…</span>
   </a>
 </li>
 <li class="song-entry" data-id="entha-srimantha">
   <a class="song-link" href="songs/entha-srimantha.html">
-    <span class="song-title">Entha Shrimmtanmtano</span>
+    <span class="song-title">Entha Shrimantanantano</span>
     <span class="song-author">Prasanna Venkata Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">entha shrimmtanmtano shrikanteya kanta…</span>
+    <span class="song-ankita">prasanna</span>
+    <span class="song-types"></span>
+    <span class="song-preview">entha shrimantanantano shrikanteya kanta…</span>
   </a>
 </li>
 <li class="song-entry" data-id="janma-saphalavayitu">
   <a class="song-link" href="songs/janma-saphalavayitu.html">
     <span class="song-title">Janma Saphalavayitu</span>
     <span class="song-author">Shri Vadiraja Guru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
     <span class="song-preview">janma saphalavayitu ॥ pa…</span>
   </a>
 </li>
@@ -95,7 +109,8 @@
   <a class="song-link" href="songs/jayarayara-nodiro.html">
     <span class="song-title">Jayarayara Nodiro</span>
     <span class="song-author">Vijaya Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Yatigalu</span></span>
+    <span class="song-ankita">vijaya vithala</span>
+    <span class="song-types"></span>
     <span class="song-preview">jayarayara nodiro sajjanarella jayarayara…</span>
   </a>
 </li>
@@ -103,39 +118,44 @@
   <a class="song-link" href="songs/kai-pididhu-paalisai.html">
     <span class="song-title">Kaipididu Palisai Brahmanyaguruve</span>
     <span class="song-author">Bagepalli Shesha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Yatigalu</span></span>
+    <span class="song-ankita">prananatha viththala</span>
+    <span class="song-types"></span>
     <span class="song-preview">kaipididu palisai brahmanyaguruve</span>
   </a>
 </li>
 <li class="song-entry" data-id="kandu-kandu-nee-enna">
   <a class="song-link" href="songs/kandu-kandu-nee-enna.html">
-    <span class="song-title">Kmdu Kmdu Ni Enna Kai Biduvare Krishna</span>
-    <span class="song-author">Purmdara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">kmdu kmdu ni enna…</span>
+    <span class="song-title">Kandu Kandu Ni Enna Kai Biduvare Krishna</span>
+    <span class="song-author">Purandara Dasaru</span>
+    <span class="song-ankita">purandaravithala</span>
+    <span class="song-types"></span>
+    <span class="song-preview">kandu kandu ni enna…</span>
   </a>
 </li>
 <li class="song-entry" data-id="rama-rama-rama-sita-rama-enniro">
   <a class="song-link" href="songs/rama-rama-rama-sita-rama-enniro.html">
     <span class="song-title">Rama Rama Rama Sita Rama Enniro</span>
-    <span class="song-author">Purmdara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-author">Purandara Dasaru</span>
+    <span class="song-ankita">purandara viththala</span>
+    <span class="song-types"></span>
     <span class="song-preview">rama rama rama rama…</span>
   </a>
 </li>
 <li class="song-entry" data-id="ranganathana-noduva-banni">
   <a class="song-link" href="songs/ranganathana-noduva-banni.html">
-    <span class="song-title">Rmganathana Noduva Banni</span>
+    <span class="song-title">Ranganathana Noduva Banni</span>
     <span class="song-author">Shripada Rajaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">rmganathana noduva banni| shrirmgana…</span>
+    <span class="song-ankita">ranga vithala</span>
+    <span class="song-types"></span>
+    <span class="song-preview">ranganathana noduva banni| shrirangana…</span>
   </a>
 </li>
 <li class="song-entry" data-id="tiliyado-ninnata">
   <a class="song-link" href="songs/tiliyado-ninnata.html">
     <span class="song-title">Tiliyado Ninnata Tirupatiya Venkata</span>
     <span class="song-author">Kalluru Subbanna Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita">vyasa viththala</span>
+    <span class="song-types"></span>
     <span class="song-preview">tiliyado ninnata tirupatiya venkata…</span>
   </a>
 </li>
@@ -143,7 +163,8 @@
   <a class="song-link" href="songs/vadiraja-guruve.html">
     <span class="song-title">Vadiraja Guruve</span>
     <span class="song-author">Karpara Narahari Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Dasara Pada</span><span class="badge badge-on">Yatigalu</span></span>
+    <span class="song-ankita">karpara</span>
+    <span class="song-types"></span>
     <span class="song-preview">vadiraja guruve padaradhaka surataruve…</span>
   </a>
 </li>
@@ -151,15 +172,17 @@
   <a class="song-link" href="songs/rama-kathaamruta.html">
     <span class="song-title">Rama Kathamrita</span>
     <span class="song-author">Jagannatha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Kavya</span></span>
+    <span class="song-ankita">jagannatha viththala</span>
+    <span class="song-types"></span>
     <span class="song-preview">asura badhisutiralu rishigalu stutimade…</span>
   </a>
 </li>
 <li class="song-entry" data-id="srinivasa-kalyana">
   <a class="song-link" href="songs/srinivasa-kalyana.html">
     <span class="song-title">Shrinivasa Kalyana</span>
-    <span class="song-author">Purmdara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Kavya</span></span>
+    <span class="song-author">Purandara Dasaru</span>
+    <span class="song-ankita">purandara viththala</span>
+    <span class="song-types"></span>
     <span class="song-preview">vaikunthapati tanu vaikunthavane bittu…</span>
   </a>
 </li>
@@ -167,23 +190,26 @@
   <a class="song-link" href="songs/01-hasege-kareyuva-haadu.html">
     <span class="song-title">01 Lakshmi Baramma Muttaide Baramma</span>
     <span class="song-author">Kamalanabha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Aarati</span></span>
+    <span class="song-ankita">kamalanabha viththala</span>
+    <span class="song-types"><span class="badge badge-type">Aarati</span></span>
     <span class="song-preview">lakshmi baramma muttaide baramma…</span>
   </a>
 </li>
 <li class="song-entry" data-id="02-hasege-banda-haadu">
   <a class="song-link" href="songs/02-hasege-banda-haadu.html">
-    <span class="song-title">02 Bmdalu Node Mmdiradolu</span>
+    <span class="song-title">02 Bandalu Node Mandiradolu</span>
     <span class="song-author">Jagannatha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Aarati</span></span>
-    <span class="song-preview">bmdalu node mmdiradolu bhagyadalakshmi…</span>
+    <span class="song-ankita">jagannatha viththala</span>
+    <span class="song-types"><span class="badge badge-type">Aarati</span></span>
+    <span class="song-preview">bandalu node mandiradolu bhagyadalakshmi…</span>
   </a>
 </li>
 <li class="song-entry" data-id="03-namaskaara-haadu">
   <a class="song-link" href="songs/03-namaskaara-haadu.html">
     <span class="song-title">03 Taye Nina Padatoyaja</span>
     <span class="song-author">Tapranesha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Namaskaara</span></span>
+    <span class="song-ankita">pranesha viththala</span>
+    <span class="song-types"><span class="badge badge-type">Namaskaara</span></span>
     <span class="song-preview">taye nina padatoyajakeraguve |…</span>
   </a>
 </li>
@@ -191,7 +217,8 @@
   <a class="song-link" href="songs/04-hoova-mudisuva-haadu.html">
     <span class="song-title">04 Huva Mudisida Svami Rukmini</span>
     <span class="song-author">Harapanahalli Bhimavva</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span></span>
+    <span class="song-ankita">bhimeshakrishna</span>
+    <span class="song-types"></span>
     <span class="song-preview">huva mudisida svami rukmini…</span>
   </a>
 </li>
@@ -199,7 +226,8 @@
   <a class="song-link" href="songs/05-udiya-tumbuva-haadu.html">
     <span class="song-title">05 Udiya Tumbire Namma Udurajamukhige</span>
     <span class="song-author">Harapanahalli Bhimavva</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span></span>
+    <span class="song-ankita">bhimeshakrishna</span>
+    <span class="song-types"></span>
     <span class="song-preview">udiya tumbire namma udurajamukhige…</span>
   </a>
 </li>
@@ -207,7 +235,8 @@
   <a class="song-link" href="songs/06-naivedya-haadu.html">
     <span class="song-title">06 Hariyodagudi Siridevi Bare |</span>
     <span class="song-author">Vijayaraghava Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Pooje</span></span>
+    <span class="song-ankita">vijayaraghava</span>
+    <span class="song-types"><span class="badge badge-type">Pooje</span></span>
     <span class="song-preview">hariyodagudi siridevi bare |…</span>
   </a>
 </li>
@@ -215,71 +244,80 @@
   <a class="song-link" href="songs/07-varava-kodu-haadu.html">
     <span class="song-title">07 Huva Kode Ni Varava Kode</span>
     <span class="song-author">Harapanahalli Bhimavva</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Aagamana</span></span>
+    <span class="song-ankita">bhimeshakrishna</span>
+    <span class="song-types"><span class="badge badge-type">Aagamana</span></span>
     <span class="song-preview">huva kode ni varava…</span>
   </a>
 </li>
 <li class="song-entry" data-id="08-aarati-haadu">
   <a class="song-link" href="songs/08-aarati-haadu.html">
-    <span class="song-title">08 Ettire Navaratnadaruti Kartrirmgana Ranige</span>
+    <span class="song-title">08 Ettire Navaratnadaruti Kartrirangana Ranige</span>
     <span class="song-author">Harapanahalli Bhimavva</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Aarati</span></span>
-    <span class="song-preview">ettire navaratnadaruti kartrirmgana ranige||</span>
+    <span class="song-ankita">bhimeshakrishna</span>
+    <span class="song-types"><span class="badge badge-type">Aarati</span></span>
+    <span class="song-preview">ettire navaratnadaruti kartrirangana ranige||</span>
   </a>
 </li>
 <li class="song-entry" data-id="09-mangala-haadu">
   <a class="song-link" href="songs/09-mangala-haadu.html">
-    <span class="song-title">09 Mmgalm Jaya Mmgalm</span>
-    <span class="song-author">Tirupati Pandurmgi Huccacaryaru</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span></span>
-    <span class="song-preview">mmgalm jaya mmgalm ||</span>
+    <span class="song-title">09 Mangalam Jaya Mangalam</span>
+    <span class="song-author">Tirupati Pandurangi Huccacaryaru</span>
+    <span class="song-ankita">indiresha</span>
+    <span class="song-types"></span>
+    <span class="song-preview">mangalam jaya mangalam ||</span>
   </a>
 </li>
 <li class="song-entry" data-id="adhika-masa-haadu">
   <a class="song-link" href="songs/adhika-masa-haadu.html">
     <span class="song-title">Adhika Masa Hadu</span>
     <span class="song-author">Unknown</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span></span>
-    <span class="song-preview">adhika masa bmdu adhikanmda…</span>
+    <span class="song-ankita">madhvesha viththala</span>
+    <span class="song-types"></span>
+    <span class="song-preview">adhika masa bandu adhikananda…</span>
   </a>
 </li>
 <li class="song-entry" data-id="03-annavanu-unisida-rati">
   <a class="song-link" href="songs/03-annavanu-unisida-rati.html">
-    <span class="song-title">Annavanunisida Rati Harushadindanmdagopana Kmdanige</span>
+    <span class="song-title">Annavanunisida Rati Harushadindanandagopana Kandanige</span>
     <span class="song-author">Shri Vadiraja Tirtharu</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">annavanunisida rati harushadindanmdagopana kmdanige</span>
+    <span class="song-ankita">hayavadana</span>
+    <span class="song-types"></span>
+    <span class="song-preview">annavanunisida rati harushadindanandagopana kandanige</span>
   </a>
 </li>
 <li class="song-entry" data-id="bandu-nodiro-sri-subramanyana">
   <a class="song-link" href="songs/bandu-nodiro-sri-subramanyana.html">
-    <span class="song-title">Bmdu Nodiro Shri Subrahmanyana</span>
+    <span class="song-title">Bandu Nodiro Shri Subrahmanyana</span>
     <span class="song-author">Unknown</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span></span>
-    <span class="song-preview">bmdu nodiro shri subrahmanyana…</span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
+    <span class="song-preview">bandu nodiro shri subrahmanyana…</span>
   </a>
 </li>
 <li class="song-entry" data-id="deevige-amavasya">
   <a class="song-link" href="songs/deevige-amavasya.html">
     <span class="song-title">Divashi Gauri Hadu</span>
     <span class="song-author">Unknown</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
     <span class="song-preview">bhimana amavasye hadu gajamukha…</span>
   </a>
 </li>
 <li class="song-entry" data-id="04-hadaginolaginda">
   <a class="song-link" href="songs/04-hadaginolaginda.html">
-    <span class="song-title">Hadaginolaginda Bmda</span>
+    <span class="song-title">Hadaginolaginda Banda</span>
     <span class="song-author">Shri Vadiraja Tirtharu</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">hadaginolaginda bmda kadumuddu shrikrishna…</span>
+    <span class="song-ankita">hayavadana</span>
+    <span class="song-types"></span>
+    <span class="song-preview">hadaginolaginda banda kadumuddu shrikrishna…</span>
   </a>
 </li>
 <li class="song-entry" data-id="01-hejje-nodona-baare">
   <a class="song-link" href="songs/01-hejje-nodona-baare.html">
     <span class="song-title">Hejje Nodona Bare Gopalakrishnana</span>
     <span class="song-author">Shri Vadiraja Tirtharu</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita">hayavadana</span>
+    <span class="song-types"></span>
     <span class="song-preview">hejje nodona bare gopalakrishnana…</span>
   </a>
 </li>
@@ -287,7 +325,8 @@
   <a class="song-link" href="songs/02-ee-muddu-krishnana.html">
     <span class="song-title">I Muddu Krishnana I Kshnada Sukhave Saku</span>
     <span class="song-author">Shri Vadiraja Tirtharu</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita">hayavadana</span>
+    <span class="song-types"></span>
     <span class="song-preview">i muddu krishnana i…</span>
   </a>
 </li>
@@ -295,23 +334,26 @@
   <a class="song-link" href="songs/kolu-kolenna-kole.html">
     <span class="song-title">Kolu Kolenna Kole</span>
     <span class="song-author">Unknown</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
     <span class="song-preview">kolu kolenna kole, kolu…</span>
   </a>
 </li>
 <li class="song-entry" data-id="mangala-gowriya-poojipa-banni">
   <a class="song-link" href="songs/mangala-gowriya-poojipa-banni.html">
-    <span class="song-title">Mmgalagauriya Pujipa Banni</span>
+    <span class="song-title">Mangalagauriya Pujipa Banni</span>
     <span class="song-author">Madhvesha Krishnana</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Pooje</span></span>
-    <span class="song-preview">mmgala gauriya pujipa banni…</span>
+    <span class="song-ankita"></span>
+    <span class="song-types"><span class="badge badge-type">Pooje</span></span>
+    <span class="song-preview">mangala gauriya pujipa banni…</span>
   </a>
 </li>
 <li class="song-entry" data-id="naga-chaturthi-kathe">
   <a class="song-link" href="songs/naga-chaturthi-kathe.html">
-    <span class="song-title">Naga Caturti / Garuda Pmcami Hadu</span>
+    <span class="song-title">Naga Caturti / Garuda Pancami Hadu</span>
     <span class="song-author">Unknown</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Kathe</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"><span class="badge badge-type">Kathe</span></span>
     <span class="song-preview">vasuki rupane vaiyyaradinda suvasiniyaru…</span>
   </a>
 </li>
@@ -319,7 +361,8 @@
   <a class="song-link" href="songs/naga-chaturthi-arati-haadu.html">
     <span class="song-title">Naga Caturti Arati Hadu</span>
     <span class="song-author">Unknown</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span><span class="badge badge-type">Aarati</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"><span class="badge badge-type">Aarati</span></span>
     <span class="song-preview">tarakka upadeshi devi parakku…</span>
   </a>
 </li>
@@ -327,7 +370,8 @@
   <a class="song-link" href="songs/rakshisennanu-neenu.html">
     <span class="song-title">Rakshisennanu Ninu Pakshindrane</span>
     <span class="song-author">Shyama Sundara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devi</span></span>
+    <span class="song-ankita">shyama sundara vithalana</span>
+    <span class="song-types"></span>
     <span class="song-preview">rakshisennanu ninu pakshindrane</span>
   </a>
 </li>
@@ -335,15 +379,17 @@
   <a class="song-link" href="songs/04-jo-jo-baala-mukunda.html">
     <span class="song-title">Shravana Ashtami Naduratriyalli</span>
     <span class="song-author">Shri Vadiraja Tirtharu</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita">hayavadana</span>
+    <span class="song-types"></span>
     <span class="song-preview">shravana ashtami naduratriyalli rohini…</span>
   </a>
 </li>
 <li class="song-entry" data-id="ganesha-sandhi">
   <a class="song-link" href="songs/ganesha-sandhi.html">
-    <span class="song-title">Vighneshvara Stotra Smdhi</span>
+    <span class="song-title">Vighneshvara Stotra Sandhi</span>
     <span class="song-author">Unknown</span>
-    <span class="song-badges"><span class="badge badge-category">Sampradaya Haadu</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
     <span class="song-preview">harikathamritasara gurugala karunadindapanitu peluve…</span>
   </a>
 </li>
@@ -351,7 +397,8 @@
   <a class="song-link" href="songs/avatara-traya-stotra.html">
     <span class="song-title">Avatara Traya Stotra</span>
     <span class="song-author">Vadiraja Tirtharu</span>
-    <span class="song-badges"><span class="badge badge-category">Stotra</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
     <span class="song-preview">palayasva nipalayasva nipalayasva ramapate…</span>
   </a>
 </li>
@@ -359,7 +406,8 @@
   <a class="song-link" href="songs/rajagopala-stuti.html">
     <span class="song-title">Rajagopala Stuti</span>
     <span class="song-author">Raghavendra Tirtharu</span>
-    <span class="song-badges"><span class="badge badge-category">Stuti</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
     <span class="song-preview">hridi bodhadugdharasavasanakrite parinirmitaviv payojatallanau…</span>
   </a>
 </li>
@@ -367,7 +415,8 @@
   <a class="song-link" href="songs/bhoo-varaha-devara-suladi.html">
     <span class="song-title">Bhu Varaha Suladi</span>
     <span class="song-author">Vijaya Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita">vijaya vittala</span>
+    <span class="song-types"></span>
     <span class="song-preview">bhuvaraha avatara shringara gunakara…</span>
   </a>
 </li>
@@ -375,7 +424,8 @@
   <a class="song-link" href="songs/chinta-parihara-suladi.html">
     <span class="song-title">Cinta Parihara Suladi</span>
     <span class="song-author">Vijaya Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span><span class="badge badge-type">Parihara</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"><span class="badge badge-type">Parihara</span></span>
     <span class="song-preview">vyakulaveno manave yake ninage…</span>
   </a>
 </li>
@@ -383,31 +433,35 @@
   <a class="song-link" href="songs/durga-devi-stotra-suladi.html">
     <span class="song-title">Durgadevi Stotra Suladi</span>
     <span class="song-author">Vijaya Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devi</span></span>
-    <span class="song-preview">durga durgeye mahadushtajana smhare…</span>
+    <span class="song-ankita">vijaya vittala</span>
+    <span class="song-types"></span>
+    <span class="song-preview">durga durgeye mahadushtajana samhare…</span>
   </a>
 </li>
 <li class="song-entry" data-id="gajanana-stotra-suladi">
   <a class="song-link" href="songs/gajanana-stotra-suladi.html">
     <span class="song-title">Gajanana Stotra Suladi</span>
     <span class="song-author">Abhinava Pranesha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">kariraja kmdhara rajatadri mmdira…</span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
+    <span class="song-preview">kariraja kandhara rajatadri mandira…</span>
   </a>
 </li>
 <li class="song-entry" data-id="hanumantha-stotra-suladi">
   <a class="song-link" href="songs/hanumantha-stotra-suladi.html">
-    <span class="song-title">Hanummta Stotra Suladi</span>
-    <span class="song-author">Purmdara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Yatigalu</span></span>
-    <span class="song-preview">hanummtana balagondare, haripadaseve dorakombudu|…</span>
+    <span class="song-title">Hanumanta Stotra Suladi</span>
+    <span class="song-author">Purandara Dasaru</span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
+    <span class="song-preview">hanumantana balagondare, haripadaseve dorakombudu|…</span>
   </a>
 </li>
 <li class="song-entry" data-id="hari-sarvothama-prameya-sadhana-vishaya-suladi">
   <a class="song-link" href="songs/hari-sarvothama-prameya-sadhana-vishaya-suladi.html">
     <span class="song-title">Hari Sarvottama Prameya Sadhana Vishaya Suladi</span>
     <span class="song-author">Vadiraja Tirtharu</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita">hayavadana</span>
+    <span class="song-types"></span>
     <span class="song-preview">ambikapati umapatiyendu veda tri-…</span>
   </a>
 </li>
@@ -415,31 +469,35 @@
   <a class="song-link" href="songs/krishna-stotra-suladi.html">
     <span class="song-title">Krishna Stotra Suladi</span>
     <span class="song-author">Beluru Vaikuntha Vittala Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">elliha madhurapura innelliha kmsasurane…</span>
+    <span class="song-ankita">vaikuntha vittala</span>
+    <span class="song-types"></span>
+    <span class="song-preview">elliha madhurapura innelliha kamsasurane…</span>
   </a>
 </li>
 <li class="song-entry" data-id="lakshmi-narasimha-suladi">
   <a class="song-link" href="songs/lakshmi-narasimha-suladi.html">
     <span class="song-title">Lakshmi Nrisimha Suladi</span>
     <span class="song-author">Jagannatha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">duritavanakuthari durjana kulavairi sharanagatavajrapmjara…</span>
+    <span class="song-ankita">jagannatha vittala</span>
+    <span class="song-types"></span>
+    <span class="song-preview">duritavanakuthari durjana kulavairi sharanagatavajrapanjara…</span>
   </a>
 </li>
 <li class="song-entry" data-id="lakshmi-stotra-suladi">
   <a class="song-link" href="songs/lakshmi-stotra-suladi.html">
     <span class="song-title">Lakshmi Stotra Suladi</span>
     <span class="song-author">Gopala Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devi</span></span>
-    <span class="song-preview">indiradevi mate tmde vithalana…</span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
+    <span class="song-preview">indiradevi mate tande vithalana…</span>
   </a>
 </li>
 <li class="song-entry" data-id="parvati-stotra-suladi">
   <a class="song-link" href="songs/parvati-stotra-suladi.html">
     <span class="song-title">Parvati Devi Stotra Suladi</span>
     <span class="song-author">Abhinava Pranesha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devi</span></span>
+    <span class="song-ankita">abhinava pranesha vithala</span>
+    <span class="song-types"></span>
     <span class="song-preview">uma katyayani parvati kalyani…</span>
   </a>
 </li>
@@ -447,7 +505,8 @@
   <a class="song-link" href="songs/raghavendra-hastodaka-suladi.html">
     <span class="song-title">Raghavendra Hastodaka Suladi</span>
     <span class="song-author">Guru Jagannatha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Yatigalu</span></span>
+    <span class="song-ankita">guru jagannatha vithala</span>
+    <span class="song-types"></span>
     <span class="song-preview">hariyu undanna namma gururaghavendrarige…</span>
   </a>
 </li>
@@ -455,7 +514,8 @@
   <a class="song-link" href="songs/raghavendra-stotra-suladi-2.html">
     <span class="song-title">Raghavendra Stotra Suladi</span>
     <span class="song-author">Modhalakallu Shesha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Yatigalu</span></span>
+    <span class="song-ankita">guru vijaya vithala</span>
+    <span class="song-types"></span>
     <span class="song-preview">ghana dayanidhiyada guru raghavendra…</span>
   </a>
 </li>
@@ -463,15 +523,17 @@
   <a class="song-link" href="songs/raghavendra-stotra-suladi-3.html">
     <span class="song-title">Raghavendra Stotra Suladi</span>
     <span class="song-author">Gopala Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Yatigalu</span></span>
+    <span class="song-ankita">gopala vittala</span>
+    <span class="song-types"></span>
     <span class="song-preview">dhareyavolage namma gururaghavendrarinnu |…</span>
   </a>
 </li>
 <li class="song-entry" data-id="raghavendra-stotra-suladi">
   <a class="song-link" href="songs/raghavendra-stotra-suladi.html">
     <span class="song-title">Raghavendra Stotra Suladi</span>
-    <span class="song-author">Dhanvmtri Vittala Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Yatigalu</span></span>
+    <span class="song-author">Dhanvantri Vittala Dasaru</span>
+    <span class="song-ankita">dhanvantri vittala</span>
+    <span class="song-types"></span>
     <span class="song-preview">guru raya maharaya gunapurna…</span>
   </a>
 </li>
@@ -479,7 +541,8 @@
   <a class="song-link" href="songs/rama-devara-suladi.html">
     <span class="song-title">Rama Devara Suladi</span>
     <span class="song-author">Vijaya Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
     <span class="song-preview">raja rajaramani rajashekhara vinuta…</span>
   </a>
 </li>
@@ -487,48 +550,54 @@
   <a class="song-link" href="songs/rudra-devara-suladi.html">
     <span class="song-title">Rudra Devara Suladi</span>
     <span class="song-author">Abhinava Pranesha Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
-    <span class="song-preview">kamitaprada raghu rama cmdrana…</span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
+    <span class="song-preview">kamitaprada raghu rama candrana…</span>
   </a>
 </li>
 <li class="song-entry" data-id="srishti-prakarana-suladi">
   <a class="song-link" href="songs/srishti-prakarana-suladi.html">
     <span class="song-title">Srishti Prakarana Suladi</span>
-    <span class="song-author">Purmdara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-author">Purandara Dasaru</span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
     <span class="song-preview">shrimannarayana deva ninu shri…</span>
   </a>
 </li>
 <li class="song-entry" data-id="thulasi-stotra-suladi">
   <a class="song-link" href="songs/thulasi-stotra-suladi.html">
     <span class="song-title">Tulasi Stotra Suladi</span>
-    <span class="song-author">Purmdara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devi</span></span>
-    <span class="song-preview">smtata hanneradu koti suvarna…</span>
+    <span class="song-author">Purandara Dasaru</span>
+    <span class="song-ankita"></span>
+    <span class="song-types"></span>
+    <span class="song-preview">santata hanneradu koti suvarna…</span>
   </a>
 </li>
 <li class="song-entry" data-id="vishnu-paada-suladi">
   <a class="song-link" href="songs/vishnu-paada-suladi.html">
     <span class="song-title">Vishnupada Suladi</span>
     <span class="song-author">Vijaya Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Devaru</span></span>
+    <span class="song-ankita">vijaya vittala</span>
+    <span class="song-types"></span>
     <span class="song-preview">jagavella vyapisida balu atindriya…</span>
   </a>
 </li>
 <li class="song-entry" data-id="vyasaraja-stotra-suladi">
   <a class="song-link" href="songs/vyasaraja-stotra-suladi.html">
     <span class="song-title">Vyasaraja Stotra Suladi</span>
-    <span class="song-author">Purmdara Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Yatigalu</span></span>
+    <span class="song-author">Purandara Dasaru</span>
+    <span class="song-ankita">purandara vithala</span>
+    <span class="song-types"></span>
     <span class="song-preview">vyasarayara caranakamala darshanavena -…</span>
   </a>
 </li>
 <li class="song-entry" data-id="yantrodharaka-prana-devara-suladi">
   <a class="song-link" href="songs/yantrodharaka-prana-devara-suladi.html">
-    <span class="song-title">Ymtroddharaka Pranadevara Suladi</span>
+    <span class="song-title">Yantroddharaka Pranadevara Suladi</span>
     <span class="song-author">Vijaya Dasaru</span>
-    <span class="song-badges"><span class="badge badge-category">Suladi</span><span class="badge badge-on">Yatigalu</span></span>
-    <span class="song-preview">ymtroddharaka hanuma surasarvabhauma mmtradharaka…</span>
+    <span class="song-ankita">vijaya vittala</span>
+    <span class="song-types"></span>
+    <span class="song-preview">yantroddharaka hanuma surasarvabhauma mantradharaka…</span>
   </a>
 </li>
 
@@ -539,10 +608,10 @@
 
   <footer class="site-footer">
     <p>ಶ್ರೀ ಕೃಷ್ಣಾರ್ಪಣಮಸ್ತು · Śrī Kṛṣṇārpaṇamastu</p>
-    <p class="build-date">Updated: 01 October 2026 · 59 compositions</p>
+    <p class="build-date">Updated: 02 October 2026 · 59 compositions</p>
   </footer>
 
-  <script id="ds-index-data" type="application/json">{"songs": [{"id": "dayamaado-ranga", "href": "songs/dayamaado-ranga.html", "title": "Dayamado Rmga Dayamado", "author": "Purmdara Dasaru", "preview": "dayamado rmga dayamado dayamado…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": ["Aavahana"]}, {"id": "devi-ambujavalli", "href": "songs/devi-ambujavalli.html", "title": "Devi Ambujavalli Ramanane", "author": "Gopala Dasaru", "preview": "devi ambujavalli ramanane ।…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": []}, {"id": "entha-srimantha", "href": "songs/entha-srimantha.html", "title": "Entha Shrimmtanmtano", "author": "Prasanna Venkata Dasaru", "preview": "entha shrimmtanmtano shrikanteya kanta…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": []}, {"id": "janma-saphalavayitu", "href": "songs/janma-saphalavayitu.html", "title": "Janma Saphalavayitu", "author": "Shri Vadiraja Guru", "preview": "janma saphalavayitu ॥ pa…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": []}, {"id": "jayarayara-nodiro", "href": "songs/jayarayara-nodiro.html", "title": "Jayarayara Nodiro", "author": "Vijaya Dasaru", "preview": "jayarayara nodiro sajjanarella jayarayara…", "category": ["Dasara Pada"], "on_who": ["Yatigalu"], "types": []}, {"id": "kai-pididhu-paalisai", "href": "songs/kai-pididhu-paalisai.html", "title": "Kaipididu Palisai Brahmanyaguruve", "author": "Bagepalli Shesha Dasaru", "preview": "kaipididu palisai brahmanyaguruve", "category": ["Dasara Pada"], "on_who": ["Yatigalu"], "types": []}, {"id": "kandu-kandu-nee-enna", "href": "songs/kandu-kandu-nee-enna.html", "title": "Kmdu Kmdu Ni Enna Kai Biduvare Krishna", "author": "Purmdara Dasaru", "preview": "kmdu kmdu ni enna…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": []}, {"id": "rama-rama-rama-sita-rama-enniro", "href": "songs/rama-rama-rama-sita-rama-enniro.html", "title": "Rama Rama Rama Sita Rama Enniro", "author": "Purmdara Dasaru", "preview": "rama rama rama rama…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": []}, {"id": "ranganathana-noduva-banni", "href": "songs/ranganathana-noduva-banni.html", "title": "Rmganathana Noduva Banni", "author": "Shripada Rajaru", "preview": "rmganathana noduva banni| shrirmgana…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": []}, {"id": "tiliyado-ninnata", "href": "songs/tiliyado-ninnata.html", "title": "Tiliyado Ninnata Tirupatiya Venkata", "author": "Kalluru Subbanna Dasaru", "preview": "tiliyado ninnata tirupatiya venkata…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": []}, {"id": "vadiraja-guruve", "href": "songs/vadiraja-guruve.html", "title": "Vadiraja Guruve", "author": "Karpara Narahari Dasaru", "preview": "vadiraja guruve padaradhaka surataruve…", "category": ["Dasara Pada"], "on_who": ["Yatigalu"], "types": []}, {"id": "rama-kathaamruta", "href": "songs/rama-kathaamruta.html", "title": "Rama Kathamrita", "author": "Jagannatha Dasaru", "preview": "asura badhisutiralu rishigalu stutimade…", "category": ["Kavya"], "on_who": [], "types": []}, {"id": "srinivasa-kalyana", "href": "songs/srinivasa-kalyana.html", "title": "Shrinivasa Kalyana", "author": "Purmdara Dasaru", "preview": "vaikunthapati tanu vaikunthavane bittu…", "category": ["Kavya"], "on_who": [], "types": []}, {"id": "01-hasege-kareyuva-haadu", "href": "songs/01-hasege-kareyuva-haadu.html", "title": "01 Lakshmi Baramma Muttaide Baramma", "author": "Kamalanabha Dasaru", "preview": "lakshmi baramma muttaide baramma…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aarati"]}, {"id": "02-hasege-banda-haadu", "href": "songs/02-hasege-banda-haadu.html", "title": "02 Bmdalu Node Mmdiradolu", "author": "Jagannatha Dasaru", "preview": "bmdalu node mmdiradolu bhagyadalakshmi…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aarati"]}, {"id": "03-namaskaara-haadu", "href": "songs/03-namaskaara-haadu.html", "title": "03 Taye Nina Padatoyaja", "author": "Tapranesha Dasaru", "preview": "taye nina padatoyajakeraguve |…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Namaskaara"]}, {"id": "04-hoova-mudisuva-haadu", "href": "songs/04-hoova-mudisuva-haadu.html", "title": "04 Huva Mudisida Svami Rukmini", "author": "Harapanahalli Bhimavva", "preview": "huva mudisida svami rukmini…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": []}, {"id": "05-udiya-tumbuva-haadu", "href": "songs/05-udiya-tumbuva-haadu.html", "title": "05 Udiya Tumbire Namma Udurajamukhige", "author": "Harapanahalli Bhimavva", "preview": "udiya tumbire namma udurajamukhige…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": []}, {"id": "06-naivedya-haadu", "href": "songs/06-naivedya-haadu.html", "title": "06 Hariyodagudi Siridevi Bare |", "author": "Vijayaraghava Dasaru", "preview": "hariyodagudi siridevi bare |…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Pooje"]}, {"id": "07-varava-kodu-haadu", "href": "songs/07-varava-kodu-haadu.html", "title": "07 Huva Kode Ni Varava Kode", "author": "Harapanahalli Bhimavva", "preview": "huva kode ni varava…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aagamana"]}, {"id": "08-aarati-haadu", "href": "songs/08-aarati-haadu.html", "title": "08 Ettire Navaratnadaruti Kartrirmgana Ranige", "author": "Harapanahalli Bhimavva", "preview": "ettire navaratnadaruti kartrirmgana ranige||", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aarati"]}, {"id": "09-mangala-haadu", "href": "songs/09-mangala-haadu.html", "title": "09 Mmgalm Jaya Mmgalm", "author": "Tirupati Pandurmgi Huccacaryaru", "preview": "mmgalm jaya mmgalm ||", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": []}, {"id": "adhika-masa-haadu", "href": "songs/adhika-masa-haadu.html", "title": "Adhika Masa Hadu", "author": "Unknown", "preview": "adhika masa bmdu adhikanmda…", "category": ["Sampradaya Haadu"], "on_who": [], "types": []}, {"id": "03-annavanu-unisida-rati", "href": "songs/03-annavanu-unisida-rati.html", "title": "Annavanunisida Rati Harushadindanmdagopana Kmdanige", "author": "Shri Vadiraja Tirtharu", "preview": "annavanunisida rati harushadindanmdagopana kmdanige", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": []}, {"id": "bandu-nodiro-sri-subramanyana", "href": "songs/bandu-nodiro-sri-subramanyana.html", "title": "Bmdu Nodiro Shri Subrahmanyana", "author": "Unknown", "preview": "bmdu nodiro shri subrahmanyana…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": []}, {"id": "deevige-amavasya", "href": "songs/deevige-amavasya.html", "title": "Divashi Gauri Hadu", "author": "Unknown", "preview": "bhimana amavasye hadu gajamukha…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": []}, {"id": "04-hadaginolaginda", "href": "songs/04-hadaginolaginda.html", "title": "Hadaginolaginda Bmda", "author": "Shri Vadiraja Tirtharu", "preview": "hadaginolaginda bmda kadumuddu shrikrishna…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": []}, {"id": "01-hejje-nodona-baare", "href": "songs/01-hejje-nodona-baare.html", "title": "Hejje Nodona Bare Gopalakrishnana", "author": "Shri Vadiraja Tirtharu", "preview": "hejje nodona bare gopalakrishnana…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": []}, {"id": "02-ee-muddu-krishnana", "href": "songs/02-ee-muddu-krishnana.html", "title": "I Muddu Krishnana I Kshnada Sukhave Saku", "author": "Shri Vadiraja Tirtharu", "preview": "i muddu krishnana i…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": []}, {"id": "kolu-kolenna-kole", "href": "songs/kolu-kolenna-kole.html", "title": "Kolu Kolenna Kole", "author": "Unknown", "preview": "kolu kolenna kole, kolu…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": []}, {"id": "mangala-gowriya-poojipa-banni", "href": "songs/mangala-gowriya-poojipa-banni.html", "title": "Mmgalagauriya Pujipa Banni", "author": "Madhvesha Krishnana", "preview": "mmgala gauriya pujipa banni…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Pooje"]}, {"id": "naga-chaturthi-kathe", "href": "songs/naga-chaturthi-kathe.html", "title": "Naga Caturti / Garuda Pmcami Hadu", "author": "Unknown", "preview": "vasuki rupane vaiyyaradinda suvasiniyaru…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Kathe"]}, {"id": "naga-chaturthi-arati-haadu", "href": "songs/naga-chaturthi-arati-haadu.html", "title": "Naga Caturti Arati Hadu", "author": "Unknown", "preview": "tarakka upadeshi devi parakku…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aarati"]}, {"id": "rakshisennanu-neenu", "href": "songs/rakshisennanu-neenu.html", "title": "Rakshisennanu Ninu Pakshindrane", "author": "Shyama Sundara Dasaru", "preview": "rakshisennanu ninu pakshindrane", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": []}, {"id": "04-jo-jo-baala-mukunda", "href": "songs/04-jo-jo-baala-mukunda.html", "title": "Shravana Ashtami Naduratriyalli", "author": "Shri Vadiraja Tirtharu", "preview": "shravana ashtami naduratriyalli rohini…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": []}, {"id": "ganesha-sandhi", "href": "songs/ganesha-sandhi.html", "title": "Vighneshvara Stotra Smdhi", "author": "Unknown", "preview": "harikathamritasara gurugala karunadindapanitu peluve…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": []}, {"id": "avatara-traya-stotra", "href": "songs/avatara-traya-stotra.html", "title": "Avatara Traya Stotra", "author": "Vadiraja Tirtharu", "preview": "palayasva nipalayasva nipalayasva ramapate…", "category": ["Stotra"], "on_who": [], "types": []}, {"id": "rajagopala-stuti", "href": "songs/rajagopala-stuti.html", "title": "Rajagopala Stuti", "author": "Raghavendra Tirtharu", "preview": "hridi bodhadugdharasavasanakrite parinirmitaviv payojatallanau…", "category": ["Stuti"], "on_who": [], "types": []}, {"id": "bhoo-varaha-devara-suladi", "href": "songs/bhoo-varaha-devara-suladi.html", "title": "Bhu Varaha Suladi", "author": "Vijaya Dasaru", "preview": "bhuvaraha avatara shringara gunakara…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "chinta-parihara-suladi", "href": "songs/chinta-parihara-suladi.html", "title": "Cinta Parihara Suladi", "author": "Vijaya Dasaru", "preview": "vyakulaveno manave yake ninage…", "category": ["Suladi"], "on_who": ["Devaru"], "types": ["Parihara"]}, {"id": "durga-devi-stotra-suladi", "href": "songs/durga-devi-stotra-suladi.html", "title": "Durgadevi Stotra Suladi", "author": "Vijaya Dasaru", "preview": "durga durgeye mahadushtajana smhare…", "category": ["Suladi"], "on_who": ["Devi"], "types": []}, {"id": "gajanana-stotra-suladi", "href": "songs/gajanana-stotra-suladi.html", "title": "Gajanana Stotra Suladi", "author": "Abhinava Pranesha Dasaru", "preview": "kariraja kmdhara rajatadri mmdira…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "hanumantha-stotra-suladi", "href": "songs/hanumantha-stotra-suladi.html", "title": "Hanummta Stotra Suladi", "author": "Purmdara Dasaru", "preview": "hanummtana balagondare, haripadaseve dorakombudu|…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": []}, {"id": "hari-sarvothama-prameya-sadhana-vishaya-suladi", "href": "songs/hari-sarvothama-prameya-sadhana-vishaya-suladi.html", "title": "Hari Sarvottama Prameya Sadhana Vishaya Suladi", "author": "Vadiraja Tirtharu", "preview": "ambikapati umapatiyendu veda tri-…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "krishna-stotra-suladi", "href": "songs/krishna-stotra-suladi.html", "title": "Krishna Stotra Suladi", "author": "Beluru Vaikuntha Vittala Dasaru", "preview": "elliha madhurapura innelliha kmsasurane…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "lakshmi-narasimha-suladi", "href": "songs/lakshmi-narasimha-suladi.html", "title": "Lakshmi Nrisimha Suladi", "author": "Jagannatha Dasaru", "preview": "duritavanakuthari durjana kulavairi sharanagatavajrapmjara…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "lakshmi-stotra-suladi", "href": "songs/lakshmi-stotra-suladi.html", "title": "Lakshmi Stotra Suladi", "author": "Gopala Dasaru", "preview": "indiradevi mate tmde vithalana…", "category": ["Suladi"], "on_who": ["Devi"], "types": []}, {"id": "parvati-stotra-suladi", "href": "songs/parvati-stotra-suladi.html", "title": "Parvati Devi Stotra Suladi", "author": "Abhinava Pranesha Dasaru", "preview": "uma katyayani parvati kalyani…", "category": ["Suladi"], "on_who": ["Devi"], "types": []}, {"id": "raghavendra-hastodaka-suladi", "href": "songs/raghavendra-hastodaka-suladi.html", "title": "Raghavendra Hastodaka Suladi", "author": "Guru Jagannatha Dasaru", "preview": "hariyu undanna namma gururaghavendrarige…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": []}, {"id": "raghavendra-stotra-suladi-2", "href": "songs/raghavendra-stotra-suladi-2.html", "title": "Raghavendra Stotra Suladi", "author": "Modhalakallu Shesha Dasaru", "preview": "ghana dayanidhiyada guru raghavendra…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": []}, {"id": "raghavendra-stotra-suladi-3", "href": "songs/raghavendra-stotra-suladi-3.html", "title": "Raghavendra Stotra Suladi", "author": "Gopala Dasaru", "preview": "dhareyavolage namma gururaghavendrarinnu |…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": []}, {"id": "raghavendra-stotra-suladi", "href": "songs/raghavendra-stotra-suladi.html", "title": "Raghavendra Stotra Suladi", "author": "Dhanvmtri Vittala Dasaru", "preview": "guru raya maharaya gunapurna…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": []}, {"id": "rama-devara-suladi", "href": "songs/rama-devara-suladi.html", "title": "Rama Devara Suladi", "author": "Vijaya Dasaru", "preview": "raja rajaramani rajashekhara vinuta…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "rudra-devara-suladi", "href": "songs/rudra-devara-suladi.html", "title": "Rudra Devara Suladi", "author": "Abhinava Pranesha Dasaru", "preview": "kamitaprada raghu rama cmdrana…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "srishti-prakarana-suladi", "href": "songs/srishti-prakarana-suladi.html", "title": "Srishti Prakarana Suladi", "author": "Purmdara Dasaru", "preview": "shrimannarayana deva ninu shri…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "thulasi-stotra-suladi", "href": "songs/thulasi-stotra-suladi.html", "title": "Tulasi Stotra Suladi", "author": "Purmdara Dasaru", "preview": "smtata hanneradu koti suvarna…", "category": ["Suladi"], "on_who": ["Devi"], "types": []}, {"id": "vishnu-paada-suladi", "href": "songs/vishnu-paada-suladi.html", "title": "Vishnupada Suladi", "author": "Vijaya Dasaru", "preview": "jagavella vyapisida balu atindriya…", "category": ["Suladi"], "on_who": ["Devaru"], "types": []}, {"id": "vyasaraja-stotra-suladi", "href": "songs/vyasaraja-stotra-suladi.html", "title": "Vyasaraja Stotra Suladi", "author": "Purmdara Dasaru", "preview": "vyasarayara caranakamala darshanavena -…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": []}, {"id": "yantrodharaka-prana-devara-suladi", "href": "songs/yantrodharaka-prana-devara-suladi.html", "title": "Ymtroddharaka Pranadevara Suladi", "author": "Vijaya Dasaru", "preview": "ymtroddharaka hanuma surasarvabhauma mmtradharaka…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": []}], "categories": ["Dasara Pada", "Sampradaya Haadu", "Suladi", "Stuti", "Stotra", "Gadya", "Kavya", "Kathe"], "types": ["Aavahana", "Aagamana", "Namaskaara", "Pooje", "Aarati", "Kathe", "Vairagya", "Parihara"], "onWho": ["Devaru", "Devi", "Yatigalu", "Dasaru"]}</script>
+  <script id="ds-index-data" type="application/json">{"songs": [{"id": "dayamaado-ranga", "href": "songs/dayamaado-ranga.html", "title": "Dayamado Ranga Dayamado", "author": "Purandara Dasaru", "ankita": "purandara vithala", "preview": "dayamado ranga dayamado dayamado…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": ["Aavahana"], "festivals": []}, {"id": "devi-ambujavalli", "href": "songs/devi-ambujavalli.html", "title": "Devi Ambujavalli Ramanane", "author": "Gopala Dasaru", "ankita": "gopala viththala", "preview": "devi ambujavalli ramanane ।…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "entha-srimantha", "href": "songs/entha-srimantha.html", "title": "Entha Shrimantanantano", "author": "Prasanna Venkata Dasaru", "ankita": "prasanna", "preview": "entha shrimantanantano shrikanteya kanta…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "janma-saphalavayitu", "href": "songs/janma-saphalavayitu.html", "title": "Janma Saphalavayitu", "author": "Shri Vadiraja Guru", "ankita": "", "preview": "janma saphalavayitu ॥ pa…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "jayarayara-nodiro", "href": "songs/jayarayara-nodiro.html", "title": "Jayarayara Nodiro", "author": "Vijaya Dasaru", "ankita": "vijaya vithala", "preview": "jayarayara nodiro sajjanarella jayarayara…", "category": ["Dasara Pada"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "kai-pididhu-paalisai", "href": "songs/kai-pididhu-paalisai.html", "title": "Kaipididu Palisai Brahmanyaguruve", "author": "Bagepalli Shesha Dasaru", "ankita": "prananatha viththala", "preview": "kaipididu palisai brahmanyaguruve", "category": ["Dasara Pada"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "kandu-kandu-nee-enna", "href": "songs/kandu-kandu-nee-enna.html", "title": "Kandu Kandu Ni Enna Kai Biduvare Krishna", "author": "Purandara Dasaru", "ankita": "purandaravithala", "preview": "kandu kandu ni enna…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "rama-rama-rama-sita-rama-enniro", "href": "songs/rama-rama-rama-sita-rama-enniro.html", "title": "Rama Rama Rama Sita Rama Enniro", "author": "Purandara Dasaru", "ankita": "purandara viththala", "preview": "rama rama rama rama…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "ranganathana-noduva-banni", "href": "songs/ranganathana-noduva-banni.html", "title": "Ranganathana Noduva Banni", "author": "Shripada Rajaru", "ankita": "ranga vithala", "preview": "ranganathana noduva banni| shrirangana…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "tiliyado-ninnata", "href": "songs/tiliyado-ninnata.html", "title": "Tiliyado Ninnata Tirupatiya Venkata", "author": "Kalluru Subbanna Dasaru", "ankita": "vyasa viththala", "preview": "tiliyado ninnata tirupatiya venkata…", "category": ["Dasara Pada"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "vadiraja-guruve", "href": "songs/vadiraja-guruve.html", "title": "Vadiraja Guruve", "author": "Karpara Narahari Dasaru", "ankita": "karpara", "preview": "vadiraja guruve padaradhaka surataruve…", "category": ["Dasara Pada"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "rama-kathaamruta", "href": "songs/rama-kathaamruta.html", "title": "Rama Kathamrita", "author": "Jagannatha Dasaru", "ankita": "jagannatha viththala", "preview": "asura badhisutiralu rishigalu stutimade…", "category": ["Kavya"], "on_who": [], "types": [], "festivals": []}, {"id": "srinivasa-kalyana", "href": "songs/srinivasa-kalyana.html", "title": "Shrinivasa Kalyana", "author": "Purandara Dasaru", "ankita": "purandara viththala", "preview": "vaikunthapati tanu vaikunthavane bittu…", "category": ["Kavya"], "on_who": [], "types": [], "festivals": []}, {"id": "01-hasege-kareyuva-haadu", "href": "songs/01-hasege-kareyuva-haadu.html", "title": "01 Lakshmi Baramma Muttaide Baramma", "author": "Kamalanabha Dasaru", "ankita": "kamalanabha viththala", "preview": "lakshmi baramma muttaide baramma…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aarati"], "festivals": []}, {"id": "02-hasege-banda-haadu", "href": "songs/02-hasege-banda-haadu.html", "title": "02 Bandalu Node Mandiradolu", "author": "Jagannatha Dasaru", "ankita": "jagannatha viththala", "preview": "bandalu node mandiradolu bhagyadalakshmi…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aarati"], "festivals": []}, {"id": "03-namaskaara-haadu", "href": "songs/03-namaskaara-haadu.html", "title": "03 Taye Nina Padatoyaja", "author": "Tapranesha Dasaru", "ankita": "pranesha viththala", "preview": "taye nina padatoyajakeraguve |…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Namaskaara"], "festivals": []}, {"id": "04-hoova-mudisuva-haadu", "href": "songs/04-hoova-mudisuva-haadu.html", "title": "04 Huva Mudisida Svami Rukmini", "author": "Harapanahalli Bhimavva", "ankita": "bhimeshakrishna", "preview": "huva mudisida svami rukmini…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "05-udiya-tumbuva-haadu", "href": "songs/05-udiya-tumbuva-haadu.html", "title": "05 Udiya Tumbire Namma Udurajamukhige", "author": "Harapanahalli Bhimavva", "ankita": "bhimeshakrishna", "preview": "udiya tumbire namma udurajamukhige…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "06-naivedya-haadu", "href": "songs/06-naivedya-haadu.html", "title": "06 Hariyodagudi Siridevi Bare |", "author": "Vijayaraghava Dasaru", "ankita": "vijayaraghava", "preview": "hariyodagudi siridevi bare |…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Pooje"], "festivals": []}, {"id": "07-varava-kodu-haadu", "href": "songs/07-varava-kodu-haadu.html", "title": "07 Huva Kode Ni Varava Kode", "author": "Harapanahalli Bhimavva", "ankita": "bhimeshakrishna", "preview": "huva kode ni varava…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aagamana"], "festivals": []}, {"id": "08-aarati-haadu", "href": "songs/08-aarati-haadu.html", "title": "08 Ettire Navaratnadaruti Kartrirangana Ranige", "author": "Harapanahalli Bhimavva", "ankita": "bhimeshakrishna", "preview": "ettire navaratnadaruti kartrirangana ranige||", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aarati"], "festivals": []}, {"id": "09-mangala-haadu", "href": "songs/09-mangala-haadu.html", "title": "09 Mangalam Jaya Mangalam", "author": "Tirupati Pandurangi Huccacaryaru", "ankita": "indiresha", "preview": "mangalam jaya mangalam ||", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "adhika-masa-haadu", "href": "songs/adhika-masa-haadu.html", "title": "Adhika Masa Hadu", "author": "Unknown", "ankita": "madhvesha viththala", "preview": "adhika masa bandu adhikananda…", "category": ["Sampradaya Haadu"], "on_who": [], "types": [], "festivals": []}, {"id": "03-annavanu-unisida-rati", "href": "songs/03-annavanu-unisida-rati.html", "title": "Annavanunisida Rati Harushadindanandagopana Kandanige", "author": "Shri Vadiraja Tirtharu", "ankita": "hayavadana", "preview": "annavanunisida rati harushadindanandagopana kandanige", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "bandu-nodiro-sri-subramanyana", "href": "songs/bandu-nodiro-sri-subramanyana.html", "title": "Bandu Nodiro Shri Subrahmanyana", "author": "Unknown", "ankita": "", "preview": "bandu nodiro shri subrahmanyana…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "deevige-amavasya", "href": "songs/deevige-amavasya.html", "title": "Divashi Gauri Hadu", "author": "Unknown", "ankita": "", "preview": "bhimana amavasye hadu gajamukha…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "04-hadaginolaginda", "href": "songs/04-hadaginolaginda.html", "title": "Hadaginolaginda Banda", "author": "Shri Vadiraja Tirtharu", "ankita": "hayavadana", "preview": "hadaginolaginda banda kadumuddu shrikrishna…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "01-hejje-nodona-baare", "href": "songs/01-hejje-nodona-baare.html", "title": "Hejje Nodona Bare Gopalakrishnana", "author": "Shri Vadiraja Tirtharu", "ankita": "hayavadana", "preview": "hejje nodona bare gopalakrishnana…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "02-ee-muddu-krishnana", "href": "songs/02-ee-muddu-krishnana.html", "title": "I Muddu Krishnana I Kshnada Sukhave Saku", "author": "Shri Vadiraja Tirtharu", "ankita": "hayavadana", "preview": "i muddu krishnana i…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "kolu-kolenna-kole", "href": "songs/kolu-kolenna-kole.html", "title": "Kolu Kolenna Kole", "author": "Unknown", "ankita": "", "preview": "kolu kolenna kole, kolu…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "mangala-gowriya-poojipa-banni", "href": "songs/mangala-gowriya-poojipa-banni.html", "title": "Mangalagauriya Pujipa Banni", "author": "Madhvesha Krishnana", "ankita": "", "preview": "mangala gauriya pujipa banni…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Pooje"], "festivals": []}, {"id": "naga-chaturthi-kathe", "href": "songs/naga-chaturthi-kathe.html", "title": "Naga Caturti / Garuda Pancami Hadu", "author": "Unknown", "ankita": "", "preview": "vasuki rupane vaiyyaradinda suvasiniyaru…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Kathe"], "festivals": []}, {"id": "naga-chaturthi-arati-haadu", "href": "songs/naga-chaturthi-arati-haadu.html", "title": "Naga Caturti Arati Hadu", "author": "Unknown", "ankita": "", "preview": "tarakka upadeshi devi parakku…", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": ["Aarati"], "festivals": []}, {"id": "rakshisennanu-neenu", "href": "songs/rakshisennanu-neenu.html", "title": "Rakshisennanu Ninu Pakshindrane", "author": "Shyama Sundara Dasaru", "ankita": "shyama sundara vithalana", "preview": "rakshisennanu ninu pakshindrane", "category": ["Sampradaya Haadu"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "04-jo-jo-baala-mukunda", "href": "songs/04-jo-jo-baala-mukunda.html", "title": "Shravana Ashtami Naduratriyalli", "author": "Shri Vadiraja Tirtharu", "ankita": "hayavadana", "preview": "shravana ashtami naduratriyalli rohini…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "ganesha-sandhi", "href": "songs/ganesha-sandhi.html", "title": "Vighneshvara Stotra Sandhi", "author": "Unknown", "ankita": "", "preview": "harikathamritasara gurugala karunadindapanitu peluve…", "category": ["Sampradaya Haadu"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "avatara-traya-stotra", "href": "songs/avatara-traya-stotra.html", "title": "Avatara Traya Stotra", "author": "Vadiraja Tirtharu", "ankita": "", "preview": "palayasva nipalayasva nipalayasva ramapate…", "category": ["Stotra"], "on_who": [], "types": [], "festivals": []}, {"id": "rajagopala-stuti", "href": "songs/rajagopala-stuti.html", "title": "Rajagopala Stuti", "author": "Raghavendra Tirtharu", "ankita": "", "preview": "hridi bodhadugdharasavasanakrite parinirmitaviv payojatallanau…", "category": ["Stuti"], "on_who": [], "types": [], "festivals": []}, {"id": "bhoo-varaha-devara-suladi", "href": "songs/bhoo-varaha-devara-suladi.html", "title": "Bhu Varaha Suladi", "author": "Vijaya Dasaru", "ankita": "vijaya vittala", "preview": "bhuvaraha avatara shringara gunakara…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "chinta-parihara-suladi", "href": "songs/chinta-parihara-suladi.html", "title": "Cinta Parihara Suladi", "author": "Vijaya Dasaru", "ankita": "", "preview": "vyakulaveno manave yake ninage…", "category": ["Suladi"], "on_who": ["Devaru"], "types": ["Parihara"], "festivals": []}, {"id": "durga-devi-stotra-suladi", "href": "songs/durga-devi-stotra-suladi.html", "title": "Durgadevi Stotra Suladi", "author": "Vijaya Dasaru", "ankita": "vijaya vittala", "preview": "durga durgeye mahadushtajana samhare…", "category": ["Suladi"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "gajanana-stotra-suladi", "href": "songs/gajanana-stotra-suladi.html", "title": "Gajanana Stotra Suladi", "author": "Abhinava Pranesha Dasaru", "ankita": "", "preview": "kariraja kandhara rajatadri mandira…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "hanumantha-stotra-suladi", "href": "songs/hanumantha-stotra-suladi.html", "title": "Hanumanta Stotra Suladi", "author": "Purandara Dasaru", "ankita": "", "preview": "hanumantana balagondare, haripadaseve dorakombudu|…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "hari-sarvothama-prameya-sadhana-vishaya-suladi", "href": "songs/hari-sarvothama-prameya-sadhana-vishaya-suladi.html", "title": "Hari Sarvottama Prameya Sadhana Vishaya Suladi", "author": "Vadiraja Tirtharu", "ankita": "hayavadana", "preview": "ambikapati umapatiyendu veda tri-…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "krishna-stotra-suladi", "href": "songs/krishna-stotra-suladi.html", "title": "Krishna Stotra Suladi", "author": "Beluru Vaikuntha Vittala Dasaru", "ankita": "vaikuntha vittala", "preview": "elliha madhurapura innelliha kamsasurane…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "lakshmi-narasimha-suladi", "href": "songs/lakshmi-narasimha-suladi.html", "title": "Lakshmi Nrisimha Suladi", "author": "Jagannatha Dasaru", "ankita": "jagannatha vittala", "preview": "duritavanakuthari durjana kulavairi sharanagatavajrapanjara…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "lakshmi-stotra-suladi", "href": "songs/lakshmi-stotra-suladi.html", "title": "Lakshmi Stotra Suladi", "author": "Gopala Dasaru", "ankita": "", "preview": "indiradevi mate tande vithalana…", "category": ["Suladi"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "parvati-stotra-suladi", "href": "songs/parvati-stotra-suladi.html", "title": "Parvati Devi Stotra Suladi", "author": "Abhinava Pranesha Dasaru", "ankita": "abhinava pranesha vithala", "preview": "uma katyayani parvati kalyani…", "category": ["Suladi"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "raghavendra-hastodaka-suladi", "href": "songs/raghavendra-hastodaka-suladi.html", "title": "Raghavendra Hastodaka Suladi", "author": "Guru Jagannatha Dasaru", "ankita": "guru jagannatha vithala", "preview": "hariyu undanna namma gururaghavendrarige…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "raghavendra-stotra-suladi-2", "href": "songs/raghavendra-stotra-suladi-2.html", "title": "Raghavendra Stotra Suladi", "author": "Modhalakallu Shesha Dasaru", "ankita": "guru vijaya vithala", "preview": "ghana dayanidhiyada guru raghavendra…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "raghavendra-stotra-suladi-3", "href": "songs/raghavendra-stotra-suladi-3.html", "title": "Raghavendra Stotra Suladi", "author": "Gopala Dasaru", "ankita": "gopala vittala", "preview": "dhareyavolage namma gururaghavendrarinnu |…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "raghavendra-stotra-suladi", "href": "songs/raghavendra-stotra-suladi.html", "title": "Raghavendra Stotra Suladi", "author": "Dhanvantri Vittala Dasaru", "ankita": "dhanvantri vittala", "preview": "guru raya maharaya gunapurna…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "rama-devara-suladi", "href": "songs/rama-devara-suladi.html", "title": "Rama Devara Suladi", "author": "Vijaya Dasaru", "ankita": "", "preview": "raja rajaramani rajashekhara vinuta…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "rudra-devara-suladi", "href": "songs/rudra-devara-suladi.html", "title": "Rudra Devara Suladi", "author": "Abhinava Pranesha Dasaru", "ankita": "", "preview": "kamitaprada raghu rama candrana…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "srishti-prakarana-suladi", "href": "songs/srishti-prakarana-suladi.html", "title": "Srishti Prakarana Suladi", "author": "Purandara Dasaru", "ankita": "", "preview": "shrimannarayana deva ninu shri…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "thulasi-stotra-suladi", "href": "songs/thulasi-stotra-suladi.html", "title": "Tulasi Stotra Suladi", "author": "Purandara Dasaru", "ankita": "", "preview": "santata hanneradu koti suvarna…", "category": ["Suladi"], "on_who": ["Devi"], "types": [], "festivals": []}, {"id": "vishnu-paada-suladi", "href": "songs/vishnu-paada-suladi.html", "title": "Vishnupada Suladi", "author": "Vijaya Dasaru", "ankita": "vijaya vittala", "preview": "jagavella vyapisida balu atindriya…", "category": ["Suladi"], "on_who": ["Devaru"], "types": [], "festivals": []}, {"id": "vyasaraja-stotra-suladi", "href": "songs/vyasaraja-stotra-suladi.html", "title": "Vyasaraja Stotra Suladi", "author": "Purandara Dasaru", "ankita": "purandara vithala", "preview": "vyasarayara caranakamala darshanavena -…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": [], "festivals": []}, {"id": "yantrodharaka-prana-devara-suladi", "href": "songs/yantrodharaka-prana-devara-suladi.html", "title": "Yantroddharaka Pranadevara Suladi", "author": "Vijaya Dasaru", "ankita": "vijaya vittala", "preview": "yantroddharaka hanuma surasarvabhauma mantradharaka…", "category": ["Suladi"], "on_who": ["Yatigalu"], "types": [], "festivals": []}], "vocabularies": {"on_who": ["Vishnu", "Dashavatara", "Varaha", "Narasimha", "Vamana", "Parasurama", "Rama", "Krishna", "Padmanabha", "Kapila", "Dattatreya", "Keshavaadi Rupa", "Venkatesha", "Ranga", "Hanuma", "Bheema", "Madhwacharya", "Saraswati", "Garuda", "Sesha", "Rudra", "Ganesha", "Subrahmanya", "Bhutarajaru", "Lakshmi", "Durga", "Parvati", "Bharati", "Padmanabha Teertharu", "Rayaru", "Vyasarajaru", "Vadirajaru", "Sripadarajaru", "Jayateertharu", "Purandara Dasaru", "Vijaya Dasaru", "Jagannatha Dasaru", "Gopala Dasaru"], "category": ["Haadu", "Stuti", "Suladi", "Sloka", "Stotra", "Kavya", "Gadya", "Kathe"], "type": ["Aavahana (Baaro/Baare)", "Aagamana (Banda/Bandalu)", "Namaskaara", "Pooja", "Naivedya", "Udi Tumbuva", "Uruttani", "Aarati", "Huva / Varava Kodu", "Laali", "Vairagya", "Ninda Stuti", "Parihara", "others"], "festivals": ["Rama Navami", "Krishna Jayanti", "Mangala Gowri", "Vara Mahalakshmi", "Vamana Jayanti", "Swarna Gowri Vrata", "Jyeshta Devi Vrata", "Gowri Tritiya", "Diwashi Gowri Vrata", "Ananta Chaturshashi", "Guru Poornima", "Navaratri", "Makara Shankaranti", "Deepavali", "Ganesha Chaturthi", "Saraswati Pooja", "Mahalaya Paksha", "Adhika Maasa", "Chaturmaasya", "Ekadashi", "Surya Grahana", "Chandra Grahana", "Dhanvantri Jayanti", "Srinivasa Kalyana", "Yugaadi", "Naga Chaturthi", "Garuda Panchami", "Shivaratri"], "author": ["Purandara Dasaru", "Raghavendra Teertharu", "Vijaya Dasaru", "Gopala Dasaru", "Jagannatha Dasaru", "Guru Jagannatha Dasaru", "Sripadarajaru", "Dhanvantari Vittala Dasaru", "Vadirajaru", "Guru Govinda Vittala Dasaru", "Beluru Vaikunta Vittala Dasaru"], "ankita": ["Sampradaya", "Purandara Vittala", "Hayavadana", "Vijaya Vittala", "Jagannatha Vittala", "Gopala Vittala", "Ranga Vittala", "Sree Krishna", "Madhwesha Vittala", "Madhwesha Krishna", "Bheemesha Krishna"]}}</script>
   <script>
     window.DS_INDEX = JSON.parse(document.getElementById('ds-index-data').textContent);
   </script>

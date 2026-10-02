@@ -20,21 +20,41 @@
 title_kn: ಹಾಡಿನ ಹೆಸರು
 author_kn: ಕವಿ/ದಾಸರ ಹೆಸರು
 
-# FILTERABLE METADATA - these drive the checkboxes and tag inputs on the index.
-# One of: Dasara Pada, Sampradaya Haadu, Suladi, Stuti, Stotra, Gadya, Kavya, Kathe
-category:
-#  - Dasara Pada
+# FILTERABLE METADATA - these drive the tag inputs on the index page.
+# The lists in scripts/align.py are the canonical order shown in the dropdowns;
+# any other wording still works and shows up in the list, but then it will not
+# line up with the dropdown. Leave a field empty and align.py guesses it from
+# the folder and title. It never overwrites values you set by hand.
+category: []
+#  - Haadu | Stuti | Suladi | Sloka | Stotra | Kavya | Gadya | Kathe
 
-# Who the song is addressed to. One or more of: Devaru, Devi, Yatigalu, Dasaru
+# Who the song is addressed to. One or more names from ON_WHO in
+# scripts/align.py: Vishnu, Dashavatara, Varaha, Narasimha, Vamana, Parasurama,
+# Rama, Krishna, Padmanabha, Kapila, Dattatreya, Keshavaadi Rupa, Venkatesha,
+# Ranga, Hanuma, Bheema, Madhwacharya, Saraswati, Garuda, Sesha, Rudra, Ganesha,
+# Subrahmanya, Bhutarajaru, Lakshmi, Durga, Parvati, Bharati,
+# Padmanabha Teertharu, Rayaru, Vyasarajaru, Vadirajaru, Sripadarajaru,
+# Jayateertharu, Purandara Dasaru, Vijaya Dasaru, Jagannatha Dasaru,
+# Gopala Dasaru
 on_who: []
-#  - Devaru
+#  - Lakshmi
 
 # Ritual form. Zero or more of:
-# Aavahana, Aagamana, Namaskaara, Pooje, Aarati, Kathe, Vairagya, Parihara
+# Aavahana (Baaro/Baare), Aagamana (Banda/Bandalu), Namaskaara, Pooja, Naivedya,
+# Udi Tumbuva, Uruttani, Aarati, Huva / Varava Kodu, Laali, Vairagya,
+# Ninda Stuti, Parihara, others
 types: []
 #  - Aarati
 
+# Festival, vrata or jayanti the song belongs to. Zero or more of the 28
+# FESTIVALS in scripts/align.py (Rama Navami, Krishna Jayanti, Mangala Gowri,
+# Vara Mahalakshmi, Guru Poornima, Navaratri, Deepavali, ...).
+festivals: []
+#  - Vara Mahalakshmi
+
 # OPTIONAL: Raga, Tala, Ankita
+# ankita_kn is also the Author/Ankita filter value and the column shown in the
+# search results, so spell it the same way every time ("Purandara Vittala").
 raga_kn:
 tala_kn:
 ankita_kn:

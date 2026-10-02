@@ -14,45 +14,151 @@ import yaml
 from pathlib import Path
 
 # ── Controlled vocabularies ──────────────────────────────────────────────
+#
+# Every value the index page offers as a tag is listed here, in the order the
+# dropdowns should show them. A song YAML is free to use any other wording:
+# `match_value` snaps what it recognises and keeps the rest, and the tag inputs
+# always offer the union of these lists and the values actually found in the
+# collection. So a half-tagged collection never silently loses a song.
 
 CATEGORIES = [
-    'Dasara Pada',
-    'Sampradaya Haadu',
-    'Suladi',
+    'Haadu',
     'Stuti',
+    'Suladi',
+    'Sloka',
     'Stotra',
-    'Gadya',
     'Kavya',
+    'Gadya',
     'Kathe',
 ]
 
 TYPES = [
-    'Aavahana',
-    'Aagamana',
+    'Aavahana (Baaro/Baare)',
+    'Aagamana (Banda/Bandalu)',
     'Namaskaara',
-    'Pooje',
+    'Pooja',
+    'Naivedya',
+    'Udi Tumbuva',
+    'Uruttani',
     'Aarati',
-    'Kathe',
+    'Huva / Varava Kodu',
+    'Laali',
     'Vairagya',
+    'Ninda Stuti',
     'Parihara',
+    'others',
 ]
 
-ON_WHO = ['Devaru', 'Devi', 'Yatigalu', 'Dasaru']
+# 'On whom?' is a single flat list: the old Devaru / Devi / Yatigalu / Dasaru
+# groups were merged, so a song on Lakshmi is picked exactly like one on
+# Vijaya Dasaru. Saraswati appears under Devaru, so it is listed once only.
+ON_WHO = [
+    # Devaru
+    'Vishnu', 'Dashavatara', 'Varaha', 'Narasimha', 'Vamana', 'Parasurama',
+    'Rama', 'Krishna', 'Padmanabha', 'Kapila', 'Dattatreya', 'Keshavaadi Rupa',
+    'Venkatesha', 'Ranga', 'Hanuma', 'Bheema', 'Madhwacharya', 'Saraswati',
+    'Garuda', 'Sesha', 'Rudra', 'Ganesha', 'Subrahmanya', 'Bhutarajaru',
+    # Devi
+    'Lakshmi', 'Durga', 'Parvati', 'Bharati',
+    # Yatigalu
+    'Padmanabha Teertharu', 'Rayaru', 'Vyasarajaru', 'Vadirajaru',
+    'Sripadarajaru', 'Jayateertharu',
+    # Dasaru
+    'Purandara Dasaru', 'Vijaya Dasaru', 'Jagannatha Dasaru', 'Gopala Dasaru',
+]
+
+FESTIVALS = [
+    'Rama Navami',
+    'Krishna Jayanti',
+    'Mangala Gowri',
+    'Vara Mahalakshmi',
+    'Vamana Jayanti',
+    'Swarna Gowri Vrata',
+    'Jyeshta Devi Vrata',
+    'Gowri Tritiya',
+    'Diwashi Gowri Vrata',
+    'Ananta Chaturshashi',
+    'Guru Poornima',
+    'Navaratri',
+    'Makara Shankaranti',
+    'Deepavali',
+    'Ganesha Chaturthi',
+    'Saraswati Pooja',
+    'Mahalaya Paksha',
+    'Adhika Maasa',
+    'Chaturmaasya',
+    'Ekadashi',
+    'Surya Grahana',
+    'Chandra Grahana',
+    'Dhanvantri Jayanti',
+    'Srinivasa Kalyana',
+    'Yugaadi',
+    'Naga Chaturthi',
+    'Garuda Panchami',
+    'Shivaratri',
+]
+
+AUTHORS = [
+    'Purandara Dasaru',
+    'Raghavendra Teertharu',
+    'Vijaya Dasaru',
+    'Gopala Dasaru',
+    'Jagannatha Dasaru',
+    'Guru Jagannatha Dasaru',
+    'Sripadarajaru',
+    'Dhanvantari Vittala Dasaru',
+    'Vadirajaru',
+    'Guru Govinda Vittala Dasaru',
+    'Beluru Vaikunta Vittala Dasaru',
+]
+
+ANKITAS = [
+    'Sampradaya',
+    'Purandara Vittala',
+    'Hayavadana',
+    'Vijaya Vittala',
+    'Jagannatha Vittala',
+    'Gopala Vittala',
+    'Ranga Vittala',
+    'Sree Krishna',
+    'Madhwesha Vittala',
+    'Madhwesha Krishna',
+    'Bheemesha Krishna',
+]
 
 # 'on' alone would be parsed by YAML 1.1 as the boolean true, so the key is explicit.
 ON_KEY = 'on_who'
 
+# Spellings used before a vocabulary was revised, mapped onto the current one.
+# Anything not listed here is kept verbatim rather than guessed at.
+ALIASES = {
+    'category': {
+        'dasara pada': 'Haadu',
+        'sampradaya haadu': 'Haadu',
+    },
+    'types': {
+        'pooje': 'Pooja',
+        'arati': 'Aarati',
+        'avahana': 'Aavahana (Baaro/Baare)',
+        'agamina': 'Aagamana (Banda/Bandalu)',
+        'huvva / varava kodu': 'Huva / Varava Kodu',
+        'hova / varava kodu': 'Huva / Varava Kodu',
+    },
+}
+
 PATH_CATEGORY = {
-    'devara nama': 'Dasara Pada',
-    'gurugalu nama': 'Dasara Pada',
+    'devara nama': 'Haadu',
+    'gurugalu nama': 'Haadu',
     'suladigalu': 'Suladi',
     'stutigalu': 'Stuti',
     'stotragalu': 'Stotra',
     'kavyagalu': 'Kavya',
     'gatagal': 'Gadya',
-    'vishesha dinagalu': 'Sampradaya Haadu',
+    'vishesha dinagalu': 'Haadu',
 }
 
+# Still the broad Devaru / Devi / Yatigalu / Dasaru groups. Replace these with
+# names from ON_WHO as the collection gets re-tagged by hand.
 PATH_ON_WHO = {
     'devara nama': 'Devaru',
     'gurugalu nama': 'Yatigalu',
@@ -69,23 +175,43 @@ PATH_ON_WHO = {
     'vishesha dinagalu/ganesha chaturthi': 'Devaru',
 }
 
+# Festival folders are named after the occasion, so the folder alone is enough.
+PATH_FESTIVALS = {
+    'vishesha dinagalu/adhika masa': ['Adhika Maasa'],
+    'vishesha dinagalu/deevige amavasya': ['Makara Shankaranti'],
+    'vishesha dinagalu/ganesha chaturthi': ['Ganesha Chaturthi'],
+    'vishesha dinagalu/gowri tritiya': ['Gowri Tritiya'],
+    'vishesha dinagalu/krishnaashtami': ['Krishna Jayanti'],
+    'vishesha dinagalu/managala gowri': ['Mangala Gowri'],
+    'vishesha dinagalu/naga panchami': ['Naga Chaturthi', 'Garuda Panchami'],
+    'vishesha dinagalu/varamahalakshmi': ['Vara Mahalakshmi'],
+}
+
 # Matched against the filename, the Kannada title, and the IAST title.
 # Extend this table as you tag more songs by hand.
+# Keep the keywords specific: matching is plain substring, so a word like
+# 'stuti' would tag a Rajagopala Stuti as "Ninda Stuti".
 TYPE_KEYWORDS = {
-    'Aavahana': ['aavahana', 'avahana', 'ಆವಾಹನ', 'ಆವಾಹನ'],
-    'Aagamana': ['aagamana', 'agamina', 'ಆಗಮನ', 'ವರವ ಕೊಡೆ'],
+    'Aavahana (Baaro/Baare)': ['aavahana', 'avahana', 'ಆವಾಹನ'],
+    'Aagamana (Banda/Bandalu)': ['aagamana', 'agamina', 'ಆಗಮನ'],
     'Namaskaara': ['namaskaara', 'namaskara', 'ನಮಸ್ಕಾರ'],
-    'Pooje': ['pooje', 'pooja', 'poojipa', 'naivedya', 'ಪೂಜೆ', 'ಪೂಜಿಪ', 'ನೈವೇದ್ಯ'],
+    'Pooja': ['pooja', 'pooje', 'poojipa', 'ಪೂಜೆ', 'ಪೂಜಿಪ'],
+    'Naivedya': ['naivedya', 'ನೈವೇದ್ಯ'],
+    'Udi Tumbuva': ['udiya tumbuva', 'tumbuva', 'ತುಂಬುವ'],
+    'Uruttani': ['uruttani', 'ಉರುಟ್ಟಾನಿ'],
     'Aarati': ['aarati', 'arati', 'hasege', 'ಆರತಿ'],
-    'Kathe': ['kathe', 'ಕಥೆ'],
+    'Huva / Varava Kodu': ['varava kodu', 'ವರವ ಕೊಡೆ', 'ಹುವಾಗಿ', 'ಹೊವ'],
+    'Laali': ['laali', 'ಲಾಲಿ'],
     'Vairagya': ['vairagya', 'ವೈರಾಗ್ಯ'],
+    'Ninda Stuti': ['ninda', 'ನಿಂದಾ'],
     'Parihara': ['parihara', 'ಪರಿಹಾರ'],
+    'others': [],
 }
 
 # ── Canonical emission ───────────────────────────────────────────────────
 
 TOP_ORDER = [
-    'title_kn', 'author_kn', 'category', ON_KEY, 'types',
+    'title_kn', 'author_kn', 'category', ON_KEY, 'types', 'festivals',
     'raga_kn', 'tala_kn', 'ankita_kn', 'verses',
 ]
 
@@ -168,7 +294,7 @@ def as_text(value):
     return str(value).strip()
 
 
-def match_value(candidate, vocabulary):
+def match_value(candidate, vocabulary, aliases=None):
     """Snap a loosely-written value onto the controlled vocabulary."""
     key = candidate.strip().lower()
     if not key:
@@ -176,11 +302,14 @@ def match_value(candidate, vocabulary):
     for option in vocabulary:
         if key == option.lower():
             return option
+    alias = (aliases or {}).get(key)
+    if alias:
+        return alias
     return candidate.strip()
 
 
 def infer_metadata(rel_path, data):
-    """Derive category / on-who / types from location and title."""
+    """Derive category / on-who / types / festivals from location and title."""
     parts = [p.lower() for p in rel_path.parts]
     folder = '/'.join(parts[:-1])
     stem = rel_path.stem.lower()
@@ -205,12 +334,19 @@ def infer_metadata(rel_path, data):
                 on_who = value
                 break
 
+    festivals = PATH_FESTIVALS.get(folder, [])
+    if not festivals:
+        for key, value in PATH_FESTIVALS.items():
+            if folder.startswith(key + '/'):
+                festivals = value
+                break
+
     types = [
         value for value in TYPES
         if any(keyword in haystack for keyword in TYPE_KEYWORDS[value])
     ]
 
-    return category, on_who, types
+    return category, on_who, types, festivals
 
 
 def normalise(data, rel_path=None):
@@ -223,15 +359,16 @@ def normalise(data, rel_path=None):
     given_category = as_list(data.get('category'))
     given_on = as_list(legacy_on)
     given_types = as_list(data.get('types'))
+    given_festivals = as_list(data.get('festivals'))
 
-    inferred_category, inferred_on, inferred_types = (
-        infer_metadata(rel_path, data) if rel_path is not None else ('', '', [])
+    inferred_category, inferred_on, inferred_types, inferred_festivals = (
+        infer_metadata(rel_path, data) if rel_path is not None else ('', '', [], [])
     )
 
-    def ordered(values, vocabulary):
+    def ordered(values, vocabulary, aliases=None):
         seen, out = set(), []
         for value in values:
-            snapped = match_value(value, vocabulary)
+            snapped = match_value(value, vocabulary, aliases)
             if snapped and snapped.lower() not in seen:
                 seen.add(snapped.lower())
                 out.append(snapped)
@@ -240,9 +377,11 @@ def normalise(data, rel_path=None):
     out = {}
     out['title_kn'] = as_text(data.get('title_kn'))
     out['author_kn'] = as_text(data.get('author_kn'))
-    out['category'] = ordered(given_category or [inferred_category], CATEGORIES)
+    out['category'] = ordered(
+        given_category or [inferred_category], CATEGORIES, ALIASES['category'])
     out[ON_KEY] = ordered(given_on or [inferred_on], ON_WHO)
-    out['types'] = ordered(given_types or inferred_types, TYPES)
+    out['types'] = ordered(given_types or inferred_types, TYPES, ALIASES['types'])
+    out['festivals'] = ordered(given_festivals or inferred_festivals, FESTIVALS)
 
     for field in ('raga_kn', 'tala_kn', 'ankita_kn'):
         out[field] = as_text(data.get(field))
@@ -263,7 +402,7 @@ def dump(data):
     for field in ('title_kn', 'author_kn'):
         lines.append(f'{field}: {scalar(data.get(field, ""))}')
 
-    for field in ('category', ON_KEY, 'types'):
+    for field in ('category', ON_KEY, 'types', 'festivals'):
         values = data[field]
         if values:
             lines.append(f'{field}:')

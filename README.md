@@ -19,17 +19,55 @@ Site regenerates in docs/ and goes live in ~2 minutes
 
 ## Finding a song on the homepage
 
-The index has no folders. Everything is one flat list you narrow down:
+The index has no folders. Everything is one flat list you narrow down. Every
+filter is a tag input: click one, type a few letters, then press Enter or click
+the suggestion to drop it in as a chip. Click the `×` on a chip to remove it.
 
-- **Search bar + Search button** — matches title, author, and lyrics in any script. Results refresh when you press Search, so half-finished selections do not shuffle the list.
-- **Category** checkboxes — Dasara Pada, Sampradaya Haadu, Suladi, Stuti, Stotra, Gadya, Kavya, Kathe.
-- **Type** checkboxes — Aavahana, Aagamana, Namaskaara, Pooje, Aarati, Kathe, Vairagya, Parihara.
-- **On who?** tags — Devaru, Devi, Yatigalu, Dasaru. Type to autocomplete.
-- **Author** tags — every author in the collection. Type to autocomplete.
+They sit in two columns — **Category** beside **Type**, **Author** beside
+**Ankita** — with **On whom?** and **Festival / Vrata / Jayanti** spanning the
+full width above and between them.
+
+- **Search bar + Search button** — matches title, author, ankita and the opening
+  line, in any script. Results refresh when you press Search, so half-finished
+  selections do not shuffle the list.
+- **On whom?** — the deity, Devi, Yatigalu or Dasaru the song is addressed to.
+  One flat list: Vishnu, Dashavatara, Varaha, Narasimha, Vamana, Parasurama,
+  Rama, Krishna, Padmanabha, Kapila, Dattatreya, Keshavaadi Rupa, Venkatesha,
+  Ranga, Hanuma, Bheema, Madhwacharya, Saraswati, Garuda, Sesha, Rudra, Ganesha,
+  Subrahmanya, Bhutarajaru, Lakshmi, Durga, Parvati, Bharati,
+  Padmanabha Teertharu, Rayaru, Vyasarajaru, Vadirajaru, Sripadarajaru,
+  Jayateertharu, Purandara Dasaru, Vijaya Dasaru, Jagannatha Dasaru,
+  Gopala Dasaru.
+- **Category** — Haadu, Stuti, Suladi, Sloka, Stotra, Kavya, Gadya, Kathe.
+- **Type** — Aavahana (Baaro/Baare), Aagamana (Banda/Bandalu), Namaskaara,
+  Pooja, Naivedya, Udi Tumbuva, Uruttani, Aarati, Huva / Varava Kodu, Laali,
+  Vairagya, Ninda Stuti, Parihara, others.
+- **Festival / Vrata / Jayanti** — the 28 occasions in `FESTIVALS`
+  (Rama Navami, Krishna Jayanti, Mangala Gowri, Vara Mahalakshmi, Guru
+  Poornima, Navaratri, Deepavali, …).
+- **Author** — Purandara Dasaru, Raghavendra Teertharu, Vijaya Dasaru, Gopala
+  Dasaru, Jagannatha Dasaru, Guru Jagannatha Dasaru, Sripadarajaru, Dhanvantari
+  Vittala Dasaru, Vadirajaru, Guru Govinda Vittala Dasaru, Beluru Vaikunta
+  Vittala Dasaru.
+- **Ankita** — Sampradaya, Purandara Vittala, Hayavadana, Vijaya Vittala,
+  Jagannatha Vittala, Gopala Vittala, Ranga Vittala, Sree Krishna, Madhwesha
+  Vittala, Madhwesha Krishna, Bheemesha Krishna.
 - `/` focuses search, `Esc` resets everything.
 
-Filters combine with AND. Each combination is written to the URL, so you can
-bookmark or share exactly what you are looking at.
+Tags combine with AND across filters and OR within a single filter. Each
+combination is written to the URL, so you can bookmark or share exactly what you
+are looking for.
+
+Each dropdown lists the canonical vocabulary above **first, in that order**, and
+then anything else the songs actually use. That is on purpose: it keeps the
+existing songs filterable while you re-tag them by hand. The ~59 songs still
+tagged with the older wording (`Devaru`, `Sampradaya Haadu`, `Pooje`) still
+show up as their own tags. Once a song uses the canonical spelling it lines up
+with the dropdown and the duplicate spellings drop away.
+
+### What a result row shows
+
+Title · author · ankita · type · the opening line of the song. No other tags.
 
 ---
 
@@ -48,7 +86,8 @@ lyrics/                   ← ONLY edit here
     song-name.yml
 
 Folder names are only a convenience for you. They are not navigation on the
-site — they are read once by scripts/align.py to guess category / on_who.
+site — they are read once by scripts/align.py to guess category / on_who /
+festivals.
 
 scripts/align.py          ← YAML normaliser + metadata inference (run --apply)
 scripts/build.py          ← transliteration + site builder (auto-generates docs/)
@@ -92,25 +131,44 @@ See `templates/song-template.yml` for a copy-paste starter.
 
 ### Filterable metadata
 
-These four fields drive the index page. `scripts/align.py` fills them in from
-the folder path and the title when they are empty, so you only need to write
-what it cannot guess.
+These fields drive the index page. `scripts/align.py` fills them in from the
+folder path and the title when they are empty, so you only need to write what it
+cannot guess. `author_kn` and `ankita_kn` double as the Author and Ankita filter
+values, so spell those two the same way in every file.
 
 ```yaml
 category:               # one of the CATEGORIES below
-  - Dasara Pada
+  - Haadu
 
-on_who:                 # any of: Devaru, Devi, Yatigalu, Dasaru
-  - Devaru
+on_who:                 # any name from ON_WHO below
+  - Lakshmi
 
 types:                  # any of the TYPES below
   - Aarati
-  - Pooje
+  - Pooja
+
+festivals:              # any of the FESTIVALS below
+  - Vara Mahalakshmi
+
+ankita_kn: ಪುರಂದರ ವಿಠ್ಠಲ   # one of the ANKITAS below
 ```
 
-| CATEGORIES | TYPES |
-|------------|-------|
-| Dasara Pada, Sampradaya Haadu, Suladi, Stuti, Stotra, Gadya, Kavya, Kathe | Aavahana, Aagamana, Namaskaara, Pooje, Aarati, Kathe, Vairagya, Parihara |
+All four lists live at the top of `scripts/align.py`, in the order the dropdowns
+should show them — edit them there, not here.
+
+| list | values |
+|------|--------|
+| `CATEGORIES` | Haadu, Stuti, Suladi, Sloka, Stotra, Kavya, Gadya, Kathe |
+| `TYPES` | Aavahana (Baaro/Baare), Aagamana (Banda/Bandalu), Namaskaara, Pooja, Naivedya, Udi Tumbuva, Uruttani, Aarati, Huva / Varava Kodu, Laali, Vairagya, Ninda Stuti, Parihara, others |
+| `ON_WHO` | Vishnu, Dashavatara, Varaha, Narasimha, Vamana, Parasurama, Rama, Krishna, Padmanabha, Kapila, Dattatreya, Keshavaadi Rupa, Venkatesha, Ranga, Hanuma, Bheema, Madhwacharya, Saraswati, Garuda, Sesha, Rudra, Ganesha, Subrahmanya, Bhutarajaru, Lakshmi, Durga, Parvati, Bharati, Padmanabha Teertharu, Rayaru, Vyasarajaru, Vadirajaru, Sripadarajaru, Jayateertharu, Purandara Dasaru, Vijaya Dasaru, Jagannatha Dasaru, Gopala Dasaru |
+| `FESTIVALS` | Rama Navami, Krishna Jayanti, Mangala Gowri, Vara Mahalakshmi, Vamana Jayanti, Swarna Gowri Vrata, Jyeshta Devi Vrata, Gowri Tritiya, Diwashi Gowri Vrata, Ananta Chaturshashi, Guru Poornima, Navaratri, Makara Shankaranti, Deepavali, Ganesha Chaturthi, Saraswati Pooja, Mahalaya Paksha, Adhika Maasa, Chaturmaasya, Ekadashi, Surya Grahana, Chandra Grahana, Dhanvantri Jayanti, Srinivasa Kalyana, Yugaadi, Naga Chaturthi, Garuda Panchami, Shivaratri |
+| `AUTHORS` | Purandara Dasaru, Raghavendra Teertharu, Vijaya Dasaru, Gopala Dasaru, Jagannatha Dasaru, Guru Jagannatha Dasaru, Sripadarajaru, Dhanvantari Vittala Dasaru, Vadirajaru, Guru Govinda Vittala Dasaru, Beluru Vaikunta Vittala Dasaru |
+| `ANKITAS` | Sampradaya, Purandara Vittala, Hayavadana, Vijaya Vittala, Jagannatha Vittala, Gopala Vittala, Ranga Vittala, Sree Krishna, Madhwesha Vittala, Madhwesha Krishna, Bheemesha Krishna |
+
+A value that is not on its list is **kept as typed** and shows up in the dropdown
+after the canonical entries, so nothing ever disappears. `ALIASES` in the same
+file maps older spellings onto the current ones when you run `--apply`
+(`Sampradaya Haadu` → `Haadu`, `Pooje` → `Pooja`, and so on).
 
 ### Normalising the YAML
 

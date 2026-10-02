@@ -18,7 +18,9 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).parent))
-from align import CATEGORIES, ON_KEY, ON_WHO, TYPES  # noqa: E402
+from align import (  # noqa: E402
+    ANKITAS, AUTHORS, CATEGORIES, FESTIVALS, ON_KEY, ON_WHO, TYPES,
+)
 
 # ──────────────────────────────────────────────────────────────────────────
 #  Kannada → Tamil (with superscripts)
@@ -291,11 +293,21 @@ def transliterate_to_iast(text):
             i += 1
             if i < n and chars[i] == HALANTA:
                 i += 1
-            elif i < n and chars[i] in KN_VOWEL_SIGNS:
+            elif i < n and chars[i] in KN_VOWEL_SIGNS and chars[i] != ANUSVARA:
                 result.append(KN_TO_IAST[chars[i]])
                 i += 1
-            elif not (i < n and chars[i] == ANUSVARA):
+            else:
+                # The inherent 'a'. 'ಂ' is itself listed in KN_VOWEL_SIGNS, so it
+                # is deliberately kept out of the branch above: an anusvara is a
+                # coda on this syllable, not its vowel, and it has to become the
+                # nasal of whatever follows. Written in this order
+                # ಪುರಂದರ -> puraṅdara; treating 'ಂ' as a vowel sign gave
+                # 'purṃdara', and dropping the inherent 'a' gave 'purndara'.
                 result.append('a')
+                if i < n and chars[i] == ANUSVARA:
+                    result.append(
+                        varga_nasal(chars, i, 'iast') or KN_TO_IAST[ANUSVARA])
+                    i += 1
         elif char in KN_TO_IAST:
             result.append(KN_TO_IAST[char])
             i += 1
@@ -392,7 +404,7 @@ def load_lyrics(path):
 
         record['verses'].append(rendered)
 
-    for field in ('category', ON_KEY, 'types'):
+    for field in ('category', ON_KEY, 'types', 'festivals'):
         values = raw.get(field)
         if values is None:
             values = raw.get('on') if field == ON_KEY else None
@@ -407,6 +419,11 @@ def plain_title(record):
 
 def plain_author(record):
     return iast_to_plain(record['author']['en']).strip().title()
+
+
+def plain_ankita(record):
+    """The signature line ("ankita") as written in Roman letters."""
+    return iast_to_plain(record['ankita']['en']).strip()
 
 
 def preview_line(record):
@@ -466,6 +483,8 @@ def render_badges(record):
         badges.append(f'<span class="badge badge-on">{escape(value)}</span>')
     for value in record['types']:
         badges.append(f'<span class="badge badge-type">{escape(value)}</span>')
+    for value in record.get('festivals') or []:
+        badges.append(f'<span class="badge badge-festival">{escape(value)}</span>')
     return ''.join(badges)
 
 
@@ -520,28 +539,46 @@ def render_song_page(record, song, output_dir, template):
     return out_path
 
 
-def render_index(template, songs, output_dir):
-    entries = ''.join(
-        f'''<li class="song-entry" data-id="{song['id']}">
+def render_index_entry(song):
+    """One result row: title, author, ankita, type, then the opening line."""
+    types = ''.join(
+        f'<span class="badge badge-type">{escape(value)}</span>'
+        for value in song['types']
+    )
+    return f'''<li class="song-entry" data-id="{song['id']}">
   <a class="song-link" href="{song['href']}">
     <span class="song-title">{escape(song['title'])}</span>
     <span class="song-author">{escape(song['author'])}</span>
-    <span class="song-badges">{render_badges(song)}</span>
+    <span class="song-ankita">{escape(song['ankita'])}</span>
+    <span class="song-types">{types}</span>
     <span class="song-preview">{escape(song['preview'])}</span>
   </a>
 </li>
 '''
-        for song in songs
-    )
+
+
+def render_index(template, songs, output_dir):
+    entries = ''.join(render_index_entry(song) for song in songs)
 
     index = {
         'songs': [
-            {key: song[key] for key in ('id', 'href', 'title', 'author', 'preview', 'category', ON_KEY, 'types')}
+            {key: song[key] for key in (
+                'id', 'href', 'title', 'author', 'ankita', 'preview',
+                'category', ON_KEY, 'types', 'festivals',
+            )}
             for song in songs
         ],
-        'categories': CATEGORIES,
-        'types': TYPES,
-        'onWho': ON_WHO,
+        # Canonical vocabulary per filter, in the order the tag inputs show them.
+        # The browser adds on any value the songs actually use, so a collection
+        # that has not been re-tagged yet still filters correctly.
+        'vocabularies': {
+            'on_who': ON_WHO,
+            'category': CATEGORIES,
+            'type': TYPES,
+            'festivals': FESTIVALS,
+            'author': AUTHORS,
+            'ankita': ANKITAS,
+        },
     }
 
     # '<' is escaped so the payload can never terminate the host <script> element.
@@ -608,10 +645,12 @@ def build(repo_root):
                 'href': f'songs/{slug}.html',
                 'title': plain_title(record) or rel.stem.replace('_', ' ').title(),
                 'author': plain_author(record) or 'Unknown',
+                'ankita': plain_ankita(record),
                 'preview': preview_line(record),
                 'category': record['category'],
                 ON_KEY: record[ON_KEY],
                 'types': record['types'],
+                'festivals': record['festivals'],
             }
 
             render_song_page(record, song, output_dir, song_template)

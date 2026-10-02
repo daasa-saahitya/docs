@@ -202,13 +202,19 @@ body {
 
 .reset-button:hover { background: var(--parchment-deeper); }
 
+/* Two columns: Category sits beside Type, Author beside Ankita, and the two
+   long lists (On whom?, Festival) span the full width. */
 .filter-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.75rem;
+  align-items: start;
 }
 
+.filter-group-wide { grid-column: 1 / -1; }
+
 .filter-actions {
+  grid-column: 1 / -1;
   display: flex;
   justify-content: flex-end;
   border-top: 1px solid var(--rule-light);
@@ -216,46 +222,18 @@ body {
 }
 
 .filter-group {
-  border: 0;
   min-width: 0;
 }
 
-.filter-group legend,
 .filter-legend {
   display: block;
-  padding: 0 0 0.55rem;
+  padding: 0 0 0.5rem;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
 }
-
-.option-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.4rem;
-}
-
-.option {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 1.1rem;
-  color: var(--ink-light);
-  cursor: pointer;
-  user-select: none;
-}
-
-.option input {
-  accent-color: var(--accent);
-  cursor: pointer;
-  margin: 0;
-  width: 1.35rem;
-  height: 1.35rem;
-}
-
-.option:hover { color: var(--accent); }
 
 /* Tag autocomplete */
 
@@ -358,7 +336,12 @@ body {
 
 .song-link {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr) minmax(0, 2fr) minmax(0, 1.2fr);
+  grid-template-columns:
+    minmax(0, 2.3fr)   /* title */
+    minmax(0, 1.5fr)   /* author */
+    minmax(0, 1.3fr)   /* ankita */
+    minmax(0, 1.5fr)   /* type */
+    minmax(0, 1.5fr);  /* opening line */
   gap: 0.25rem 0.9rem;
   align-items: baseline;
   padding: 0.4rem 0.9rem;
@@ -375,6 +358,14 @@ body {
 }
 
 .song-link .song-author { font-size: 0.75rem; color: var(--ink-faint); }
+
+.song-link .song-ankita { font-size: 0.75rem; color: var(--ink-faint); }
+
+.song-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
 
 .song-link .song-preview {
   font-size: 0.7rem;
@@ -407,6 +398,7 @@ body {
 
 .badge-on    { border-color: var(--rule); background: var(--parchment-deeper); color: var(--accent); }
 .badge-type  { border-color: var(--rule-light); background: transparent; color: var(--ink-faint); }
+.badge-festival { border-color: var(--rule); background: var(--accent); color: var(--parchment); }
 
 .empty-state {
   margin-top: 2rem;
@@ -571,9 +563,13 @@ body {
   .song-page { padding: 1.25rem 1.5rem 3rem; }
   .lang-panels { padding: 1.5rem; }
 
-  .song-link { grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr); }
-  .song-badges { grid-column: 1; }
-  .song-preview { display: none; }
+  /* Results collapse to title / meta / opening line. */
+  .song-link {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr) minmax(0, 1.4fr);
+    row-gap: 0.3rem;
+  }
+  .song-link .song-preview { display: none; }
+  .song-types { grid-column: 1 / -1; }
 }
 
 @media (max-width: 600px) {
@@ -601,9 +597,8 @@ body {
   .lang-panels { padding: 1.25rem 1rem 2rem; }
 
   .filter-panel { padding: 1rem; }
-  .filter-grid { gap: 1.1rem; }
+  .filter-grid { grid-template-columns: 1fr; gap: 1.1rem; }
 
   .song-link { grid-template-columns: 1fr; gap: 0.15rem; padding: 0.7rem 0.85rem; }
-  .song-preview { display: block; text-align: left; }
-  .song-badges { grid-column: auto; }
+  .song-link .song-preview { display: block; text-align: left; white-space: normal; }
 }
