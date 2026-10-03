@@ -1,12 +1,10 @@
 # Daasa Saahitya - lyrics (aligned by scripts/align.py)
-
 title_kn: ವ್ಯಾಸರಾಜ ಸ್ತೋತ್ರ ಸುಳಾದಿ
 author_kn: ಪುರಂದರ ದಾಸರು
-category:
-  - Suladi
-on_who:
-  - Yatigalu
+category: [Suladi]
+on_who: [Vyasarajaru]
 types: []
+festivals: []
 raga_kn: ವಲಜಿ
 tala_kn:
 ankita_kn: ಪುರಂದರ ವಿಠಲ
@@ -56,7 +54,7 @@ verses:
       ಅಂಕಿತ ಎನಗಿತ್ತು ಗುರುವ್ಯಾಸ ಮುನಿರಾಯಾ ॥
 
   - type: ''
-    number: 3
+    number: 4
     subtitle_kn: ಝಂಪೆತಾಳ
     kn:
     |
@@ -68,7 +66,7 @@ verses:
       ನಾಯಕನೆಂದೆನಿಸಿ ಗುರುವ್ಯಾಸ ಮುನಿರಾಯ ॥
 
   - type: ''
-    number: 3
+    number: 5
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
     kn:
     |
@@ -82,7 +80,7 @@ verses:
       ಲೇಶ ನಿನ್ನಂತೆ ವೆಗ್ಗಳರ ಕಾಣೆನು ನಾನು ॥
 
   - type: ''
-    number: 1
+    number: 6
     subtitle_kn: ಧ್ರುವತಾಳ
     kn:
     |
@@ -96,7 +94,7 @@ verses:
       ಪುರಂದರವಿಠ್ಠಲ ಪರದೈವ ಜಗಕೆ ॥
 
   - type: ''
-    number: 3
+    number: 7
     subtitle_kn: ತ್ರಿಪುಟತಾಳ
     kn:
     |
@@ -106,7 +104,7 @@ verses:
       ಪುರಂದರವಿಠ್ಠಲನ್ನ ಕರುಣಾಕರ ಕರುಣವ ಪಡೆದೆ ॥
 
   - type: ''
-    number: 4
+    number: 8
     subtitle_kn: ಅಟ್ಟತಾಳ
     kn:
     |
@@ -127,7 +125,7 @@ verses:
       ನೀ ಸಮರ್ಥನು ಸಂನ್ಯಾಸಿ ಶಿರೋಮಣಿ ॥
 
   - type: ''
-    number: 5
+    number: 9
     subtitle_kn: ಆದಿತಾಳ
     kn:
     |
